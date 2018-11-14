@@ -1,0 +1,18 @@
+body {
+    background: black;
+    color: whitesmoke;
+}
+a{
+    color:darkgray;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    background: whitesmoke;
+}
+
+h1{
+    font-family: "Times New Roman";
+    font-size: 50pt;
+
+}
