@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ZygmuntGroceryStore:war exploded">
+    <output-path>$PROJECT_DIR$/target/ZygGroceryStore</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ZygmuntGroceryStore" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: net.bootsfaces:bootsfaces:1.1.3" />
+          <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.1.7" />
+          <element id="library" level="project" name="Maven: com.sun.faces:jsf-impl:2.1.7" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.faces:2.2.14" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.1" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/ZygGroceryStore/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="ZygmuntGroceryStore/web/Web" />
+    </root>
+  </artifact>
+</component>

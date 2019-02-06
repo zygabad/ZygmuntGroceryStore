@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui" xmlns:ng="http://java.sun.com/jsf/composite">
+<h:head>
+    <title>Kontakt</title>
+</h:head>
+<h:body>
+    <b:navBar brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple">
+        <b:navbarLinks>
+            <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
+            <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value=" Koszyk" href="#" iconAwesome="fa-shopping-cart"></b:navLink>
+            <b:navLink value=" Załóż konto" href="#" iconAwesome="fa-user"></b:navLink>
+            <b:navLink value=" Zaloguj się" href="#" iconAwesome="fa-key" iconSpin="true"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+
+    <b:form id="contact_form">
+        <b:container fluid="=true">
+            <b:panel title="Informacje kontaktowe" look="primary">
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Imię:" for="firstname"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="Imię" id="firstname" value="#{utils.firstname}"
+                                     ajax="true" autocomplete="false" update="@(.message)" required="true" data-error="Imię jest wymagane.">
+                            <f:facet name="prepend">
+                                <b:icon name="user"/>
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Nazwisko:" for="secondname"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="Nazwisko" id="secondname" value="#{utils.secondname}"
+                                     ajax="true" autocomplete="false" update="@(.message)" required="true" data-error="Nazwisko jest wymagane.">
+                            <f:facet name="prepend">
+                                <b:icon name="user"/>
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Email:" for="email"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="Email" id="email" value="#{utils.email}"
+                                     ajax="true" autocomplete="false" update="@(.message)"
+                                     required="true" data-error="Email jest wymagany." mask="email">
+                            <f:facet name="prepend">
+                                <b:icon name="envelope"/>
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Telefon:" for="telefon"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText placeholder="+48 XXX-XXX-XXX" id="telefon" value="#{utils.phone}"
+                                     ajax="true" autocomplete="false" update="@(.message)"
+                                     required="true" data-error="Telefon jest wymagany." mask="+48 999-999-999">
+                            <f:facet name="prepend">
+                                <b:icon name="phone"/>
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Typ sprawy:" for="typsprawy"/>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:selectOneMenu value="#{utils.typSprawy}" required="true" id="typsprawy" >
+                            <f:selectItem itemLabel="(Temat sprawy)" itemValue="0" />
+                            <f:selectItem itemLabel="Płatności" itemValue="1" />
+                            <f:selectItem itemLabel="Faktury" itemValue="2" />
+                            <f:selectItem itemLabel="Zamówienia" itemValue="3" />
+                            <f:selectItem itemLabel="Zapytanie ofertowe" itemValue="3" />
+                            <f:selectItem itemLabel="Żadne z powyższych" itemValue="3" />
+                            <f:facet name="prepend">
+                                <b:icon name="list" />
+                            </f:facet>
+                        </b:selectOneMenu>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Jesteś klientem?" />
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:radiobutton value="#{utils.clientAlready}" itemLabel="Tak" itemValue="klient_tak"/>
+                        <b:radiobutton value="#{utils.clientAlready}" itemLabel="Nie" itemValue="klient_nie"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputText value="Treść wiadomości *" />
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputTextarea class="form-control" name="comment" cols="2" rows="3" value="#{utils.trescWiadomosci}">
+                            <f:facet name="prepend">
+                                <b:icon name="pencil" />
+                            </f:facet>
+                        </b:inputTextarea>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2">
+                        <h:commandButton action="#{utils.printData}">
+                           <!-- <f:param name="someparam" value="somevalue" /> -->
+                        </h:commandButton>
+                    </b:column>
+
+                </b:row>
+
+            </b:panel>
+        </b:container>
+    </b:form>
+
+
+</h:body>
+
+</html>

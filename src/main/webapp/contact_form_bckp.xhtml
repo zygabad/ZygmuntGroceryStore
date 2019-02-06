@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui" xmlns:ng="http://java.sun.com/jsf/composite">
+<h:head>
+    <title>Kontakt</title>
+</h:head>
+<h:body>
+    <b:navBar brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple">
+        <b:navbarLinks>
+            <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
+            <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value=" Koszyk" href="#" iconAwesome="fa-shopping-cart"></b:navLink>
+            <b:navLink value=" Załóż konto" href="#" iconAwesome="fa-user"></b:navLink>
+            <b:navLink value=" Zaloguj się" href="#" iconAwesome="fa-key" iconSpin="true"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+
+    <div class="container">
+
+        <form class="well form-horizontal" action="contact_form_success.xhtml" method="post" id="contact_form">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Formularz kontaktowy</legend>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Imię *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+                        <b:inputText name="first_name" placeholder="Imię" class="form-control" type="text" required="true"
+                                     data-error="Imię jest wymagane.">
+                            <f:facet name="prepend">
+                                <b:icon name="user" />
+                            </f:facet>
+                        </b:inputText>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nazwisko *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon">-->
+                            <!--<i class="glyphicon glyphicon-user"></i></span>-->
+                        <b:inputText name="last_name" placeholder="Nazwisko" class="form-control" type="text" required="true"
+                                     data-error="Nazwisko jest wymagane.">
+                            <f:facet name="prepend">
+                            <b:icon name="user" />
+                            </f:facet>
+                        </b:inputText>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<b:inputText placeholder="Username" required="true" label="Username" colMd="10" labelColMd="2">-->
+                <!--<f:facet name="prepend">-->
+                    <!--<b:icon name="user" />-->
+                <!--</f:facet>-->
+            <!--</b:inputText>-->
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>-->
+                        <b:inputText id="form_email" name="form_email" typeahead="email" placeholder="Adres E-Mail" class="form-control"
+                                     type="text" required="true" data-error-msg="Email jest wymagany."
+                                     oninvalid="setCustomValidity('Wprowadź poprawny adres email')"
+                                     onchange="try{setCustomValidity('')}catch(e){}">
+                            <f:facet name="prepend">
+                                <b:icon name="envelope" />
+                            </f:facet>
+                        </b:inputText>
+
+                    </div>
+                </div>
+                <div class="help-block with-errors"></div>
+            </div>
+
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Telefon</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>-->
+                        <b:inputText name="phone" placeholder="+48 XXX-XXX-XXX" class="form-control" type="text">
+                        <f:facet name="prepend">
+                            <b:icon name="user" />
+                        </f:facet>
+                        </b:inputText>
+                </div>
+            </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Typ sprawy</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>-->
+                        <!--<select name="state" class="form-control selectpicker">-->
+                            <!--<option value=" ">Temat sprawy</option>-->
+                            <!--<option>Płatności</option>-->
+                            <!--<option>Faktury</option>-->
+                            <!--<option>Zamówienia</option>-->
+                            <!--<option>Zapytanie ofertowe</option>-->
+                            <!--<option>Żadne z powyższych</option>-->
+
+
+                        <!--</select>-->
+
+                        <b:selectOneMenu value="1" required="true" >
+                            <f:selectItem itemLabel="(Temat sprawy)" itemValue="" />
+                            <f:selectItem itemLabel="Płatności" itemValue="1" />
+                            <f:selectItem itemLabel="Faktury" itemValue="2" />
+                            <f:selectItem itemLabel="Zamówienia" itemValue="3" />
+                            <f:selectItem itemLabel="Zapytanie ofertowe" itemValue="3" />
+                            <f:selectItem itemLabel="Żadne z powyższych" itemValue="3" />
+                            <f:facet name="prepend">
+                                <b:icon name="list" />
+                            </f:facet>
+                        </b:selectOneMenu>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <!--<b:radiobutton value="#{radiobuttonBean.javaVersion}" itemLabel="Java 6" itemValue="6" required="true" />-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Jesteś już naszym klientem?</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="hosting" value="yes"/> Tak
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="hosting" value="no"/> Nie
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text area -->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Treść wiadomości *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>-->
+                        <b:inputTextarea class="form-control" name="comment" cols="2" rows="3">
+                            <f:facet name="prepend">
+                                <b:icon name="pencil" />
+                            </f:facet>
+                        </b:inputTextarea>
+                    </div>
+                </div>
+            </div>
+
+            <!--<%&#45;&#45;&lt;!&ndash; Success message &ndash;&gt;&#45;&#45;%>-->
+            <!--<%&#45;&#45;<div class="alert alert-success" role="alert" id="success_message">Sukces! <i class="glyphicon glyphicon-thumbs-up"></i> Dziękujemy za kontakt. Odpowiemy wkrótce.</div>&#45;&#45;%>-->
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <!--<b:button type="submit" class="btn btn-warning" onclick="showAlert()">Wyślij <span class="glyphicon glyphicon-send"></span>-->
+                    <!--<b:button value="Wyślij" iconAwesome="send" ajax="true" action="contact_form_success.xhtml" />-->
+                    <!--&lt;!&ndash;<b:button href="contact_form_success.xhtml" target="contact_form_success.xhtml"&ndash;&gt;-->
+                              <!--look="success"-->
+                              <!--value="Wyslij" icon="envelope"/>-->
+                    <button type="submit" class="btn btn-warning" onclick="showAlert()">Wyślij <span class="glyphicon glyphicon-send"></span></button>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <p class="text-muted">
+                    <strong>*</strong> Pola wymagane. Prosimy o wypełnienie
+                </p>
+            </div>
+        </fieldset>
+
+</form>
+</div><!-- /.container -->
+
+        </h:body>
+
+        </html>
