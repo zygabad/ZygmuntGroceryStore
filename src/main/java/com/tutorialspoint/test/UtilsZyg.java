@@ -133,8 +133,8 @@ public class UtilsZyg {
 //        this.secondname = secondname;
 //        this.email = email;
 //        this.phone = phone;
-//        this.typSprawy = typSprawy;
-//        this.trescWiadomosci = trescWiadomosci;
+//        this.issueType = issueType;
+//        this.messageText = messageText;
 //        this.message = message;
 //        this.message2 = message2;
 //        this.clientAlready = clientAlready;
