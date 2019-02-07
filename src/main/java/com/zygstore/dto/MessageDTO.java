@@ -1,4 +1,4 @@
-package com.zygstore.utils;
+package com.zygstore.dto;
 
 /**
  * Place description here.
@@ -6,5 +6,5 @@ package com.zygstore.utils;
  * @author Y08L@nykredit.dk
  */
 
-public class Email {
+public class MessageDTO {
 }

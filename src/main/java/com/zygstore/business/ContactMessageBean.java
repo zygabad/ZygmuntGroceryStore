@@ -3,15 +3,18 @@ package com.zygstore.business;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import com.zygstore.dto.ContactDTO;
+import com.zygstore.service.ContactMessageService;
+
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
 
-@ManagedBean(name = "contact", eager = true)
+@ManagedBean(name = "contactMessageBean", eager = true)
 @RequestScoped
-public class Contact {
+public class ContactMessageBean {
     private String firstname = "";
     public String secondname;
     public String email;
@@ -20,12 +23,15 @@ public class Contact {
     public String messageText;
     public Boolean clientAlready;
 
-    public Contact() {
+    @Named
+    private ContactMessageService contactMessageService;
+
+    public ContactMessageBean() {
         System.out.println("Bean Contact zainicjalizowany !");
     }
 
-    public Contact(String firstname, String secondname, String email, String phone, String issueType, String messageText,
-                   Boolean clientAlready) {
+    public ContactMessageBean(String firstname, String secondname, String email, String phone, String issueType, String messageText,
+                              Boolean clientAlready) {
         this.setFirstname(firstname);
         this.secondname = secondname;
         this.email = email;
@@ -100,5 +106,23 @@ public class Contact {
             "\nTyp Sprawy: " + issueType +
             "\nTreść Wiadomości: " + messageText  +
             "\nNasz Klient: " + clientAlready;
+    }
+
+    public void send(){
+        ContactDTO contact = new ContactDTO(firstname);
+        contactMessageService.send(contact); //tak zamiast co ponizej
+        ContactMessageService cms = new ContactMessageService(contact); //lepiej tutaj wstrzyknac bean springowy , enterprise, gdzie indziej tworzyny ale tutaj go uzywam
+        //inversion of control - gdzie indziej inicjalizuje gdzie indziej uzywam , dependency inj
+        //springa lub jee
+        //services nie maja stanow - bezstanowe, utile, validatory nie maja stanow - tylko funkcje
+        //managed beany sa stanowe
+
+        //util vs service - service wola cos jeszcze a util juz nic nie wola, zazwyczaj metody statyczne, ktorych nie mokujemy
+        //util to cos czego nie musze mockowac , nt operacje na dacie,
+        //service tworze
+        //TESTY!!!! servicow - beanow nie testowac i dao nie testujemy
+        //Obsluga wyjatkow jak zrobic
+
+
     }
 }
