@@ -1,4 +1,4 @@
-package com.zygstore.service;
+package com.zygstore.config;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -2,6 +2,7 @@ package com.zygstore.business;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.mail.MessagingException;
 
 import com.zygstore.dto.ContactDTO;
 import com.zygstore.service.ContactMessageService;
@@ -11,7 +12,7 @@ import com.zygstore.service.ContactMessageService;
  *
  * @author Y08L@nykredit.dk
  */
-
+//TODO check if we can comment below bean name
 @ManagedBean(name = "contactMessageBean", eager = true)
 @RequestScoped
 public class ContactMessageBean {
@@ -23,8 +24,7 @@ public class ContactMessageBean {
     public String messageText;
     public Boolean clientAlready;
 
-    @Named
-    private ContactMessageService contactMessageService;
+    private ContactDTO contact1;
 
     public ContactMessageBean() {
         System.out.println("Bean Contact zainicjalizowany !");
@@ -39,6 +39,14 @@ public class ContactMessageBean {
         this.issueType = issueType;
         this.messageText = messageText;
         this.clientAlready = clientAlready;
+    }
+
+    public ContactDTO getContact1() {
+        return contact1;
+    }
+
+    public void setContact1(ContactDTO contact1) {
+        this.contact1 = contact1;
     }
 
     public String getFirstname() {
@@ -97,21 +105,23 @@ public class ContactMessageBean {
         this.clientAlready = clientAlready;
     }
 
-    public String printContact(){
+    public String printContact() {
         return "Contact data: !\n" +
             "Imię: " + getFirstname() +
             "\nNazwisko: " + secondname +
             "\nAdres email: " + email +
             "\nTelefon: " + phone +
             "\nTyp Sprawy: " + issueType +
-            "\nTreść Wiadomości: " + messageText  +
+            "\nTreść Wiadomości: " + messageText +
             "\nNasz Klient: " + clientAlready;
     }
 
-    public void send(){
-        ContactDTO contact = new ContactDTO(firstname);
-        contactMessageService.send(contact); //tak zamiast co ponizej
-        ContactMessageService cms = new ContactMessageService(contact); //lepiej tutaj wstrzyknac bean springowy , enterprise, gdzie indziej tworzyny ale tutaj go uzywam
+    public void send() throws MessagingException {
+        ContactDTO contact = new ContactDTO(this);
+        ContactMessageService contactMessageService = new ContactMessageService(contact);
+        contactMessageService.send(); //tak zamiast co ponizej
+
+
         //inversion of control - gdzie indziej inicjalizuje gdzie indziej uzywam , dependency inj
         //springa lub jee
         //services nie maja stanow - bezstanowe, utile, validatory nie maja stanow - tylko funkcje
@@ -122,7 +132,11 @@ public class ContactMessageBean {
         //service tworze
         //TESTY!!!! servicow - beanow nie testowac i dao nie testujemy
         //Obsluga wyjatkow jak zrobic
-
+        //helper = util
+        //w messydzbean wywolue contactDTOBuilder i przekazuje parametry albo this , builder buduje mi obiekt contactdto
+        //w COntactDTO nie powininenm miec beana ContactMessydz
+        //wzorzec builder, visitor
+        //wzorzec factory - abstract factory , fabryka abstrakcyjna
 
     }
 }
