@@ -4,7 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.mail.MessagingException;
 
-import com.zygstore.dto.ContactDTO;
+import com.zygstore.dto.ContactMessageDTO;
 import com.zygstore.service.ContactMessageService;
 
 /**
@@ -16,37 +16,43 @@ import com.zygstore.service.ContactMessageService;
 @ManagedBean(name = "contactMessageBean", eager = true)
 @RequestScoped
 public class ContactMessageBean {
-    private String firstname = "";
-    public String secondname;
-    public String email;
-    public String phone;
-    public String issueType;
-    public String messageText;
-    public Boolean clientAlready;
 
-    private ContactDTO contact1;
+    private ContactMessageService contactMessageService;
 
-    public ContactMessageBean() {
-        System.out.println("Bean Contact zainicjalizowany !");
+    private String firstname;
+    private String secondname;
+    private String email;
+    private String phone;
+    private String issueType;
+    private String messageText;
+    private Boolean clientAlready;
+
+    public ContactMessageBean(ContactMessageService contactMessageService) {
+        this.contactMessageService = contactMessageService;
+        System.out.println("ContactMessageBean zainicjalizowany !");
     }
 
-    public ContactMessageBean(String firstname, String secondname, String email, String phone, String issueType, String messageText,
-                              Boolean clientAlready) {
-        this.setFirstname(firstname);
-        this.secondname = secondname;
-        this.email = email;
-        this.phone = phone;
-        this.issueType = issueType;
-        this.messageText = messageText;
-        this.clientAlready = clientAlready;
-    }
+    public void send() throws MessagingException {
+        ContactMessageDTO contactMessageDTO = new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
+        contactMessageService.send(contactMessageDTO); //tak zamiast co ponizej
 
-    public ContactDTO getContact1() {
-        return contact1;
-    }
 
-    public void setContact1(ContactDTO contact1) {
-        this.contact1 = contact1;
+        //inversion of control - gdzie indziej inicjalizuje gdzie indziej uzywam , dependency inj
+        //springa lub jee
+        //services nie maja stanow - bezstanowe, utile, validatory nie maja stanow - tylko funkcje
+        //managed beany sa stanowe
+
+        //util vs service - service wola cos jeszcze a util juz nic nie wola, zazwyczaj metody statyczne, ktorych nie mokujemy
+        //util to cos czego nie musze mockowac , nt operacje na dacie,
+        //service tworze
+        //TESTY!!!! servicow - beanow nie testowac i dao nie testujemy
+        //Obsluga wyjatkow jak zrobic
+        //helper = util
+        //w messydzbean wywolue contactDTOBuilder i przekazuje parametry albo this , builder buduje mi obiekt contactdto
+        //w COntactDTO nie powininenm miec beana ContactMessydz
+        //wzorzec builder, visitor
+        //wzorzec factory - abstract factory , fabryka abstrakcyjna
+
     }
 
     public String getFirstname() {
@@ -103,40 +109,5 @@ public class ContactMessageBean {
 
     public void setClientAlready(Boolean clientAlready) {
         this.clientAlready = clientAlready;
-    }
-
-    public String printContact() {
-        return "Contact data: !\n" +
-            "Imię: " + getFirstname() +
-            "\nNazwisko: " + secondname +
-            "\nAdres email: " + email +
-            "\nTelefon: " + phone +
-            "\nTyp Sprawy: " + issueType +
-            "\nTreść Wiadomości: " + messageText +
-            "\nNasz Klient: " + clientAlready;
-    }
-
-    public void send() throws MessagingException {
-        ContactDTO contact = new ContactDTO(this);
-        ContactMessageService contactMessageService = new ContactMessageService(contact);
-        contactMessageService.send(); //tak zamiast co ponizej
-
-
-        //inversion of control - gdzie indziej inicjalizuje gdzie indziej uzywam , dependency inj
-        //springa lub jee
-        //services nie maja stanow - bezstanowe, utile, validatory nie maja stanow - tylko funkcje
-        //managed beany sa stanowe
-
-        //util vs service - service wola cos jeszcze a util juz nic nie wola, zazwyczaj metody statyczne, ktorych nie mokujemy
-        //util to cos czego nie musze mockowac , nt operacje na dacie,
-        //service tworze
-        //TESTY!!!! servicow - beanow nie testowac i dao nie testujemy
-        //Obsluga wyjatkow jak zrobic
-        //helper = util
-        //w messydzbean wywolue contactDTOBuilder i przekazuje parametry albo this , builder buduje mi obiekt contactdto
-        //w COntactDTO nie powininenm miec beana ContactMessydz
-        //wzorzec builder, visitor
-        //wzorzec factory - abstract factory , fabryka abstrakcyjna
-
     }
 }

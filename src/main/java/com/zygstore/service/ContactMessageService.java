@@ -1,49 +1,32 @@
 package com.zygstore.service;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.mail.MessagingException;
-import static java.lang.System.out;
 
-import com.zygstore.business.ContactMessageBean;
-import com.zygstore.dto.ContactDTO;
-import com.zygstore.utils.EmailBuilder;
-import com.zygstore.utils.EmailData;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.zygstore.dto.ContactMessageDTO;
+import com.zygstore.dto.EmailMessageDTO;
+import com.zygstore.utils.EmailUtils;
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-@ManagedBean(name = "contactMessageService", eager = true)
-@RequestScoped
+
 public class ContactMessageService {
-    private ContactDTO contactDto;
 
-    public ContactMessageService() {
+    private SendEmailService sendEmailService;
+
+    public ContactMessageService(SendEmailService sendEmailService) {
+        this.sendEmailService = sendEmailService;
     }
 
-    public ContactMessageService(ContactDTO contactDto) {
-        this.contactDto = contactDto;
-    }
+    public void send(ContactMessageDTO contactMessageDTO) throws MessagingException {
+        EmailMessageDTO emailMessageDTO = new EmailMessageDTO(
+            contactMessageDTO.getEmail(),
+            "Subject",
+            EmailUtils.generateText(contactMessageDTO),
+            "generationTime");
 
-    public ContactDTO getContactDto() {
-        return contactDto;
-    }
-
-    public void setContactDto(ContactDTO contactDto) {
-        this.contactDto = contactDto;
-    }
-
-    public void send() throws MessagingException {
-//        String firstName = contactDto.getContactMessageBean().getFirstname();
-//        out.println("String First Name from contact message bean : ");
-//        out.println("String First Name from contact message bean : " + firstName);
-        EmailBuilder emailBuilder = new EmailBuilder(contactDto);
-        EmailData emailData = new EmailData();
-        emailData = emailBuilder.createEmailData();
-        SendEmailService sendEmailService = new SendEmailService(emailData);
-        sendEmailService.sendNewEmail();
+        sendEmailService.send(emailMessageDTO);
     }
 }

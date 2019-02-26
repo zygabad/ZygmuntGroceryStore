@@ -6,5 +6,5 @@ package com.zygstore.dto;
  * @author Y08L@nykredit.dk
  */
 
-public class MessageDTO {
+public class ClientDTO {
 }
