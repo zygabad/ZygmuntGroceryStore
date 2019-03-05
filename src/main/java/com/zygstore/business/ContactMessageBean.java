@@ -141,3 +141,4 @@ public class ContactMessageBean {
 
 //TODO numer zgloszenia wyswietlic na stronie - zwrocic z servicebeana wartosc i ustwic w fasadzie
 //TODO obsluga bledow - jakas generalna , uniwersalna,, popup interceptor/filtr  zanim dostane response przechodze przez interceptora
+//TODO Mockito in tests
