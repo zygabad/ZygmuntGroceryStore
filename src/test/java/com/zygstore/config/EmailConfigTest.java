@@ -13,6 +13,12 @@ import org.junit.Test;
 public class EmailConfigTest {
 
     @Test
-    public void getSession() {
+    public void EmailConfig() {
+        EmailConfig emailConfig = new EmailConfig("relayinternal.nykreditnet.net", "y08l@nykredit.dk", "", 25, true);
+        assertEquals("relayinternal.nykreditnet.net", emailConfig.getHostName());
+        assertEquals("y08l@nykredit.dk", emailConfig.getUsername());
+        assertEquals("", emailConfig.getPassword());
+        assertEquals(25, emailConfig.getPort());
+        assertEquals(true, emailConfig.isAuth());
     }
 }

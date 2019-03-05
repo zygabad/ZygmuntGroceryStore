@@ -4,7 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="contactMessageBean" class="com.zygstore.business.ContactMessageBean">
-        <constructor-arg name="contactMessageService" ref="contactMessageService" />
+        <property name="contactMessageService" ref="contactMessageService" />
+    </bean>
+
+    <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
+        <constructor-arg name="firstname" value=""/>
+        <constructor-arg name="secondname" value=""/>
+        <constructor-arg name="email" value=""/>
+        <constructor-arg name="phone" value=""/>
+        <constructor-arg name="issueType" value=""/>
+        <constructor-arg name="messageText" value=""/>
+        <constructor-arg name="clientAlready" value=""/>
     </bean>
 
     <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">

@@ -46,4 +46,24 @@ public class EmailConfig {
             }
         });
     }
+
+    public String getHostName() {
+        return hostName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public boolean isAuth() {
+        return auth;
+    }
 }

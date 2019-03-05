@@ -17,13 +17,13 @@
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.0.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.0.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.maven.surefire:surefire-junit4:2.22.0" />
           <element id="library" level="project" name="Maven: org.apache.maven.surefire:surefire-api:2.22.0" />
           <element id="library" level="project" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.22.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.0.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

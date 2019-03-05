@@ -9,4 +9,14 @@
     <application>
         <!--<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>-->
     </application>
+
+    <navigation-rule>
+        <from-view-id>contact_form.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{contactMessageBean.send}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
 </faces-config>

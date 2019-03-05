@@ -1,11 +1,18 @@
 package com.zygstore.business;
 
+import java.io.IOException;
+
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.mail.MessagingException;
 
 import com.zygstore.dto.ContactMessageDTO;
 import com.zygstore.service.ContactMessageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Place description here.
@@ -14,9 +21,12 @@ import com.zygstore.service.ContactMessageService;
  */
 //TODO check if we can comment below bean name
 @ManagedBean(name = "contactMessageBean", eager = true)
-@RequestScoped
+//@RequestScoped
+//@ViewScoped
+@SessionScoped
 public class ContactMessageBean {
 
+    @Autowired
     private ContactMessageService contactMessageService;
 
     private String firstname;
@@ -26,15 +36,17 @@ public class ContactMessageBean {
     private String issueType;
     private String messageText;
     private Boolean clientAlready;
+    ClassPathXmlApplicationContext ctx;
 
-    public ContactMessageBean(ContactMessageService contactMessageService) {
-        this.contactMessageService = contactMessageService;
+    public ContactMessageBean() {
         System.out.println("ContactMessageBean zainicjalizowany !");
     }
 
-    public void send() throws MessagingException {
+    public void send() throws MessagingException, IOException {
+        ctx = new ClassPathXmlApplicationContext("application-config.xml");
         ContactMessageDTO contactMessageDTO = new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
-        contactMessageService.send(contactMessageDTO); //tak zamiast co ponizej
+        ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
+        contactMessageService.send(contactMessageDTO);
 
 
         //inversion of control - gdzie indziej inicjalizuje gdzie indziej uzywam , dependency inj
@@ -53,6 +65,13 @@ public class ContactMessageBean {
         //wzorzec builder, visitor
         //wzorzec factory - abstract factory , fabryka abstrakcyjna
 
+        //nie testujemy DTO, to struktura danych i nie ma logiki!
+    }
+
+    public String clear() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        ctx.stop();
+        return "contact_form.xhtml";
     }
 
     public String getFirstname() {
@@ -110,4 +129,15 @@ public class ContactMessageBean {
     public void setClientAlready(Boolean clientAlready) {
         this.clientAlready = clientAlready;
     }
+
+    public void setContactMessageService(ContactMessageService contactMessageService) {
+        this.contactMessageService = contactMessageService;
+    }
+
+    public ContactMessageService getContactMessageService() {
+        return contactMessageService;
+    }
 }
+
+//TODO numer zgloszenia wyswietlic na stronie - zwrocic z servicebeana wartosc i ustwic w fasadzie
+//TODO obsluga bledow - jakas generalna , uniwersalna,, popup interceptor/filtr  zanim dostane response przechodze przez interceptora

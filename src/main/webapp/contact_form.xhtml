@@ -129,9 +129,10 @@
                     <b:column medium-screen="2"></b:column>
                     <b:column medium-screen="2"></b:column>
                     <b:column medium-screen="4">
-                        <h:commandButton action="#{contactMessageBean.send}" value="Wyślij wiadomość">
+                        <h:commandButton action="#{contactMessageBean.send}" value="Wyślij wiadomość" ></h:commandButton>
+                        <h:commandButton action="#{contactMessageBean.clear}" value="Wyczyść formularz" ></h:commandButton>
                            <!-- <f:param name="someparam" value="somevalue" /> -->
-                        </h:commandButton>
+
                     </b:column>
                 </b:row>
             </b:panel>
