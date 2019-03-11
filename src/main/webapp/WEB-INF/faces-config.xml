@@ -13,10 +13,37 @@
     <navigation-rule>
         <from-view-id>contact_form.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{contactMessageBean.send}</from-action>
-            <to-view-id>/index.xhtml</to-view-id>
+            <from-outcome>true</from-outcome>
+            <to-view-id>contact_form_success.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>false</from-outcome>
+            <to-view-id>contact_form_error.xhtml</to-view-id>
             <redirect />
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>contact_form_error.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>contact_form.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>contact_form_success.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>index.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>nextticket</from-outcome>
+            <to-view-id>contact_form.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
 
 </faces-config>

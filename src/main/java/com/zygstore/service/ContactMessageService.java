@@ -20,6 +20,7 @@ import com.zygstore.utils.EmailUtils;
 public class ContactMessageService {
     boolean sendingEmailResult = false;
     ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
+    String ticketNumber;
 
     private SendEmailService sendEmailService;
 
@@ -27,32 +28,37 @@ public class ContactMessageService {
         this.sendEmailService = sendEmailService;
     }
 
-    public void send(ContactMessageDTO contactMessageDTO) throws MessagingException, IOException {
+    public String send(ContactMessageDTO contactMessageDTO) throws MessagingException, IOException {
+        ticketNumber = EmailUtils.generateTicketNumber();
+
         EmailMessageDTO emailMessageDTO = new EmailMessageDTO(
             contactMessageDTO.getEmail(),
-            EmailUtils.generateSubject(),
+            EmailUtils.generateSubject(ticketNumber),
             EmailUtils.generateText(contactMessageDTO),
             EmailUtils.generateTime());
 
         sendingEmailResult = sendEmailService.send(emailMessageDTO);
-        navigate(sendingEmailResult);
+       // navigate(sendingEmailResult);
+        String result = Boolean.toString(sendingEmailResult);
+        return result;
     }
 
-    private void navigate(boolean sendingEmailResult) {
-        try {
-            if (sendingEmailResult) {
-
-                context.redirect(context.getRequestContextPath() + "contact_form_success.xhtml");
-
-            } else {
-                context.redirect(context.getRequestContextPath() + "contact_form_error.xhtml?");
-                //context.redirect(context.getRequestContextPath() + "contact_form_error.xhtml?" + e);
-                //TODO Jak tutaj przechwycic wyjatek z wysylki? Mialem event e w SendEmailService
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public String getTicketNumber() {
+        return ticketNumber;
     }
+
+    //    private void navigate(boolean sendingEmailResult) {
+//        try {
+//            if (sendingEmailResult) {
+//                context.redirect(context.getRequestContextPath() + "contact_form_success.xhtml");
+//            } else {
+//                context.redirect(context.getRequestContextPath() + "contact_form_error.xhtml");
+//                //TODO przechwycic wyjatek z wysylki - byl event e w SendEmailService
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 }

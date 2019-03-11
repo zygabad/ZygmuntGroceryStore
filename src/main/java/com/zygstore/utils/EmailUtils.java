@@ -29,11 +29,11 @@ public class EmailUtils {
         return stringBuilder.toString();
     }
 
-    public static String generateSubject() {
+    public static String generateSubject(String ticketNumber) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("ZygStore - Przyjeto zgloszenie");
         stringBuilder.append(",\n\n");
-        stringBuilder.append("Twoje zgloszenie otrzymalo numer: " + generateTicketNumber());
+        stringBuilder.append("Twoje zgloszenie otrzymalo numer: " + ticketNumber);
         return stringBuilder.toString();
     }
 

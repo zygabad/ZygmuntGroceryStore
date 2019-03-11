@@ -33,7 +33,7 @@
                 <b:row>
                     <b:column medium-screen="4"></b:column>
                     <b:column medium-screen="4">
-                        <h:outputText value="Dziekujemy za zgloszenie."/>
+                        <h:outputText value="Dziekujemy za zgloszenie. nr #{contactMessageBean.ticketNumber}"/>
                     </b:column>
                 </b:row>
                 <b:row>
@@ -43,7 +43,7 @@
                         <h:commandButton action="index" value="Strona główna">
                             <!-- <f:param name="someparam" value="somevalue" /> -->
                         </h:commandButton>
-                        <h:commandButton action="contact_form" value="Kolejne zgłoszenie">
+                        <h:commandButton action="nextticket" value="Kolejne zgłoszenie">
                             <!-- <f:param name="someparam" value="somevalue" /> -->
                         </h:commandButton>
                     </b:column>
