@@ -1,8 +1,12 @@
 package com.zygstore.business;
 
+import java.io.IOException;
+
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.mail.MessagingException;
 
 import com.zygstore.config.Context;
 import com.zygstore.dto.ContactMessageDTO;
@@ -37,21 +41,13 @@ public class ContactMessageBean {
         System.out.println("ContactMessageBean zainicjalizowany !");
     }
 
-    //public Result send() throws MessagingException, IOException {
-    public Result send() {
-
-
-        try {
-            ContactMessageDTO contactMessageDTO =
-                new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
-            ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
-            contactMessageService.send(contactMessageDTO);
-            ticketNumber = contactMessageService.getTicketNumber();
-
-            return Result.SUCCESS;
-        } catch (Exception e) {
-            return Result.ERROR;
-        }
+    public Result send() throws IOException, MessagingException {
+        ContactMessageDTO contactMessageDTO =
+            new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
+        ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
+        contactMessageService.send(contactMessageDTO);
+        ticketNumber = contactMessageService.getTicketNumber();
+        return Result.SUCCESS;
     }
 
     public String clear() {
@@ -142,7 +138,6 @@ public class ContactMessageBean {
         return context;
     }
 }
-
 
 
 //TODO interceptor - przechwytywanie wyjatku i przekirowanie np na error_page i wyswietlenie pop z wyjatkiem, filter, error-handling, web.xml filter

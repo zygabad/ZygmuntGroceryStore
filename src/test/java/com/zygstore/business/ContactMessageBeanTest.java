@@ -1,5 +1,9 @@
 package com.zygstore.business;
 
+import java.io.IOException;
+
+
+import javax.mail.MessagingException;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -42,7 +46,7 @@ public class ContactMessageBeanTest {
     }
 
     @Test
-    public void sendResult() {
+    public void sendResult() throws IOException, MessagingException {
         //when(contactMessageBean.getTicketNumber()).thenReturn("12019");
         assertEquals("SUCCESS", contactMessageBean.send());
     }

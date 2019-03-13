@@ -31,4 +31,21 @@
         <filter-name>ErrorResultFilter</filter-name>
         <url-pattern>/contact_form.xhtml</url-pattern>
     </filter-mapping>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/contact_form_error.xhtml?faces-redirect=true</location>
+    </error-page>
+    <error-page>
+        <exception-type>javax.mail.MessagingException</exception-type>
+        <location>/contact_form_error_email.xhtml?faces-redirect=true</location>
+    </error-page>
+
+
 </web-app>
