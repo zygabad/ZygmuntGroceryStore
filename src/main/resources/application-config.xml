@@ -5,7 +5,13 @@
 
     <bean id="contactMessageBean" class="com.zygstore.business.ContactMessageBean">
         <property name="contactMessageService" ref="contactMessageService" />
+        <property name="context" ref="context"/>
     </bean>
+
+    <bean id="context" class="com.zygstore.config.Context">
+        <constructor-arg value="application-config.xml"/>
+    </bean>
+
 
     <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
         <constructor-arg name="firstname" value=""/>
@@ -31,6 +37,10 @@
         <constructor-arg name="password" value=""/>
         <constructor-arg name="port" value="25"/>
         <constructor-arg name="auth" value="true"/>
+    </bean>
+
+    <bean id="result" class="com.zygstore.navigation.Result" factory-method="valueOf">
+        <constructor-arg value="ERROR"></constructor-arg>
     </bean>
 
 </beans>

@@ -29,18 +29,11 @@ public class SendEmailService {
         this.emailConfig = emailConfig;
     }
 
-    public boolean send(EmailMessageDTO emailMessageDTO) throws IOException {
-
-
-        try {
+    public boolean send(EmailMessageDTO emailMessageDTO) throws MessagingException {
             MimeMessage msg = createMimeMessage(emailMessageDTO);
             Transport.send(msg);
             out.println("Mail has been sent successfully");
             return true;
-        } catch (MessagingException e) {
-            out.println("Mamy wyjatek: " + e);
-            return false;
-        }
     }
 
     public MimeMessage createMimeMessage (EmailMessageDTO emailMessageDTO) throws MessagingException {

@@ -62,7 +62,7 @@ public class SendEmailServiceTest {
     }
 
     @Test
-    public void TestSendEmail() throws IOException {
+    public void TestSendEmail() throws IOException, MessagingException {
         boolean ret = sendEmailService.send(emailMessageDTO);
         Assert.assertTrue(ret);
     }
@@ -71,7 +71,5 @@ public class SendEmailServiceTest {
     public void TestEmailWithoutSending() throws MessagingException, IOException {
         Assert.assertTrue(mimeMessage.getRecipients(Message.RecipientType.TO)[0].toString().equals(EMAIL_RECIPENT));
         Assert.assertEquals(mimeMessage.getRecipients(Message.RecipientType.TO)[0].toString(), EMAIL_RECIPENT);
-        //TODO assert subject
-
     }
 }

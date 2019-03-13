@@ -19,4 +19,16 @@
     <welcome-file-list>
         <welcome-file>index.jsf</welcome-file>
     </welcome-file-list>
+
+
+    <filter>
+        <filter-name>ErrorResultFilter</filter-name>
+        <filter-class>com.zygstore.filters.ErrorResultFilter</filter-class>
+    </filter>
+
+
+    <filter-mapping>
+        <filter-name>ErrorResultFilter</filter-name>
+        <url-pattern>/contact_form.xhtml</url-pattern>
+    </filter-mapping>
 </web-app>
