@@ -1,7 +1,6 @@
 package com.zygstore.service;
 
 
-import java.io.IOException;
 import java.util.Date;
 
 
@@ -20,7 +19,6 @@ import com.zygstore.dto.EmailMessageDTO;
  *
  * @author Y08L@nykredit.dk
  */
-//@NamedBean//@Named //bean springowy!! named or injected
 public class SendEmailService {
 
     private EmailConfig emailConfig;
@@ -30,13 +28,13 @@ public class SendEmailService {
     }
 
     public boolean send(EmailMessageDTO emailMessageDTO) throws MessagingException {
-            MimeMessage msg = createMimeMessage(emailMessageDTO);
-            Transport.send(msg);
-            out.println("Mail has been sent successfully");
-            return true;
+        MimeMessage msg = createMimeMessage(emailMessageDTO);
+        Transport.send(msg);
+        out.println("Mail has been sent successfully");
+        return true;
     }
 
-    public MimeMessage createMimeMessage (EmailMessageDTO emailMessageDTO) throws MessagingException {
+    public MimeMessage createMimeMessage(EmailMessageDTO emailMessageDTO) throws MessagingException {
         MimeMessage msg = new MimeMessage(emailConfig.getSession());
         InternetAddress[] address = InternetAddress.parse(emailMessageDTO.getEmailRecipent(), true);
         msg.setRecipients(Message.RecipientType.TO, address);

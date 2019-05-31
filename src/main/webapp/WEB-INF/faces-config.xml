@@ -7,7 +7,7 @@
 
 
     <application>
-        <!--<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>-->
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     </application>
 
     <navigation-rule>
@@ -45,5 +45,24 @@
         </navigation-case>
     </navigation-rule>
 
+    <navigation-rule>
+        <from-view-id>contact_form_error_email.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>BACK</from-outcome>
+            <to-view-id>/contact_form.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+
+
+    <!--<navigation-rule>-->
+        <!--<from-view-id>general_error.xhtml</from-view-id>-->
+        <!--<navigation-case>-->
+            <!--<from-outcome>BACK</from-outcome>-->
+            <!--<to-view-id>/index.xhtml</to-view-id>-->
+            <!--<redirect />-->
+        <!--</navigation-case>-->
+    <!--</navigation-rule>-->
 
 </faces-config>

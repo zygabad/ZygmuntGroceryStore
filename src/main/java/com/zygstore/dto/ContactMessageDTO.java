@@ -1,23 +1,13 @@
 package com.zygstore.dto;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-//@NamedBean
-//@ManagedBean(name = "contactMessageDTO", eager = true)
-//@Component
-//@Scope("session")
 public class ContactMessageDTO {
 
-    //@Autowired
     private String firstname;
-    //@Autowired
     private String secondname;
     private String email;
     private String phone;
@@ -33,6 +23,9 @@ public class ContactMessageDTO {
         this.phone = phone;
         this.issueType = issueType;
         this.messageText = messageText;
+        if (clientAlready == null) {
+            this.clientAlready = false;
+        }
         this.clientAlready = clientAlready;
     }
 

@@ -8,10 +8,10 @@
         <property name="context" ref="context"/>
     </bean>
 
-    <bean id="context" class="com.zygstore.config.Context">
-        <constructor-arg value="application-config.xml"/>
+    <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
+        <property name="context" ref="context"/>
+        <property name="menuProductsService" ref="menuProductsService"/>
     </bean>
-
 
     <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
         <constructor-arg name="firstname" value=""/>
@@ -22,6 +22,9 @@
         <constructor-arg name="messageText" value=""/>
         <constructor-arg name="clientAlready" value=""/>
     </bean>
+
+<bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
+</bean>
 
     <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">
         <constructor-arg name="sendEmailService" ref="sendEmailService" />
@@ -37,6 +40,10 @@
         <constructor-arg name="password" value=""/>
         <constructor-arg name="port" value="25"/>
         <constructor-arg name="auth" value="true"/>
+    </bean>
+
+    <bean id="context" class="com.zygstore.config.Context">
+        <constructor-arg value="application-config.xml"/>
     </bean>
 
     <bean id="result" class="com.zygstore.navigation.Result" factory-method="valueOf">

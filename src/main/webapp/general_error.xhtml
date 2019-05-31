@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui" xmlns:ng="http://java.sun.com/jsf/composite">
+<h:head>
+    <title>ERROR</title>
+</h:head>
+<h:body>
+    <b:navBar brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple">
+        <b:navbarLinks>
+            <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
+            <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value=" Koszyk" href="#" iconAwesome="fa-shopping-cart"></b:navLink>
+            <b:navLink value=" Załóż konto" href="#" iconAwesome="fa-user"></b:navLink>
+            <b:navLink value=" Zaloguj się" href="#" iconAwesome="fa-key" iconSpin="true"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+
+    <b:form id="contact_form">
+        <b:container fluid="=true">
+            <b:panel title="Informacje kontaktowe" look="primary">
+                <b:row>
+                    <b:column medium-screen="4"></b:column>
+                    <b:column medium-screen="4">
+                        <h:outputText value="Witaj #{contactMessageBean.firstname} #{contactMessageBean.secondname} " />
+                        <h:outputText value="Niestety coś poszło nie tak - ogólny błąd (general error page)"  />
+                    </b:column>
+                    <b:column medium-screen="4">
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="4">
+                        <h:commandButton action="BACK" value="Wróć" >
+                            <!-- <f:param name="someparam" value="somevalue" /> -->
+                        </h:commandButton>
+                    </b:column>
+                </b:row>
+            </b:panel>
+        </b:container>
+    </b:form>
+
+    <!--<div class="container">-->
+        <!--<div>ERROR!!! Something went wrong!@ Error message:</div>-->
+        <!--&lt;!&ndash;<b:form class="well form-horizontal" action="contact.xhtml" method="post" id="contact_form" data-toggle="validator">&ndash;&gt;-->
+            <!--&lt;!&ndash;<fieldset>&ndash;&gt;-->
+                <!--&lt;!&ndash; Form Name &ndash;&gt;-->
+                <!--&lt;!&ndash;<legend>Formularz kontaktowy</legend>&ndash;&gt;-->
+
+                <!--&lt;!&ndash; Success message-->
+                <!--<div class="alert alert-success" id="success_message">Sukces! <i class="glyphicon glyphicon-thumbs-up"></i> #{contactMessageDTO.messageText} </div>-->
+                <!--<div class="alert alert-success" id="success_message_time">#{contactMessageDTO.email}</div>-->
+        <!--&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash; Button &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label class="col-md-4 control-label"></label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button type="submit" class="btn btn-warning" >Powrót <span&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="glyphicon glyphicon-send"></span></button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</fieldset>-->
+        <!--</b:form>-->
+    <!--</div>-->
+</h:body>
+</html>

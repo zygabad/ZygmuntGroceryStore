@@ -5,49 +5,48 @@ import java.io.IOException;
 
 import javax.mail.MessagingException;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 
 import com.zygstore.dto.ContactMessageDTO;
+import com.zygstore.navigation.Result;
 import com.zygstore.service.ContactMessageService;
-import com.zygstore.service.SendEmailService;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-
+@RunWith(MockitoJUnitRunner.class)
 public class ContactMessageBeanTest {
-    private static final String TICKET_NUMBER = "1/2019/02/11";
-    private static final String FIRST_NAME = "FirstName";
-    private static final String SECOND_NAME = "SecondName";
-    private static final String EMAIL = "Email";
-    private static final String PHONE = "Phone";
 
-
-    ContactMessageBean contactMessageBean;
-    ContactMessageService contactMessageService;
-    ContactMessageDTO contactMessageDTO;
+    @Mock
     ClassPathXmlApplicationContext ctx;
 
-    @Before
-    public void setUp() throws Exception {
-        contactMessageDTO = new ContactMessageDTO(FIRST_NAME, SECOND_NAME, EMAIL, PHONE, "", "", true);
-        SendEmailService sendEmailService = mock(SendEmailService.class);
-        contactMessageService = new ContactMessageService(sendEmailService);
-        contactMessageBean = new ContactMessageBean();
-        contactMessageService.send(contactMessageDTO);
+    @Mock
+    ContactMessageService contactMessageService;
 
-    }
+    @InjectMocks
+    ContactMessageBean contactMessageBean;
 
     @Test
     public void sendResult() throws IOException, MessagingException {
-        //when(contactMessageBean.getTicketNumber()).thenReturn("12019");
-        assertEquals("SUCCESS", contactMessageBean.send());
+        // given
+        when(ctx.getBean(ContactMessageService.class)).thenReturn(contactMessageService);
+        doNothing().when(contactMessageService).send(any(ContactMessageDTO.class), anyString());
+
+        // when
+        Result result = contactMessageBean.send();
+
+        // then
+        assertEquals(Result.SUCCESS, result);
     }
 }

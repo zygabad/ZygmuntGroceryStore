@@ -14,13 +14,15 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-
+@RunWith(MockitoJUnitRunner.class)
 public class SendEmailServiceTest {
 
     private static final String HOST_NAME = "relayinternal.nykreditnet.net";
@@ -61,11 +63,14 @@ public class SendEmailServiceTest {
     public void tearDown() throws Exception {
     }
 
-    @Test
-    public void TestSendEmail() throws IOException, MessagingException {
-        boolean ret = sendEmailService.send(emailMessageDTO);
-        Assert.assertTrue(ret);
-    }
+//    @Test
+//    public void TestSendEmail() throws IOException, MessagingException {
+//        //given
+//        //when
+//        boolean ret = sendEmailService.send(emailMessageDTO);
+//        //done
+//        Assert.assertTrue(ret);
+//    }
 
     @Test
     public void TestEmailWithoutSending() throws MessagingException, IOException {

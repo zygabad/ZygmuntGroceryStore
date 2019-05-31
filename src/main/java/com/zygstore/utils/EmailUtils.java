@@ -24,16 +24,16 @@ public class EmailUtils {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Witaj " + contactMessageDTO.getFirstname() + " " + contactMessageDTO.getSecondname());
         stringBuilder.append(",\n\n");
-        stringBuilder.append("Przyjelismy zgloszenie.");
+        stringBuilder.append("Przyjęlismy zgłoszenie.");
 
         return stringBuilder.toString();
     }
 
     public static String generateSubject(String ticketNumber) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("ZygStore - Przyjeto zgloszenie");
+        stringBuilder.append("ZygStore - Przyjeto zgłoszenie");
         stringBuilder.append(",\n\n");
-        stringBuilder.append("Twoje zgloszenie otrzymalo numer: " + ticketNumber);
+        stringBuilder.append("Twoje zgłoszenie otrzymało numer: " + ticketNumber);
         return stringBuilder.toString();
     }
 
@@ -55,7 +55,6 @@ public class EmailUtils {
         year = cal.get(Calendar.YEAR);
         month = cal.get(Calendar.MONTH);
         day = cal.get(Calendar.DAY_OF_MONTH);
-
 
         String ticketNumber = ticketCounter + "/" + year + "/" + month + "/" + day;
         return ticketNumber;
