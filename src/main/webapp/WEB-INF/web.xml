@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
@@ -19,4 +25,73 @@
     <welcome-file-list>
         <welcome-file>index.jsf</welcome-file>
     </welcome-file-list>
+
+    
+    
+    
+    
+    <filter>
+        <filter-name>RequestResultFilter</filter-name>
+        <filter-class>com.zygstore.filters.RequestResultFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>RequestResultFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--<servlet>-->
+        <!--    <servlet-name>dispatcher</servlet-name>-->
+        <!--    <servlet-class>-->
+        <!--        org.springframework.web.servlet.DispatcherServlet-->
+        <!--    </servlet-class>-->
+        <!--    <init-param>-->
+        <!--        <param-name>contextConfigLocation</param-name>-->
+        <!--        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>-->
+        <!--    </init-param>-->
+        <!--    <load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>dispatcher</servlet-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<filter>-->
+        <!--<filter-name>ErrorResultFilter</filter-name>-->
+        <!--<filter-class>com.zygstore.filters.ErrorResultFilter</filter-class>-->
+    <!--</filter>-->
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>ErrorResultFilter</filter-name>-->
+        <!--<url-pattern>/contact_form.xhtml</url-pattern>-->
+    <!--</filter-mapping>-->
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <!--<error-page>-->
+        <!--<exception-type>java.lang.Exception</exception-type>-->
+        <!--<location>/contact_form_error.xhtml?faces-redirect=true</location>-->
+    <!--</error-page>-->
+
+    <!--Add here call for my own typpe of for example business exception and a redirect to my page-->
+    <error-page>
+        <exception-type>javax.faces.FacesException</exception-type>
+        <location>/contact_form_error_email.xhtml?faces-redirect=true</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>javax.mail.MessagingException</exception-type>
+        <location>/contact_form_error_email.xhtml?faces-redirect=true</location>
+    </error-page>
+
+
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/general_error.xhtml?faces-redirect=true</location>
+    </error-page>
+
 </web-app>

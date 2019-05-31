@@ -31,7 +31,7 @@
                         <h:outputText value="Imię:" for="firstname"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputText placeholder="Imię" id="firstname" value="#{utils.firstname}"
+                        <b:inputText placeholder="Imię" id="firstname" value="#{contactMessageBean.firstname}"
                                      ajax="true" autocomplete="false" update="@(.message)" required="true" data-error="Imię jest wymagane.">
                             <f:facet name="prepend">
                                 <b:icon name="user"/>
@@ -45,7 +45,7 @@
                         <h:outputText value="Nazwisko:" for="secondname"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputText placeholder="Nazwisko" id="secondname" value="#{utils.secondname}"
+                        <b:inputText placeholder="Nazwisko" id="secondname" value="#{contactMessageBean.secondname}"
                                      ajax="true" autocomplete="false" update="@(.message)" required="true" data-error="Nazwisko jest wymagane.">
                             <f:facet name="prepend">
                                 <b:icon name="user"/>
@@ -59,7 +59,7 @@
                         <h:outputText value="Email:" for="email"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputText placeholder="Email" id="email" value="#{utils.email}"
+                        <b:inputText placeholder="Email" id="email" value="#{contactMessageBean.email}"
                                      ajax="true" autocomplete="false" update="@(.message)"
                                      required="true" data-error="Email jest wymagany." mask="email">
                             <f:facet name="prepend">
@@ -74,7 +74,7 @@
                         <h:outputText value="Telefon:" for="telefon"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputText placeholder="+48 XXX-XXX-XXX" id="telefon" value="#{utils.phone}"
+                        <b:inputText placeholder="+48 XXX-XXX-XXX" id="telefon" value="#{contactMessageBean.phone}"
                                      ajax="true" autocomplete="false" update="@(.message)"
                                      required="true" data-error="Telefon jest wymagany." mask="+48 999-999-999">
                             <f:facet name="prepend">
@@ -86,10 +86,10 @@
                 <b:row>
                     <b:column medium-screen="2"></b:column>
                     <b:column medium-screen="2">
-                        <h:outputText value="Typ sprawy:" for="typsprawy"/>
+                        <h:outputText value="Typ sprawy:" for="issueType"/>
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:selectOneMenu value="#{utils.typSprawy}" required="true" id="typsprawy" >
+                        <b:selectOneMenu value="#{contactMessageBean.issueType}" required="true" id="issueType" >
                             <f:selectItem itemLabel="(Temat sprawy)" itemValue="0" />
                             <f:selectItem itemLabel="Płatności" itemValue="1" />
                             <f:selectItem itemLabel="Faktury" itemValue="2" />
@@ -108,8 +108,8 @@
                         <h:outputText value="Jesteś klientem?" />
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:radiobutton value="#{utils.clientAlready}" itemLabel="Tak" itemValue="klient_tak"/>
-                        <b:radiobutton value="#{utils.clientAlready}" itemLabel="Nie" itemValue="klient_nie"/>
+                        <b:radiobutton value="#{contactMessageBean.clientAlready}" itemLabel="Tak" itemValue="klient_tak"/>
+                        <b:radiobutton value="#{contactMessageBean.clientAlready}" itemLabel="Nie" itemValue="klient_nie"/>
                     </b:column>
                 </b:row>
                 <b:row>
@@ -118,7 +118,7 @@
                         <h:outputText value="Treść wiadomości *" />
                     </b:column>
                     <b:column medium-screen="4">
-                        <b:inputTextarea class="form-control" name="comment" cols="2" rows="3" value="#{utils.trescWiadomosci}">
+                        <b:inputTextarea class="form-control" name="comment" cols="2" rows="3" value="#{contactMessageBean.messageText}">
                             <f:facet name="prepend">
                                 <b:icon name="pencil" />
                             </f:facet>
@@ -126,14 +126,15 @@
                     </b:column>
                 </b:row>
                 <b:row>
-                    <b:column medium-screen="2">
-                        <h:commandButton action="#{utils.printData}">
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="2"></b:column>
+                    <b:column medium-screen="4">
+                        <h:commandButton action="#{contactMessageBean.send}" value="Wyślij wiadomość" ></h:commandButton>
+                        <h:commandButton action="#{contactMessageBean.clear}" value="Wyczyść formularz" ></h:commandButton>
                            <!-- <f:param name="someparam" value="somevalue" /> -->
-                        </h:commandButton>
+
                     </b:column>
-
                 </b:row>
-
             </b:panel>
         </b:container>
     </b:form>

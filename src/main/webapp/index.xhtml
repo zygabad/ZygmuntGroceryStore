@@ -5,13 +5,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui" xmlns:ng="http://java.sun.com/jsf/composite">
+<f:event type="preRenderView" listener="#{menuProductsBean.initPage}"/>
 <h:head>
     <title>ZygKompStore</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 </h:head>
 <h:body>
-    <b:navBar brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple">
+    <b:navBar class="navbar top-color" brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple" >
         <b:navbarLinks>
             <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
             <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
@@ -24,11 +25,26 @@
         </b:navbarLinks>
     </b:navBar>
 
-    <!--<h:outputLabel for="msgID" value="HEllo form " />-->
-    <!--<h:outputText id="msgID" value="#{utils.message}"/>-->
-    <!--<h:outputText id="msgID3" value="#{utils.message2}"/>-->
-
-    <!--<h:outputText value="#{test.elapsedTime}" />-->
-
+    <b:navBar brand="" brandHref="#" inverse="false" >
+        <b:navbarLinks>
+            <!--<b:navLink value="#{menuProductsBean.displayField}" href="maincategories/electronics.xhtml"></b:navLink>-->
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem1}" href="maincategories/electronics.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem2}" href="maincategories/mobiles.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem3}" href="maincategories/tvandrtv.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem4}" href="maincategories/agd.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem5}" href="maincategories/house.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem6}" href="maincategories/garden.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem7}" href="maincategories/kid.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem8}" href="maincategories/health.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem9}" href="maincategories/moto.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem10}" href="maincategories/hobby.xhtml"></b:navLink>
+            <b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem11}" href="maincategories/hobby.xhtml"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value="Usługi" href="services.xhtml" iconAwesome="services.xhtml"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
 </h:body>
+<!--#{menuProductBean.MenuProductsDTO.getProdMenuItem1().toString()}-->
 </html>

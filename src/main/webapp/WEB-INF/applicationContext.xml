@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="contactMessageBean" class="com.zygstore.business.ContactMessageBean">
+        <property name="contactMessageService" ref="contactMessageService" />
+        <property name="context" ref="context"/>
+    </bean>
+
+    <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
+        <property name="context" ref="context"/>
+        <property name="menuProductsService" ref="menuProductsService"/>
+    </bean>
+
+    <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
+        <constructor-arg name="firstname" value=""/>
+        <constructor-arg name="secondname" value=""/>
+        <constructor-arg name="email" value=""/>
+        <constructor-arg name="phone" value=""/>
+        <constructor-arg name="issueType" value=""/>
+        <constructor-arg name="messageText" value=""/>
+        <constructor-arg name="clientAlready" value=""/>
+    </bean>
+
+    <!--<bean id="menuProductsDTO" class="com.zygstore.dto.MenuProductsDTO">-->
+        <!--<constructor-arg name="prodMenuItem1" value="Elektronika_wbeinf"/>-->
+        <!--<constructor-arg name="prodMenuItem2" value="Telefony i Smartwatche"/>-->
+        <!--<constructor-arg name="prodMenuItem3" value="Telewizory i RTV"/>-->
+        <!--<constructor-arg name="prodMenuItem4" value="AGD"/>-->
+        <!--<constructor-arg name="prodMenuItem5" value="Dom"/>-->
+        <!--<constructor-arg name="prodMenuItem6" value="Ogród"/>-->
+        <!--<constructor-arg name="prodMenuItem7" value="Dziecki"/>-->
+        <!--<constructor-arg name="prodMenuItem8" value="Zdrowie i Uroda"/>-->
+        <!--<constructor-arg name="prodMenuItem9" value="Moto"/>-->
+        <!--<constructor-arg name="prodMenuItem10" value="Hobby"/>-->
+        <!--<constructor-arg name="prodMenuItem11" value="Usługi"/>-->
+    <!--</bean>-->
+
+<bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
+    <!--<property name="menuProductsDTO" ref="menuProductsDTO"></property>-->
+</bean>
+
+    <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">
+        <constructor-arg name="sendEmailService" ref="sendEmailService" />
+    </bean>
+
+    <bean id="sendEmailService" class="com.zygstore.service.SendEmailService">
+        <constructor-arg name="emailConfig" ref="emailConfig"/>
+    </bean>
+
+    <bean id="emailConfig" class="com.zygstore.config.EmailConfig">
+        <constructor-arg name="hostName" value="relayinternal.nykreditnet.net"/>
+        <constructor-arg name="username" value="y08l@nykredit.dk"/>
+        <constructor-arg name="password" value=""/>
+        <constructor-arg name="port" value="25"/>
+        <constructor-arg name="auth" value="true"/>
+    </bean>
+
+    <bean id="context" class="com.zygstore.config.Context">
+        <constructor-arg value="application-config.xml"/>
+    </bean>
+
+    <bean id="result" class="com.zygstore.navigation.Result" factory-method="valueOf">
+        <constructor-arg value="ERROR"></constructor-arg>
+    </bean>
+
+</beans>
