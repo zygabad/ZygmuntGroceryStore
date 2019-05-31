@@ -42,7 +42,7 @@ public class ContactMessageBean {
     final static Logger logger = Logger.getLogger(ContactMessageBean.class);
 
     public ContactMessageBean() {
-        System.out.println("ContactMessageBean zainicjalizowany !");
+        System.out.println("ContactMessageBean initialized !");
         logger.info("ContactMessageBean initialized!");
     }
 
