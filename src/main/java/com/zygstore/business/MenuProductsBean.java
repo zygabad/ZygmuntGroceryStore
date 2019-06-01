@@ -5,6 +5,9 @@ import javax.faces.bean.SessionScoped;
 
 import com.zygstore.config.Context;
 import com.zygstore.dto.MenuProductsDTO;
+import com.zygstore.dto.MenuProductsHorizontalSubMenuDTO;
+import com.zygstore.dto.MenuProductsSubMenuDTO;
+import com.zygstore.dto.MenuProductsVerticalSubMenuDTO;
 import com.zygstore.service.MenuProductsService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
@@ -26,6 +29,11 @@ public class MenuProductsBean{
     MenuProductsService menuProductsService;
 
     private MenuProductsDTO menuProductsDTO;
+    private MenuProductsVerticalSubMenuDTO menuProductsVerticalSubMenuDTO;
+    private MenuProductsVerticalSubMenuDTO menuProductsVerticalSubMenuDTO2;
+    private MenuProductsHorizontalSubMenuDTO menuProductsHorizontalSubMenuDTO;
+    private MenuProductsSubMenuDTO menuProductsSubMenuDTO;
+
 
 //    @PostConstruct
 //    public void postConstract(){
@@ -38,16 +46,33 @@ public class MenuProductsBean{
         displayField = "TEST_CHECK";
         this.displayField = displayField;
 
-        //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(CLASSPATH);
-
-//        MenuProductsDTO menuProductsDTO = ctx.getBean(MenuProductsDTO.class);
-
-//        logger.info("Values of first item:" + menuProductsDTO.getProdMenuItem1().toString());
     }
 
     public void initPage() {
-       menuProductsDTO = menuProductsService.getMenuProductsDTO();
-        //menuProductsDTO
+        menuProductsVerticalSubMenuDTO = menuProductsService.getMenuProductsVerticalSubMenuDTO();
+        menuProductsVerticalSubMenuDTO2 = menuProductsService.getMenuProductsVerticalSubMenuDTO2();
+        menuProductsHorizontalSubMenuDTO = menuProductsService.getMenuProductsHorizontalSubMenuDTO();
+        menuProductsDTO = menuProductsService.getMenuProductsDTO();
+    }
+
+    public void initPage2() {
+        menuProductsSubMenuDTO = menuProductsService.getMenuProductsSubMenuDTO();
+    }
+
+    public MenuProductsVerticalSubMenuDTO getMenuProductsVerticalSubMenuDTO2() {
+        return menuProductsVerticalSubMenuDTO2;
+    }
+
+    public MenuProductsVerticalSubMenuDTO getMenuProductsVerticalSubMenuDTO() {
+        return menuProductsVerticalSubMenuDTO;
+    }
+
+    public MenuProductsHorizontalSubMenuDTO getMenuProductsHorizontalSubMenuDTO() {
+        return menuProductsHorizontalSubMenuDTO;
+    }
+
+    public MenuProductsSubMenuDTO getMenuProductsSubMenuDTO() {
+        return menuProductsSubMenuDTO;
     }
 
     public MenuProductsDTO getMenuProductsDTO() {
