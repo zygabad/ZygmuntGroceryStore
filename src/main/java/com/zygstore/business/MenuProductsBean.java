@@ -4,11 +4,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.zygstore.config.Context;
-import com.zygstore.dto.MenuProductsDTO;
-import com.zygstore.dto.MenuProductsHorizontalSubMenuDTO;
-import com.zygstore.dto.MenuProductsSubMenuDTO;
-import com.zygstore.dto.MenuProductsVerticalSubMenuDTO;
+import com.zygstore.dto.*;
 import com.zygstore.service.MenuProductsService;
+import com.zygstore.service.NewMenuProductsService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -25,14 +23,20 @@ public class MenuProductsBean{
     private String displayField;
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
+    private static final String FILE_MENU_PRODUCTS = "c:\\temp_zyg_ZygmuntGroceryStore\\menuProducts.txt";
+    private static final String FILE_MENU_PRODUCTS_VERTICAL_1 = "c:\\temp_zyg_ZygmuntGroceryStore\\menuProductsVertical1.txt";
+//    private static final String FILE_MENU_PRODUCTS = "resources/menuProducts.txt";
 
     MenuProductsService menuProductsService;
+    NewMenuProductsService newMenuProductsService;
 
     private MenuProductsDTO menuProductsDTO;
     private MenuProductsVerticalSubMenuDTO menuProductsVerticalSubMenuDTO;
     private MenuProductsVerticalSubMenuDTO menuProductsVerticalSubMenuDTO2;
     private MenuProductsHorizontalSubMenuDTO menuProductsHorizontalSubMenuDTO;
     private MenuProductsSubMenuDTO menuProductsSubMenuDTO;
+    private NewMenuProductsDTO newMenuProductsDTO;
+    private NewMenuProductsDTO newMenuProductsVerticalDTO_1;
 
 
 //    @PostConstruct
@@ -53,6 +57,21 @@ public class MenuProductsBean{
         menuProductsVerticalSubMenuDTO2 = menuProductsService.getMenuProductsVerticalSubMenuDTO2();
         menuProductsHorizontalSubMenuDTO = menuProductsService.getMenuProductsHorizontalSubMenuDTO();
         menuProductsDTO = menuProductsService.getMenuProductsDTO();
+        newMenuProductsDTO = newMenuProductsService.getNewProductsMenu(FILE_MENU_PRODUCTS);
+        newMenuProductsVerticalDTO_1 = newMenuProductsService.getNewProductsMenu(FILE_MENU_PRODUCTS_VERTICAL_1);
+
+    }
+
+    public NewMenuProductsDTO getNewMenuProductsVerticalDTO_1() {
+        return newMenuProductsVerticalDTO_1;
+    }
+
+    public NewMenuProductsDTO getNewMenuProductsDTO() {
+        return newMenuProductsDTO;
+    }
+
+    public void setNewMenuProductsService(NewMenuProductsService newMenuProductsService) {
+        this.newMenuProductsService = newMenuProductsService;
     }
 
     public void initPage2() {
