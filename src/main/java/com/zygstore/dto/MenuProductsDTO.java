@@ -3,6 +3,8 @@ package com.zygstore.dto;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.zygstore.business.MenuProductsBean;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Component;
 //@SessionScoped
 //    @Component
 public class MenuProductsDTO {
+    final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private String prodMenuItem1;
     private String prodMenuItem2;
     private String prodMenuItem3;
@@ -40,6 +43,7 @@ public class MenuProductsDTO {
         this.prodMenuItem9 = prodMenuItem9;
         this.prodMenuItem10 = prodMenuItem10;
         this.prodMenuItem11 = prodMenuItem11;
+        logger.info("MenuProductsDTO initialized!");
     }
 
 
