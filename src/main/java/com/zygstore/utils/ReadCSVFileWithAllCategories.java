@@ -20,12 +20,12 @@ public class ReadCSVFileWithAllCategories {
         try {
             reader = new BufferedReader(new FileReader(filePath));
             String line = reader.readLine();
-                while (line != null) {
-                    if (!line.equals("ID;ParentID;Name")) {
-                        list.add(line);
-                    }
-                    line = reader.readLine();
+            while (line != null) {
+                if ((!line.equals("ID;ParentID;Name")) && (!line.equals("")) && (!line.equals(" "))) {
+                    list.add(line);
                 }
+                line = reader.readLine();
+            }
 
             reader.close();
         } catch (IOException e) {
