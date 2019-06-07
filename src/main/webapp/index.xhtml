@@ -5,9 +5,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui"
-      xmlns:ng="http://java.sun.com/jsf/composite">
+>
 <f:event type="preRenderView" listener="#{menuProductsBean.initPage}"/>
-<f:event type="preRenderView" listener="#{menuProductsBean.initPage2}"/>
 <h:head>
     <title>ZygKompStore</title>
 
@@ -32,82 +31,19 @@
     <b:navBar brand="" brandHref="#" inverse="false">
         <b:navbarLinks>
             <!--<b:navLink value="#{menuProductsBean.displayField}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <ui:repeat var="menu" value="#{menuProductsBean.newMenuProductsDTO.childsList}">
+            <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
                 <b:dropMenu value="#{menu.text}" href="maincategories/electronics.xhtml">
                     <b:flyOutMenu width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki">
-                        <ui:repeat var="menuVertical" value="#{menuProductsBean.newMenuProductsVerticalDTO_1.childsList}">
-                            <b:dropMenu value="#{menuVertical.text}"></b:dropMenu>
-                            <!--<b:dropMenu value="#{menuProductsBean.newMenuProductsVerticalDTO_1.childsList[0].text}"></b:dropMenu>-->
+                        <ui:repeat value="#{menu.childsList}" var="menuVertical">
+                            <b:dropMenu value="#{menuVertical.text}">
+                                <ui:repeat value="#{menuVertical.childsList}" var="menuHorizontal">
+                                    <b:navLink value="#{menuHorizontal.text}"></b:navLink>
+                                </ui:repeat>
+                            </b:dropMenu>
                         </ui:repeat>
                     </b:flyOutMenu>
-                <!--newMenuProductsVerticalDTO_1-->
                 </b:dropMenu>
             </ui:repeat>
-            <!--<b:dropMenu value="#{menuProductsBean.newMenuProductsDTO.childsList[0].text}" href="maincategories/electronics.xhtml"></b:dropMenu>-->
-
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsDTO.prodMenuItem1}" href="maincategories/electronics.xhtml">-->
-            <!--<b:flyOutMenu width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki">-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem1}">-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem1}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem2}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem3}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem4}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem5}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem6}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem7}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsHorizontalSubMenuDTO.prodHorizontalSubMenuItem8}" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem2}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem3}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem4}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem5}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem6}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem7}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem8}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem9}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem10}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem11}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem12}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO.prodVerticalSubMenuItem1}" href="maincategories/electronics.xhtml">-->
-            <!--</b:dropMenu>-->
-            <!--</b:flyOutMenu>-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsDTO.prodMenuItem2}" href="maincategories/mobiles.xhtml">-->
-            <!--<b:flyOutMenu width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące telefonów komórkowych">-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO2.prodVerticalSubMenuItem1}">-->
-            <!--<b:navLink value="Wszystkie telefony" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--<b:navLink value="Telefony iPhone" href="maincategories/electronics.xhtml"></b:navLink>-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO2.prodVerticalSubMenuItem2}">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO2.prodVerticalSubMenuItem3}">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO2.prodVerticalSubMenuItem4}">-->
-            <!--</b:dropMenu>-->
-            <!--<b:dropMenu value="#{menuProductsBean.menuProductsVerticalSubMenuDTO2.prodVerticalSubMenuItem5}">-->
-            <!--</b:dropMenu>-->
-            <!--</b:flyOutMenu>-->
-            <!--</b:dropMenu>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem3}" href="maincategories/tvandrtv.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem4}" href="maincategories/agd.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem5}" href="maincategories/house.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem6}" href="maincategories/garden.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem7}" href="maincategories/kid.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem8}" href="maincategories/health.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem9}" href="maincategories/moto.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem10}" href="maincategories/hobby.xhtml"></b:navLink>-->
-            <!--<b:navLink value="#{menuProductsBean.menuProductsDTO.prodMenuItem11}" href="maincategories/hobby.xhtml"></b:navLink>-->
         </b:navbarLinks>
 
         <b:navbarLinks pull="right">
@@ -119,5 +55,4 @@
     </b:navBar>
 
 </h:body>
-<!--#{menuProductBean.MenuProductsDTO.getProdMenuItem1().toString()}-->
 </html>

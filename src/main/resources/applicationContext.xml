@@ -24,6 +24,7 @@
     </bean>
 
 <bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
+
 </bean>
 
     <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">

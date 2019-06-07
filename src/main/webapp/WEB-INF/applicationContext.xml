@@ -27,7 +27,6 @@
     <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
         <property name="context" ref="context"/>
         <property name="menuProductsService" ref="menuProductsService"/>
-        <property name="newMenuProductsService" ref="newMenuProductsService"/>
     </bean>
 
     <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
@@ -52,7 +51,6 @@
         <!--<property name="menuProductsDTO" ref="menuProductsDTO"></property>-->
     </bean>
 
-    <bean id="newMenuProductsService" class="com.zygstore.service.NewMenuProductsService"></bean>
 
 
 
