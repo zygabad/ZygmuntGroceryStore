@@ -22,7 +22,7 @@ public class MenuProductsBean{
     private String displayField;
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
-    private static final String FILE_MENU_PRODUCTS = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    private static final String FILE_MENU_PRODUCTS = "Categories.csv";
 
     MenuProductsService menuProductsService;
 

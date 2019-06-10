@@ -1,0 +1,9 @@
+ID;ParentID;Name
+1;0;Elektronika
+2;0;Telefony I Smartwatche
+3;0;AGD
+201;2;Akcesoria GSM
+101;1;Komputery
+2201;201;Nowy
+1101;101;Serwery
+1102;101;Laptopy
