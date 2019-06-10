@@ -1,6 +1,7 @@
 package com.zygstore.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -45,6 +46,7 @@ public class MenuProductsService {
             }
         }
 
+        Collections.reverse(listOfSelectedMenuItems);
         return listOfSelectedMenuItems;
     }
 
