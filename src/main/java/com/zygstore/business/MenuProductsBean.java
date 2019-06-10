@@ -11,6 +11,7 @@ import com.zygstore.config.Context;
 import com.zygstore.dto.*;
 import com.zygstore.service.MenuProductsService;
 import com.zygstore.utils.ReadKomputronikSite;
+import com.zygstore.utils.WriteFile;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -27,6 +28,7 @@ public class MenuProductsBean{
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
+//    private static final String FILE_MENU_PRODUCTS_NET = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
 
     MenuProductsService menuProductsService;
 
@@ -42,10 +44,13 @@ public class MenuProductsBean{
     }
 
     public void initPage() throws IOException {
-        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+//        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
-        Element tree = kompsite.getTree();
-        String treeElements = tree.toString();
+        ArrayList<String> listOfLines = kompsite.getLinesFromFile();
+        WriteFile wf = new WriteFile(FILE_MENU_PRODUCTS, listOfLines);
+        wf.writeToFile();
+
+        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
