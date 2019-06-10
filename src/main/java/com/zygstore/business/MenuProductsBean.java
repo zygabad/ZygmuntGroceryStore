@@ -1,5 +1,6 @@
 package com.zygstore.business;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -9,7 +10,10 @@ import javax.faces.bean.SessionScoped;
 import com.zygstore.config.Context;
 import com.zygstore.dto.*;
 import com.zygstore.service.MenuProductsService;
+import com.zygstore.utils.ReadKomputronikSite;
 import org.apache.log4j.Logger;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 /**
  * Place description here.
@@ -37,8 +41,11 @@ public class MenuProductsBean{
 
     }
 
-    public void initPage() {
+    public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+        ReadKomputronikSite kompsite = new ReadKomputronikSite();
+        Element tree = kompsite.getTree();
+        String treeElements = tree.toString();
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
