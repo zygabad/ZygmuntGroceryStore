@@ -21,8 +21,7 @@ public class WriteFile {
 
 
 
-//        FileOutputStream outputStream = new FileOutputStream(fileName);
-        FileOutputStream outputStream = new FileOutputStream(new ClassPathResource(fileName).getFilename());
+        FileOutputStream outputStream = new FileOutputStream(fileName);
 
         for (int i = 0; i < listOfLiinesToWrite.size(); i++) {
             String line = listOfLiinesToWrite.get(i) + "\n";

@@ -32,6 +32,15 @@ public class MenuProductsService {
         return listOfRootMenuItemsDTO;
     }
 
+    public ArrayList<MenuProductsDTO> getCategories(ArrayList<String> linesFromFile){
+        ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = new ArrayList<>();
+        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
+        listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
+        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+
+        return listOfRootMenuItemsDTO;
+    }
+
     private ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {

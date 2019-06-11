@@ -30,7 +30,6 @@
 
     <b:navBar brand="" brandHref="#" inverse="false">
         <b:navbarLinks>
-            <!--<b:navLink value="#{menuProductsBean.displayField}" href="maincategories/electronics.xhtml"></b:navLink>-->
             <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
                 <b:dropMenu value="#{menu.text}" href="maincategories/electronics.xhtml">
                     <b:flyOutMenu width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki">
@@ -44,13 +43,6 @@
                     </b:flyOutMenu>
                 </b:dropMenu>
             </ui:repeat>
-        </b:navbarLinks>
-
-        <b:navbarLinks pull="right">
-            <b:navLink value="    " href="#"></b:navLink>
-        </b:navbarLinks>
-        <b:navbarLinks pull="right" styleClass="hidden-xs">
-            <b:navLink value="Usługi" href="services.xhtml" iconAwesome="services.xhtml"></b:navLink>
         </b:navbarLinks>
     </b:navBar>
 

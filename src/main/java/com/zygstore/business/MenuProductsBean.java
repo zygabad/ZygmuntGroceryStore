@@ -27,8 +27,8 @@ public class MenuProductsBean{
     private String displayField;
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
-    private static final String FILE_MENU_PRODUCTS = "Categories.csv";
-//    private static final String FILE_MENU_PRODUCTS_NET = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+//    private static final String FILE_MENU_PRODUCTS = "Categories.csv";
+    private static final String FILE_MENU_PRODUCTS = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
 
     MenuProductsService menuProductsService;
 
@@ -47,10 +47,10 @@ public class MenuProductsBean{
 //        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
+        menuItemsList = menuProductsService.getCategories(listOfLines);
+
         WriteFile wf = new WriteFile(FILE_MENU_PRODUCTS, listOfLines);
         wf.writeToFile();
-
-        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
