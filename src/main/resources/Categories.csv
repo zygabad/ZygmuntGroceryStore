@@ -1,5 +1,5 @@
 ID;ParentID;Name
-1;0;Elektronika
+1;null;Elektronika
 2;1;Laptopy | Tablety
 3;2;Laptopy
 4;2;Laptopy Apple MacBook
@@ -182,7 +182,7 @@ ID;ParentID;Name
 181;1;Rozwi?zania profesjonalne
 182;181;Monitory reklamowe (Digital Signage)
 183;181;Monitory przemys?owe
-184;0;Telefony i Smartwatche
+184;null;Telefony i Smartwatche
 185;184;Telefony i Smartfony
 186;185;Wszystkie telefony
 187;185;Telefony iPhone
@@ -231,7 +231,7 @@ ID;ParentID;Name
 230;227;Opaski sportowe
 231;227;Paski do zegarków
 232;227;Akcesoria do zegarków sportowych
-233;0;Telewizory i RTV
+233;null;Telewizory i RTV
 234;233;Telewizory
 235;234;Wszystkie telewizory
 236;234;Telewizory Full HD
@@ -303,7 +303,7 @@ ID;ParentID;Name
 302;233;Dyktafony cyfrowe
 303;302;Dyktafony
 304;302;Akcesoria do dyktafonów
-305;0;AGD
+305;null;AGD
 306;305;Ma?e AGD do kuchni
 307;306;Blendery
 308;306;Ch?odziarki do mleka
@@ -463,7 +463,7 @@ ID;ParentID;Name
 462;447;Akcesoria do zmywarek
 463;447;Akcesoria kuchenne
 464;447;Kawa i napoje w kapsu?kach
-465;0;Dom
+465;null;Dom
 466;465;Narz?dzia i majsterkowanie
 467;466;Agregaty pr?dotwórcze
 468;466;Narz?dzia r?czne
@@ -561,7 +561,7 @@ ID;ParentID;Name
 560;546;Wideodomofony
 561;546;Zestawy do monitoringu
 562;546;Zestawy inteligentnego domu
-563;0;Ogród
+563;null;Ogród
 564;563;Elektronarz?dzia ogrodowe
 565;564;Aeratory
 566;564;Dmuchawy
@@ -633,7 +633,7 @@ ID;ParentID;Name
 632;631;Siedziska ogrodowe
 633;631;Skrzynie ogrodowe
 634;631;Zestawy ogrodowe
-635;0;Dziecko
+635;null;Dziecko
 636;635;Zabawki
 637;636;AGD dla dzieci
 638;636;Budziki dzieci?ce
@@ -770,7 +770,7 @@ ID;ParentID;Name
 769;764;Pojazdy dla dzieci
 770;764;Zabawki wodne
 771;764;Zje?d?alnie i hu?tawki
-772;0;Zdrowie i Uroda
+772;null;Zdrowie i Uroda
 773;772;Kosmetyki damskie
 774;773;Kosmetyki damskie do twarzy
 775;773;Kosmetyki damskie do cia?a
@@ -835,7 +835,7 @@ ID;ParentID;Name
 834;815;W?dkarstwo
 835;772;Sprz?t medyczny
 836;835;Aparaty s?uchowe
-837;0;Moto
+837;null;Moto
 838;837;Akcesoria dla zmotoryzowanych
 839;838;?adowarki samochodowe
 840;838;Alkomaty
@@ -905,7 +905,7 @@ ID;ParentID;Name
 904;903;Baga?niki samochodowe
 905;837;Zabezpieczenia przed kradzie??
 906;905;Blokady motocyklowe
-907;0;Hobby
+907;null;Hobby
 908;907;Sprz?t sportowy
 909;908;Dr??ki gimnastyczne
 910;908;Ekspandery
@@ -985,7 +985,7 @@ ID;ParentID;Name
 984;983;Wyposa?enie osobiste
 985;983;Wyposa?enie taktyczne
 986;907;Muzyka
-987;0;Us?ugi
+987;null;Us?ugi
 988;987;Do?adowania telefonów GSM
 989;987;Naprawy pogwarancyjne notebooków
 990;987;Naprawy pogwarancyjne - foto i multimedia

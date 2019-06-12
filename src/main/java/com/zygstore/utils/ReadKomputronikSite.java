@@ -37,7 +37,7 @@ public class ReadKomputronikSite {
 
         for (int i = 0; i < tree.childNodeSize(); i++) {
             id = Long.toString(idGenerator.generateNewId());
-            parentID = "0";
+            parentID = "null";
 
             if (addElementToList(tree.childNode(i), parentID)) {
                 String parentID2 = id;
@@ -49,7 +49,7 @@ public class ReadKomputronikSite {
                         }
                     }
                 }
-            } //link
+            }
         }
 
         return linesFromFile;

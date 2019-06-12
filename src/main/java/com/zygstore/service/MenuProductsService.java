@@ -27,16 +27,16 @@ public class MenuProductsService {
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = new ArrayList<>();
         ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
         listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
-        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
 
         return listOfRootMenuItemsDTO;
     }
 
-    public ArrayList<MenuProductsDTO> getCategories(ArrayList<String> linesFromFile){
+    public ArrayList<MenuProductsDTO> getCategories(ArrayList<String> linesFromFile) {
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = new ArrayList<>();
         ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
         listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
-        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
 
         return listOfRootMenuItemsDTO;
     }
@@ -45,7 +45,13 @@ public class MenuProductsService {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
-            if (currentMenuItemDTO.getParentId().equals(Long.parseLong(parentId))) {
+            Long convertedParentId = 0L;
+            if (parentId.equals("null")) {
+                convertedParentId = null;
+            } else {
+                convertedParentId = Long.parseLong(parentId);
+            }
+            if (currentMenuItemDTO.getParentId() == convertedParentId) {
                 int j = 0;
                 String currentItemID = Long.toString(currentMenuItemDTO.getID());
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
@@ -66,8 +72,16 @@ public class MenuProductsService {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
             MenuProductsDTO menuItemDTO = new MenuProductsDTO();
-            menuItemDTO.setId(Long.parseLong(values[0]));
-            menuItemDTO.setParentId(Long.parseLong(values[1]));
+            if (values[0].equals("null")) {
+                menuItemDTO.setId(null);
+            } else {
+                menuItemDTO.setId(Long.parseLong(values[0]));
+            }
+            if (values[1].equals("null")) {
+                menuItemDTO.setParentId(null);
+            } else {
+                menuItemDTO.setParentId(Long.parseLong(values[1]));
+            }
             menuItemDTO.setText(values[2]);
             menuItemDTO.setChildsList(null);
             menuItemDTO.setLink(null);
