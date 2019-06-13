@@ -1,4 +1,3 @@
-ID;ParentID;Name
 1;0;Elektronika
 2;1;Laptopy | Tablety
 3;2;Laptopy
@@ -996,4 +995,4 @@ ID;ParentID;Name
 995;987;Ochrona sprz?tu - ubezpieczenia
 996;987;Us?ugi serwerowe
 997;987;Odzyskiwanie danych
-998;987;Transport z wniesieniem
+998;987;Transport z wniesieniem 

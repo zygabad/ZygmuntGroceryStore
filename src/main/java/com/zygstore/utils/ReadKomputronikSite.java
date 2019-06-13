@@ -34,7 +34,6 @@ public class ReadKomputronikSite {
         String id;
         String parentID;
 
-
         IdGenerator idGenerator = new IdGenerator();
 
         for (int i = 0; i < tree.childNodeSize(); i++) {

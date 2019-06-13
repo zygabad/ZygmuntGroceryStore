@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
+import com.google.common.annotations.VisibleForTesting;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.utils.ReadCSVFileWithAllCategories;
 
@@ -24,10 +25,8 @@ public class MenuProductsService {
     public ArrayList<MenuProductsDTO> getCategories(String filePath) {
         ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(filePath);
         linesFromFile = readCSVFileWithAllCategories.getList();
-        ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = new ArrayList<>();
-        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
-        listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
-        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
+        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
 
         return listOfRootMenuItemsDTO;
     }
@@ -41,7 +40,8 @@ public class MenuProductsService {
         return listOfRootMenuItemsDTO;
     }
 
-    private ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
+    @VisibleForTesting
+    ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
@@ -59,7 +59,8 @@ public class MenuProductsService {
         return listOfSelectedMenuItems;
     }
 
-    private ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
+    @VisibleForTesting
+    ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
         ArrayList<MenuProductsDTO> menuItemsDTOList = new ArrayList<>();
 
         for (int i = 0; i < linesFromFile.size(); i++) {
