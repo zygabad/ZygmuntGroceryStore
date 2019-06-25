@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 
 public class ReadCSVFileWithAllCategories {
+    private static final String FILE_ENCODING = "UTF-8";
     private BufferedReader reader;
     private List<String> list = new ArrayList<>();
     private String filePath;
@@ -20,7 +21,7 @@ public class ReadCSVFileWithAllCategories {
 
     private void readLines(String filePath) {
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filePath).getInputStream(),"UTF-8"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filePath).getInputStream(),FILE_ENCODING));
             String line = reader.readLine();
             while (line != null) {
                 if ((!line.equals("ID;ParentID;Name")) && (!line.equals("")) && (!line.equals(" "))) {

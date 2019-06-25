@@ -7,6 +7,8 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class WriteFile {
+    private static final String FILE_ENCODING ="UTF-8";
+
     private String fileName;
     private FileWriter fw;
     private ArrayList<String> listOfLiinesToWrite;
@@ -17,19 +19,12 @@ public class WriteFile {
     }
 
     public void writeToFile() throws IOException {
-//        BufferedReader reader = new BufferedReader(
-//                new InputStreamReader(new ClassPathResource(filePath).getInputStream()));
-
-
-
         FileOutputStream outputStream = new FileOutputStream(fileName);
 
         for (int i = 0; i < listOfLiinesToWrite.size(); i++) {
             String line = listOfLiinesToWrite.get(i) + "\n";
-            byte[] strToBytes = line.getBytes(Charset.forName("UTF-8"));
-
+            byte[] strToBytes = line.getBytes(Charset.forName(FILE_ENCODING));
             outputStream.write(strToBytes);
-
         }
         outputStream.close();
     }
