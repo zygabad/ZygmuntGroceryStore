@@ -22,8 +22,12 @@ public class MenuItemsDTOSListCreator {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
             MenuProductsDTO menuItemDTO = new MenuProductsDTO();
-            menuItemDTO.setId(Long.parseLong(values[0]));
-            menuItemDTO.setParentId(Long.parseLong(values[1]));
+            menuItemDTO.setId((values[0]));
+            if (!values[1].equals("null")) {
+                menuItemDTO.setParentId((values[1]));
+            } else if (values[1].equals("null")) {
+                menuItemDTO.setParentId("null");
+            }
             menuItemDTO.setText(values[2]);
             menuItemDTO.setChildsList(null);
             menuItemDTO.setLink(null);
@@ -36,9 +40,10 @@ public class MenuItemsDTOSListCreator {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
-            if (currentMenuItemDTO.getParentId().equals(Long.parseLong(parentId))) {
+
+            if (currentMenuItemDTO.getParentId().equals(parentId)) {
                 int j = 0;
-                String currentItemID = Long.toString(currentMenuItemDTO.getID());
+                String currentItemID = currentMenuItemDTO.getID();
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 listOfSelectedMenuItems.add(j, currentMenuItemDTO);

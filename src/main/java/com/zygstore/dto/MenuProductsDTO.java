@@ -3,28 +3,28 @@ package com.zygstore.dto;
 import java.util.List;
 
 public class MenuProductsDTO implements MenuItemDTO {
-    private Long Id;
-    private Long ParentId;
+    private String Id;
+    private String ParentId;
     private String text;
     private String link;
     private List<MenuProductsDTO> childsList;
 
-    public Long getID() {
+    public String getID() {
         return Id;
     }
 
     @Override
-    public void setId(Long id) {
+    public void setId(String id) {
         Id = id;
     }
 
     @Override
-    public Long getParentId() {
+    public String getParentId() {
         return ParentId;
     }
 
     @Override
-    public void setParentId(Long parentId) {
+    public void setParentId(String parentId) {
         ParentId = parentId;
     }
 

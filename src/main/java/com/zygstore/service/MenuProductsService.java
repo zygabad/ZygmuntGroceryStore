@@ -27,7 +27,7 @@ public class MenuProductsService {
         linesFromFile = readCSVFileWithAllCategories.getList();
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
 
         return listOfRootMenuItemsDTO;
     }
@@ -37,7 +37,7 @@ public class MenuProductsService {
         ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
 
         return listOfRootMenuItemsDTO;
     }

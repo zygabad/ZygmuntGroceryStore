@@ -1,4 +1,4 @@
-1;0;Elektronika
+1;null;Elektronika
 2;1;Laptopy | Tablety
 3;2;Laptopy
 4;2;Laptopy Apple MacBook
@@ -181,7 +181,7 @@
 181;1;Rozwiązania profesjonalne
 182;181;Monitory reklamowe (Digital Signage)
 183;181;Monitory przemysłowe
-184;0;Telefony i Smartwatche
+184;null;Telefony i Smartwatche
 185;184;Telefony i Smartfony
 186;185;Wszystkie telefony
 187;185;Telefony iPhone
@@ -231,7 +231,7 @@
 231;227;Opaski sportowe
 232;227;Paski do zegarków
 233;227;Akcesoria do zegarków sportowych
-234;0;Telewizory i RTV
+234;null;Telewizory i RTV
 235;234;Telewizory
 236;235;Wszystkie telewizory
 237;235;Telewizory Full HD
@@ -304,7 +304,7 @@
 304;234;Dyktafony cyfrowe
 305;304;Dyktafony
 306;304;Akcesoria do dyktafonów
-307;0;AGD
+307;null;AGD
 308;307;Małe AGD do kuchni
 309;308;Blendery
 310;308;Chłodziarki do mleka
@@ -464,7 +464,7 @@
 464;449;Akcesoria do zmywarek
 465;449;Akcesoria kuchenne
 466;449;Kawa i napoje w kapsułkach
-467;0;Dom
+467;null;Dom
 468;467;Narzędzia i majsterkowanie
 469;468;Agregaty prądotwórcze
 470;468;Narzędzia ręczne
@@ -562,7 +562,7 @@
 562;548;Wideodomofony
 563;548;Zestawy do monitoringu
 564;548;Zestawy inteligentnego domu
-565;0;Ogród
+565;null;Ogród
 566;565;Elektronarzędzia ogrodowe
 567;566;Aeratory
 568;566;Dmuchawy
@@ -634,7 +634,7 @@
 634;633;Siedziska ogrodowe
 635;633;Skrzynie ogrodowe
 636;633;Zestawy ogrodowe
-637;0;Dziecko
+637;null;Dziecko
 638;637;Zabawki
 639;638;AGD dla dzieci
 640;638;Budziki dziecięce
@@ -770,7 +770,7 @@
 770;765;Pojazdy dla dzieci
 771;765;Zabawki wodne
 772;765;Zjeżdżalnie i huśtawki
-773;0;Zdrowie i Uroda
+773;null;Zdrowie i Uroda
 774;773;Kosmetyki damskie
 775;774;Kosmetyki damskie do twarzy
 776;774;Kosmetyki damskie do ciała
@@ -836,7 +836,7 @@
 836;817;Wędkarstwo
 837;773;Sprzęt medyczny
 838;837;Aparaty słuchowe
-839;0;Moto
+839;null;Moto
 840;839;Akcesoria dla zmotoryzowanych
 841;840;Ładowarki samochodowe
 842;840;Alkomaty
@@ -906,7 +906,7 @@
 906;905;Bagażniki samochodowe
 907;839;Zabezpieczenia przed kradzieżą
 908;907;Blokady motocyklowe
-909;0;Hobby
+909;null;Hobby
 910;909;Sprzęt sportowy
 911;910;Drążki gimnastyczne
 912;910;Ekspandery
@@ -986,7 +986,7 @@
 986;985;Wyposażenie osobiste
 987;985;Wyposażenie taktyczne
 988;909;Muzyka
-989;0;Usługi
+989;null;Usługi
 990;989;Doładowania telefonów GSM
 991;989;Naprawy pogwarancyjne notebooków
 992;989;Naprawy pogwarancyjne - foto i multimedia

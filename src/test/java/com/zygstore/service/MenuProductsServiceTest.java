@@ -28,8 +28,8 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals(Long.valueOf(1L), menuProductsDTO.getID());
-        assertEquals(Long.valueOf(0L), menuProductsDTO.getParentId());
+        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
 
@@ -38,7 +38,7 @@ public class MenuProductsServiceTest {
         //given
         MenuProductsService menuProductsService = new MenuProductsService();
         ArrayList<String> linesFromFile = new ArrayList<>();
-        linesFromFile.add("1;0;Elektronika;");
+        linesFromFile.add("1;null;Elektronika;");
         linesFromFile.add("2;1;Telewizory;");
 
         //when
@@ -46,8 +46,8 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals(Long.valueOf(1L), menuProductsDTO.getID());
-        assertEquals(Long.valueOf(0L), menuProductsDTO.getParentId());
+        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
 
@@ -56,9 +56,8 @@ public class MenuProductsServiceTest {
         //given
         MenuProductsService menuProductsService = new MenuProductsService();
         ArrayList<String> linesFromFile = new ArrayList<>();
-        linesFromFile.add("1;0;Elektronika;");
+        linesFromFile.add("1;null;Elektronika;");
         linesFromFile.add("2;1;Telewizory;");
-//        ArrayList<MenuProductsDTO> listOfMenuProductDTOS = menuProductsService.getAllMenuItemsDTO(linesFromFile);
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> listOfMenuProductDTOS =  menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
@@ -67,8 +66,8 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals(Long.valueOf(2L), menuProductsDTO.getID());
-        assertEquals(Long.valueOf(1L), menuProductsDTO.getParentId());
+        assertEquals("2", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getParentId());
         assertEquals("Telewizory", menuProductsDTO.getText());
     }
 
@@ -77,17 +76,16 @@ public class MenuProductsServiceTest {
         //given
         MenuProductsService menuProductsService = new MenuProductsService();
         ArrayList<String> linesFromFile = new ArrayList<>();
-        linesFromFile.add("1;0;Elektronika;");
+        linesFromFile.add("1;null;Elektronika;");
 
         //when
         MenuItemsDTOSListCreator menuItemsDTOSListCreator =new MenuItemsDTOSListCreator();
-//        ArrayList<MenuProductsDTO> result = menuProductsService.getAllMenuItemsDTO(linesFromFile);
         ArrayList<MenuProductsDTO> result = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals(Long.valueOf(1L), menuProductsDTO.getID());
-        assertEquals(Long.valueOf(0L), menuProductsDTO.getParentId());
+        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
 }
