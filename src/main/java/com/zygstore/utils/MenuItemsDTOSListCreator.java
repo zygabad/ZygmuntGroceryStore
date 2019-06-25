@@ -1,6 +1,8 @@
 package com.zygstore.utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 import com.zygstore.dto.MenuProductsDTO;
@@ -29,4 +31,24 @@ public class MenuItemsDTOSListCreator {
         }
         return menuItemsDTOList;
     }
+
+    public ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
+        ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
+        for (int i = 0; i < listOfMenuItems.size(); i++) {
+            MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
+            if (currentMenuItemDTO.getParentId().equals(Long.parseLong(parentId))) {
+                int j = 0;
+                String currentItemID = Long.toString(currentMenuItemDTO.getID());
+                List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
+                currentMenuItemDTO.setChildsList(childsList);
+                listOfSelectedMenuItems.add(j, currentMenuItemDTO);
+                j++;
+            }
+        }
+
+        Collections.reverse(listOfSelectedMenuItems);
+        return listOfSelectedMenuItems;
+    }
+
+
 }

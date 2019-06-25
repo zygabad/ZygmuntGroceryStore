@@ -59,11 +59,11 @@ public class MenuProductsServiceTest {
         linesFromFile.add("1;0;Elektronika;");
         linesFromFile.add("2;1;Telewizory;");
 //        ArrayList<MenuProductsDTO> listOfMenuProductDTOS = menuProductsService.getAllMenuItemsDTO(linesFromFile);
-        MenuItemsDTOSListCreator menuItemsDTOSListCreator =new MenuItemsDTOSListCreator();
+        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> listOfMenuProductDTOS =  menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //when
-        ArrayList<MenuProductsDTO> result = menuProductsService.getSelectedMenuItemsDTO(listOfMenuProductDTOS,"1");
+        ArrayList<MenuProductsDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS,"1");
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);

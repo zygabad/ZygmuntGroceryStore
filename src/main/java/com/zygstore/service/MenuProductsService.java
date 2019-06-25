@@ -27,7 +27,7 @@ public class MenuProductsService {
         linesFromFile = readCSVFileWithAllCategories.getList();
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
 
         return listOfRootMenuItemsDTO;
     }
@@ -36,30 +36,12 @@ public class MenuProductsService {
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = new ArrayList<>();
         ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = new ArrayList<>();
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
-//        listOfAllMenuItemsDTO = getAllMenuItemsDTO(linesFromFile);
         listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        listOfRootMenuItemsDTO = getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
+        listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "0");
 
         return listOfRootMenuItemsDTO;
     }
 
-    ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
-        ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
-        for (int i = 0; i < listOfMenuItems.size(); i++) {
-            MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
-            if (currentMenuItemDTO.getParentId().equals(Long.parseLong(parentId))) {
-                int j = 0;
-                String currentItemID = Long.toString(currentMenuItemDTO.getID());
-                List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
-                currentMenuItemDTO.setChildsList(childsList);
-                listOfSelectedMenuItems.add(j, currentMenuItemDTO);
-                j++;
-            }
-        }
-
-        Collections.reverse(listOfSelectedMenuItems);
-        return listOfSelectedMenuItems;
-    }
 
 
 }
