@@ -28,7 +28,7 @@ public class MenuProductsBean{
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
-//    private static final String FILE_MENU_PRODUCTS = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
 
     MenuProductsService menuProductsService;
 
@@ -45,12 +45,14 @@ public class MenuProductsBean{
 
     public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
-//        ReadKomputronikSite kompsite = new ReadKomputronikSite();
-//        ArrayList<String> listOfLines = kompsite.getLinesFromFile();
-//        menuItemsList = menuProductsService.getCategories(listOfLines);
-//
-//        WriteFile wf = new WriteFile(FILE_MENU_PRODUCTS, listOfLines);
-//        wf.writeToFile();
+    }
+
+    public void initAdminPage() throws IOException {
+        ReadKomputronikSite kompsite = new ReadKomputronikSite();
+        ArrayList<String> listOfLines = kompsite.getLinesFromFile();
+        menuItemsList = menuProductsService.getCategories(listOfLines);
+        WriteFile wf = new WriteFile(FILE_MENU_PRODUCTS_ADMIN, listOfLines);
+        wf.writeToFile();
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
