@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 
-import com.google.common.annotations.VisibleForTesting;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.utils.ReadCSVFileWithAllCategories;
 
@@ -40,7 +39,7 @@ public class MenuProductsService {
         return listOfRootMenuItemsDTO;
     }
 
-    @VisibleForTesting
+
     ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
@@ -59,7 +58,7 @@ public class MenuProductsService {
         return listOfSelectedMenuItems;
     }
 
-    @VisibleForTesting
+
     ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
         ArrayList<MenuProductsDTO> menuItemsDTOList = new ArrayList<>();
 

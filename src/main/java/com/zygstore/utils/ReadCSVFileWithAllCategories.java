@@ -20,7 +20,7 @@ public class ReadCSVFileWithAllCategories {
 
     private void readLines(String filePath) {
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filePath).getInputStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filePath).getInputStream(),"UTF-8"));
             String line = reader.readLine();
             while (line != null) {
                 if ((!line.equals("ID;ParentID;Name")) && (!line.equals("")) && (!line.equals(" "))) {

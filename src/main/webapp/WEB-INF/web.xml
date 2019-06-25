@@ -26,9 +26,7 @@
         <welcome-file>index.jsf</welcome-file>
     </welcome-file-list>
 
-    
-    
-    
+
     
     <filter>
         <filter-name>RequestResultFilter</filter-name>
@@ -40,9 +38,54 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>com.zygstore.filters.AdminFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+
+
+
+
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>FacesServlet</servlet-name>-->
+        <!--<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>FacesServlet</servlet-name>-->
+        <!--<url-pattern>/util/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>/WEB-INF/util/*.xhtml</welcome-file>-->
+    <!--</welcome-file-list>-->
+
+    <!--<servlet>-->
+        <!--<servlet-name>mvc-dispatcher</servlet-name>-->
+        <!--<servlet-class>-->
+            <!--org.springframework.web.servlet.DispatcherServlet-->
+        <!--</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>mvc-dispatcher</servlet-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
     <!--<servlet>-->
         <!--    <servlet-name>dispatcher</servlet-name>-->
         <!--    <servlet-class>-->
+            <!--org.springframework.web. org.springframework.web.se-->
         <!--        org.springframework.web.servlet.DispatcherServlet-->
         <!--    </servlet-class>-->
         <!--    <init-param>-->
@@ -56,6 +99,8 @@
         <!--<servlet-name>dispatcher</servlet-name>-->
         <!--<url-pattern>/*</url-pattern>-->
     <!--</servlet-mapping>-->
+
+
     <!--<filter>-->
         <!--<filter-name>ErrorResultFilter</filter-name>-->
         <!--<filter-class>com.zygstore.filters.ErrorResultFilter</filter-class>-->
@@ -93,5 +138,6 @@
         <exception-type>javax.servlet.ServletException</exception-type>
         <location>/general_error.xhtml?faces-redirect=true</location>
     </error-page>
+
 
 </web-app>

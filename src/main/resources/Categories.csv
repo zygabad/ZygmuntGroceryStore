@@ -18,28 +18,28 @@
 18;11;Serwery
 19;11;Stacje Robocze
 20;11;Pakiety Serwisowe
-21;1;Cz??ci PC
+21;1;Części PC
 22;21;Akcesoria do dysków twardych
 23;21;Akcesoria do kart graficznych
 24;21;Akcesoria do obudów
-25;21;Akcesoria do p?yt g?ównych
-26;21;Ch?odzenie
-27;21;Czytniki kart pami?ci wewn?trzne
+25;21;Akcesoria do płyt głównych
+26;21;Chłodzenie
+27;21;Czytniki kart pamięci wewnętrzne
 28;21;Dyski
-29;21;Karty d?wi?kowe
+29;21;Karty dźwiękowe
 30;21;Karty graficzne
 31;21;Kontrolery PCI
 32;21;Modding
-33;21;Nap?dy optyczne
+33;21;Napędy optyczne
 34;21;Obudowy komputerowe
-35;21;Pami?ci RAM
-36;21;P?yty g?ówne
+35;21;Pamięci RAM
+36;21;Płyty główne
 37;21;Procesory
 38;21;Sloty (Brackets)
 39;21;Zasilacze do obudów
 40;1;Dla graczy
 41;40;Gry
-42;40;Sprz?t PC do gier
+42;40;Sprzęt PC do gier
 43;40;Laptopy do gier
 44;40;PlayStation 4
 45;40;PlayStation 3
@@ -53,18 +53,18 @@
 53;40;Nintendo Classic Mini NES
 54;40;Fotele gamingowe
 55;40;Biurka gamingowe
-56;40;Artyku?y kolekcjonerskie
+56;40;Artykuły kolekcjonerskie
 57;40;Pady do smartfonów
 58;1;Peryferia PC
 59;58;Akcesoria do monitorów
-60;58;Czytniki kart pami?ci
+60;58;Czytniki kart pamięci
 61;58;Drukowanie
-62;58;Dyski zewn?trzne
-63;58;Etui do dysków zewn?trznych
+62;58;Dyski zewnętrzne
+63;58;Etui do dysków zewnętrznych
 64;58;Stacje dyskietek
-65;58;G?o?niki
+65;58;Głośniki
 66;58;Kamery internetowe
-67;58;Karty d?wi?kowe (zewn.)
+67;58;Karty dźwiękowe (zewn.)
 68;58;Karty Video
 69;58;Klawiatury
 70;58;Klawiatura i mysz - zestawy
@@ -72,17 +72,17 @@
 72;58;Mikrofony
 73;58;Monitory
 74;58;Myszki
-75;58;Nap?dy optyczne zewn?trzne
+75;58;Napędy optyczne zewnętrzne
 76;58;Pendrive
-77;58;Podk?adki pod myszk?
-78;58;Prezentery i wska?niki
+77;58;Podkładki pod myszkę
+78;58;Prezentery i wskaźniki
 79;58;Projektory i ekrany
 80;58;Skanery
-81;58;S?uchawki
+81;58;Słuchawki
 82;58;Storage i Archiwizacja
 83;58;Tablety graficzne
 84;58;Tunery TV USB
-85;58;Urz?dzenia wielofunkcyjne
+85;58;Urządzenia wielofunkcyjne
 86;58;Zasilanie awaryjne
 87;1;Sieci i komunikacja
 88;87;Akcesoria sieciowe
@@ -91,22 +91,22 @@
 91;87;Modemy USB
 92;87;Monitoring
 93;87;NAS - serwery plików
-94;87;Prze??czniki
-95;87;Prze??czniki KVM
-96;87;Punkty dost?pu
+94;87;Przełączniki
+95;87;Przełączniki KVM
+96;87;Punkty dostępu
 97;87;Routery
 98;87;Serwery wydruku
 99;87;Systemy Mesh
 100;87;Szafy RACK
 101;87;Transmitery sieciowe (powerline)
-102;87;Wzmacniacze sygna?u
+102;87;Wzmacniacze sygnału
 103;87;Zapory ogniowe (firewall)
 104;1;Inteligentny dom
-105;104;Asystenci g?osowi
+105;104;Asystenci głosowi
 106;104;Centralki do inteligentnego domu
 107;104;Czujniki inteligentne
 108;104;Inteligentne gniazdka (Smart Plug)
-109;104;Inteligentne o?wietlenie
+109;104;Inteligentne oświetlenie
 110;104;Inteligentne ogrzewanie
 111;104;Inteligentne stacje pogodowe
 112;104;Kamery do monitoringu
@@ -119,52 +119,52 @@
 119;104;Zestawy do monitoringu
 120;104;Zestawy inteligentnego domu
 121;1;Oprogramowanie
-122;121;Antywirusy i bezpiecze?stwo
+122;121;Antywirusy i bezpieczeństwo
 123;121;Biurowe
 124;121;Dla dzieci
 125;121;Graficzne, video i projektowanie
-126;121;Ksi??ki i podr?czniki
+126;121;Książki i podręczniki
 127;121;Mapy do nawigacji
 128;121;Muzyczne
-129;121;Narz?dziowe
+129;121;Narzędziowe
 130;121;Oprogramowanie dla Apple
 131;121;Systemy baz danych
 132;121;Systemy operacyjne
-133;121;Zarz?dzanie firm?
+133;121;Zarządzanie firmą
 134;1;Akcesoria | Eksploatacja
 135;134;Akcesoria Foto
 136;134;Akcesoria GSM
 137;134;Akcesoria dla zmotoryzowanych
 138;134;Akcesoria USB
-139;134;Druk - materia?y eksploatacyjne
+139;134;Druk - materiały eksploatacyjne
 140;134;Kable i adaptery
 141;134;Kosmetyka biurowa
-142;134;No?niki danych
+142;134;Nośniki danych
 143;134;Zasilanie
 144;1;Foto | Wideo
 145;144;Drukarki sublimacyjne
 146;144;Aparaty cyfrowe
 147;144;Kamery
-148;144;Lampy b?yskowe
+148;144;Lampy błyskowe
 149;144;Obiektywy
 150;144;Statywy
 151;144;Gimbale
-152;144;Karty pami?ci
+152;144;Karty pamięci
 153;144;Akcesoria do kamer sportowych
 154;144;Akcesoria Foto
 155;144;Torby, Pokrowce
 156;144;Drony
-157;144;Sprz?t optyczny
-158;144;Ramki cyfrowe do zdj??
+157;144;Sprzęt optyczny
+158;144;Ramki cyfrowe do zdjęć
 159;1;Biuro | Firma
 160;159;Akcesoria na biurko
 161;159;Akcesoria do niszczarek
 162;159;Archiwizacja dokumentów
-163;159;Artyku?y pi?miennicze
+163;159;Artykuły piśmiennicze
 164;159;Czytniki kodów kreskowych
 165;159;Drukarki etykiet
 166;159;Flipcharty
-167;159;Liczarki pieni?dzy
+167;159;Liczarki pieniędzy
 168;159;Meble biurowe
 169;159;Niszczarki dokumentów
 170;159;Oprawa dokumentów
@@ -175,12 +175,12 @@
 175;159;Tablice interaktywne
 176;159;Telefonia analogowa
 177;159;Telefonia VOIP
-178;159;Testery pieni?dzy
+178;159;Testery pieniędzy
 179;159;Uzdatnianie powietrza
 180;159;Wideokonferencje
-181;1;Rozwi?zania profesjonalne
+181;1;Rozwiązania profesjonalne
 182;181;Monitory reklamowe (Digital Signage)
-183;181;Monitory przemys?owe
+183;181;Monitory przemysłowe
 184;0;Telefony i Smartwatche
 185;184;Telefony i Smartfony
 186;185;Wszystkie telefony
@@ -189,810 +189,812 @@
 189;185;Telefony dotykowe
 190;185;Telefony z LTE
 191;184;Akcesoria GSM
-192;191;S?uchawki do telefonu
+192;191;Słuchawki do telefonu
 193;191;Baterie do telefonów
 194;191;Etui na telefon
 195;191;Transmitery FM
 196;191;Gimbale
-197;191;G?o?niki przeno?ne
+197;191;Głośniki przenośne
 198;191;Kable do telefonów
 199;191;Kamery termowizyjne do smartfonów
 200;191;Karty Micro Secure Digital (microSD)
 201;191;Kosmetyka
 202;191;Lampy LED do smartfonów
-203;191;?adowarki do telefonu
+203;191;Ładowarki do telefonu
 204;191;Obiektywy do smartfonów
 205;191;Ochrona ekranu
 206;191;Okulary VR
 207;191;Pady do smartfonów
 208;191;Piloty IR
-209;191;Podk?adki antypo?lizgowe
+209;191;Podkładki antypoślizgowe
 210;191;Podstawki i standy
 211;191;Power Banki
-212;191;Pozosta?e
+212;191;Pozostałe
 213;191;Rysiki
-214;191;Stacje dokuj?ce do telefonów
+214;191;Stacje dokujące do telefonów
 215;191;Selfie stick
 216;191;Uchwyty do telefonów
-217;191;Zestawy s?uchawkowe
+217;191;Zestawy słuchawkowe
 218;184;Telefonia VOIP
 219;218;Telefony VOIP
 220;218;Bramki VOIP
 221;218;Akcesoria do VOIP
 222;184;Telefonia analogowa
-223;222;S?uchawki dla biznesu
-224;222;Dodatkowe s?uchawki do telefonów
+223;222;Słuchawki dla biznesu
+224;222;Dodatkowe słuchawki do telefonów
 225;222;Telefony stacjonarne
 226;222;Telefony ISDN
 227;184;Smartwatche i zegarki
 228;227;Smartwatche
-229;227;Zegarki sportowe
-230;227;Opaski sportowe
-231;227;Paski do zegarków
-232;227;Akcesoria do zegarków sportowych
-233;0;Telewizory i RTV
-234;233;Telewizory
-235;234;Wszystkie telewizory
-236;234;Telewizory Full HD
-237;234;Telewizory 4K Ultra HD
-238;234;Telewizory zakrzywione
-239;234;Telewizory z Ambilight
-240;233;Projektory i ekrany
-241;240;Projektory
-242;240;Ekrany do projektorów
-243;240;Uchwyty do projektorów
-244;240;Tablice interaktywne
-245;240;Akcesoria do projektorów
-246;233;Tunery | dekodery
-247;246;Tunery DVB-T (Telewizja naziemna)
-248;246;Tunery DVB-S (Telewizja satelitarna)
-249;246;Tunery TV USB
-250;233;Kino domowe
-251;250;Zestawy kina domowego
-252;250;Amplitunery
-253;250;Wzmacniacze audio
-254;250;G?o?niki soundbar
-255;250;Kolumny
-256;250;Subwoofery
-257;233;Odtwarzacze video
-258;257;Odtwarzacze DVD
-259;257;Odtwarzacze Blu-Ray
-260;257;Odtwarzacze przeno?ne
-261;257;Odtwarzacze multimedialne
-262;233;Sprz?t audio
-263;262;Amplitunery
-264;262;G?o?niki bezprzewodowe domowe
-265;262;G?o?niki przeno?ne
-266;262;G?o?niki soundbar
-267;262;Gramofony
-268;262;Kolumny
-269;262;Mikrofony
-270;262;Mikro i Mini Wie?e
-271;262;Przetworniki DAC
-272;262;Radiobudziki
-273;262;Radia kuchenne
-274;262;Radioodtwarzacze
-275;262;Subwoofery
-276;262;S?uchawki
-277;262;Akcesoria do s?uchawek
-278;262;Wzmacniacze audio
-279;262;Aparaty s?uchowe
-280;233;Akcesoria RTV
-281;280;Adaptery
-282;280;Adaptery Wi-Fi
-283;280;Akcesoria do dyktafonów
-284;280;Anteny
-285;280;Apple TV
-286;280;Kable antenowe
-287;280;Kable audio
-288;280;Kable video
-289;280;Konwertery satelitarne
-290;280;Listwy zasilaj?ce
-291;280;Mocowania do RTV
-292;280;Piloty do TV
-293;280;Prze??czniki i splittery
-294;280;Przystawki Smart TV
-295;233;Odtwarzacze MP3, MP4, iPod
-296;295;Odtwarzacze MP3
-297;295;Odtwarzacze MP4
-298;233;Ramki cyfrowe do zdj??
-299;298;Wszystkie ramki cyfrowe
-300;298;Ramki cyfrowe Hama
-301;298;Ramki cyfrowe Intenso
-302;233;Dyktafony cyfrowe
-303;302;Dyktafony
-304;302;Akcesoria do dyktafonów
-305;0;AGD
-306;305;Ma?e AGD do kuchni
-307;306;Blendery
-308;306;Ch?odziarki do mleka
-309;306;Czajniki elektryczne
-310;306;Ekspresy do kawy
-311;306;Filtracja wody
-312;306;Frytkownice
-313;306;Gofrownice
-314;306;Grille elektryczne
-315;306;Jajowary
-316;306;Kombiwary
-317;306;Kostkarki do lodu
-318;306;Krajalnice
-319;306;Maszynki do lodów
-320;306;Maszynki do mielenia
-321;306;Miksery
-322;306;M?ynki do kawy
-323;306;Multicookery
-324;306;Nale?nikarki
-325;306;Opiekacze
-326;306;Parowary
-327;306;Patelnie elektryczne
-328;306;Roboty kuchenne
-329;306;Saturatory
-330;306;Sokowirówki
-331;306;Spieniacze do mleka
-332;306;Suszarki do warzyw i owoców
-333;306;Szatkownice
-334;306;Szybkowary
-335;306;Tostery
-336;306;Wagi kuchenne
-337;306;Wyciskarki
-338;306;Wypiekacze do chleba
-339;306;Zupowary
-340;306;Wolnowary
-341;306;Jogurtownice
-342;305;Ma?e AGD do domu
-343;342;Akcesoria do prasowania
-344;342;Akcesoria do mopów parowych
-345;342;Budziki
-346;342;Deski do prasowania
-347;342;Golarki do ubra?
-348;342;Grzejniki
-349;342;Higrometry
-350;342;Klimatyzatory
-351;342;Maszyny do szycia
-352;342;Mopy parowe
-353;342;Oczyszczacze parowe
-354;342;Oczyszczacze powietrza
-355;342;Odkurzacze
-356;342;Odkurzacze pionowe
-357;342;Party Time
-358;342;Roboty sprz?taj?ce
-359;342;Stacje pogody
-360;342;Termowentylatory
-361;342;Wentylatory
-362;342;Zgrzewarki folii
-363;342;?elazka
-364;305;Ma?e AGD do higieny i piel?gnacji
-365;364;Depilatory laserowe
-366;364;Depilatory
-367;364;Depilatory IPL
-368;364;Frezarki do paznokci
-369;364;Golarki damskie
-370;364;Golarki m?skie
-371;364;Irygatory do z?bów
-372;364;Karbownice
-373;364;Koce elektryczne
-374;364;Lokówki
-375;364;Lusterka
-376;364;Masa?ery do cia?a
-377;364;Masa?ery do stóp
-378;364;Maszynki do strzy?enia
-379;364;Mikrodermabrazja
-380;364;Pasy stymuluj?ce
-381;364;Prostownice
-382;364;Redukcja podwójnego podbródka
-383;364;Sauny
-384;364;Suszarki
-385;364;Suszarko-lokówki
-386;364;Szczoteczki do twarzy
-387;364;Szczoteczki elektryczne do z?bów
-388;364;Szczotki
-389;364;Termoloki
-390;364;Trymery
-391;364;Urz?dzenia do liftingu
-392;364;Usuwanie zrogowacia?ego naskórka
-393;364;Wagi ?azienkowe
-394;364;Wybielanie z?bów
-395;364;Zestawy do manicure, pedicure
-396;305;Ma?e AGD dla zdrowia
-397;396;Ci?nieniomierze
-398;396;Elektroniczne nianie
-399;396;Inhalatory
-400;396;Koce elektryczne
-401;396;Lampy lecznicze
-402;396;Podgrzewacze
-403;396;Pulsometry medyczne
-404;396;Sterylizatory
-405;396;Termometry
-406;396;Wagi ?azienkowe
-407;305;Du?e AGD wolnostoj?ce
-408;407;Ch?odziarki do wina
-409;407;Kuchenki
-410;407;Kuchenki mikrofalowe
-411;407;Lodówki
-412;407;Lodówki turystyczne
-413;407;Piekarniki wolnostoj?ce
-414;407;Pralki
-415;407;Pralko-suszarki
-416;407;Suszarki do bielizny
-417;407;Zamra?arki
-418;407;Zmywarki
-419;305;Du?e AGD do zabudowy
-420;419;Ekspresy do kawy do zabudowy
-421;419;Kuchenki mikrofalowe do zabudowy
-422;419;Lodówki do zabudowy
-423;419;Okapy kuchenne
-424;419;Piekarniki
-425;419;P?yty grzewcze
-426;419;Pralki do zabudowy
-427;419;Pralko-suszarki do zabudowy
-428;419;Szuflady grzewcze
-429;419;Zamra?arki do zabudowy
-430;419;Zmywarki do zabudowy
-431;305;Sprz?t do kawy
-432;431;Ekspresy do kawy
-433;431;Kawiarki
-434;431;M?ynki do kawy
-435;431;Kawa i napoje w kapsu?kach
-436;431;Spieniacze do mleka
-437;431;Ch?odziarki do mleka
-438;431;Akcesoria do ekspresów
-439;305;Sprz?t do Sous Vide
-440;439;Cyrkulatory do Sous Vide
-441;305;Uzdatnianie powietrza
-442;441;Aromatyzery
-443;441;Nawil?acze powietrza
-444;441;Oczyszczacze powietrza
-445;441;Osuszacze powietrza
-446;441;Akcesoria do oczyszczaczy
-447;305;Akcesoria AGD
-448;447;Akcesoria do depilatorów
-449;447;Akcesoria do ekspresów
-450;447;Akcesoria do golarek m?skich
-451;447;Akcesoria do lodówek
-452;447;Akcesoria do lodówek turystycznych
-453;447;Akcesoria do maszynek do mielenia
-454;447;Akcesoria do oczyszczaczy
-455;447;Akcesoria do odkurzaczy
-456;447;Akcesoria do okapów kuchennych
-457;447;Akcesoria do piekarników
-458;447;Akcesoria do prania
-459;447;Akcesoria do robotów kuchennych
-460;447;Akcesoria do szczoteczek
-461;447;Akcesoria do zgrzewarek do folii
-462;447;Akcesoria do zmywarek
-463;447;Akcesoria kuchenne
-464;447;Kawa i napoje w kapsu?kach
-465;0;Dom
-466;465;Narz?dzia i majsterkowanie
-467;466;Agregaty pr?dotwórcze
-468;466;Narz?dzia r?czne
-469;466;Elektronarz?dzia
-470;466;Narz?dzia pomiarowe
-471;466;Narz?dzia specjalistyczne
-472;466;Odzie? budowlana
-473;465;Sprz?tanie
-474;473;Akcesoria do mopów
-475;473;Akcesoria do mopów parowych
-476;473;Akcesoria do prasowania
-477;473;Akcesoria do sprz?tania
-478;473;Chemia gospodarcza
-479;473;Deski do prasowania
-480;473;Kije
-481;473;Miot?y, szczotki i szufelki
-482;473;Mopy
-483;473;Mopy parowe
-484;473;Myjki do okien
-485;473;Oczyszczacze parowe
-486;473;Odkurzacze
-487;473;Roboty sprz?taj?ce
-488;473;Suszarki do prania
-489;473;?ci?gaczki do szyb
-490;465;Kuchnia
-491;490;Wyposa?enie kuchni
-492;490;Przybory do gotowania
-493;490;Naczynia
-494;490;Akcesoria do kuchni
-495;490;Radia kuchenne
-496;465;Jadalnia
-497;496;Serwowanie posi?ków
-498;496;Szk?o sto?owe
-499;496;Zestawy sztu?ców
-500;465;?azienka
-501;500;Dozowniki do p?ynów
-502;500;Kosze na pranie
-503;500;Kosze na ?mieci do ?azienki
-504;500;Stojaki prysznicowe
-505;500;Szczotki do WC
-506;500;Lusterka
-507;500;?ci?gaczki do szyb
-508;500;Uchwyty na papier toaletowy
-509;500;Wagi ?azienkowe
-510;465;Pokój dzieci?cy
-511;510;Dekoracje dla dzieci
-512;510;Kocyki
-513;510;Lampki dzieci?ce
-514;510;?ó?eczka
-515;510;Pojemniki na zabawki
-516;510;Po?ciele i prze?cierad?a dla dzieci
-517;510;Projektory dla dzieci
-518;465;Dekoracja domu
-519;518;Akcesoria do ?wiec zapachowych
-520;518;Narz?dzia dekoracyjne
-521;518;?wieczki zapachowe
-522;518;Zapachy do domu
-523;518;Zegary ?cienne
-524;465;Wyposa?enie wn?trz
-525;524;Wieszaki
-526;465;Elektryka
-527;526;Czujniki
-528;526;Gniazdka elektryczne
-529;526;Mediaporty
-530;526;Mierniki energii
-531;526;Programatory czasowe
-532;526;Wideodomofony
-533;526;Zasilanie
-534;526;Zasilanie awaryjne
-535;465;O?wietlenie
-536;535;Akcesoria LED
-537;535;Inteligentne o?wietlenie
-538;535;Lampy
-539;535;Lampy LED
-540;535;Lampki USB
-541;535;Latarki
-542;535;O?wietlenie samochodowe
-543;535;?wietlówki LED
-544;535;Ta?my LED
-545;535;?arówki LED
-546;465;Inteligentny dom
-547;546;Asystenci g?osowi
-548;546;Centralki do inteligentnego domu
-549;546;Czujniki inteligentne
-550;546;Inteligentne gniazdka (Smart Plug)
-551;546;Inteligentne o?wietlenie
-552;546;Inteligentne ogrzewanie
-553;546;Inteligentne stacje pogodowe
-554;546;Kamery do monitoringu
-555;546;Panele inteligentne
-556;546;Piloty IR
-557;546;Przyciski inteligentne
-558;546;Sterowniki inteligentne
-559;546;Systemy alarmowe
-560;546;Wideodomofony
-561;546;Zestawy do monitoringu
-562;546;Zestawy inteligentnego domu
-563;0;Ogród
-564;563;Elektronarz?dzia ogrodowe
-565;564;Aeratory
-566;564;Dmuchawy
-567;564;Glebogryzarki
-568;564;Kosiarki
-569;564;?uparki
-570;564;Myjki ci?nieniowe
-571;564;No?yce elektryczne
-572;564;Odkurzacze ogrodowe
-573;564;Pilarki ogrodowe
-574;564;Podkaszarki
-575;564;Pompy ogrodowe
-576;564;Roboty ogrodowe
-577;564;Rozdrabniarki
-578;564;Systemy do obróbki ?cian
-579;564;Wertykulatory
-580;564;Akcesoria do myjek ci?nieniowych
-581;564;Wielofunkcyjne narz?dzie ogrodowe
-582;564;Zamiatarki
-583;563;Narz?dzia ogrodowe
-584;583;Drobne narz?dzia ogrodowe
-585;583;Grabie
-586;583;Kosiarki r?czne
-587;583;M?oty ogrodowe
-588;583;No?e
-589;583;No?yce ogrodowe
-590;583;Opryskiwacze
-591;583;Pi?y ogrodowe
-592;583;P?ugi i odgarniacze
-593;583;Sekatory
-594;583;Siekiery
-595;583;Skuwacze do lodu
-596;583;Szczotki
-597;583;Szpadle
-598;583;Szufle
-599;583;?widry
-600;583;Tasaki
-601;583;Wid?y
-602;583;Zestawy narz?dzi ogrodowych
-603;583;Trzonki
-604;563;Sprz?t ogrodowy
-605;604;Baseny ogrodowe
-606;604;Doniczki i pojemniki
-607;604;Grille ogrodowe
-608;604;Akcesoria do grilla
-609;604;Materace do p?ywania
-610;604;Skrzynie ogrodowe
-611;604;Suszarki ogrodowe
-612;604;Zgniatarki do butelek
-613;563;Nawadnianie ogrodu
-614;613;Akcesoria do nawadniania
-615;613;Ko?cówki zraszaj?ce
-616;613;Sterowniki nawadniania
-617;613;W??e ogrodowe
-618;613;Wózki do w??y ogrodowych
-619;613;Zraszacze ogrodowe
-620;563;Zabawki ogrodowe
-621;620;Baseny ogrodowe
-622;620;Domki
-623;620;Materace do p?ywania
-624;620;Place zabaw i piaskownice
-625;620;Pojazdy dla dzieci
-626;620;Zabawki wodne
-627;620;Zje?d?alnie i hu?tawki
-628;563;Lampy zewn?trzne
-629;628;Lampy ogrodowe
-630;628;Na?wietlacze LED
-631;563;Meble ogrodowe
-632;631;Siedziska ogrodowe
-633;631;Skrzynie ogrodowe
-634;631;Zestawy ogrodowe
-635;0;Dziecko
-636;635;Zabawki
-637;636;AGD dla dzieci
-638;636;Budziki dzieci?ce
-639;636;Bujaki dla dzieci
-640;636;Figurki
-641;636;Gry towarzyskie
-642;636;Klocki
-643;636;Lalki i akcesoria
-644;636;Maskotki
-645;636;Pistolety
-646;636;Pojazdy
-647;636;Pojemniki na zabawki
-648;636;Pozosta?e
-649;636;Puzzle
-650;636;Roboty zabawki
-651;636;Zabawki do k?pieli
-652;636;Zabawki edukacyjne
-653;636;Zegarki dzieci?ce
-654;635;Dla najm?odszych
-655;654;Je?dziki i pchacze
-656;654;Grzechotki i gryzaki
-657;654;Karuzele
-658;654;Kojce dla dzieci
-659;654;Krzese?ka do karmienia
-660;654;Le?aczki i hu?tawki
-661;654;Maty edukacyjne
-662;654;Maty koryguj?ce
-663;654;Noside?ka
-664;654;Otulacze dla niemowl?t
-665;654;Podg?ówki koryguj?ce
-666;654;?piworki dla dzieci
-667;635;Artyku?y szkolne
-668;667;Akcesoria na biurko
-669;667;Artyku?y pi?miennicze
-670;667;Artyku?y plastyczne
-671;667;D?ugopisy 3D
-672;667;Piórniki
-673;667;Plecaki i tornistry
-674;667;Portfele i portmonetki
-675;667;Pozosta?e
-676;667;Pude?ka ?niadaniowe
-677;667;Torby i saszetki
-678;667;Worki na buty
-679;635;Pokój dzieci?cy
-680;679;Dekoracje dla dzieci
-681;679;Kocyki
-682;679;Lampki dzieci?ce
-683;679;?ó?eczka
-684;679;Pojemniki na zabawki
-685;679;Po?ciele i prze?cierad?a dla dzieci
-686;679;Projektory dla dzieci
-687;635;Komfort i bezpiecze?stwo
-688;687;Bramki na schody
-689;687;Chodziki
-690;687;Elektroniczne nianie
-691;687;Foteliki rowerowe
-692;687;Je?dziki i pchacze
-693;687;Lusterka do obserwacji dziecka
-694;687;Smartwatche dla dzieci
-695;687;Stopie? dla dziecka
-696;687;Zabezpieczenia przed dzie?mi
-697;635;Karmienie dziecka
-698;697;Akcesoria do karmienia
-699;697;Bielizna ci??owa
-700;697;Butelki dla dzieci
-701;697;Krzese?ka do karmienia
-702;697;Kubki dla dzieci
-703;697;Laktatory
-704;697;Naczynia dla dzieci
-705;697;Poduszki do karmienia
-706;697;Smoczki
-707;697;Smoczki do butelek
-708;697;Sterylizatory
-709;697;Podgrzewacze
-710;697;Sztu?ce dla dzieci
-711;697;?liniaki
-712;697;Torby dla mam
-713;697;Wk?adki laktacyjne
-714;635;Zdrowie i higiena
-715;714;Aspiratory dla dzieci
-716;714;Chusteczki
-717;714;Foteliki k?pielowe
-718;714;Inhalatory dla dzieci
-719;714;Kosmetyki dla dzieci
-720;714;Kosze na zu?yte pieluszki
-721;714;Maty do k?pieli
-722;714;Maty do przewijania
-723;714;Nak?adki na sedes dla dzieci
-724;714;Nocniki
-725;714;Okulary dla dzieci
-726;714;Pieluszki
-727;714;R?czniki k?pielowe dla dzieci
-728;714;Ronda k?pielowe
-729;714;Termometry
-730;714;Wanienki
-731;714;Zabawki do k?pieli
-732;714;Zestawy piel?gnacyjne dla dzieci
-733;635;Foteliki samochodowe
-734;733;Akcesoria do fotelików samochodowych
-735;733;Bazy isofix do fotelików
-736;733;Foteliki
-737;733;Podstawki
-738;635;Wózki
-739;738;Wózki wielofunkcyjne
-740;738;Gondole
-741;738;Wózki dla bli?ni?t
-742;738;Wózki spacerowe
-743;738;Folie przeciwdeszczowe na wózek
-744;738;Moskitiery na wózek
-745;738;Torby dla mam
-746;738;?piworki do wózka
-747;738;Pa??ki do wózka
-748;738;Tacki do wózka
-749;738;Adaptery do wózków
-750;738;Parasolki do wózka
-751;738;Uchwyty na kubek do wózka
-752;738;Dostawki do wózka
-753;635;Pojazdy dla dzieci
-754;753;Hulajnogi dla dzieci
-755;753;Rowerki
-756;753;Traktory
-757;753;Samochody
-758;753;Je?dziki i pchacze
-759;635;Pojazdy elektryczne
-760;759;Segway
-761;759;Deskorolki elektryczne
-762;759;Quady elektryczne
-763;759;Hulajnogi elektryczne
-764;635;Zabawki ogrodowe
-765;764;Baseny ogrodowe
-766;764;Domki
-767;764;Materace do p?ywania
-768;764;Place zabaw i piaskownice
-769;764;Pojazdy dla dzieci
-770;764;Zabawki wodne
-771;764;Zje?d?alnie i hu?tawki
-772;0;Zdrowie i Uroda
-773;772;Kosmetyki damskie
-774;773;Kosmetyki damskie do twarzy
-775;773;Kosmetyki damskie do cia?a
-776;773;Kosmetyki damskie do w?osów
-777;773;Kosmetyki damskie do opalania
-778;773;Kosmetyki dla mam
-779;772;Makija?
-780;779;Oczy
-781;779;Usta
-782;779;Twarz
-783;779;Paznokcie
-784;779;Akcesoria
-785;772;Perfumy damskie
-786;785;Wody toaletowe
-787;785;Wody perfumowane
-788;772;Kosmetyki dla m??czyzn
-789;788;Kosmetyki m?skie do twarzy
-790;788;Kosmetyki m?skie do cia?a
-791;788;Kosmetyki m?skie do golenia
-792;788;Kosmetyki m?skie do w?osów
-793;788;Kosmetyki m?skie do piel?gnacji brody
-794;772;Perfumy m?skie
-795;794;Wody toaletowe
-796;794;Wody perfumowane
-797;772;Kosmetyki dla dzieci
-798;797;Akcesoria piel?gnacyjne dla dzieci
-799;797;Detergenty przyjazne dzieciom
-800;797;Myd?a i ?ele do k?pieli
-801;797;Piel?gnacja cia?a dziecka
-802;797;Piel?gnacja s?oneczna
-803;797;Szampony dla dzieci
-804;772;Kosmetyki naturalne
-805;804;Kosmetyki naturalne do twarzy
-806;804;Kosmetyki naturalne do cia?a
-807;804;Kosmetyki naturalne do w?osów
-808;772;Higiena jamy ustnej
-809;808;Pasty do z?bów
-810;808;P?yny do p?ukania jamy ustnej
-811;808;Od?wie?acze do ust
-812;808;Preparaty do czyszczenia aparatów ortodontycznych
-813;772;Zestawy kosmetyków
-814;813;Kosmetyki dla kobiet
-815;772;Sprz?t sportowy
-816;815;Dr??ki gimnastyczne
-817;815;Ekspandery
-818;815;Gogle narciarskie
-819;815;Gryfy
-820;815;Hantle
-821;815;Kaski narciarskie
-822;815;Kettlebell
-823;815;?awki treningowe
-824;815;Maty do jogi
-825;815;Nawigacja piesza
-826;815;Orbitreki
-827;815;Pi?ki gimnastyczne
-828;815;Rolki do masa?u
-829;815;Rowery treningowe
-830;815;S?uchawki dla sportowców
-831;815;Smartwatche i zegarki
-832;815;Steppery
-833;815;Wagi ?azienkowe
-834;815;W?dkarstwo
-835;772;Sprz?t medyczny
-836;835;Aparaty s?uchowe
-837;0;Moto
-838;837;Akcesoria dla zmotoryzowanych
-839;838;?adowarki samochodowe
-840;838;Alkomaty
-841;838;Transmitery FM
-842;838;Kamery cofania
-843;838;Lusterka do obserwacji dziecka
-844;838;Odbiorniki GPS
-845;838;Odkurzacze r?czne
-846;838;Organizery CAR HI-FI
-847;838;Podk?adki antypo?lizgowe
-848;838;Power Banki
-849;838;Przetwornice samochodowe
-850;838;Rozga??ziacze gniazda zapalniczki
-851;838;Termosy i kubki termiczne
-852;838;Torby i etui do nawigacji
-853;838;Uchwyty do telefonów
-854;838;Wideorejestratory
-855;838;Zestawy g?o?nomówi?ce
-856;838;Zestawy s?uchawkowe
-857;837;Car Audio
-858;857;Anteny samochodowe
-859;857;Transmitery FM
-860;857;Radioodtwarzacze samochodowe
-861;837;Nawigacja GPS
-862;861;Nawigacja motocyklowa
-863;861;Nawigacja piesza
-864;861;Nawigacja rowerowa
-865;861;Nawigacja samochodowa
-866;861;Mapy do nawigacji
-867;837;Kamery samochodowe
-868;867;Wideorejestratory
-869;867;Kamery cofania
-870;867;Akcesoria do kamer samochodowych
-871;837;Chemia samochodowa
-872;871;Piel?gnacja lakieru
-873;871;Piel?gnacja wn?trza
-874;871;Piel?gnacja metalu i chromu
-875;871;P?yny do spryskiwaczy
-876;871;Zapachy samochodowe
-877;837;O?wietlenie samochodowe
-878;877;?arówki H1
-879;877;?arówki H4
-880;877;?arówki H7
-881;877;?arówki D1S
-882;877;?arówki D2S
-883;877;?arówki D3S
-884;877;?arówki D2R
-885;837;Sprz?t warsztatowy
-886;885;Agregaty pr?dotwórcze
-887;885;Akumulatory rozruchowe
-888;885;Klucze udarowe
-889;885;Kompresory samochodowe
-890;885;Lejki samochodowe
-891;885;Odkurzacze r?czne
-892;885;Podno?niki samochodowe
-893;885;Prostowniki samochodowe
-894;885;Skrzynki narz?dziowe
-895;885;Wyci?garki
-896;885;Zestawy bitów
-897;885;Wkr?taki
-898;837;Pojazdy elektryczne
-899;898;Segway
-900;898;Deskorolki elektryczne
-901;898;Quady elektryczne
-902;898;Hulajnogi elektryczne
-903;837;Wyposa?enie samochodu
-904;903;Baga?niki samochodowe
-905;837;Zabezpieczenia przed kradzie??
-906;905;Blokady motocyklowe
-907;0;Hobby
-908;907;Sprz?t sportowy
-909;908;Dr??ki gimnastyczne
-910;908;Ekspandery
-911;908;Gogle narciarskie
-912;908;Gryfy
-913;908;Hantle
-914;908;Kaski narciarskie
-915;908;Kettlebell
-916;908;?awki treningowe
-917;908;Maty do jogi
-918;908;Nawigacja piesza
-919;908;Orbitreki
-920;908;Pi?ki gimnastyczne
-921;908;Rolki do masa?u
-922;908;Rowery treningowe
-923;908;S?uchawki dla sportowców
-924;908;Smartwatche i zegarki
-925;908;Steppery
-926;908;Wagi ?azienkowe
-927;908;W?dkarstwo
-928;907;Sprz?t rowerowy
-929;928;Baga?niki rowerowe
-930;928;Foteliki rowerowe
-931;928;Koszyki na rower
-932;928;Liczniki rowerowe
-933;928;Nawigacja rowerowa
-934;928;Okulary rowerowe
-935;928;O?wietlenie rowerowe
-936;928;Pokrowce na rowery
-937;928;Sakwy i torby rowerowe
-938;928;Uchwyty rowerowe na telefon
-939;907;Hulajnogi
-940;939;Hulajnogi elektryczne
-941;939;Hulajnogi tradycyjne
-942;939;Hulajnogi dla dzieci
-943;939;Hulajnogi dla doros?ych
-944;907;Turystyka
-945;944;Adaptery zasilania
-946;944;Krzesiwa i zapalniczki
-947;944;Kuchenki turystyczne
-948;944;Kuchnia turystyczna
-949;944;Lodówki turystyczne
-950;944;Multitoole
-951;944;Odzie? bluetooth
-952;944;Odzie? ogrzewana
-953;944;Plecaki
-954;944;Scyzoryki
-955;944;Torby podró?ne
-956;944;Torby termoizolacyjne
-957;944;Wagi baga?owe
-958;944;Walizki podró?ne
-959;907;Sprz?t muzyczny
-960;959;Akcesoria do gitar
-961;959;Gramofony
-962;959;Interfejsy
-963;959;Klawiatury steruj?ce
-964;959;Kontrolery
-965;959;Mikrofony
-966;959;Miksery audio
-967;959;Monitory studyjne
-968;959;Perkusje i akcesoria
-969;959;Rejestratory d?wi?ku
-970;959;Samplery
-971;959;S?uchawki studyjne
-972;907;Zdalnie sterowane
-973;972;Drony
-974;972;Roboty zabawki
-975;907;W?dkarstwo
-976;975;Echosondy
-977;907;Odzie? sportowa
-978;977;Gogle narciarskie
-979;977;Kaski narciarskie
-980;977;Koszulki treningowe
-981;977;Kurtki sportowe
-982;977;Skarpetki sportowe
-983;907;Militaria i survival
-984;983;Wyposa?enie osobiste
-985;983;Wyposa?enie taktyczne
-986;907;Muzyka
-987;0;Us?ugi
-988;987;Do?adowania telefonów GSM
-989;987;Naprawy pogwarancyjne notebooków
-990;987;Naprawy pogwarancyjne - foto i multimedia
-991;987;Us?ugi serwisowe
-992;987;Us?ugi finansowe - raty
-993;987;Us?ugi finansowe - leasing
-994;987;Karty podarunkowe
-995;987;Ochrona sprz?tu - ubezpieczenia
-996;987;Us?ugi serwerowe
-997;987;Odzyskiwanie danych
-998;987;Transport z wniesieniem 
+229;227;Zegarki klasyczne
+230;227;Zegarki sportowe
+231;227;Opaski sportowe
+232;227;Paski do zegarków
+233;227;Akcesoria do zegarków sportowych
+234;0;Telewizory i RTV
+235;234;Telewizory
+236;235;Wszystkie telewizory
+237;235;Telewizory Full HD
+238;235;Telewizory 4K Ultra HD
+239;235;Telewizory zakrzywione
+240;235;Telewizory z Ambilight
+241;234;Projektory i ekrany
+242;241;Projektory
+243;241;Ekrany do projektorów
+244;241;Uchwyty do projektorów
+245;241;Tablice interaktywne
+246;241;Akcesoria do projektorów
+247;234;Tunery | dekodery
+248;247;Tunery DVB-T (Telewizja naziemna)
+249;247;Tunery DVB-S (Telewizja satelitarna)
+250;247;Tunery DVB-C (Telewizja kablowa)
+251;247;Tunery TV USB
+252;234;Kino domowe
+253;252;Zestawy kina domowego
+254;252;Amplitunery
+255;252;Wzmacniacze audio
+256;252;Głośniki soundbar
+257;252;Kolumny
+258;252;Subwoofery
+259;234;Odtwarzacze video
+260;259;Odtwarzacze DVD
+261;259;Odtwarzacze Blu-Ray
+262;259;Odtwarzacze przenośne
+263;259;Odtwarzacze multimedialne
+264;234;Sprzęt audio
+265;264;Amplitunery
+266;264;Głośniki bezprzewodowe domowe
+267;264;Głośniki przenośne
+268;264;Głośniki soundbar
+269;264;Gramofony
+270;264;Kolumny
+271;264;Mikrofony
+272;264;Mikro i Mini Wieże
+273;264;Przetworniki DAC
+274;264;Radiobudziki
+275;264;Radia kuchenne
+276;264;Radioodtwarzacze
+277;264;Subwoofery
+278;264;Słuchawki
+279;264;Akcesoria do słuchawek
+280;264;Wzmacniacze audio
+281;264;Aparaty słuchowe
+282;234;Akcesoria RTV
+283;282;Adaptery
+284;282;Adaptery Wi-Fi
+285;282;Akcesoria do dyktafonów
+286;282;Anteny
+287;282;Apple TV
+288;282;Kable antenowe
+289;282;Kable audio
+290;282;Kable video
+291;282;Konwertery satelitarne
+292;282;Listwy zasilające
+293;282;Mocowania do RTV
+294;282;Piloty do TV
+295;282;Przełączniki i splittery
+296;282;Przystawki Smart TV
+297;234;Odtwarzacze MP3, MP4, iPod
+298;297;Odtwarzacze MP3
+299;297;Odtwarzacze MP4
+300;234;Ramki cyfrowe do zdjęć
+301;300;Wszystkie ramki cyfrowe
+302;300;Ramki cyfrowe Hama
+303;300;Ramki cyfrowe Intenso
+304;234;Dyktafony cyfrowe
+305;304;Dyktafony
+306;304;Akcesoria do dyktafonów
+307;0;AGD
+308;307;Małe AGD do kuchni
+309;308;Blendery
+310;308;Chłodziarki do mleka
+311;308;Czajniki elektryczne
+312;308;Ekspresy do kawy
+313;308;Filtracja wody
+314;308;Frytkownice
+315;308;Gofrownice
+316;308;Grille elektryczne
+317;308;Jajowary
+318;308;Kombiwary
+319;308;Kostkarki do lodu
+320;308;Krajalnice
+321;308;Maszynki do lodów
+322;308;Maszynki do mielenia
+323;308;Miksery
+324;308;Młynki do kawy
+325;308;Multicookery
+326;308;Naleśnikarki
+327;308;Opiekacze
+328;308;Parowary
+329;308;Patelnie elektryczne
+330;308;Roboty kuchenne
+331;308;Saturatory
+332;308;Sokowirówki
+333;308;Spieniacze do mleka
+334;308;Suszarki do warzyw i owoców
+335;308;Szatkownice
+336;308;Szybkowary
+337;308;Tostery
+338;308;Wagi kuchenne
+339;308;Wyciskarki
+340;308;Wypiekacze do chleba
+341;308;Zupowary
+342;308;Wolnowary
+343;308;Jogurtownice
+344;307;Małe AGD do domu
+345;344;Akcesoria do prasowania
+346;344;Akcesoria do mopów parowych
+347;344;Budziki
+348;344;Deski do prasowania
+349;344;Golarki do ubrań
+350;344;Grzejniki
+351;344;Higrometry
+352;344;Klimatyzatory
+353;344;Maszyny do szycia
+354;344;Mopy parowe
+355;344;Oczyszczacze parowe
+356;344;Oczyszczacze powietrza
+357;344;Odkurzacze
+358;344;Odkurzacze pionowe
+359;344;Party Time
+360;344;Roboty sprzątające
+361;344;Stacje pogody
+362;344;Termowentylatory
+363;344;Wentylatory
+364;344;Zgrzewarki folii
+365;344;Żelazka
+366;307;Małe AGD do higieny i pielęgnacji
+367;366;Depilatory laserowe
+368;366;Depilatory
+369;366;Depilatory IPL
+370;366;Frezarki do paznokci
+371;366;Golarki damskie
+372;366;Golarki męskie
+373;366;Irygatory do zębów
+374;366;Karbownice
+375;366;Koce elektryczne
+376;366;Lokówki
+377;366;Lusterka
+378;366;Masażery do ciała
+379;366;Masażery do stóp
+380;366;Maszynki do strzyżenia
+381;366;Mikrodermabrazja
+382;366;Pasy stymulujące
+383;366;Prostownice
+384;366;Redukcja podwójnego podbródka
+385;366;Sauny
+386;366;Suszarki
+387;366;Suszarko-lokówki
+388;366;Szczoteczki do twarzy
+389;366;Szczoteczki elektryczne do zębów
+390;366;Szczotki
+391;366;Termoloki
+392;366;Trymery
+393;366;Urządzenia do liftingu
+394;366;Usuwanie zrogowaciałego naskórka
+395;366;Wagi łazienkowe
+396;366;Wybielanie zębów
+397;366;Zestawy do manicure, pedicure
+398;307;Małe AGD dla zdrowia
+399;398;Ciśnieniomierze
+400;398;Elektroniczne nianie
+401;398;Inhalatory
+402;398;Koce elektryczne
+403;398;Lampy lecznicze
+404;398;Podgrzewacze
+405;398;Pulsometry medyczne
+406;398;Sterylizatory
+407;398;Termometry
+408;398;Wagi łazienkowe
+409;307;Duże AGD wolnostojące
+410;409;Chłodziarki do wina
+411;409;Kuchenki
+412;409;Kuchenki mikrofalowe
+413;409;Lodówki
+414;409;Lodówki turystyczne
+415;409;Piekarniki wolnostojące
+416;409;Pralki
+417;409;Pralko-suszarki
+418;409;Suszarki do bielizny
+419;409;Zamrażarki
+420;409;Zmywarki
+421;307;Duże AGD do zabudowy
+422;421;Ekspresy do kawy do zabudowy
+423;421;Kuchenki mikrofalowe do zabudowy
+424;421;Lodówki do zabudowy
+425;421;Okapy kuchenne
+426;421;Piekarniki
+427;421;Płyty grzewcze
+428;421;Pralki do zabudowy
+429;421;Pralko-suszarki do zabudowy
+430;421;Szuflady grzewcze
+431;421;Zamrażarki do zabudowy
+432;421;Zmywarki do zabudowy
+433;307;Sprzęt do kawy
+434;433;Ekspresy do kawy
+435;433;Kawiarki
+436;433;Młynki do kawy
+437;433;Kawa i napoje w kapsułkach
+438;433;Spieniacze do mleka
+439;433;Chłodziarki do mleka
+440;433;Akcesoria do ekspresów
+441;307;Sprzęt do Sous Vide
+442;441;Cyrkulatory do Sous Vide
+443;307;Uzdatnianie powietrza
+444;443;Aromatyzery
+445;443;Nawilżacze powietrza
+446;443;Oczyszczacze powietrza
+447;443;Osuszacze powietrza
+448;443;Akcesoria do oczyszczaczy
+449;307;Akcesoria AGD
+450;449;Akcesoria do depilatorów
+451;449;Akcesoria do ekspresów
+452;449;Akcesoria do golarek męskich
+453;449;Akcesoria do lodówek
+454;449;Akcesoria do lodówek turystycznych
+455;449;Akcesoria do maszynek do mielenia
+456;449;Akcesoria do oczyszczaczy
+457;449;Akcesoria do odkurzaczy
+458;449;Akcesoria do okapów kuchennych
+459;449;Akcesoria do piekarników
+460;449;Akcesoria do prania
+461;449;Akcesoria do robotów kuchennych
+462;449;Akcesoria do szczoteczek
+463;449;Akcesoria do zgrzewarek do folii
+464;449;Akcesoria do zmywarek
+465;449;Akcesoria kuchenne
+466;449;Kawa i napoje w kapsułkach
+467;0;Dom
+468;467;Narzędzia i majsterkowanie
+469;468;Agregaty prądotwórcze
+470;468;Narzędzia ręczne
+471;468;Elektronarzędzia
+472;468;Narzędzia pomiarowe
+473;468;Narzędzia specjalistyczne
+474;468;Odzież budowlana
+475;467;Sprzątanie
+476;475;Akcesoria do mopów
+477;475;Akcesoria do mopów parowych
+478;475;Akcesoria do prasowania
+479;475;Akcesoria do sprzątania
+480;475;Chemia gospodarcza
+481;475;Deski do prasowania
+482;475;Kije
+483;475;Miotły, szczotki i szufelki
+484;475;Mopy
+485;475;Mopy parowe
+486;475;Myjki do okien
+487;475;Oczyszczacze parowe
+488;475;Odkurzacze
+489;475;Roboty sprzątające
+490;475;Suszarki do prania
+491;475;Ściągaczki do szyb
+492;467;Kuchnia
+493;492;Wyposażenie kuchni
+494;492;Przybory do gotowania
+495;492;Naczynia
+496;492;Akcesoria do kuchni
+497;492;Radia kuchenne
+498;467;Jadalnia
+499;498;Serwowanie posiłków
+500;498;Szkło stołowe
+501;498;Zestawy sztućców
+502;467;Łazienka
+503;502;Dozowniki do płynów
+504;502;Kosze na pranie
+505;502;Kosze na śmieci do łazienki
+506;502;Stojaki prysznicowe
+507;502;Szczotki do WC
+508;502;Lusterka
+509;502;Ściągaczki do szyb
+510;502;Uchwyty na papier toaletowy
+511;502;Wagi łazienkowe
+512;467;Pokój dziecięcy
+513;512;Dekoracje dla dzieci
+514;512;Kocyki
+515;512;Lampki dziecięce
+516;512;Łóżeczka
+517;512;Pojemniki na zabawki
+518;512;Pościele i prześcieradła dla dzieci
+519;512;Projektory dla dzieci
+520;467;Dekoracja domu
+521;520;Akcesoria do świec zapachowych
+522;520;Narzędzia dekoracyjne
+523;520;Świeczki zapachowe
+524;520;Zapachy do domu
+525;520;Zegary ścienne
+526;467;Wyposażenie wnętrz
+527;526;Wieszaki
+528;467;Elektryka
+529;528;Czujniki
+530;528;Gniazdka elektryczne
+531;528;Mediaporty
+532;528;Mierniki energii
+533;528;Programatory czasowe
+534;528;Wideodomofony
+535;528;Zasilanie
+536;528;Zasilanie awaryjne
+537;467;Oświetlenie
+538;537;Akcesoria LED
+539;537;Inteligentne oświetlenie
+540;537;Lampy
+541;537;Lampy LED
+542;537;Lampki USB
+543;537;Latarki
+544;537;Oświetlenie samochodowe
+545;537;Świetlówki LED
+546;537;Taśmy LED
+547;537;Żarówki LED
+548;467;Inteligentny dom
+549;548;Asystenci głosowi
+550;548;Centralki do inteligentnego domu
+551;548;Czujniki inteligentne
+552;548;Inteligentne gniazdka (Smart Plug)
+553;548;Inteligentne oświetlenie
+554;548;Inteligentne ogrzewanie
+555;548;Inteligentne stacje pogodowe
+556;548;Kamery do monitoringu
+557;548;Panele inteligentne
+558;548;Piloty IR
+559;548;Przyciski inteligentne
+560;548;Sterowniki inteligentne
+561;548;Systemy alarmowe
+562;548;Wideodomofony
+563;548;Zestawy do monitoringu
+564;548;Zestawy inteligentnego domu
+565;0;Ogród
+566;565;Elektronarzędzia ogrodowe
+567;566;Aeratory
+568;566;Dmuchawy
+569;566;Glebogryzarki
+570;566;Kosiarki
+571;566;Łuparki
+572;566;Myjki ciśnieniowe
+573;566;Nożyce elektryczne
+574;566;Odkurzacze ogrodowe
+575;566;Pilarki ogrodowe
+576;566;Podkaszarki
+577;566;Pompy ogrodowe
+578;566;Roboty ogrodowe
+579;566;Rozdrabniarki
+580;566;Systemy do obróbki ścian
+581;566;Wertykulatory
+582;566;Akcesoria do myjek ciśnieniowych
+583;566;Wielofunkcyjne narzędzie ogrodowe
+584;566;Zamiatarki
+585;565;Narzędzia ogrodowe
+586;585;Drobne narzędzia ogrodowe
+587;585;Grabie
+588;585;Kosiarki ręczne
+589;585;Młoty ogrodowe
+590;585;Noże
+591;585;Nożyce ogrodowe
+592;585;Opryskiwacze
+593;585;Piły ogrodowe
+594;585;Pługi i odgarniacze
+595;585;Sekatory
+596;585;Siekiery
+597;585;Skuwacze do lodu
+598;585;Szczotki
+599;585;Szpadle
+600;585;Szufle
+601;585;Świdry
+602;585;Tasaki
+603;585;Widły
+604;585;Zestawy narzędzi ogrodowych
+605;585;Trzonki
+606;565;Sprzęt ogrodowy
+607;606;Baseny ogrodowe
+608;606;Doniczki i pojemniki
+609;606;Grille ogrodowe
+610;606;Akcesoria do grilla
+611;606;Materace do pływania
+612;606;Skrzynie ogrodowe
+613;606;Suszarki ogrodowe
+614;606;Zgniatarki do butelek
+615;565;Nawadnianie ogrodu
+616;615;Akcesoria do nawadniania
+617;615;Końcówki zraszające
+618;615;Sterowniki nawadniania
+619;615;Węże ogrodowe
+620;615;Wózki do węży ogrodowych
+621;615;Zraszacze ogrodowe
+622;565;Zabawki ogrodowe
+623;622;Baseny ogrodowe
+624;622;Domki
+625;622;Materace do pływania
+626;622;Place zabaw i piaskownice
+627;622;Pojazdy dla dzieci
+628;622;Zabawki wodne
+629;622;Zjeżdżalnie i huśtawki
+630;565;Lampy zewnętrzne
+631;630;Lampy ogrodowe
+632;630;Naświetlacze LED
+633;565;Meble ogrodowe
+634;633;Siedziska ogrodowe
+635;633;Skrzynie ogrodowe
+636;633;Zestawy ogrodowe
+637;0;Dziecko
+638;637;Zabawki
+639;638;AGD dla dzieci
+640;638;Budziki dziecięce
+641;638;Bujaki dla dzieci
+642;638;Figurki
+643;638;Gry towarzyskie
+644;638;Klocki
+645;638;Lalki i akcesoria
+646;638;Maskotki
+647;638;Pistolety
+648;638;Pojazdy
+649;638;Pojemniki na zabawki
+650;638;Pozostałe
+651;638;Puzzle
+652;638;Roboty zabawki
+653;638;Zabawki do kąpieli
+654;638;Zabawki edukacyjne
+655;638;Zegarki dziecięce
+656;637;Dla najmłodszych
+657;656;Jeździki i pchacze
+658;656;Grzechotki i gryzaki
+659;656;Karuzele
+660;656;Kojce dla dzieci
+661;656;Krzesełka do karmienia
+662;656;Leżaczki i huśtawki
+663;656;Maty edukacyjne
+664;656;Maty korygujące
+665;656;Nosidełka
+666;656;Otulacze dla niemowląt
+667;656;Podgłówki korygujące
+668;656;Śpiworki dla dzieci
+669;637;Artykuły szkolne
+670;669;Akcesoria na biurko
+671;669;Artykuły piśmiennicze
+672;669;Artykuły plastyczne
+673;669;Długopisy 3D
+674;669;Piórniki
+675;669;Plecaki i tornistry
+676;669;Portfele i portmonetki
+677;669;Pozostałe
+678;669;Pudełka śniadaniowe
+679;669;Torby i saszetki
+680;669;Worki na buty
+681;637;Pokój dziecięcy
+682;681;Dekoracje dla dzieci
+683;681;Kocyki
+684;681;Lampki dziecięce
+685;681;Łóżeczka
+686;681;Pojemniki na zabawki
+687;681;Pościele i prześcieradła dla dzieci
+688;681;Projektory dla dzieci
+689;637;Komfort i bezpieczeństwo
+690;689;Bramki na schody
+691;689;Chodziki
+692;689;Elektroniczne nianie
+693;689;Foteliki rowerowe
+694;689;Jeździki i pchacze
+695;689;Lusterka do obserwacji dziecka
+696;689;Smartwatche dla dzieci
+697;689;Stopień dla dziecka
+698;689;Zabezpieczenia przed dziećmi
+699;637;Karmienie dziecka
+700;699;Akcesoria do karmienia
+701;699;Bielizna ciążowa
+702;699;Butelki dla dzieci
+703;699;Krzesełka do karmienia
+704;699;Kubki dla dzieci
+705;699;Laktatory
+706;699;Naczynia dla dzieci
+707;699;Poduszki do karmienia
+708;699;Smoczki
+709;699;Smoczki do butelek
+710;699;Sterylizatory
+711;699;Podgrzewacze
+712;699;Sztućce dla dzieci
+713;699;Śliniaki
+714;699;Torby dla mam
+715;699;Wkładki laktacyjne
+716;637;Zdrowie i higiena
+717;716;Aspiratory dla dzieci
+718;716;Chusteczki
+719;716;Foteliki kąpielowe
+720;716;Inhalatory dla dzieci
+721;716;Kosmetyki dla dzieci
+722;716;Kosze na zużyte pieluszki
+723;716;Maty do kąpieli
+724;716;Maty do przewijania
+725;716;Nakładki na sedes dla dzieci
+726;716;Nocniki
+727;716;Okulary dla dzieci
+728;716;Pieluszki
+729;716;Ręczniki kąpielowe dla dzieci
+730;716;Ronda kąpielowe
+731;716;Termometry
+732;716;Wanienki
+733;716;Zabawki do kąpieli
+734;716;Zestawy pielęgnacyjne dla dzieci
+735;637;Foteliki samochodowe
+736;735;Akcesoria do fotelików samochodowych
+737;735;Bazy isofix do fotelików
+738;735;Foteliki
+739;735;Podstawki
+740;637;Wózki
+741;740;Wózki wielofunkcyjne
+742;740;Gondole
+743;740;Wózki dla bliźniąt
+744;740;Wózki spacerowe
+745;740;Folie przeciwdeszczowe na wózek
+746;740;Moskitiery na wózek
+747;740;Torby dla mam
+748;740;Śpiworki do wózka
+749;740;Pałąki do wózka
+750;740;Tacki do wózka
+751;740;Adaptery do wózków
+752;740;Parasolki do wózka
+753;740;Uchwyty na kubek do wózka
+754;740;Dostawki do wózka
+755;637;Pojazdy dla dzieci
+756;755;Hulajnogi dla dzieci
+757;755;Rowerki
+758;755;Samochody
+759;755;Jeździki i pchacze
+760;637;Pojazdy elektryczne
+761;760;Segway
+762;760;Deskorolki elektryczne
+763;760;Quady elektryczne
+764;760;Hulajnogi elektryczne
+765;637;Zabawki ogrodowe
+766;765;Baseny ogrodowe
+767;765;Domki
+768;765;Materace do pływania
+769;765;Place zabaw i piaskownice
+770;765;Pojazdy dla dzieci
+771;765;Zabawki wodne
+772;765;Zjeżdżalnie i huśtawki
+773;0;Zdrowie i Uroda
+774;773;Kosmetyki damskie
+775;774;Kosmetyki damskie do twarzy
+776;774;Kosmetyki damskie do ciała
+777;774;Kosmetyki damskie do włosów
+778;774;Kosmetyki damskie do opalania
+779;774;Kosmetyki dla mam
+780;773;Makijaż
+781;780;Oczy
+782;780;Usta
+783;780;Twarz
+784;780;Paznokcie
+785;780;Akcesoria
+786;773;Perfumy damskie
+787;786;Wody toaletowe
+788;786;Wody perfumowane
+789;773;Kosmetyki dla mężczyzn
+790;789;Kosmetyki męskie do twarzy
+791;789;Kosmetyki męskie do ciała
+792;789;Kosmetyki męskie do golenia
+793;789;Kosmetyki męskie do włosów
+794;789;Kosmetyki męskie do pielęgnacji brody
+795;773;Perfumy męskie
+796;795;Wody toaletowe
+797;795;Wody perfumowane
+798;795;Wody kolońskie
+799;773;Kosmetyki dla dzieci
+800;799;Akcesoria pielęgnacyjne dla dzieci
+801;799;Detergenty przyjazne dzieciom
+802;799;Mydła i żele do kąpieli
+803;799;Pielęgnacja ciała dziecka
+804;799;Pielęgnacja słoneczna
+805;799;Szampony dla dzieci
+806;773;Kosmetyki naturalne
+807;806;Kosmetyki naturalne do twarzy
+808;806;Kosmetyki naturalne do ciała
+809;806;Kosmetyki naturalne do włosów
+810;773;Higiena jamy ustnej
+811;810;Pasty do zębów
+812;810;Płyny do płukania jamy ustnej
+813;810;Odświeżacze do ust
+814;810;Preparaty do czyszczenia aparatów ortodontycznych
+815;773;Zestawy kosmetyków
+816;815;Kosmetyki dla kobiet
+817;773;Sprzęt sportowy
+818;817;Drążki gimnastyczne
+819;817;Ekspandery
+820;817;Gogle narciarskie
+821;817;Gryfy
+822;817;Hantle
+823;817;Kaski narciarskie
+824;817;Kettlebell
+825;817;Ławki treningowe
+826;817;Maty do jogi
+827;817;Nawigacja piesza
+828;817;Orbitreki
+829;817;Piłki gimnastyczne
+830;817;Rolki do masażu
+831;817;Rowery treningowe
+832;817;Słuchawki dla sportowców
+833;817;Smartwatche i zegarki
+834;817;Steppery
+835;817;Wagi łazienkowe
+836;817;Wędkarstwo
+837;773;Sprzęt medyczny
+838;837;Aparaty słuchowe
+839;0;Moto
+840;839;Akcesoria dla zmotoryzowanych
+841;840;Ładowarki samochodowe
+842;840;Alkomaty
+843;840;Transmitery FM
+844;840;Kamery cofania
+845;840;Lusterka do obserwacji dziecka
+846;840;Odbiorniki GPS
+847;840;Odkurzacze ręczne
+848;840;Organizery CAR HI-FI
+849;840;Podkładki antypoślizgowe
+850;840;Power Banki
+851;840;Przetwornice samochodowe
+852;840;Rozgałęziacze gniazda zapalniczki
+853;840;Termosy i kubki termiczne
+854;840;Torby i etui do nawigacji
+855;840;Uchwyty do telefonów
+856;840;Wideorejestratory
+857;840;Zestawy głośnomówiące
+858;840;Zestawy słuchawkowe
+859;839;Car Audio
+860;859;Anteny samochodowe
+861;859;Transmitery FM
+862;859;Radioodtwarzacze samochodowe
+863;839;Nawigacja GPS
+864;863;Nawigacja motocyklowa
+865;863;Nawigacja piesza
+866;863;Nawigacja rowerowa
+867;863;Nawigacja samochodowa
+868;863;Mapy do nawigacji
+869;839;Kamery samochodowe
+870;869;Wideorejestratory
+871;869;Kamery cofania
+872;869;Akcesoria do kamer samochodowych
+873;839;Chemia samochodowa
+874;873;Pielęgnacja lakieru
+875;873;Pielęgnacja wnętrza
+876;873;Pielęgnacja metalu i chromu
+877;873;Płyny do spryskiwaczy
+878;873;Zapachy samochodowe
+879;839;Oświetlenie samochodowe
+880;879;Żarówki H1
+881;879;Żarówki H4
+882;879;Żarówki H7
+883;879;Żarówki D1S
+884;879;Żarówki D2S
+885;879;Żarówki D3S
+886;879;Żarówki D2R
+887;839;Sprzęt warsztatowy
+888;887;Agregaty prądotwórcze
+889;887;Akumulatory rozruchowe
+890;887;Klucze udarowe
+891;887;Kompresory samochodowe
+892;887;Lejki samochodowe
+893;887;Odkurzacze ręczne
+894;887;Podnośniki samochodowe
+895;887;Prostowniki samochodowe
+896;887;Skrzynki narzędziowe
+897;887;Wyciągarki
+898;887;Zestawy bitów
+899;887;Wkrętaki
+900;839;Pojazdy elektryczne
+901;900;Segway
+902;900;Deskorolki elektryczne
+903;900;Quady elektryczne
+904;900;Hulajnogi elektryczne
+905;839;Wyposażenie samochodu
+906;905;Bagażniki samochodowe
+907;839;Zabezpieczenia przed kradzieżą
+908;907;Blokady motocyklowe
+909;0;Hobby
+910;909;Sprzęt sportowy
+911;910;Drążki gimnastyczne
+912;910;Ekspandery
+913;910;Gogle narciarskie
+914;910;Gryfy
+915;910;Hantle
+916;910;Kaski narciarskie
+917;910;Kettlebell
+918;910;Ławki treningowe
+919;910;Maty do jogi
+920;910;Nawigacja piesza
+921;910;Orbitreki
+922;910;Piłki gimnastyczne
+923;910;Rolki do masażu
+924;910;Rowery treningowe
+925;910;Słuchawki dla sportowców
+926;910;Smartwatche i zegarki
+927;910;Steppery
+928;910;Wagi łazienkowe
+929;910;Wędkarstwo
+930;909;Sprzęt rowerowy
+931;930;Bagażniki rowerowe
+932;930;Foteliki rowerowe
+933;930;Koszyki na rower
+934;930;Liczniki rowerowe
+935;930;Nawigacja rowerowa
+936;930;Okulary rowerowe
+937;930;Oświetlenie rowerowe
+938;930;Pokrowce na rowery
+939;930;Sakwy i torby rowerowe
+940;930;Uchwyty rowerowe na telefon
+941;909;Hulajnogi
+942;941;Hulajnogi elektryczne
+943;941;Hulajnogi tradycyjne
+944;941;Hulajnogi dla dzieci
+945;941;Hulajnogi dla dorosłych
+946;909;Turystyka
+947;946;Adaptery zasilania
+948;946;Krzesiwa i zapalniczki
+949;946;Kuchenki turystyczne
+950;946;Kuchnia turystyczna
+951;946;Lodówki turystyczne
+952;946;Multitoole
+953;946;Odzież bluetooth
+954;946;Odzież ogrzewana
+955;946;Plecaki
+956;946;Scyzoryki
+957;946;Torby podróżne
+958;946;Torby termoizolacyjne
+959;946;Wagi bagażowe
+960;946;Walizki podróżne
+961;909;Sprzęt muzyczny
+962;961;Akcesoria do gitar
+963;961;Gramofony
+964;961;Interfejsy
+965;961;Klawiatury sterujące
+966;961;Kontrolery
+967;961;Mikrofony
+968;961;Miksery audio
+969;961;Monitory studyjne
+970;961;Perkusje i akcesoria
+971;961;Rejestratory dźwięku
+972;961;Samplery
+973;961;Słuchawki studyjne
+974;909;Zdalnie sterowane
+975;974;Drony
+976;974;Roboty zabawki
+977;909;Wędkarstwo
+978;977;Echosondy
+979;909;Odzież sportowa
+980;979;Gogle narciarskie
+981;979;Kaski narciarskie
+982;979;Koszulki treningowe
+983;979;Kurtki sportowe
+984;979;Skarpetki sportowe
+985;909;Militaria i survival
+986;985;Wyposażenie osobiste
+987;985;Wyposażenie taktyczne
+988;909;Muzyka
+989;0;Usługi
+990;989;Doładowania telefonów GSM
+991;989;Naprawy pogwarancyjne notebooków
+992;989;Naprawy pogwarancyjne - foto i multimedia
+993;989;Usługi serwisowe
+994;989;Usługi finansowe - raty
+995;989;Usługi finansowe - leasing
+996;989;Karty podarunkowe
+997;989;Ochrona sprzętu - ubezpieczenia
+998;989;Usługi serwerowe
+999;989;Odzyskiwanie danych
+1000;989;Transport z wniesieniem

@@ -3,6 +3,7 @@ package com.zygstore.utils;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class WriteFile {
@@ -25,7 +26,7 @@ public class WriteFile {
 
         for (int i = 0; i < listOfLiinesToWrite.size(); i++) {
             String line = listOfLiinesToWrite.get(i) + "\n";
-            byte[] strToBytes = line.getBytes();
+            byte[] strToBytes = line.getBytes(Charset.forName("UTF-8"));
 
             outputStream.write(strToBytes);
 
