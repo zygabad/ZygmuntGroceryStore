@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 import com.zygstore.dto.MenuProductsDTO;
+import com.zygstore.utils.MenuItemsDTOSListCreator;
 import org.junit.Test;
 
 /**
@@ -57,7 +58,9 @@ public class MenuProductsServiceTest {
         ArrayList<String> linesFromFile = new ArrayList<>();
         linesFromFile.add("1;0;Elektronika;");
         linesFromFile.add("2;1;Telewizory;");
-        ArrayList<MenuProductsDTO> listOfMenuProductDTOS = menuProductsService.getAllMenuItemsDTO(linesFromFile);
+//        ArrayList<MenuProductsDTO> listOfMenuProductDTOS = menuProductsService.getAllMenuItemsDTO(linesFromFile);
+        MenuItemsDTOSListCreator menuItemsDTOSListCreator =new MenuItemsDTOSListCreator();
+        ArrayList<MenuProductsDTO> listOfMenuProductDTOS =  menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //when
         ArrayList<MenuProductsDTO> result = menuProductsService.getSelectedMenuItemsDTO(listOfMenuProductDTOS,"1");
@@ -77,7 +80,9 @@ public class MenuProductsServiceTest {
         linesFromFile.add("1;0;Elektronika;");
 
         //when
-        ArrayList<MenuProductsDTO> result = menuProductsService.getAllMenuItemsDTO(linesFromFile);
+        MenuItemsDTOSListCreator menuItemsDTOSListCreator =new MenuItemsDTOSListCreator();
+//        ArrayList<MenuProductsDTO> result = menuProductsService.getAllMenuItemsDTO(linesFromFile);
+        ArrayList<MenuProductsDTO> result = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
