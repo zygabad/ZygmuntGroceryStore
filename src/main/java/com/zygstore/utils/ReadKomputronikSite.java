@@ -44,7 +44,7 @@ public class ReadKomputronikSite {
             if (link != null) {
                 id = Long.toString(idGenerator.generateNewId());
 
-                parentID = "0";
+                parentID = "null";
 
                 String title = link.attr("title").toString();
                 String ulr = link.attr("href").toString();

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 </h:head>
 <h:body>
-    <b:navBar class="navbar top-color" brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple">
+    <b:navBar class="navbar top-color" brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple" sticky="true">
         <b:navbarLinks>
             <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
             <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
@@ -28,7 +28,7 @@
         </b:navbarLinks>
     </b:navBar>
 
-    <b:navBar brand="" brandHref="#" inverse="false">
+    <b:navBar brand="" brandHref="#" inverse="false" static="true">
         <b:navbarLinks>
             <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
                 <b:dropMenu value="#{menu.text}" href="maincategories/electronics.xhtml">

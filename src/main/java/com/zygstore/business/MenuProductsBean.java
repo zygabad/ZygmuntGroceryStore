@@ -29,6 +29,7 @@ public class MenuProductsBean{
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
 
     MenuProductsService menuProductsService;
 
@@ -47,7 +48,7 @@ public class MenuProductsBean{
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
     }
 
-    public void initAdminPage() throws IOException {
+    public void readKomputronikSiteToFile() throws IOException {
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
         menuItemsList = menuProductsService.getCategories(listOfLines);
@@ -81,5 +82,13 @@ public class MenuProductsBean{
 
     public MenuProductsService getMenuProductsService() {
         return menuProductsService;
+    }
+
+    public void setFileNameWithPathToCategories(String fileNameWithPathToCategories) {
+        this.fileNameWithPathToCategories = fileNameWithPathToCategories;
+    }
+
+    public String getFileNameWithPathToCategories() {
+        return fileNameWithPathToCategories;
     }
 }
