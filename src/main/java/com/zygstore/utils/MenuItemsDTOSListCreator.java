@@ -30,7 +30,11 @@ public class MenuItemsDTOSListCreator {
             }
             menuItemDTO.setText(values[2]);
             menuItemDTO.setChildsList(null);
-            menuItemDTO.setLink(null);
+            if (values.length > 3) {
+                menuItemDTO.setLink(values[3]);
+            } else {
+                menuItemDTO.setLink("/elektronika.xhtml");
+            }
             menuItemsDTOList.add(i, menuItemDTO);
         }
         return menuItemsDTOList;

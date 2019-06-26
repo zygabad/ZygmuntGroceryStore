@@ -12,6 +12,7 @@ import com.zygstore.dto.*;
 import com.zygstore.service.MenuProductsService;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFile;
+import net.bootsfaces.utils.FacesMessages;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -23,7 +24,7 @@ import org.jsoup.nodes.Element;
  */
 @ManagedBean(name = "menuProductsBean", eager = true)
 @SessionScoped
-public class MenuProductsBean{
+public class MenuProductsBean {
     private String displayField;
     private Context context;
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
@@ -52,8 +53,9 @@ public class MenuProductsBean{
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
         menuItemsList = menuProductsService.getCategories(listOfLines);
-        WriteFile wf = new WriteFile(FILE_MENU_PRODUCTS_ADMIN, listOfLines);
+        WriteFile wf = new WriteFile(fileNameWithPathToCategories, listOfLines);
         wf.writeToFile();
+        FacesMessages.info("Successfully saved.");
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {

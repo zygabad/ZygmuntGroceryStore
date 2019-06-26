@@ -47,8 +47,8 @@ public class ReadKomputronikSite {
                 parentID = "null";
 
                 String title = link.attr("title").toString();
-                String ulr = link.attr("href").toString();
-                linesFromFile.add(id + ";" + parentID + ";" + title);
+                String ulr = "https://www.komputronik.pl" + link.attr("href").toString();
+                linesFromFile.add(id + ";" + parentID + ";" + title + ";" + ulr);
 //feeding next menu level
                 String parentID2 = id;
                 for (int j = 0; j < tree.childNode(i).childNode(3).childNodeSize(); j++) {
@@ -59,8 +59,8 @@ public class ReadKomputronikSite {
                     if (link2 != null) {
                         id = Long.toString(idGenerator.generateNewId());
                         String titleSecondLink = link2.attr("title").toString();
-                        String urlSecondLink = link2.attr("href").toString();
-                        linesFromFile.add(id + ";" + parentID2 + ";" + titleSecondLink);
+                        String urlSecondLink = "https://www.komputronik.pl" + link2.attr("href").toString();
+                        linesFromFile.add(id + ";" + parentID2 + ";" + titleSecondLink + ";" + urlSecondLink);
 
 //feeding next menu level
                         String parentID3 = id;
@@ -72,8 +72,8 @@ public class ReadKomputronikSite {
                             if (link3 != null) {
                                 id = Long.toString(idGenerator.generateNewId());
                                 String titleThirdLink = link3.attr("title").toString();
-                                String urlThirdLink = link3.attr("href").toString();
-                                linesFromFile.add(id + ";" + parentID3 + ";" + titleThirdLink);
+                                String urlThirdLink = "https://www.komputronik.pl" + link3.attr("href").toString();
+                                linesFromFile.add(id + ";" + parentID3 + ";" + titleThirdLink + ";" + urlThirdLink);
                             }
 
                         }
