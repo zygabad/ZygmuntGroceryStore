@@ -54,6 +54,33 @@
         </navigation-case>
     </navigation-rule>
 
+    <navigation-rule>
+        <from-view-id>admin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>SUCCESS</from-outcome>
+            <to-view-id>/admin_success.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ERROR</from-outcome>
+            <to-view-id>/general_error.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>admin_success.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>BACK</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ERROR</from-outcome>
+            <to-view-id>/general_error.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
 
     <!--<navigation-rule>-->

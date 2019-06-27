@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import com.zygstore.config.Context;
 import com.zygstore.dto.*;
+import com.zygstore.navigation.Result;
 import com.zygstore.service.MenuProductsService;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFile;
@@ -49,13 +52,17 @@ public class MenuProductsBean {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
     }
 
-    public void readKomputronikSiteToFile() throws IOException {
+    public Result readKomputronikSiteToFile() throws IOException {
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
         menuItemsList = menuProductsService.getCategories(listOfLines);
         WriteFile wf = new WriteFile(fileNameWithPathToCategories, listOfLines);
         wf.writeToFile();
-        FacesMessages.info("Successfully saved.");
+        FacesContext.getCurrentInstance().addMessage(null,
+            new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message", "INFO File was successfully saved"));
+        logger.info("File " + fileNameWithPathToCategories + "was successfully saved");
+
+        return Result.SUCCESS;
     }
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
