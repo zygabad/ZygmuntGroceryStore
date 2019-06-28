@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <b:navBar class="navbar top-color" brand="Zyg Store" brandHref="#" inverse="true" iconAwesome="fa-apple" sticky="true">
+        <b:navbarLinks>
+            <b:navLink value=" Strona główna" href="index.xhtml" iconAwesome="fa-home"></b:navLink>
+            <b:navLink value="Kontakt" href="contact.xhtml"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right">
+            <b:navLink value="    " href="#"></b:navLink>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value=" Koszyk" href="#" iconAwesome="fa-shopping-cart"></b:navLink>
+            <b:navLink value=" Załóż konto" href="#" iconAwesome="fa-user"></b:navLink>
+            <b:navLink value=" Zaloguj się" href="#" iconAwesome="fa-key" iconSpin="true"></b:navLink>
+        </b:navbarLinks>
+    </b:navBar>
+</ui:composition>
