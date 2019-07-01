@@ -100,4 +100,5 @@ public class MenuProductsBean {
     public String getFileNameWithPathToCategories() {
         return fileNameWithPathToCategories;
     }
+
 }
