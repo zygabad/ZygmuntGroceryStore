@@ -3,29 +3,40 @@ package com.zygstore.dto;
 import java.util.List;
 
 public class MenuProductsDTO implements MenuItemDTO {
-    private String Id;
-    private String ParentId;
+    private String id;
+    private String parentId;
     private String text;
     private String link;
     private List<MenuProductsDTO> childsList;
+    private List<String> breadCrumbs;
+
+    public MenuProductsDTO getParent() {
+        return parent;
+    }
+
+    public void setParent(MenuProductsDTO parent) {
+        this.parent = parent;
+    }
+
+    private MenuProductsDTO parent;
 
     public String getID() {
-        return Id;
+        return id;
     }
 
     @Override
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     @Override
     public String getParentId() {
-        return ParentId;
+        return parentId;
     }
 
     @Override
     public void setParentId(String parentId) {
-        ParentId = parentId;
+        this.parentId = parentId;
     }
 
     @Override
@@ -54,7 +65,19 @@ public class MenuProductsDTO implements MenuItemDTO {
     }
 
     @Override
+    public List getbreadCrumbs() {
+        return breadCrumbs;
+    }
+
+    @Override
     public void setChildsList(List<MenuProductsDTO> childsList) {
         this.childsList = childsList;
     }
+
+    @Override
+    public void setbreadCrumbs(List list) {
+        this.breadCrumbs = list;
+    }
+
+
 }
