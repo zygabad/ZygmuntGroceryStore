@@ -63,9 +63,9 @@ public class MenuItemsDTOSListCreator {
 
         for (MenuProductsDTO dto : listOfMenuItems) {
             MenuProductsDTO parent = dto.getParent();
-            List breadcrumbs = (parent != null) ? new ArrayList(parent.getbreadCrumbs()) : new ArrayList();
+            List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList();
             breadcrumbs.add(dto.getText());
-            dto.setbreadCrumbs(breadcrumbs);
+            dto.setBreadCrumbs(breadcrumbs);
         }
 
         return listOfSelectedMenuItems;

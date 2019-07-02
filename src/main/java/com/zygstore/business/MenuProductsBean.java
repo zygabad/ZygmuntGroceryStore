@@ -101,4 +101,22 @@ public class MenuProductsBean {
         return fileNameWithPathToCategories;
     }
 
+    private String page="start.xhtml";
+    public MenuProductsDTO menuProductsDTOClicked;
+
+    public String getPage() {
+        return page;
+    }
+
+    public void setPage(String currentPage) {
+        this.page=currentPage;
+    }
+
+    public MenuProductsDTO getMenuProductsDTOClicked() {
+        return menuProductsDTOClicked;
+    }
+
+    public void setMenuProductsDTOClicked(MenuProductsDTO menuProductsDTOClicked) {
+        this.menuProductsDTOClicked = menuProductsDTOClicked;
+    }
 }

@@ -108,9 +108,9 @@ public class MenuProductsServiceTest {
         MenuProductsDTO menuLevel_2 = menuLevel_1.getChildsList().get(0);
         MenuProductsDTO menuLevel_3 = menuLevel_2.getChildsList().get(0);
 
-        List breadCrumbsLevel_1 = menuLevel_1.getbreadCrumbs();
-        List breadCrumbsLevel_2 = menuLevel_2.getbreadCrumbs();
-        List breadCrumbsLevel_3 = menuLevel_3.getbreadCrumbs();
+        List breadCrumbsLevel_1 = menuLevel_1.getBreadCrumbs();
+        List breadCrumbsLevel_2 = menuLevel_2.getBreadCrumbs();
+        List breadCrumbsLevel_3 = menuLevel_3.getBreadCrumbs();
 
         assertEquals(1, breadCrumbsLevel_1.size());
         assertEquals("Elektronika", breadCrumbsLevel_1.get(0));

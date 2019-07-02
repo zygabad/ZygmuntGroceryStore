@@ -7,8 +7,19 @@ public class MenuProductsDTO implements MenuItemDTO {
     private String parentId;
     private String text;
     private String link;
-    private List<MenuProductsDTO> childsList;
     private List<String> breadCrumbs;
+    private List<MenuProductsDTO> childsList;
+
+
+    @Override
+    public void setChildsList(List<MenuProductsDTO> childsList) {
+        this.childsList = childsList;
+    }
+
+    @Override
+    public void setBreadCrumbs(List<String> breadCrumbs) {
+        this.breadCrumbs = breadCrumbs;
+    }
 
     public MenuProductsDTO getParent() {
         return parent;
@@ -65,18 +76,8 @@ public class MenuProductsDTO implements MenuItemDTO {
     }
 
     @Override
-    public List getbreadCrumbs() {
+    public List getBreadCrumbs() {
         return breadCrumbs;
-    }
-
-    @Override
-    public void setChildsList(List<MenuProductsDTO> childsList) {
-        this.childsList = childsList;
-    }
-
-    @Override
-    public void setbreadCrumbs(List list) {
-        this.breadCrumbs = list;
     }
 
 
