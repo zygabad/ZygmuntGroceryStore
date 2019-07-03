@@ -126,7 +126,7 @@
     </error-page>
 
     <error-page>
-        <exception-type>javax.mail.MessagingException</exception-type>
+        <exception-type>com.sun.mail.util.MailConnectException</exception-type>
         <location>/contact_form_error_email.xhtml?faces-redirect=true</location>
     </error-page>
 
@@ -135,6 +135,9 @@
         <exception-type>javax.servlet.ServletException</exception-type>
         <location>/general_error.xhtml?faces-redirect=true</location>
     </error-page>
+
+
+
 
 
 </web-app>

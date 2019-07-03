@@ -7,9 +7,8 @@ public class MenuProductsDTO implements MenuItemDTO {
     private String parentId;
     private String text;
     private String link;
-    private List<String> breadCrumbs;
     private List<MenuProductsDTO> childsList;
-
+    private List<String> breadCrumbs;
 
     @Override
     public void setChildsList(List<MenuProductsDTO> childsList) {
@@ -79,6 +78,4 @@ public class MenuProductsDTO implements MenuItemDTO {
     public List getBreadCrumbs() {
         return breadCrumbs;
     }
-
-
 }
