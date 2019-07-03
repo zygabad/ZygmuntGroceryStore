@@ -5,17 +5,9 @@
                 xmlns:b="http://bootsfaces.net/ui">
     <h:form>
         <b:breadcrumbs>
-              <f:facet name="root">
-                <b:iconAwesome value="fa-desktop"/>
-                Root
-              </f:facet>
             <ui:repeat value="#{menuProductsBean.menuProductsDTOClicked.breadCrumbs}" var="breadCrumb">
-                <b:navLink value="#{breadCrumb}" outcome=""></b:navLink>
+                <b:navLink value="#{breadCrumb}" outcome="#{menuProductsBean.menuProductsDTOClicked.link}"></b:navLink>
             </ui:repeat>
-              <f:facet name="end">
-                <b:iconAwesome value="coffee"/>
-                Current item
-              </f:facet>
         </b:breadcrumbs>
     </h:form>
 </ui:composition>
