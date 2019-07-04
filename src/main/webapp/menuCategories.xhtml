@@ -12,7 +12,7 @@
                         <ui:repeat value="#{menu.childsList}" var="menuVertical">
                             <b:dropMenu value="#{menuVertical.text}">
                                 <ui:repeat value="#{menuVertical.childsList}" var="menuHorizontal">
-                                    <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}" onclick="ajax:menuProductsBean.setMenuProductsDTOClicked(menuHorizontal)"></b:navLink>
+                                    <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)"></b:navLink>
                                 </ui:repeat>
                             </b:dropMenu>
                         </ui:repeat>

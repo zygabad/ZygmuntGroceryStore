@@ -10,7 +10,7 @@ public interface MenuItemDTO {
     void setChildsList(List<MenuProductsDTO> list);
     void setBreadCrumbs(List<String> breadCrumbs);
 
-    String getID();
+    String getId();
     String getParentId();
     String getText();
     String getLink();

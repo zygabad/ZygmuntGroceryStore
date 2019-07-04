@@ -11,8 +11,8 @@
     <ui:define name="menuCategories"><ui:include src="/menuCategories.xhtml"/></ui:define>
     <ui:define name="breadCrumbs"><ui:include src="/breadCrumbs.xhtml"/></ui:define>
     <ui:define name="content">
-        <h1>New content here</h1>
-        <p>Blah blah</p>
+        <h1>Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} </h1>
+        <h1>Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}</h1>
     </ui:define>
     <div id="footer">Footer from index page</div>
 </ui:composition>

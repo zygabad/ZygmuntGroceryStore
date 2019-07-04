@@ -119,4 +119,42 @@ public class MenuProductsBean {
     public void setMenuProductsDTOClicked(MenuProductsDTO menuProductsDTOClicked) {
         this.menuProductsDTOClicked = menuProductsDTOClicked;
     }
+
+    private MenuProductsDTO findMenuProductClickedByName(String itemName){
+        for (int i = 0; i < menuItemsList.size(); i++) {
+            if (menuItemsList.get(i).getText().equals(itemName)) {
+                return menuItemsList.get(i);
+            } else {
+                for (int j = 0; j < menuItemsList.get(i).getChildsList().size(); j++) {
+                    if (menuItemsList.get(i).getChildsList().get(j).getText().equals(itemName)) {
+                        return menuItemsList.get(i).getChildsList().get(j);
+                    } else {
+                        for (int x = 0; x < menuItemsList.get(i).getChildsList().get(j).getChildsList().size(); x++) {
+                            if (menuItemsList.get(i).getChildsList().get(j).getChildsList().get(x).getText().equals(itemName)) {
+                                return menuItemsList.get(i).getChildsList().get(j).getChildsList().get(x);
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        return null;
+    }
+
+    private MenuProductsDTO findMenuProductClickedbyId(String itemId){
+        for (int i = 0; i < menuItemsList.size(); i++){
+            if (menuItemsList.get(i).getId().equals(itemId)) {
+                return menuItemsList.get(i);
+            }
+        }
+
+        return null;
+    }
+
+    public void setClickedMenuItem(String itemName) {
+        setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
+    }
+
+
 }

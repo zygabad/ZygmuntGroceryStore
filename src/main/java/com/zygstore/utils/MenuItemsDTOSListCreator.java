@@ -47,7 +47,7 @@ public class MenuItemsDTOSListCreator {
 
             if (currentMenuItemDTO.getParentId().equals(parentId)) {
                 int j = 0;
-                String currentItemID = currentMenuItemDTO.getID();
+                String currentItemID = currentMenuItemDTO.getId();
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 listOfSelectedMenuItems.add(j, currentMenuItemDTO);
@@ -73,7 +73,7 @@ public class MenuItemsDTOSListCreator {
 
     private MenuProductsDTO findItem(ArrayList<MenuProductsDTO> menuProductsDTOS, String id) {
         for (MenuProductsDTO dto : menuProductsDTOS) {
-            if (dto.getID().equals(id)) {
+            if (dto.getId().equals(id)) {
                 return dto;
             }
         }

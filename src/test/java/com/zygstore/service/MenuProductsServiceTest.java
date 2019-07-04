@@ -29,7 +29,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
@@ -47,7 +47,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
@@ -67,7 +67,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("2", menuProductsDTO.getID());
+        assertEquals("2", menuProductsDTO.getId());
         assertEquals("1", menuProductsDTO.getParentId());
         assertEquals("Telewizory", menuProductsDTO.getText());
     }
@@ -85,7 +85,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }

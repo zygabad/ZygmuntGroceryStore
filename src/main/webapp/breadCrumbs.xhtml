@@ -6,7 +6,7 @@
     <h:form>
         <b:breadcrumbs>
             <ui:repeat value="#{menuProductsBean.menuProductsDTOClicked.breadCrumbs}" var="breadCrumb">
-                <b:navLink value="#{breadCrumb}" outcome="#{menuProductsBean.menuProductsDTOClicked.link}"></b:navLink>
+                <b:navLink value="#{breadCrumb}" outcome="#{menuProductsBean.menuProductsDTOClicked.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)"></b:navLink>
             </ui:repeat>
         </b:breadcrumbs>
     </h:form>

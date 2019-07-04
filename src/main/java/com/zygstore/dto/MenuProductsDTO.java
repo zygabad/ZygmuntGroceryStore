@@ -30,7 +30,7 @@ public class MenuProductsDTO implements MenuItemDTO {
 
     private MenuProductsDTO parent;
 
-    public String getID() {
+    public String getId() {
         return id;
     }
 
