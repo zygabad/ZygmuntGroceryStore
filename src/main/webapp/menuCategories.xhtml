@@ -3,7 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:b="http://bootsfaces.net/ui">
-
+<h:form>
     <b:navBar brand="" brandHref="#" inverse="false" static="true">
         <b:navbarLinks>
             <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
@@ -12,7 +12,7 @@
                         <ui:repeat value="#{menu.childsList}" var="menuVertical">
                             <b:dropMenu value="#{menuVertical.text}">
                                 <ui:repeat value="#{menuVertical.childsList}" var="menuHorizontal">
-                                    <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}"></b:navLink>
+                                    <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)"></b:navLink>
                                 </ui:repeat>
                             </b:dropMenu>
                         </ui:repeat>
@@ -21,4 +21,5 @@
             </ui:repeat>
         </b:navbarLinks>
     </b:navBar>
+</h:form>
 </ui:composition>

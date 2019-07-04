@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+    <h:form>
+        <b:breadcrumbs>
+            <ui:repeat value="#{menuProductsBean.menuProductsDTOClicked.breadCrumbs}" var="breadCrumb">
+                <b:navLink value="#{breadCrumb}" outcome="#{menuProductsBean.menuProductsDTOClicked.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)"></b:navLink>
+            </ui:repeat>
+        </b:breadcrumbs>
+    </h:form>
+</ui:composition>

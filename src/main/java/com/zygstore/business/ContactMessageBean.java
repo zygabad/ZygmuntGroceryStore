@@ -25,7 +25,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @ManagedBean(name = "contactMessageBean", eager = true)
 @SessionScoped
 public class ContactMessageBean {
-    private static final String CLASSPATH = "applicationContext.xml";
+//    private static final String CLASSPATH = "applicationContext.xml";
     private ContactMessageService contactMessageService;
     ClassPathXmlApplicationContext ctx;
     private Context context;
@@ -54,7 +54,7 @@ public class ContactMessageBean {
             }
             ContactMessageDTO contactMessageDTO =
                 new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
-            ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
+//            ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
             ticketNumber = EmailUtils.generateTicketNumber();
             contactMessageService.send(contactMessageDTO, ticketNumber);
             logger.info("Message sent" + firstname + " " + secondname);

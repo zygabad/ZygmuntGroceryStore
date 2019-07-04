@@ -1,6 +1,7 @@
 package com.zygstore.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 import static org.junit.Assert.assertEquals;
@@ -28,7 +29,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
@@ -46,7 +47,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
     }
@@ -66,7 +67,7 @@ public class MenuProductsServiceTest {
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("2", menuProductsDTO.getID());
+        assertEquals("2", menuProductsDTO.getId());
         assertEquals("1", menuProductsDTO.getParentId());
         assertEquals("Telewizory", menuProductsDTO.getText());
     }
@@ -79,13 +80,48 @@ public class MenuProductsServiceTest {
         linesFromFile.add("1;null;Elektronika;");
 
         //when
-        MenuItemsDTOSListCreator menuItemsDTOSListCreator =new MenuItemsDTOSListCreator();
+        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> result = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //then
         MenuProductsDTO menuProductsDTO = result.get(0);
-        assertEquals("1", menuProductsDTO.getID());
+        assertEquals("1", menuProductsDTO.getId());
         assertEquals("null", menuProductsDTO.getParentId());
         assertEquals("Elektronika", menuProductsDTO.getText());
+    }
+
+    @Test
+    public void testBreadCrumbs(){
+        MenuProductsService menuProductsService = new MenuProductsService();
+        ArrayList<String> linesFromFile = new ArrayList<>();
+        linesFromFile.add("1;null;Elektronika;");
+        linesFromFile.add("2;1;Komputery;");
+        linesFromFile.add("3;2;Laptopy;");
+
+        //when
+        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
+        ArrayList<MenuProductsDTO> listOfMenuProductDTOS = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
+        ArrayList<MenuProductsDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS,"null");
+
+        //then
+        MenuProductsDTO menuLevel_1 = result.get(0);
+        MenuProductsDTO menuLevel_2 = menuLevel_1.getChildsList().get(0);
+        MenuProductsDTO menuLevel_3 = menuLevel_2.getChildsList().get(0);
+
+        List breadCrumbsLevel_1 = menuLevel_1.getBreadCrumbs();
+        List breadCrumbsLevel_2 = menuLevel_2.getBreadCrumbs();
+        List breadCrumbsLevel_3 = menuLevel_3.getBreadCrumbs();
+
+        assertEquals(1, breadCrumbsLevel_1.size());
+        assertEquals("Elektronika", breadCrumbsLevel_1.get(0));
+
+        assertEquals(2, breadCrumbsLevel_2.size());
+        assertEquals("Elektronika", breadCrumbsLevel_2.get(0));
+        assertEquals("Komputery", breadCrumbsLevel_2.get(1));
+
+        assertEquals(3, breadCrumbsLevel_3.size());
+        assertEquals("Elektronika", breadCrumbsLevel_3.get(0));
+        assertEquals("Komputery", breadCrumbsLevel_3.get(1));
+        assertEquals("Laptopy", breadCrumbsLevel_3.get(2));
     }
 }

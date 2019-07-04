@@ -47,17 +47,37 @@ public class MenuItemsDTOSListCreator {
 
             if (currentMenuItemDTO.getParentId().equals(parentId)) {
                 int j = 0;
-                String currentItemID = currentMenuItemDTO.getID();
+                String currentItemID = currentMenuItemDTO.getId();
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 listOfSelectedMenuItems.add(j, currentMenuItemDTO);
+
+                MenuProductsDTO parent = findItem(listOfMenuItems, parentId);
+                currentMenuItemDTO.setParent(parent);
+
                 j++;
             }
         }
 
         Collections.reverse(listOfSelectedMenuItems);
+
+        for (MenuProductsDTO dto : listOfMenuItems) {
+            MenuProductsDTO parent = dto.getParent();
+            List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList();
+            breadcrumbs.add(dto.getText());
+            dto.setBreadCrumbs(breadcrumbs);
+        }
+
         return listOfSelectedMenuItems;
     }
 
+    private MenuProductsDTO findItem(ArrayList<MenuProductsDTO> menuProductsDTOS, String id) {
+        for (MenuProductsDTO dto : menuProductsDTOS) {
+            if (dto.getId().equals(id)) {
+                return dto;
+            }
+        }
 
+        return null;
+    }
 }

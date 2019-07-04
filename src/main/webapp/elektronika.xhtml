@@ -6,8 +6,13 @@
                 xmlns:b="http://bootsfaces.net/ui">
 
     <ui:define name="header">ZygKompStore - header</ui:define>
-    <ui:define name="title">ZygKompStore - Kontakt</ui:define>
+    <ui:define name="title">ZygKompStore - test</ui:define>
     <ui:define name="menuBlack"><ui:include src="/menuBlack.xhtml"/></ui:define>
     <ui:define name="menuCategories"><ui:include src="/menuCategories.xhtml"/></ui:define>
-    <ui:define name="content">ELEKTRONIKA</ui:define>
+    <ui:define name="breadCrumbs"><ui:include src="/breadCrumbs.xhtml"/></ui:define>
+    <ui:define name="content">
+        <h1>Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} </h1>
+        <h1>Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}</h1>
+    </ui:define>
+    <div id="footer">Footer from index page</div>
 </ui:composition>

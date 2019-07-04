@@ -8,10 +8,12 @@ public interface MenuItemDTO {
     void setText(String text);
     void setLink (String link);
     void setChildsList(List<MenuProductsDTO> list);
+    void setBreadCrumbs(List<String> breadCrumbs);
 
-    String getID();
+    String getId();
     String getParentId();
     String getText();
     String getLink();
     List getChildsList();
+    List getBreadCrumbs();
 }
