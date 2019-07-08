@@ -27,6 +27,7 @@
     <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
         <property name="context" ref="context"/>
         <property name="menuProductsService" ref="menuProductsService"/>
+        <property name="productService" ref="productService"/>
         <property name="fileNameWithPathToCategories" ref="fileNameWithPathToCategories"></property>
     </bean>
 
@@ -51,6 +52,8 @@
     <bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
         <!--<property name="menuProductsDTO" ref="menuProductsDTO"></property>-->
     </bean>
+
+    <bean id="productService" class="com.zygstore.service.ProductService"/>
     <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
 
 
