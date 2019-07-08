@@ -21,9 +21,9 @@ public class ProductsServiceTest {
     public void createProductDTOName () {
         //given
         String name = "Apple Macbook Air 13,3";
+        ProductService productService = new ProductService();
 
         //when
-        ProductService productService = new ProductService();
         List<ProductDTO> listOfProducts = productService.createProductsDTO();
 
         //then
