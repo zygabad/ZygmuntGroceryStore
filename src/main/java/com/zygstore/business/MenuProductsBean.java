@@ -2,6 +2,7 @@ package com.zygstore.business;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 import javax.faces.application.FacesMessage;
@@ -10,15 +11,14 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import com.zygstore.config.Context;
-import com.zygstore.dto.*;
+import com.zygstore.dto.MenuProductsDTO;
+import com.zygstore.dto.ProductDTO;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.MenuProductsService;
+import com.zygstore.service.ProductService;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFile;
-import net.bootsfaces.utils.FacesMessages;
 import org.apache.log4j.Logger;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 /**
  * Place description here.
@@ -36,9 +36,11 @@ public class MenuProductsBean {
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
 
     MenuProductsService menuProductsService;
+    ProductService productService;
 
     private MenuProductsDTO menuProductsDTO;
     ArrayList<MenuProductsDTO> menuItemsList = new ArrayList<>();
+    List<ProductDTO> productsList = new ArrayList<>();
 
     public MenuProductsBean() {
         System.out.println("MenuProductsBean zainicjalizowany !");
@@ -50,6 +52,7 @@ public class MenuProductsBean {
 
     public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+        productsList = productService.createProductsDTO();
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -157,4 +160,11 @@ public class MenuProductsBean {
     }
 
 
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    public List<ProductDTO> getProductsList() {
+        return productsList;
+    }
 }
