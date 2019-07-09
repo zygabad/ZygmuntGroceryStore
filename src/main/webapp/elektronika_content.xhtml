@@ -3,6 +3,15 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:b="http://bootsfaces.net/ui">
+
+<style>
+        .imgscale {
+            color:black;
+            /*style="width: 110px; height: 138px;"*/
+            width: 11px;
+            height: auto;
+        }
+</style>
     <b:form>
         <b:panel col-xs="3" collapsible="false" >
             <f:facet name="heading">
@@ -24,9 +33,9 @@
                 <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}" />
             </f:facet>
 
-            <ui:repeat var="product" value="#{menuProductsBean.productsList}">
+            <ui:repeat var="product" value="#{menuProductsBean.productsList}" >
                 <b:row>
-                    <b:panel col-xs="9">
+                    <b:panel col-xs="11">
                         <b:column span="4" >
                             <b:row >
                                 <b:label text="#{product.name}" severity="primary" large-screen="full-width"/>
@@ -34,9 +43,10 @@
                             <b:row>
                                 <p></p>
                             </b:row>
+
                             <b:row >
-                                <b:image name="#{product.name}" value="#{product.linkToPicture}"  tooltip="#{product.name}" tooltipPosition="right"
-                                         style="width: 110px; height: 138px;" />
+                                <b:image style="width: auto;height: auto" name="#{product.name}" value="#{product.linkToPicture}"  tooltip="#{product.name}" tooltipPosition="right"
+                                          />
                             </b:row>
                         </b:column>
                         <b:column span="4">
@@ -58,7 +68,7 @@
                                 <h:outputText value="Ocena: #{product.rating}/5"></h:outputText>
                             </b:row>
                             <b:row>
-                                <h:outputText value="Cena: #{product.prize} PLN"></h:outputText>
+                                <h:outputText value="Cena: #{product.prize} PLN" style="font-size: x-large;font: bold;" ></h:outputText>
                             </b:row>
                             <b:row>
                                 <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus" look="primary"/>
@@ -67,6 +77,9 @@
                     </b:panel>
                 </b:row>
             </ui:repeat>
+            <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
+                Nie znaleziono produktów spełniających kryteria
+            </h:panelGroup>
 
 
         </b:panel>
