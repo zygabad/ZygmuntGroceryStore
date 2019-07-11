@@ -4,85 +4,106 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:b="http://bootsfaces.net/ui">
 
-<style>
+    <style>
         .imgscale {
-            color:black;
+            color: black;
             /*style="width: 110px; height: 138px;"*/
             width: 11px;
             height: auto;
         }
-</style>
+    </style>
+    <b:container fluid="false">
     <b:form>
-        <b:panel col-xs="3" collapsible="false" >
+        <b:panel col-xs="3" collapsible="false">
             <f:facet name="heading">
-                <i class="fa fa-filter" style="padding-right:20px" />
-                <h:outputText value="Filtrowanie produktów" />
+                <i class="fa fa-filter" style="padding-right:20px"/>
+                <h:outputText value="Filtrowanie produktów"/>
             </f:facet>
             <h:outputText value="Producenci"/>
-            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Panasonic" />
-            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Siemens" />
-            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Alcatel" />
-            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Apple" />
+            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Panasonic"/>
+            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Siemens"/>
+            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Alcatel"/>
+            <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Apple"/>
         </b:panel>
         <b:panel col-xs="9" collapsible="false">
             <f:facet name="heading">
-                <i class="fa fa-shopping-basket " style="padding-right:20px" />
-                <h:outputText value="Produkty" />
-                <h:outputText value="       " />
-                <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} " />
-                <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}" />
+                <i class="fa fa-shopping-basket " style="padding-right:20px"/>
+                <h:outputText value="Produkty"/>
+                <h:outputText value="       "/>
+                <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
+                <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
             </f:facet>
 
-            <ui:repeat var="product" value="#{menuProductsBean.productsList}" >
+            <ui:repeat var="product" value="#{menuProductsBean.productsList}">
                 <b:row>
                     <b:panel col-xs="11">
-                        <b:column span="4" >
-                            <b:row >
-                                <b:label text="#{product.name}" severity="primary" large-screen="full-width"/>
-                            </b:row>
-                            <b:row>
-                                <p></p>
-                            </b:row>
-
-                            <b:row >
-                                <b:image style="width: auto;height: auto" name="#{product.name}" value="#{product.linkToPicture}"  tooltip="#{product.name}" tooltipPosition="right"
-                                          />
-                            </b:row>
-                        </b:column>
-                        <b:column span="4">
-                            <ui:repeat var="description" value="#{product.description}">
-                                <b:row>
-                                    <h:outputText value="#{description}"></h:outputText>
-                                </b:row>
-                            </ui:repeat>
-                        </b:column>
-                        <b:column span="4">
-                            <b:row>
-                                <i class="fa fa-star" style="padding-right:5px;color:orange" />
-                                <i class="fa fa-star" style="padding-right:5px;color:orange" />
-                                <i class="fa fa-star" style="padding-right:5px;color:orange" />
-                                <i class="fa fa-star" style="padding-right:5px;color:orange" />
+                        <b:row>
+                            <b:column span="4">
+                                <b:label text="#{product.name}" severity="primary" style="width:100%;font-size: x-large;font: bold;"/>
+                            </b:column>
+                            <b:column span="4"></b:column>
+                            <b:column span="4">
+                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
                                 <i class="fa fa-star-half" style="padding-right:5px;color:orange"/>
-                            </b:row>
-                            <b:row>
-                                <h:outputText value="Ocena: #{product.rating}/5"></h:outputText>
-                            </b:row>
-                            <b:row>
-                                <h:outputText value="Cena: #{product.prize} PLN" style="font-size: x-large;font: bold;" ></h:outputText>
-                            </b:row>
-                            <b:row>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column span="4">
+                                <b:image style="width:100%;height:100%" name="#{product.name}" value="#{product.linkToPicture}"
+                                         tooltip="#{product.name}" tooltipPosition="right"/>
+                            </b:column>
+                            <b:column span="4">
+                                <ui:repeat var="description" value="#{product.description}">
+                                    <b:row>
+                                        <h:outputText value="#{description}"></h:outputText>
+                                    </b:row>
+                                </ui:repeat>
+                            </b:column>
+                            <b:column span="4" style="border:2px solid black">
+                                <b:row>
+                                <h:outputText value="Ocena: #{product.rating}/5" style="font-size:large;font: bold"></h:outputText>
+                                </b:row>
+
+                                <b:row>
+                                    <h:outputText value="Cena: #{product.prize} PLN" style="font-size: x-large;font: bold;"></h:outputText>
+                                </b:row>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column span="4"></b:column>
+
+                            <b:column span="4">
+
+                            </b:column>
+                            <b:column span="4">
+
+                            </b:column>
+
+                        </b:row>
+                        <b:row>
+                            <b:column span="4"></b:column>
+                            <b:column span="4"></b:column>
+                            <b:column span="4">
+
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column span="4"></b:column>
+                            <b:column span="4"></b:column>
+                            <b:column span="4">
                                 <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus" look="primary"/>
-                            </b:row>
-                        </b:column>
+                            </b:column>
+                        </b:row>
                     </b:panel>
                 </b:row>
             </ui:repeat>
             <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
                 Nie znaleziono produktów spełniających kryteria
             </h:panelGroup>
-
-
         </b:panel>
     </b:form>
-
+    </b:container>
 </ui:composition>
