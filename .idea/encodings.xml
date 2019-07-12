@@ -3,10 +3,11 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/resources/Categories.csv" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/css/validator.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/productsListView.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/productsListView.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/contact.xhtml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/maincategories/agd.xhtml" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/maincategories/electronics.xhtml" charset="windows-1252" />

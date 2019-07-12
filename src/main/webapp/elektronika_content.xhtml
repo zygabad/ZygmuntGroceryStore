@@ -4,18 +4,10 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:b="http://bootsfaces.net/ui">
 
-    <style>
-        .imgscale {
-            color: black;
-            /*style="width: 110px; height: 138px;"*/
-            width: 11px;
-            height: auto;
-        }
-    </style>
     <b:container fluid="false">
     <b:form>
         <b:panel col-xs="3" collapsible="false">
-            <f:facet name="heading">
+            <f:facet name="heading" class="productimgscale">
                 <i class="fa fa-filter" style="padding-right:20px"/>
                 <h:outputText value="Filtrowanie produktów"/>
             </f:facet>
@@ -36,69 +28,61 @@
 
             <ui:repeat var="product" value="#{menuProductsBean.productsList}">
                 <b:row>
-                    <b:panel col-xs="11">
-                        <b:row>
-                            <b:column span="4">
-                                <b:label text="#{product.name}" severity="primary" style="width:100%;font-size: x-large;font: bold;"/>
-                            </b:column>
-                            <b:column span="4"></b:column>
-                            <b:column span="4">
-                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
-                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
-                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
-                                <i class="fa fa-star" style="padding-right:5px;color:orange"/>
-                                <i class="fa fa-star-half" style="padding-right:5px;color:orange"/>
-                            </b:column>
-                        </b:row>
-                        <b:row>
-                            <b:column span="4">
-                                <b:image style="width:100%;height:100%" name="#{product.name}" value="#{product.linkToPicture}"
-                                         tooltip="#{product.name}" tooltipPosition="right"/>
-                            </b:column>
-                            <b:column span="4">
-                                <ui:repeat var="description" value="#{product.description}">
-                                    <b:row>
-                                        <h:outputText value="#{description}"></h:outputText>
-                                    </b:row>
-                                </ui:repeat>
-                            </b:column>
-                            <b:column span="4" style="border:2px solid black">
-                                <b:row>
-                                <h:outputText value="Ocena: #{product.rating}/5" style="font-size:large;font: bold"></h:outputText>
-                                </b:row>
+                    <b:panel col-xs="8">
+                        <b:label text="#{product.name}" severity="primary" style="width:100%;font-size: x-large;font: bold;"/>
+                    </b:panel>
+                    <b:panel col-xs="4">
+                        <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                        <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                        <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                        <i class="fa fa-star" style="padding-right:5px;color:orange"/>
+                        <i class="fa fa-star-half" style="padding-right:5px;color:orange"/>
 
-                                <b:row>
-                                    <h:outputText value="Cena: #{product.prize} PLN" style="font-size: x-large;font: bold;"></h:outputText>
-                                </b:row>
-                            </b:column>
-                        </b:row>
-                        <b:row>
-                            <b:column span="4"></b:column>
+                            <h:outputText value="Ocena: #{product.rating}/5" style="font-size:large;font: bold"></h:outputText>
 
-                            <b:column span="4">
 
-                            </b:column>
-                            <b:column span="4">
-
-                            </b:column>
-
-                        </b:row>
-                        <b:row>
-                            <b:column span="4"></b:column>
-                            <b:column span="4"></b:column>
-                            <b:column span="4">
-
-                            </b:column>
-                        </b:row>
-                        <b:row>
-                            <b:column span="4"></b:column>
-                            <b:column span="4"></b:column>
-                            <b:column span="4">
-                                <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus" look="primary"/>
-                            </b:column>
-                        </b:row>
                     </b:panel>
                 </b:row>
+                <b:row>
+                    <b:column span="4" >
+                        <b:panel >
+                            <b:image styleClass="productimgscale" name="#{product.name}" value="#{product.linkToPicture}"
+                                     tooltip="#{product.name}" tooltipPosition="right"/>
+                        </b:panel>
+                        <b:panel>
+                            <h:outputText value="HIT"></h:outputText>
+                        </b:panel>
+                    </b:column>
+                    <b:column span="4" >
+                        <b:panel>Cechy</b:panel>
+                        <b:panel>
+                            <ui:repeat var="description" value="#{product.description}">
+                                <b:row>
+                                    <h:outputText value="#{description}"></h:outputText>
+                                </b:row>
+                            </ui:repeat>
+                        </b:panel>
+                    </b:column>
+                    <b:column span="4" >
+                        <b:panel >
+                            <h:outputText value="Cena: #{product.prize} PLN" style="font-size: x-large;font: bold;"></h:outputText>
+                        </b:panel>
+                        <b:panel style="position: relative">
+                            <h:outputText style="position: absolute; bottom: 0" value="Dostawa" ></h:outputText>
+                        </b:panel>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:panel col-xs="8">
+                        <h:outputText value="Porownanie"></h:outputText>
+                    </b:panel>
+                    <b:panel col-xs="4">
+                        <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus" look="primary"/>
+                    </b:panel>
+                </b:row>
+
+
+
             </ui:repeat>
             <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
                 Nie znaleziono produktów spełniających kryteria

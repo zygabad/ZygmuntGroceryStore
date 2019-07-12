@@ -1,0 +1,10 @@
+.productimgscale {
+    width: 200px;
+height: 20px;
+}
+
+.element2bottom {
+    position: fixed;
+    bottom: 0;
+}
+
