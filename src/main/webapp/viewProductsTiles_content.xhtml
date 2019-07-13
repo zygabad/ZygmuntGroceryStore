@@ -1,0 +1,90 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <b:container fluid="true">
+        <b:form>
+            <b:panel col-xs="3" collapsible="false">
+                <f:facet name="heading" class="productimgscale">
+                    <i class="fa fa-filter" style="padding-right:20px"/>
+                    <h:outputText value="Filtrowanie produktów"/>
+                </f:facet>
+                <h:outputText value="Producenci"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Panasonic"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Siemens"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Alcatel"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Apple"/>
+            </b:panel>
+            <b:panel col-xs="9" collapsible="false">
+                <f:facet name="heading">
+                    <i class="fa fa-shopping-basket " style="padding-right:20px"/>
+                    <h:outputText value="Produkty"/>
+                    <h:outputText value="       "/>
+                    <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
+                    <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
+                </f:facet>
+
+                <ui:repeat var="product" value="#{menuProductsBean.productsList}">
+                    <div class="divpaddingright15px">
+                        <div>
+                            <b:row>
+                                <b:column span="4">
+                                    <div class="productdescription">
+                                        <h:outputText value="#{product.name}"></h:outputText>
+
+                                    </div>
+                                    <div class="productimgscale">
+                                        <b:image styleClass="productimgscale" name="#{product.name}" value="#{product.linkToPicture}"
+                                                 tooltip="#{product.name}" tooltipPosition="right"/>
+                                    </div>
+                                </b:column>
+                                <b:column span="4">
+                                    <div class="divbreake20px"></div>
+                                    <div class="divbreake10px"></div>
+                                    <div class="divpaddingleft5px"></div>
+                                    <div class="divpaddingright5px"></div>
+                                    <div>
+                                        <ui:repeat var="description" value="#{product.description}">
+                                            <b:row>
+                                                <h:outputText value="#{description}"></h:outputText>
+                                            </b:row>
+                                        </ui:repeat>
+                                    </div>
+                                </b:column>
+                                <b:column span="4" style="position: relative">
+                                    <div  class="ratingstar">
+                                        <i class="fa fa-star"/>
+                                        <i class="fa fa-star"/>
+                                        <i class="fa fa-star"/>
+                                        <i class="fa fa-star"/>
+                                        <i class="fa fa-star-half"/>
+                                    </div>
+                                    <div>
+                                        <h:outputText value="#{product.rating}/5" style="font-size: medium;font: bold"></h:outputText>
+                                    </div>
+                                    <div class="divbreake20px"></div>
+                                    <div class="divbreake20px"></div>
+                                    <div class="divbreake30px">
+                                        <h:outputText styleClass="cenastyle" value="Cena: #{product.prize} PLN" ></h:outputText>
+                                    </div>
+                                    <div >
+                                        <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus"
+                                                         look="primary"/>
+
+                                    </div>
+                                </b:column>
+                            </b:row>
+                        </div>
+                        <div class="divbreake30px"/>
+                        <div class="divbreake10px"/>
+                    </div>
+                </ui:repeat>
+                <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
+                    Nie znaleziono produktów spełniających kryteria
+                </h:panelGroup>
+            </b:panel>
+        </b:form>
+    </b:container>
+</ui:composition>

@@ -1,6 +1,20 @@
 .productimgscale {
-    width: 200px;
-height: 20px;
+    padding-top: 5px;
+    align-content: center;
+    width: auto;
+    height: auto;
+}
+
+.productdescription {
+    padding-left: 10px;
+    align-content: center;
+    font-weight: bold;
+    font-size: x-large
+}
+
+.cenastyle {
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .element2bottom {
@@ -8,3 +22,32 @@ height: 20px;
     bottom: 0;
 }
 
+.ratingstar {
+    padding-right: 5px;
+    color: orange
+}
+
+.divbreake20px {
+    padding-top: 20px;
+}
+
+.divbreake30px {
+    padding-top: 30px
+}
+
+.divbreake10px {
+    padding-top: 10px;
+}
+
+.divpaddingright5px {
+    padding-right: 5px;
+}
+
+.divpaddingright15px {
+    padding-right: 15px;
+}
+
+
+.divpaddingleft5px {
+    padding-left: 5px;
+}
