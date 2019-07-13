@@ -33,7 +33,7 @@ public class MenuItemsDTOSListCreator {
             if (values.length > 3) {
                 menuItemDTO.setLink(values[3]);
             } else {
-                menuItemDTO.setLink("/elektronika.xhtml");
+                menuItemDTO.setLink("/viewProductsList.xhtml");
             }
             menuItemsDTOList.add(i, menuItemDTO);
         }

@@ -24,7 +24,7 @@ public class ProductsServiceTest {
         ProductService productService = new ProductService();
 
         //when
-        List<ProductDTO> listOfProducts = productService.createProductsDTO();
+        List<ProductDTO> listOfProducts = productService.productListWithCategoryToDisplay("3");
 
         //then
         assertEquals(name, listOfProducts.get(0).getName());

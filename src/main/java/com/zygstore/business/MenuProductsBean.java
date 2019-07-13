@@ -34,6 +34,7 @@ public class MenuProductsBean {
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
+    public Boolean productListEmpty;
 
     MenuProductsService menuProductsService;
     ProductService productService;
@@ -52,7 +53,12 @@ public class MenuProductsBean {
 
     public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
-        productsList = productService.createProductsDTO();
+
+    }
+
+    public void initProductsPage() {
+        productsList = productService.productListWithCategoryToDisplay(menuProductsDTOClicked.getId());
+        productListEmpty = checkListOfProductsNotEmpty(productsList);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -166,5 +172,23 @@ public class MenuProductsBean {
 
     public List<ProductDTO> getProductsList() {
         return productsList;
+    }
+
+    private Boolean checkListOfProductsNotEmpty(List<ProductDTO> listOfProducts){
+        if (productsList.size()>0){
+            setProductListEmpty(false);
+            return false;
+        } else {
+            setProductListEmpty(true);
+            return true;
+        }
+    }
+
+    public Boolean getProductListEmpty() {
+        return productListEmpty;
+    }
+
+    public void setProductListEmpty(Boolean productListEmpty) {
+        this.productListEmpty = productListEmpty;
     }
 }
