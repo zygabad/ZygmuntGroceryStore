@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <b:container fluid="true">
+        <b:form>
+            <b:panel col-xs="3" collapsible="false">
+                <f:facet name="heading" class="productimgscale">
+                    <i class="fa fa-filter" style="padding-right:20px"/>
+                    <h:outputText value="Filtrowanie produktów"/>
+                </f:facet>
+                <h:outputText value="Producenci"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Panasonic"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Siemens"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Alcatel"/>
+                <b:selectBooleanCheckbox value="#{settingsBean.checkbox1}" caption="Apple"/>
+            </b:panel>
+            <b:panel col-xs="9" collapsible="false">
+                <f:facet name="heading">
+                    <i class="fa fa-shopping-basket " style="padding-right:20px"/>
+                    <h:outputText value="Produkty"/>
+                    <h:outputText value="       "/>
+                    <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
+                    <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
+                </f:facet>
+
+
+                    <b:panelGrid columns="4">
+                        <b:navLink value="Laptopy| Tablety" href="/viewProductsList.xhtml"
+                                   onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)">
+                            <b:thumbnail>
+                                <img src="https://www.komputronik.pl/uploads/category_pic_5803.jpg" alt="Generic placeholder thumbnail"/>
+                            </b:thumbnail>
+                        </b:navLink>
+                        <b:navLink value="Komputery i Serwery" href="/viewProductsList.xhtml"
+                                   onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)">
+                            <b:thumbnail>
+                                <img src="https://www.komputronik.pl/uploads/category_pic_15245.jpg"
+                                     alt="Generic placeholder thumbnail"/>
+                            </b:thumbnail>
+                        </b:navLink>
+                        <b:navLink value="Telefony i Smartwache" href="/viewProductsList.xhtml"
+                                   onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)">
+                            <b:thumbnail>
+                                <img src="https://www.komputronik.pl/uploads/category_pic_9434.jpg"
+                                     alt="Generic placeholder thumbnail"/>
+                            </b:thumbnail>
+                        </b:navLink>
+                        <b:navLink value="Czesci PC" href="/viewProductsList.xhtml"
+                                   onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)">
+                            <b:thumbnail>
+                                <img src="https://www.komputronik.pl/uploads/category_pic_5805.jpg"
+                                     alt="Generic placeholder thumbnail"/>
+                            </b:thumbnail>
+                        </b:navLink>
+                        <b:navLink value="Dla graczy" href="/viewProductsList.xhtml"
+                                   onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)">
+                            <b:thumbnail>
+                                <img src="https://www.komputronik.pl/uploads/category_pic_8737.jpg"
+                                     alt="Generic placeholder thumbnail"/>
+                            </b:thumbnail>
+                        </b:navLink>
+                    </b:panelGrid>
+
+
+                <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
+                    Nie znaleziono produktów spełniających kryteria
+                </h:panelGroup>
+            </b:panel>
+        </b:form>
+    </b:container>
+</ui:composition>

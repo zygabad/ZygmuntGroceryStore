@@ -1,6 +1,6 @@
 package com.zygstore.dto;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * Place description here.
@@ -13,16 +13,17 @@ public class ProductDTO {
     private String categoryId;
     private double rating;
     private double prize;
-    private List<String> description;
     private String linkToPicture;
+    private Map<String, String> description;
 
-    public ProductDTO(String name, String categoryId, double rating, double prize, List<String> description, String linkToPicture) {
+    public ProductDTO(String name, String categoryId, double rating, double prize, String linkToPicture,
+                      Map<String, String> description) {
         this.name = name;
         this.categoryId = categoryId;
         this.rating = rating;
         this.prize = prize;
-        this.description = description;
         this.linkToPicture = linkToPicture;
+        this.description = description;
     }
 
     public String getName() {
@@ -57,19 +58,19 @@ public class ProductDTO {
         this.prize = prize;
     }
 
-    public List<String> getDescription() {
-        return description;
-    }
-
-    public void setDescription(List<String> description) {
-        this.description = description;
-    }
-
     public String getLinkToPicture() {
         return linkToPicture;
     }
 
     public void setLinkToPicture(String linkToPicture) {
         this.linkToPicture = linkToPicture;
+    }
+
+    public Map<String, String> getDescription() {
+        return description;
+    }
+
+    public void setDescription(Map<String, String> description) {
+        this.description = description;
     }
 }

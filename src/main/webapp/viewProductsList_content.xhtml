@@ -2,7 +2,7 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:b="http://bootsfaces.net/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+                xmlns:b="http://bootsfaces.net/ui">
 
     <b:container fluid="true">
         <b:form>
@@ -24,6 +24,7 @@
                     <h:outputText value="       "/>
                     <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
                     <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
+                    <h:outputText value="link kategorii: #{menuProductsBean.menuProductsDTOClicked.link}"/>
                 </f:facet>
 
                 <ui:repeat var="product" value="#{menuProductsBean.productsList}">
@@ -31,7 +32,7 @@
                         <div>
                             <b:row>
                                 <b:column span="4">
-                                    <div class="productdescription">
+                                    <div class="productName">
                                         <h:outputText value="#{product.name}"></h:outputText>
 
                                     </div>
@@ -46,15 +47,16 @@
                                     <div class="divpaddingleft5px"></div>
                                     <div class="divpaddingright5px"></div>
                                     <div>
-                                        <ui:repeat var="description" value="#{product.description}">
-                                            <b:row>
-                                                <h:outputText value="#{description}"></h:outputText>
-                                            </b:row>
+                                        <ui:repeat var="entry" value="#{product.description.entrySet().toArray()}">
+                                            <div>
+                                                <h:outputText value="#{entry.key} : "/>
+                                                <h:outputText styleClass="productDescription" value="#{entry.value}"/>
+                                            </div>
                                         </ui:repeat>
                                     </div>
                                 </b:column>
                                 <b:column span="4" style="position: relative">
-                                    <div  class="ratingstar">
+                                    <div class="ratingstar">
                                         <i class="fa fa-star"/>
                                         <i class="fa fa-star"/>
                                         <i class="fa fa-star"/>
@@ -67,9 +69,9 @@
                                     <div class="divbreake20px"></div>
                                     <div class="divbreake20px"></div>
                                     <div class="divbreake30px">
-                                        <h:outputText styleClass="cenastyle" value="Cena: #{product.prize} PLN" ></h:outputText>
+                                        <h:outputText styleClass="cenastyle" value="Cena: #{product.prize} PLN"></h:outputText>
                                     </div>
-                                    <div >
+                                    <div>
                                         <b:commandButton value="Dodaj do koszyka" icon="fa-cart-plus"
                                                          look="primary"/>
 

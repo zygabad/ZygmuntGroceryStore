@@ -50,6 +50,11 @@ public class MenuItemsDTOSListCreator {
                 String currentItemID = currentMenuItemDTO.getId();
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
+                if (childsList.size() == 0) {
+                    currentMenuItemDTO.setLink("/viewProductsList.xhtml");
+                } else {
+                    currentMenuItemDTO.setLink("/viewProductsCategories.xhtml");
+                }
                 listOfSelectedMenuItems.add(j, currentMenuItemDTO);
 
                 MenuProductsDTO parent = findItem(listOfMenuItems, parentId);

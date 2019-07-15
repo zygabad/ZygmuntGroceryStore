@@ -7,10 +7,10 @@
     <b:navBar brand="" brandHref="#" inverse="false" static="true">
         <b:navbarLinks>
             <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
-                <b:dropMenu value="#{menu.text}" href="maincategories/electronics.xhtml">
-                    <b:flyOutMenu width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki">
+                <b:dropMenu value="#{menu.text}" href="/viewProductsTiles.xhtml">
+                    <b:flyOutMenu href="/viewProductsTiles.xhtml" width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)">
                         <ui:repeat value="#{menu.childsList}" var="menuVertical">
-                            <b:dropMenu value="#{menuVertical.text}">
+                            <b:dropMenu value="#{menuVertical.text}" href="/viewProductsTiles.xhtml">
                                 <ui:repeat value="#{menuVertical.childsList}" var="menuHorizontal">
                                     <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)"></b:navLink>
                                 </ui:repeat>

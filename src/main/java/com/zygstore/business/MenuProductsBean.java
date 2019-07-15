@@ -129,7 +129,7 @@ public class MenuProductsBean {
         this.menuProductsDTOClicked = menuProductsDTOClicked;
     }
 
-    private MenuProductsDTO findMenuProductClickedByName(String itemName){
+    public MenuProductsDTO findMenuProductClickedByName(String itemName){
         for (int i = 0; i < menuItemsList.size(); i++) {
             if (menuItemsList.get(i).getText().equals(itemName)) {
                 return menuItemsList.get(i);
@@ -164,7 +164,6 @@ public class MenuProductsBean {
     public void setClickedMenuItem(String itemName) {
         setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
     }
-
 
     public void setProductService(ProductService productService) {
         this.productService = productService;

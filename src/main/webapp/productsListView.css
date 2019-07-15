@@ -5,11 +5,15 @@
     height: auto;
 }
 
-.productdescription {
+.productName {
     padding-left: 10px;
     align-content: center;
     font-weight: bold;
     font-size: x-large
+}
+
+.productDescription {
+    font-weight: bold;
 }
 
 .cenastyle {
@@ -51,3 +55,4 @@
 .divpaddingleft5px {
     padding-left: 5px;
 }
+
