@@ -10,6 +10,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import static java.lang.System.out;
+
 import com.zygstore.config.Context;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.dto.ProductDTO;
@@ -43,8 +45,11 @@ public class MenuProductsBean {
     ArrayList<MenuProductsDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
 
+    private String page="start.xhtml";
+    public MenuProductsDTO menuProductsDTOClicked;
+
     public MenuProductsBean() {
-        System.out.println("MenuProductsBean zainicjalizowany !");
+        out.println("MenuProductsBean zainicjalizowany !");
         logger.info("MenuProductsBean initialized!");
         displayField = "TEST_CHECK";
         this.displayField = displayField;
@@ -110,9 +115,6 @@ public class MenuProductsBean {
         return fileNameWithPathToCategories;
     }
 
-    private String page="start.xhtml";
-    public MenuProductsDTO menuProductsDTOClicked;
-
     public String getPage() {
         return page;
     }
@@ -163,6 +165,11 @@ public class MenuProductsBean {
 
     public void setClickedMenuItem(String itemName) {
         setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
+    }
+
+    public void test(String name) {
+        out.println("TEST: " + name);
+        setMenuProductsDTOClicked(findMenuProductClickedByName(name));
     }
 
     public void setProductService(ProductService productService) {
