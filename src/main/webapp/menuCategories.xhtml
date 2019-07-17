@@ -8,9 +8,9 @@
         <b:navbarLinks>
             <ui:repeat var="menu" value="#{menuProductsBean.menuItemsList}">
                 <b:dropMenu value="#{menu.text}" href="/viewProductsTiles.xhtml">
-                    <b:flyOutMenu href="/viewProductsTiles.xhtml" width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)">
+                    <b:flyOutMenu outcome="/viewProductsTiles.xhtml" width="50px" tooltip="Tutaj znajdziesz wszystkie produkty dotyczące Elektroniki" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)">
                         <ui:repeat value="#{menu.childsList}" var="menuVertical">
-                            <b:dropMenu value="#{menuVertical.text}" href="/viewProductsTiles.xhtml">
+                            <b:dropMenu value="#{menuVertical.text}" outcome="/viewProductsTiles.xhtml">
                                 <ui:repeat value="#{menuVertical.childsList}" var="menuHorizontal">
                                     <b:navLink value="#{menuHorizontal.text}" href="#{menuHorizontal.link}" onclick="ajax:menuProductsBean.setClickedMenuItem(menuHorizontal.text)"></b:navLink>
                                 </ui:repeat>

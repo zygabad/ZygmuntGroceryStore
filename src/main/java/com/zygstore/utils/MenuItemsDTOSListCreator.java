@@ -32,7 +32,11 @@ public class MenuItemsDTOSListCreator {
             menuItemDTO.setChildsList(null);
             if (values.length > 3) {
                 menuItemDTO.setLink(values[3]);
-                menuItemDTO.setLinkToPicture(getLinkToPicFromHref(values[3]));
+                if (values[4].equals("null")) {
+                    menuItemDTO.setLinkToPicture(getLinkToPicFromHref(values[3]));
+                } else {
+                    menuItemDTO.setLinkToPicture(values[4]);
+                }
             } else {
                 menuItemDTO.setLink("/viewProductsList.xhtml");
             }

@@ -5,11 +5,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:event type="preRenderView" listener="#{menuProductsBean.initProductsPage}"/>
+<f:event type="preRenderView" listener="#{menuProductsBean.initMainPage}"/>
 <h:head>
     <title><ui:insert name="title">Default title</ui:insert></title>
-    <link rel="stylesheet" href="productsListView.css" position="last"></link>
-    <link rel="stylesheet" href="categoriesListView.css" position="last"></link>
 </h:head>
 <h:body>
     <div id="header"><ui:insert name="header">Default header</ui:insert></div>

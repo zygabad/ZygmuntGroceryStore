@@ -44,6 +44,7 @@ public class MenuProductsBean {
     private MenuProductsDTO menuProductsDTO;
     ArrayList<MenuProductsDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
+    List<ProductDTO> mainCategoriesList = new ArrayList<>();
 
     private String page="start.xhtml";
     public MenuProductsDTO menuProductsDTOClicked;
@@ -64,6 +65,10 @@ public class MenuProductsBean {
     public void initProductsPage() {
         productsList = productService.productListWithCategoryToDisplay(menuProductsDTOClicked.getId());
         productListEmpty = checkListOfProductsNotEmpty(productsList);
+    }
+
+    public void initMainPage() {
+        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -196,5 +201,13 @@ public class MenuProductsBean {
 
     public void setProductListEmpty(Boolean productListEmpty) {
         this.productListEmpty = productListEmpty;
+    }
+
+    public List<ProductDTO> getMainCategoriesList() {
+        return mainCategoriesList;
+    }
+
+    public void setMainCategoriesList(List<ProductDTO> mainCategoriesList) {
+        this.mainCategoriesList = mainCategoriesList;
     }
 }

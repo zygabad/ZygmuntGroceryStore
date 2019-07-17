@@ -1,4 +1,4 @@
-<ui:composition template="/WEB-INF/template.xhtml"
+<ui:composition template="/WEB-INF/template_main.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -9,10 +9,7 @@
     <ui:define name="title">ZygKompStore - test</ui:define>
     <ui:define name="menuBlack"><ui:include src="/menuBlack.xhtml"/></ui:define>
     <ui:define name="menuCategories"><ui:include src="/menuCategories.xhtml"/></ui:define>
-    <ui:define name="content">
-        <h1>Strona X</h1>
-        <p>whatever </p>
-    </ui:define>
+    <ui:define name="content"><ui:include src="/index_content.xhtml"/></ui:define>
     <div id="footer">Footer from index page</div>
 </ui:composition>
 

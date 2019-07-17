@@ -1,24 +1,24 @@
-1;null;Elektronika;https://www.komputronik.pl/category/14508/elektronika.html;null
-2;1;Laptopy | Tablety;https://www.komputronik.pl/category/5803/laptopy-tablety.html;https://www.komputronik.pl/uploads/category_pic_5803.jpg
+1;null;Elektronika;https://www.komputronik.pl/category/14508/elektronika.html;/images/categories/elektronika.jpg
+2;1;Laptopy | Tablety;https://www.komputronik.pl/category/5803/laptopy-tablety.html;/images/categories/laptopyItablety.jpg
 3;2;Laptopy;https://www.komputronik.pl/category/5022/laptopy.html;null
 4;2;Laptopy Apple MacBook;https://www.komputronik.pl/category/15251/apple-macbook.html;null
-5;2;Microsoft Surface;https://www.komputronik.pl/category/16039/microsoft-surface.html;null
+5;2;Microsoft Surface;https://www.komputronik.pl/category/16039/microsoft-surface.html;/images/categories/microsoftsurface.jpg
 6;2;Akcesoria do laptopów;https://www.komputronik.pl/category/10218/akcesoria-do-laptopow.html;null
-7;2;Tablety;https://www.komputronik.pl/category/8923/tablety.html;null
-8;2;Akcesoria do tabletów;https://www.komputronik.pl/category/10219/akcesoria-do-tabletow.html;null
-9;2;Czytniki e-book;https://www.komputronik.pl/category/8011/czytniki-ebook.html;null
-10;2;Akcesoria do czytników;https://www.komputronik.pl/category/11357/akcesoria-do-czytnikow-ebookow.html;null
-11;1;Komputery | Serwery;https://www.komputronik.pl/category/15245/komputery-serwery.html;https://www.komputronik.pl/uploads/category_pic_15245.jpg
-12;11;Komputery PC;https://www.komputronik.pl/category/5801/komputery-pc.html;null
-13;11;Komputery Mac;https://www.komputronik.pl/category/12182/komputery-mac.html;null
-14;11;Komputery All-In-One;https://www.komputronik.pl/category/6280/komputery-aio.html;null
-15;11;Komputery Mini-PC;https://www.komputronik.pl/category/8338/komputery-mini-pc.html;null
-16;11;Intel Extreme Masters;https://www.komputronik.pl/category/15102/komputery-iem.html;null
-17;11;PC on stick;https://www.komputronik.pl/category/15593/pc-on-stick.html;null
-18;11;Serwery;https://www.komputronik.pl/category/5802/serwery.html;null
-19;11;Stacje Robocze;https://www.komputronik.pl/category/3817/stacje-robocze.html;null
-20;11;Pakiety Serwisowe;https://www.komputronik.pl/category/17000/pakiety-serwisowe.html;null
-21;1;Części PC;https://www.komputronik.pl/category/5805/sprzet-komputerowy.html;https://www.komputronik.pl/uploads/category_pic_5805.jpg
+7;2;Tablety;https://www.komputronik.pl/category/8923/tablety.html;/images/categories/tablety.jpg
+8;2;Akcesoria do tabletów;https://www.komputronik.pl/category/10219/akcesoria-do-tabletow.html;/images/categories/akcesoriadotabletow.jpg
+9;2;Czytniki e-book;https://www.komputronik.pl/category/8011/czytniki-ebook.html;/images/categories/czytnikiksiazekelektronicznych.jpg
+10;2;Akcesoria do czytników;https://www.komputronik.pl/category/11357/akcesoria-do-czytnikow-ebookow.html;/images/categories/akcesoriadoczytnikow.jpg
+11;1;Komputery | Serwery;https://www.komputronik.pl/category/15245/komputery-serwery.html;/images/categories/komputeryIserwery.jpg
+12;11;Komputery PC;https://www.komputronik.pl/category/5801/komputery-pc.html;/images/categories/komputetyPC.jpg
+13;11;Komputery Mac;https://www.komputronik.pl/category/12182/komputery-mac.html;/images/categories/komputeryMac.jpg
+14;11;Komputery All-In-One;https://www.komputronik.pl/category/6280/komputery-aio.html;/images/categories/komputeryAIO.jpg
+15;11;Komputery Mini-PC;https://www.komputronik.pl/category/8338/komputery-mini-pc.html;/images/categories/komputeryMiniPc.jpg
+16;11;Intel Extreme Masters;https://www.komputronik.pl/category/15102/komputery-iem.html;/images/categories/intelExtremeMaster.jpg
+17;11;PC on stick;https://www.komputronik.pl/category/15593/pc-on-stick.html;/images/categories/PConStick.jpg
+18;11;Serwery;https://www.komputronik.pl/category/5802/serwery.html;/images/categories/serwery.jpg
+19;11;Stacje Robocze;https://www.komputronik.pl/category/3817/stacje-robocze.html;/images/categories/stacjeRobocze.jpg
+20;11;Pakiety Serwisowe;https://www.komputronik.pl/category/17000/pakiety-serwisowe.html;/images/categories/pakietySerwisowe.jpg
+21;1;Części PC;https://www.komputronik.pl/category/5805/sprzet-komputerowy.html;/images/categories/czesciPC.jpg
 22;21;Akcesoria do dysków twardych;https://www.komputronik.pl/category/17441/akcesoria-do-dyskow-twardych.html;null
 23;21;Akcesoria do kart graficznych;https://www.komputronik.pl/category/1209/Sprzet_komputerowy_Podzespoly_Akcesoria_.html;null
 24;21;Akcesoria do obudów;https://www.komputronik.pl/category/7965/akcesoria-do-obudow.html;null
@@ -37,7 +37,7 @@
 37;21;Procesory;https://www.komputronik.pl/category/401/procesory.html;null
 38;21;Sloty (Brackets);https://www.komputronik.pl/category/17431/sloty-do-komputera.html;null
 39;21;Zasilacze do obudów;https://www.komputronik.pl/category/2869/zasilacze-komputerowe.html;null
-40;1;Dla graczy;https://www.komputronik.pl/category/8737/dla-graczy.html;https://www.komputronik.pl/uploads/category_pic_8737.jpg
+40;1;Dla graczy;https://www.komputronik.pl/category/8737/dla-graczy.html;/images/categories/dlagraczy.jpg
 41;40;Gry;https://www.komputronik.pl/category/17810/gry.html;null
 42;40;Sprzęt PC do gier;https://www.komputronik.pl/category/13186/sprzet-pc-do-gier.html;null
 43;40;Laptopy do gier;https://www.komputronik.pl/search-filter/5022/laptopy-do-gier;null
@@ -55,7 +55,7 @@
 55;40;Biurka gamingowe;https://www.komputronik.pl/category/18696/biurka-gamingowe.html;null
 56;40;Artykuły kolekcjonerskie;https://www.komputronik.pl/category/13627/artykuly-kolekcjonerskie.html;null
 57;40;Pady do smartfonów;https://www.komputronik.pl/category/18422/pady-do-smartfonow.html;null
-58;1;Peryferia PC;https://www.komputronik.pl/category/5810/peryferia-pc.html;https://www.komputronik.pl/uploads/category_pic_5810.jpg
+58;1;Peryferia PC;https://www.komputronik.pl/category/5810/peryferia-pc.html;/images/categories/peryferiaPC.jpg
 59;58;Akcesoria do monitorów;https://www.komputronik.pl/category/1254/akcesoria-do-monitorow.html;null
 60;58;Czytniki kart pamięci;https://www.komputronik.pl/category/747/czytniki-kart-pamieci-zewnetrzne.html;null
 61;58;Drukowanie;https://www.komputronik.pl/category/1497/drukowanie.html;null
@@ -84,7 +84,7 @@
 84;58;Tunery TV USB;https://www.komputronik.pl/category/1222/tunery-telewizyjne-pc.html;null
 85;58;Urządzenia wielofunkcyjne;https://www.komputronik.pl/search-filter/7789/urzadzenia-wielofunkcyjne;null
 86;58;Zasilanie awaryjne;https://www.komputronik.pl/category/2664/zasilanie-awaryjne.html;null
-87;1;Sieci i komunikacja;https://www.komputronik.pl/category/5809/sieci-komputerowe.html;https://www.komputronik.pl/uploads/category_pic_5809.jpg
+87;1;Sieci i komunikacja;https://www.komputronik.pl/category/5809/sieci-komputerowe.html;/images/categories/sieciIkomunikacja.jpg
 88;87;Akcesoria sieciowe;https://www.komputronik.pl/category/2467/akcesoria-sieciowe.html;null
 89;87;Anteny sieciowe;https://www.komputronik.pl/category/2581/anteny-sieciowe.html;null
 90;87;Karty sieciowe;https://www.komputronik.pl/category/2372/karty-sieciowe.html;null
@@ -101,7 +101,7 @@
 101;87;Transmitery sieciowe (powerline);https://www.komputronik.pl/category/7343/powerline-plc.html;null
 102;87;Wzmacniacze sygnału;https://www.komputronik.pl/category/13954/wzmacniacze-sygnalu-wifi-repeatery.html;null
 103;87;Zapory ogniowe (firewall);https://www.komputronik.pl/category/2547/zapory-ogniowe-firewall-.html;null
-104;1;Inteligentny dom;https://www.komputronik.pl/category/16911/inteligentny-dom.html;https://www.komputronik.pl/uploads/category_pic_16911.jpg
+104;1;Inteligentny dom;https://www.komputronik.pl/category/16911/inteligentny-dom.html;/images/categories/inteligentnyDom.jpg
 105;104;Asystenci głosowi;https://www.komputronik.pl/category/18719/asystenci-glosowi.html;null
 106;104;Centralki do inteligentnego domu;https://www.komputronik.pl/category/18161/centralki-do-inteligentnego-domu.html;null
 107;104;Czujniki inteligentne;https://www.komputronik.pl/category/17028/czujniki-inteligentne.html;null
@@ -118,7 +118,7 @@
 118;104;Wideodomofony;https://www.komputronik.pl/category/18189/wideodomofony.html;null
 119;104;Zestawy do monitoringu;https://www.komputronik.pl/category/18127/zestawy-do-monitoringu.html;null
 120;104;Zestawy inteligentnego domu;https://www.komputronik.pl/category/17029/zestawy-inteligentnego-domu.html;null
-121;1;Oprogramowanie;https://www.komputronik.pl/category/5808/oprogramowanie.html;null
+121;1;Oprogramowanie;https://www.komputronik.pl/category/5808/oprogramowanie.html;/images/categories/oprogramowanie.jpg
 122;121;Antywirusy i bezpieczeństwo;https://www.komputronik.pl/category/2032/oprogramowanie-antywirusowe.html;null
 123;121;Biurowe;https://www.komputronik.pl/category/2124/oprogramowanie-biurowe.html;null
 124;121;Dla dzieci;https://www.komputronik.pl/category/3584/dla-dzieci.html;null
@@ -131,7 +131,7 @@
 131;121;Systemy baz danych;https://www.komputronik.pl/category/15155/systemy-baz-danych.html;null
 132;121;Systemy operacyjne;https://www.komputronik.pl/category/1970/systemy-operacyjne.html;null
 133;121;Zarządzanie firmą;https://www.komputronik.pl/category/15164/oprogramowanie-zarzadzanie-firma.html;null
-134;1;Akcesoria | Eksploatacja;https://www.komputronik.pl/category/10217/akcesoria-eksploatacja.html;null
+134;1;Akcesoria | Eksploatacja;https://www.komputronik.pl/category/10217/akcesoria-eksploatacja.html;/images/categories/akcesoriaIeksploatacja.jpg
 135;134;Akcesoria Foto;https://www.komputronik.pl/category/9622/akcesoria-fotograficzne.html;null
 136;134;Akcesoria GSM;https://www.komputronik.pl/category/10243/akcesoria-do-telefonow-gsm.html;null
 137;134;Akcesoria dla zmotoryzowanych;https://www.komputronik.pl/category/8971/akcesoria-samochodowe.html;null
@@ -141,7 +141,7 @@
 141;134;Kosmetyka biurowa;https://www.komputronik.pl/category/3338/kosmetyka-biurowa.html;null
 142;134;Nośniki danych;https://www.komputronik.pl/category/3394/nosniki-danych.html;null
 143;134;Zasilanie;https://www.komputronik.pl/category/15706/zasilanie.html;null
-144;1;Foto | Wideo;https://www.komputronik.pl/category/5807/foto-wideo.html;null
+144;1;Foto | Wideo;https://www.komputronik.pl/category/5807/foto-wideo.html;/images/categories/fotoIwideo.jpg
 145;144;Drukarki sublimacyjne;https://www.komputronik.pl/search-filter/7789/drukarki-sublimacyjne;null
 146;144;Aparaty cyfrowe;https://www.komputronik.pl/category/9308/aparaty-cyfrowe.html;null
 147;144;Kamery;https://www.komputronik.pl/category/17905/kamery.html;null
@@ -156,7 +156,7 @@
 156;144;Drony;https://www.komputronik.pl/category/13555/drony-wielowirnikowce.html;null
 157;144;Sprzęt optyczny;https://www.komputronik.pl/category/17907/sprzet-optyczny.html;null
 158;144;Ramki cyfrowe do zdjęć;https://www.komputronik.pl/category/6290/ramki-cyfrowe.html;null
-159;1;Biuro | Firma;https://www.komputronik.pl/category/5811/biuro.html;null
+159;1;Biuro | Firma;https://www.komputronik.pl/category/5811/biuro.html;/images/categories/biuroIfirma.jpg
 160;159;Akcesoria na biurko;https://www.komputronik.pl/category/14326/akcesoria-na-biurko.html;null
 161;159;Akcesoria do niszczarek;https://www.komputronik.pl/category/5016/akcesoria-do-niszczarek.html;null
 162;159;Archiwizacja dokumentów;https://www.komputronik.pl/category/18419/archiwizacja-dokumentow.html;null
@@ -178,10 +178,10 @@
 178;159;Testery pieniędzy;https://www.komputronik.pl/category/18072/testery-pieniedzy.html;null
 179;159;Uzdatnianie powietrza;https://www.komputronik.pl/category/12705/uzdatnianie-powietrza.html;null
 180;159;Wideokonferencje;https://www.komputronik.pl/category/17030/wideokonferencje.html;null
-181;1;Rozwiązania profesjonalne;https://www.komputronik.pl/category/18682/rozwiazania-profesjonalne.html;null
+181;1;Rozwiązania profesjonalne;https://www.komputronik.pl/category/18682/rozwiazania-profesjonalne.html;/images/categories/rozwiazaniaprofesjonalne.jpg
 182;181;Monitory reklamowe (Digital Signage);https://www.komputronik.pl/category/18683/monitory-reklamowe-digital-signage-.html;null
 183;181;Monitory przemysłowe;https://www.komputronik.pl/category/18684/monitory-przemyslowe.html;null
-184;null;Telefony i Smartwatche;https://www.komputronik.pl/category/9434/telefony.html;null
+184;null;Telefony i Smartwatche;https://www.komputronik.pl/category/9434/telefony.html;/images/categories/telefonyIsmartwatche.jpg
 185;184;Telefony i Smartfony;https://www.komputronik.pl/category/1596/smartfony.html;null
 186;185;Wszystkie telefony;https://www.komputronik.pl/category/1596/smartfony.html;null
 187;185;Telefony iPhone;https://www.komputronik.pl/category/8960/iphone.html;null
@@ -231,7 +231,7 @@
 231;227;Opaski sportowe;https://www.komputronik.pl/category/14231/opaski-sportowe-pulsometry.html;null
 232;227;Paski do zegarków;https://www.komputronik.pl/category/18500/paski-do-zegarkow.html;null
 233;227;Akcesoria do zegarków sportowych;https://www.komputronik.pl/category/14229/akcesoria-do-zegarkow-sportowych.html;null
-234;null;Telewizory i RTV;https://www.komputronik.pl/category/5806/sprzet-rtv.html;null
+234;null;Telewizory i RTV;https://www.komputronik.pl/category/5806/sprzet-rtv.html;/images/categories/telewizoryIrtv.jpg
 235;234;Telewizory;https://www.komputronik.pl/category/5431/telewizory.html;null
 236;235;Wszystkie telewizory;https://www.komputronik.pl/category/5431/telewizory.html;null
 237;235;Telewizory Full HD;https://www.komputronik.pl/search-filter/5431/telewizor-full-hd;null
@@ -304,7 +304,7 @@
 304;234;Dyktafony cyfrowe;https://www.komputronik.pl/category/1928/dyktafony-cyfrowe.html;null
 305;304;Dyktafony;https://www.komputronik.pl/category/1928/dyktafony-cyfrowe.html;null
 306;304;Akcesoria do dyktafonów;https://www.komputronik.pl/category/8975/akcesoria-do-dyktafonow.html;null
-307;null;AGD;https://www.komputronik.pl/category/6654/sprzet-agd.html;null
+307;null;AGD;https://www.komputronik.pl/category/6654/sprzet-agd.html;/images/categories/agd.jpg
 308;307;Małe AGD do kuchni;https://www.komputronik.pl/category/9961/agd-do-kuchni.html;null
 309;308;Blendery;https://www.komputronik.pl/category/17416/blendery.html;null
 310;308;Chłodziarki do mleka;https://www.komputronik.pl/category/17346/chlodziarka-do-mleka.html;null
@@ -464,7 +464,7 @@
 464;449;Akcesoria do zmywarek;https://www.komputronik.pl/category/14066/akcesoria-do-zmywarek.html;null
 465;449;Akcesoria kuchenne;https://www.komputronik.pl/category/14978/akcesoria-kuchenne.html;null
 466;449;Kawa i napoje w kapsułkach;https://www.komputronik.pl/category/15587/kawa-i-napoje-w-kapsulkach.html;null
-467;null;Dom;https://www.komputronik.pl/category/12617/dom.html;null
+467;null;Dom;https://www.komputronik.pl/category/12617/dom.html;/images/categories/DOM.jpg
 468;467;Narzędzia i majsterkowanie;https://www.komputronik.pl/category/12618/narzedzia-domowe-majsterkowanie.html;null
 469;468;Agregaty prądotwórcze;https://www.komputronik.pl/category/18392/agregaty-pradotworcze.html;null
 470;468;Narzędzia ręczne;https://www.komputronik.pl/category/15301/narzedzia-reczne.html;null
@@ -562,7 +562,7 @@
 562;548;Wideodomofony;https://www.komputronik.pl/category/18189/wideodomofony.html;null
 563;548;Zestawy do monitoringu;https://www.komputronik.pl/category/18127/zestawy-do-monitoringu.html;null
 564;548;Zestawy inteligentnego domu;https://www.komputronik.pl/category/17029/zestawy-inteligentnego-domu.html;null
-565;null;Ogród;https://www.komputronik.pl/category/16985/do-ogrodu.html;null
+565;null;Ogród;https://www.komputronik.pl/category/16985/do-ogrodu.html;/images/categories/ogrod.jpg
 566;565;Elektronarzędzia ogrodowe;https://www.komputronik.pl/category/17126/elektronarzedzia-ogrodowe.html;null
 567;566;Aeratory;https://www.komputronik.pl/category/17129/aeratory-napowietrzacze.html;null
 568;566;Dmuchawy;https://www.komputronik.pl/category/17130/dmuchawy-ogrodowe.html;null
@@ -986,7 +986,7 @@
 986;985;Wyposażenie osobiste;https://www.komputronik.pl/category/16134/wyposazenie-osobiste.html;null
 987;985;Wyposażenie taktyczne;https://www.komputronik.pl/category/16139/wyposazenie-taktyczne.html;null
 988;909;Muzyka;https://www.komputronik.pl/category/18542/muzyka.html;null
-989;null;Usługi;https://www.komputronik.pl/category/17976/uslugi.html;null
+989;null;Usługi;https://www.komputronik.pl/category/17976/uslugi.html;/images/categories/uslugi.jpg
 990;989;Doładowania telefonów GSM;https://www.komputronik.plhttps://www.komputronik.pl/informacje/uslugi/doladowania-telefonow-gsm/;null
 991;989;Naprawy pogwarancyjne notebooków;https://www.komputronik.plhttps://www.komputronik.pl/informacje/uslugi/naprawy-pogwarancyjne-notebookow/;null
 992;989;Naprawy pogwarancyjne - foto i multimedia;https://www.komputronik.plhttps://www.komputronik.pl/informacje/uslugi/naprawy-pogwarancyjne-foto-multimedia/;null

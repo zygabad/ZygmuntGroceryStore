@@ -6,7 +6,7 @@
 
     <b:container fluid="true">
         <b:form>
-            <b:panel col-xs="3" collapsible="false">
+            <b:panel col-xs="3" collapsible="true">
                 <f:facet name="heading" class="productimgscale">
                     <i class="fa fa-filter" style="padding-right:20px"/>
                     <h:outputText value="Filtrowanie produktów"/>
@@ -22,17 +22,15 @@
                     <i class="fa fa-shopping-basket " style="padding-right:20px"/>
                     <h:outputText value="Produkty"/>
                     <h:outputText value="       "/>
-                    <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
-                    <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
                 </f:facet>
-                <b:row>
-                    <ui:repeat var="product" value="#{menuProductsBean.menuProductsDTOClicked.childsList}">
+                <b:row styleClass="show-grid">
+                    <ui:repeat var="product" value="#{menuProductsBean.menuItemsList}">
                         <b:column span="3">
-                            <b:thumbnail style="padding-bottom: 30px;align-content: center;width: 100%;height: 150px;" >
-                                <b:navLink value="#{product.text}"
-                                           href="#{menuProductsBean.findMenuProductClickedByName(product.text).link}"
+                            <b:thumbnail style="padding-bottom: 30px;align-content: center;width: 100%;height: 150px;">
+                                <b:navLink value="#{product.text}" href="#{product.link}"
                                            onclick="ajax:menuProductsBean.setClickedMenuItem(product.text)">
-                                    <img src="#{product.linkToPicture}" alt="#{product.text}"/>
+                                    <b:image style="width: 148px;height: 148px;padding-bottom: 30px;align-content: center;" name="pic"
+                                             value="#{product.linkToPicture}" alt="#{product.text}"/>
                                 </b:navLink>
                             </b:thumbnail>
                         </b:column>
