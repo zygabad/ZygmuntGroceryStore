@@ -7,6 +7,7 @@ import java.util.Map;
 
 
 import com.zygstore.dto.ProductDTO;
+import com.zygstore.model.dao.ProductDAO;
 
 /**
  * Place description here.

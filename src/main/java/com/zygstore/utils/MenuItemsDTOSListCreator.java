@@ -14,6 +14,7 @@ import com.zygstore.dto.MenuProductsDTO;
  */
 
 public class MenuItemsDTOSListCreator {
+    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
 
     public ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
         ArrayList<MenuProductsDTO> menuItemsDTOList = new ArrayList<>();
@@ -66,7 +67,11 @@ public class MenuItemsDTOSListCreator {
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
-                    currentMenuItemDTO.setLink("/viewProductsList.xhtml");
+                    if (currentItemID=="0") {
+                        currentMenuItemDTO.setLink("/index.xhtml");
+                    } else {
+                        currentMenuItemDTO.setLink("/viewProductsList.xhtml");
+                    }
                 } else {
                     currentMenuItemDTO.setLink("/viewProductsCategories.xhtml");
                 }
@@ -83,13 +88,25 @@ public class MenuItemsDTOSListCreator {
 
         for (MenuProductsDTO dto : listOfMenuItems) {
             MenuProductsDTO parent = dto.getParent();
-            List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList();
+            List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList(mainPageDTO().getBreadCrumbs());
             breadcrumbs.add(dto.getText());
             dto.setBreadCrumbs(breadcrumbs);
         }
 
         return listOfSelectedMenuItems;
     }
+
+    public MenuProductsDTO mainPageDTO() {
+        MenuProductsDTO menuProductsDTO = new MenuProductsDTO();
+        List<String> breadcrumb = new ArrayList<>();
+        breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
+        menuProductsDTO.setBreadCrumbs(breadcrumb);
+        menuProductsDTO.setLink("/index.xhtml");
+        menuProductsDTO.setId("0");
+        menuProductsDTO.setText("MainPageDTO");
+        return menuProductsDTO;
+    }
+
 
     private MenuProductsDTO findItem(ArrayList<MenuProductsDTO> menuProductsDTOS, String id) {
         for (MenuProductsDTO dto : menuProductsDTOS) {

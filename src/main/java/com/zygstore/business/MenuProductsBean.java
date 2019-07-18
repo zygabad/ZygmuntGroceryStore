@@ -13,11 +13,13 @@ import javax.faces.context.FacesContext;
 import static java.lang.System.out;
 
 import com.zygstore.config.Context;
+import com.zygstore.dto.MenuItemDTO;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.MenuProductsService;
 import com.zygstore.service.ProductService;
+import com.zygstore.utils.MenuItemsDTOSListCreator;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFile;
 import org.apache.log4j.Logger;
@@ -35,6 +37,7 @@ public class MenuProductsBean {
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
 
@@ -69,6 +72,8 @@ public class MenuProductsBean {
 
     public void initMainPage() {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+//        Men22uProductsDTO menuProductDTO = mainPageClicked();
+//        setMenuProductsDTOClicked(menuProductDTO);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -83,6 +88,7 @@ public class MenuProductsBean {
 
         return Result.SUCCESS;
     }
+
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
         return menuItemsList;
@@ -137,6 +143,10 @@ public class MenuProductsBean {
     }
 
     public MenuProductsDTO findMenuProductClickedByName(String itemName){
+        if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
+            MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
+            return menuItemsDTOSListCreator.mainPageDTO();
+        }
         for (int i = 0; i < menuItemsList.size(); i++) {
             if (menuItemsList.get(i).getText().equals(itemName)) {
                 return menuItemsList.get(i);
@@ -157,6 +167,7 @@ public class MenuProductsBean {
         }
         return null;
     }
+
 
     private MenuProductsDTO findMenuProductClickedbyId(String itemId){
         for (int i = 0; i < menuItemsList.size(); i++){
