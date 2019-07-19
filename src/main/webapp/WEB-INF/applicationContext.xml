@@ -56,6 +56,10 @@
     <bean id="productService" class="com.zygstore.service.ProductService"/>
     <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
 
+    <bean id="productDAO" class="com.zygstore.model.dao.ProductDAO" abstract="true"/>
+
+    <bean id="productDAOFileImpl" class="com.zygstore.model.file.ProductDAOFileImpl">
+    </bean>
 
 
 

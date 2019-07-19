@@ -10,12 +10,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import static java.lang.System.out;
+
 import com.zygstore.config.Context;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.MenuProductsService;
 import com.zygstore.service.ProductService;
+import com.zygstore.utils.MenuItemsDTOSListCreator;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFile;
 import org.apache.log4j.Logger;
@@ -33,6 +36,7 @@ public class MenuProductsBean {
     final static Logger logger = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS = "Categories.csv";
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
 
@@ -42,9 +46,13 @@ public class MenuProductsBean {
     private MenuProductsDTO menuProductsDTO;
     ArrayList<MenuProductsDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
+    List<ProductDTO> mainCategoriesList = new ArrayList<>();
+
+    private String page="start.xhtml";
+    public MenuProductsDTO menuProductsDTOClicked;
 
     public MenuProductsBean() {
-        System.out.println("MenuProductsBean zainicjalizowany !");
+        out.println("MenuProductsBean zainicjalizowany !");
         logger.info("MenuProductsBean initialized!");
         displayField = "TEST_CHECK";
         this.displayField = displayField;
@@ -57,8 +65,14 @@ public class MenuProductsBean {
     }
 
     public void initProductsPage() {
-        productsList = productService.productListWithCategoryToDisplay(menuProductsDTOClicked.getId());
+        productsList = productService.getProducts(menuProductsDTOClicked.getId());
         productListEmpty = checkListOfProductsNotEmpty(productsList);
+    }
+
+    public void initMainPage() {
+        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+//        Men22uProductsDTO menuProductDTO = mainPageClicked();
+//        setMenuProductsDTOClicked(menuProductDTO);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -73,6 +87,7 @@ public class MenuProductsBean {
 
         return Result.SUCCESS;
     }
+
 
     public ArrayList<MenuProductsDTO> getMenuItemsList() {
         return menuItemsList;
@@ -110,9 +125,6 @@ public class MenuProductsBean {
         return fileNameWithPathToCategories;
     }
 
-    private String page="start.xhtml";
-    public MenuProductsDTO menuProductsDTOClicked;
-
     public String getPage() {
         return page;
     }
@@ -129,7 +141,11 @@ public class MenuProductsBean {
         this.menuProductsDTOClicked = menuProductsDTOClicked;
     }
 
-    private MenuProductsDTO findMenuProductClickedByName(String itemName){
+    public MenuProductsDTO findMenuProductClickedByName(String itemName){
+        if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
+            MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
+            return menuItemsDTOSListCreator.mainPageDTO();
+        }
         for (int i = 0; i < menuItemsList.size(); i++) {
             if (menuItemsList.get(i).getText().equals(itemName)) {
                 return menuItemsList.get(i);
@@ -151,6 +167,7 @@ public class MenuProductsBean {
         return null;
     }
 
+
     private MenuProductsDTO findMenuProductClickedbyId(String itemId){
         for (int i = 0; i < menuItemsList.size(); i++){
             if (menuItemsList.get(i).getId().equals(itemId)) {
@@ -165,6 +182,10 @@ public class MenuProductsBean {
         setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
     }
 
+    public void test(String name) {
+        out.println("TEST: " + name);
+        setMenuProductsDTOClicked(findMenuProductClickedByName(name));
+    }
 
     public void setProductService(ProductService productService) {
         this.productService = productService;
@@ -190,5 +211,13 @@ public class MenuProductsBean {
 
     public void setProductListEmpty(Boolean productListEmpty) {
         this.productListEmpty = productListEmpty;
+    }
+
+    public List<ProductDTO> getMainCategoriesList() {
+        return mainCategoriesList;
+    }
+
+    public void setMainCategoriesList(List<ProductDTO> mainCategoriesList) {
+        this.mainCategoriesList = mainCategoriesList;
     }
 }

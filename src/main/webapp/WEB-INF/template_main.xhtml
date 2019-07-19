@@ -4,18 +4,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:event type="preRenderView" listener="#{menuProductsBean.initProductsPage}"/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui">
+<f:event type="preRenderView" listener="#{menuProductsBean.initMainPage}"/>
 <h:head>
     <title><ui:insert name="title">Default title</ui:insert></title>
-    <link rel="stylesheet" href="productsListView.css" position="last"></link>
-    <link rel="stylesheet" href="categoriesListView.css" position="last"></link>
 </h:head>
 <h:body>
     <div id="header"><ui:insert name="header">Default header</ui:insert></div>
     <div id="menuBlack"><ui:insert name="menuBlack">Default menu black</ui:insert></div>
     <div id="menuCategories"><ui:insert name="menuCategories">Default menu categories</ui:insert></div>
-    <div id="breadCrumbs"><ui:insert name="breadCrumbs">../../..</ui:insert></div>
+    <div id="breadCrumbs">
+        <h:form>
+            <b:breadcrumbs>
+                <ui:insert name="breadCrumbs"><b:navLink value="Strona główna" outcome="/index.xhtml"/>
+                </ui:insert>
+            </b:breadcrumbs>
+        </h:form>
+    </div>
     <div id="content"><ui:insert name="content">Default content</ui:insert></div>
     <div id="footer"><ui:insert name="footer">Default footer</ui:insert>Footer</div>
 </h:body>

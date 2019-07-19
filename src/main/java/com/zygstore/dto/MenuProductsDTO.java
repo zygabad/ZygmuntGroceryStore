@@ -9,6 +9,7 @@ public class MenuProductsDTO implements MenuItemDTO {
     private String link;
     private List<MenuProductsDTO> childsList;
     private List<String> breadCrumbs;
+    private String linkToPicture;
 
     @Override
     public void setChildsList(List<MenuProductsDTO> childsList) {
@@ -77,5 +78,13 @@ public class MenuProductsDTO implements MenuItemDTO {
     @Override
     public List getBreadCrumbs() {
         return breadCrumbs;
+    }
+
+    public String getLinkToPicture() {
+        return linkToPicture;
+    }
+
+    public void setLinkToPicture(String linkToPicture) {
+        this.linkToPicture = linkToPicture;
     }
 }

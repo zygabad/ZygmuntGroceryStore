@@ -1,6 +1,5 @@
 package com.zygstore.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,7 +23,7 @@ public class ProductsServiceTest {
         ProductService productService = new ProductService();
 
         //when
-        List<ProductDTO> listOfProducts = productService.productListWithCategoryToDisplay("3");
+        List<ProductDTO> listOfProducts = productService.getProducts("3");
 
         //then
         assertEquals(name, listOfProducts.get(0).getName());

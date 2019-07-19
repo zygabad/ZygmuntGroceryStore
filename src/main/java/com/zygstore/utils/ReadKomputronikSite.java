@@ -15,7 +15,7 @@ import org.jsoup.nodes.Element;
  */
 
 public class ReadKomputronikSite {
-    private static final String WEB_STIE = "https://www.komputronik.pl/";
+    private static final String WEB_STIE = "http://www.komputronik.pl/";
     private static final String TREE_ROOT_HTML_ELEMENT = "ul.menu-tree";
     private ArrayList<String> linesFromFile = new ArrayList<>();
     private Document doc;
@@ -34,6 +34,7 @@ public class ReadKomputronikSite {
         String id;
         String parentID;
 
+
         IdGenerator idGenerator = new IdGenerator();
 
         for (int i = 0; i < tree.childNodeSize(); i++) {
@@ -48,6 +49,9 @@ public class ReadKomputronikSite {
 
                 String title = link.attr("title").toString();
                 String ulr = "https://www.komputronik.pl" + link.attr("href").toString();
+                ReadKomputronikCategoriesImages readKomputronikCategoriesImages = new ReadKomputronikCategoriesImages(ulr);
+
+
                 linesFromFile.add(id + ";" + parentID + ";" + title + ";" + ulr);
 //feeding next menu level
                 String parentID2 = id;
