@@ -71,8 +71,6 @@ public class MenuProductsBean {
 
     public void initMainPage() {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
-//        Men22uProductsDTO menuProductDTO = mainPageClicked();
-//        setMenuProductsDTOClicked(menuProductDTO);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
