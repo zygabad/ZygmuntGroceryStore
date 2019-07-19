@@ -13,7 +13,6 @@ import javax.faces.context.FacesContext;
 import static java.lang.System.out;
 
 import com.zygstore.config.Context;
-import com.zygstore.dto.MenuItemDTO;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.navigation.Result;
@@ -66,7 +65,7 @@ public class MenuProductsBean {
     }
 
     public void initProductsPage() {
-        productsList = productService.productListWithCategoryToDisplay(menuProductsDTOClicked.getId());
+        productsList = productService.getProducts(menuProductsDTOClicked.getId());
         productListEmpty = checkListOfProductsNotEmpty(productsList);
     }
 

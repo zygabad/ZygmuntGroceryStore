@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.zygstore.dto.ProductDTO;
+import com.zygstore.model.Product;
 
 /**
  * Place description here.
@@ -12,9 +13,7 @@ import com.zygstore.dto.ProductDTO;
  */
 
 public interface ProductDAO {
-    public void create(ProductDTO productDTO);
-    public ProductDTO read(String productName);
-    public void update(String productName);
-    public void delete(String productName);
-    public List<ProductDTO> getProducts(String categoryId);
+    public Product read(String productName);
+    public List<Product> getProducts(String categoryId);
+    List<Product> getAllProducts();
 }
