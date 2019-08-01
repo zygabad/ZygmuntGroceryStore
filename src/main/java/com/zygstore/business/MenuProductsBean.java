@@ -39,6 +39,7 @@ public class MenuProductsBean {
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
+    public Boolean categoriesListEmpty;
 
     MenuProductsService menuProductsService;
     ProductService productService;
@@ -61,6 +62,7 @@ public class MenuProductsBean {
 
     public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+        checkCategoriesListEmpty(menuProductsDTOClicked);
     }
 
     public void initProductsPage() {
@@ -70,6 +72,7 @@ public class MenuProductsBean {
 
     public void initMainPage() {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+        setCategoriesListEmpty(false);
     }
 
     public Result readKomputronikSiteToFile() throws IOException {
@@ -177,6 +180,23 @@ public class MenuProductsBean {
 
     public void setClickedMenuItem(String itemName) {
         setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
+        checkCategoriesListEmpty(menuProductsDTOClicked);
+    }
+
+    public Boolean getCategoriesListEmpty() {
+        return categoriesListEmpty;
+    }
+
+    public void setCategoriesListEmpty(Boolean categoriesListEmpty) {
+        this.categoriesListEmpty = categoriesListEmpty;
+    }
+
+    public void checkCategoriesListEmpty(MenuProductsDTO menuProductsDTOClicked) {
+        if (menuProductsDTOClicked.getChildsList().size()>0){
+            setCategoriesListEmpty(false);
+        } else {
+            setCategoriesListEmpty(true);
+        }
     }
 
     public void test(String name) {
