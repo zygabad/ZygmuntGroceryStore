@@ -9,6 +9,7 @@ import java.util.Map;
  */
 
 public class Product {
+    Long id;
     String productName;
     String categoryId;
     double rating;
@@ -17,7 +18,7 @@ public class Product {
     String allDescriptionLine;
     Map<String, String> description;
 
-    public Product(String productName, String categoryId, double rating, double prize, String linkToPicture, String allDescriptionLine,
+    public Product(Long id, String productName, String categoryId, double rating, double prize, String linkToPicture, String allDescriptionLine,
                    Map<String, String> description) {
         this.productName = productName;
         this.categoryId = categoryId;
@@ -26,6 +27,14 @@ public class Product {
         this.linkToPicture = linkToPicture;
         this.allDescriptionLine = allDescriptionLine;
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProductName() {

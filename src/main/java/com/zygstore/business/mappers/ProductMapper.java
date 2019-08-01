@@ -16,7 +16,7 @@ import com.zygstore.model.Product;
  */
 
 public class ProductMapper {
-
+    Long id;
     String productName;
     String categoryId;
     double rating;
@@ -38,6 +38,7 @@ public class ProductMapper {
         List<ProductDTO> produtctDTOList = new ArrayList<>();
 
         for (int i = 0; i < productList.size(); i++) {
+            id = productList.get(i).getId();
             productName = productList.get(i).getProductName();
             categoryId = productList.get(i).getCategoryId();
             rating = productList.get(i).getRating();
@@ -45,7 +46,7 @@ public class ProductMapper {
             linkToPicture = productList.get(i).getLinkToPicture();
             description = productList.get(i).getDescription();
 
-            ProductDTO productDTO = new ProductDTO(productName, categoryId, rating, prize, linkToPicture, description);
+            ProductDTO productDTO = new ProductDTO(id, productName, categoryId, rating, prize, linkToPicture, description);
             produtctDTOList.add(productDTO);
         }
         return produtctDTOList;

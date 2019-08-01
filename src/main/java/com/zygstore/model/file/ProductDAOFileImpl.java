@@ -19,7 +19,7 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
 
 public class ProductDAOFileImpl implements ProductDAO {
     private static final String PRODUCTS_FILE = "Products.csv";
-
+    long id;
     String productName;
     String categoryId;
     double rating;
@@ -46,17 +46,18 @@ public class ProductDAOFileImpl implements ProductDAO {
             String line = linesFromFile.get(i);
             if (!line.equals(null) || !line.equals("") || !line.equals(" ") ) {
                 String[] values = line.split(";");
-                if (values[1].equals(category)) {
-                    productName = values[0];
-                    categoryId = values[1];
-                    rating = Double.valueOf(values[2]);
-                    prize = Double.valueOf(values[3]);
-                    linkToPicture = values[4];
+                if (values[2].equals(category)) {
+                    id = Long.parseLong(values[0]);
+                    productName = values[1];
+                    categoryId = values[2];
+                    rating = Double.valueOf(values[3]);
+                    prize = Double.valueOf(values[4]);
+                    linkToPicture = values[5];
 
-                    allDescriptionLine = values[5];
+                    allDescriptionLine = values[6];
                     Map<String, String> descriptionMap = getMap(allDescriptionLine);
 
-                    Product product = new Product(productName, categoryId, rating, prize, linkToPicture, allDescriptionLine, descriptionMap);
+                    Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, allDescriptionLine, descriptionMap);
                     listOfProducts.add(product);
                 }
             }

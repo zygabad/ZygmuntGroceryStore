@@ -26,7 +26,7 @@ public class FeedProductsWithDataTest {
         description.put("system operacyjny","Mac OS");
 
         //when
-        ProductDTO productDTO = new ProductDTO("Apple Macbook Air 13,3","1",4.58,4169, "applemacbookair13.jpg",description);
+        ProductDTO productDTO = new ProductDTO(1L,"Apple Macbook Air 13,3","1",4.58,4169, "applemacbookair13.jpg",description);
 
         //then
         assertEquals(name, productDTO.getName());

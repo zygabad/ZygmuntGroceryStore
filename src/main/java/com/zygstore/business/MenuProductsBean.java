@@ -61,7 +61,6 @@ public class MenuProductsBean {
 
     public void initPage() throws IOException {
         menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
-
     }
 
     public void initProductsPage() {
