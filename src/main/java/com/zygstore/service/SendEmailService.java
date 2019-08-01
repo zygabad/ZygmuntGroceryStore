@@ -20,7 +20,6 @@ import com.zygstore.dto.EmailMessageDTO;
  * @author Y08L@nykredit.dk
  */
 public class SendEmailService {
-
     private EmailConfig emailConfig;
 
     public SendEmailService(EmailConfig emailConfig) {

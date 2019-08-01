@@ -10,7 +10,6 @@ import com.zygstore.excpetions.WrongIdException;
 
 public class IdGenerator {
     public static final Long MINIMUM_START_ID = 1L;
-
     private Long id;
 
     public IdGenerator() {

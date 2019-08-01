@@ -17,9 +17,6 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
 
 public class MenuProductsService {
     //@Autowired
-    private static
-    MenuProductsDTO menuProductsDTO;
-    List<MenuProductsDTO> newMenuProductsItemsList;
     private ArrayList<String> linesFromFile = new ArrayList<>();
 
     public ArrayList<MenuProductsDTO> getCategories(String filePath) {

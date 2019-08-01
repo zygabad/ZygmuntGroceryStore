@@ -29,7 +29,6 @@ public class ReadCSVFileWithAllCategories {
                 }
                 line = reader.readLine();
             }
-
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();

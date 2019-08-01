@@ -14,7 +14,6 @@ import javax.mail.Session;
 
 public class EmailConfig {
     private Session session;
-
     private String hostName;
     private String username;
     private String password;

@@ -25,11 +25,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @ManagedBean(name = "contactMessageBean", eager = true)
 @SessionScoped
 public class ContactMessageBean {
-//    private static final String CLASSPATH = "applicationContext.xml";
     private ContactMessageService contactMessageService;
     ClassPathXmlApplicationContext ctx;
     private Context context;
-
     private String firstname;
     private String secondname;
     private String email;
@@ -54,7 +52,6 @@ public class ContactMessageBean {
             }
             ContactMessageDTO contactMessageDTO =
                 new ContactMessageDTO(firstname, secondname, email, phone, issueType, messageText, clientAlready);
-//            ContactMessageService contactMessageService = ctx.getBean(ContactMessageService.class);
             ticketNumber = EmailUtils.generateTicketNumber();
             contactMessageService.send(contactMessageDTO, ticketNumber);
             logger.info("Message sent" + firstname + " " + secondname);
@@ -71,7 +68,6 @@ public class ContactMessageBean {
         ctx.stop();
         return "contact_form.xhtml";
     }
-
 
     public String getFirstname() {
         return firstname;
@@ -138,7 +134,6 @@ public class ContactMessageBean {
     }
 
     public void setTicketNumber(String ticketNumber) {
-
         this.ticketNumber = ticketNumber;
     }
 
@@ -154,20 +149,3 @@ public class ContactMessageBean {
         return context;
     }
 }
-
-
-//TODO interceptor - przechwytywanie wyjatku i przekirowanie np na error_page i wyswietlenie pop z wyjatkiem, filter, error-handling, web.xml filter
-//TODO na koniec obsluga bledow - jakas generalna , uniwersalna,, popup interceptor/filtr  zanim dostane response przechodze przez interceptora - web.xml
-//TODO ---------------------------------------------------------------------------------
-//TODO_DONEinterceptor - przechwytywanie wyjatku i przekirowanie np na error_page i wyswietlenie pop z wyjatkiem, filter, error-handling, web.xml filter
-//TODO_DONE na koniec obsluga bledow - jakas generalna , uniwersalna,, popup interceptor/filtr  zanim dostane response przechodze przez interceptora - web.xml
-//TODO_DONE kontekst do konstruktora - poczytac bootsfaces ze springiem
-//TODO_DONE cd w webxml mozna ustawic interceptory dla beanow czy sciezek a nie @Interceptor(jakisInterceptor.class)
-//TODO_DONE - test messagebeana czy nr zgloszenia ustawiony i co mam zwrocone - poprawnie / niepoprawnie
-//TODO_DONE nr zgloszenia ? - nazwy parametrow czy ustawiana na wejsciu wyjsciu -inParametr outParametr
-//TODO_DONE Mockito in tests - start from simplest things / tests - service where nothing to mock, EMMA plugin code coverage
-//TODO_DONE enum do wartosci action do przekirowan - zwracam enuma zamiast tekstu
-//TODO_DONE spr w tutorial bootsfacow multipage project jak nawigowac miedzy stronami i przekazywanie danych
-//TODO_DONE numer zgloszenia wyswietlic na stronie - zwrocic z servicebeana wartosc i ustwic w fasadzie
-//TODO_DONE nawigacja / przekierowanie do facady a nie w backendzie
-//TODO_DONE adres poppowrotce z errora jest dalej error

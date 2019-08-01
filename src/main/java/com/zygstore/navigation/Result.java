@@ -12,5 +12,4 @@ public enum Result {
     BACK,
     INDEX,
     NEXT_TICKET;
-
 }

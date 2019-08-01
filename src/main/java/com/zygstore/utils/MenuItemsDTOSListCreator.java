@@ -18,7 +18,6 @@ public class MenuItemsDTOSListCreator {
 
     public ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
         ArrayList<MenuProductsDTO> menuItemsDTOList = new ArrayList<>();
-
         for (int i = 0; i < linesFromFile.size(); i++) {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
@@ -41,18 +40,16 @@ public class MenuItemsDTOSListCreator {
             } else {
                 menuItemDTO.setLink("/viewProductsList.xhtml");
             }
-//            if (!values[4].equals("null")) {
-//                menuItemDTO.setLinkToPicture(values[4]);
-//            }
             menuItemsDTOList.add(i, menuItemDTO);
         }
+
         return menuItemsDTOList;
     }
 
     private String getLinkToPicFromHref(String link) {
         String[] values = link.split("/");
         String categoryId = values[4];
-        String imageLink = "https://www.komputronik.pl/uploads/category_pic_" + categoryId +".jpg";
+        String imageLink = "https://www.komputronik.pl/uploads/category_pic_" + categoryId + ".jpg";
         return imageLink;
     }
 
@@ -60,14 +57,13 @@ public class MenuItemsDTOSListCreator {
         ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
-
             if (currentMenuItemDTO.getParentId().equals(parentId)) {
                 int j = 0;
                 String currentItemID = currentMenuItemDTO.getId();
                 List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
-                    if (currentItemID=="0") {
+                    if (currentItemID == "0") {
                         currentMenuItemDTO.setLink("/index.xhtml");
                     } else {
                         currentMenuItemDTO.setLink("/viewProductsList.xhtml");
@@ -79,13 +75,10 @@ public class MenuItemsDTOSListCreator {
 
                 MenuProductsDTO parent = findItem(listOfMenuItems, parentId);
                 currentMenuItemDTO.setParent(parent);
-
                 j++;
             }
         }
-
         Collections.reverse(listOfSelectedMenuItems);
-
         for (MenuProductsDTO dto : listOfMenuItems) {
             MenuProductsDTO parent = dto.getParent();
             List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList(mainPageDTO().getBreadCrumbs());

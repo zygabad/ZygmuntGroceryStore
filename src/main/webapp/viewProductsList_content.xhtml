@@ -21,10 +21,6 @@
                 <f:facet name="heading">
                     <i class="fa fa-shopping-basket " style="padding-right:20px"/>
                     <h:outputText value="Produkty"/>
-                    <h:outputText value="       "/>
-                    <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
-                    <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
-                    <h:outputText value="link kategorii: #{menuProductsBean.menuProductsDTOClicked.link}"/>
                 </f:facet>
 
                 <ui:repeat var="product" value="#{menuProductsBean.productsList}">

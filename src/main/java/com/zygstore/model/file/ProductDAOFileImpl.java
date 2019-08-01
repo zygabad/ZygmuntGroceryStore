@@ -27,7 +27,6 @@ public class ProductDAOFileImpl implements ProductDAO {
     String linkToPicture;
     String allDescriptionLine;
     Map<String, String> description;
-
     private List<String> linesFromFile;
     List<Product> listOfProducts;
     ProductDTO productDTO;
@@ -44,7 +43,7 @@ public class ProductDAOFileImpl implements ProductDAO {
         listOfProducts = new ArrayList<>();
         for (int i = 0; i < linesFromFile.size(); i++) {
             String line = linesFromFile.get(i);
-            if (!line.equals(null) || !line.equals("") || !line.equals(" ") ) {
+            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
                 if (values[2].equals(category)) {
                     id = Long.parseLong(values[0]);
@@ -53,11 +52,10 @@ public class ProductDAOFileImpl implements ProductDAO {
                     rating = Double.valueOf(values[3]);
                     prize = Double.valueOf(values[4]);
                     linkToPicture = values[5];
-
                     allDescriptionLine = values[6];
                     Map<String, String> descriptionMap = getMap(allDescriptionLine);
-
-                    Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, allDescriptionLine, descriptionMap);
+                    Product product =
+                        new Product(id, productName, categoryId, rating, prize, linkToPicture, allDescriptionLine, descriptionMap);
                     listOfProducts.add(product);
                 }
             }
@@ -66,7 +64,6 @@ public class ProductDAOFileImpl implements ProductDAO {
         return listOfProducts;
     }
 
-
     private Map<String, String> getMap(String allDescriptionLine) {
         Map<String, String> descriptionMap1 = new HashMap<>();
         String[] descriptionLine = allDescriptionLine.split("#");
@@ -74,6 +71,7 @@ public class ProductDAOFileImpl implements ProductDAO {
             String[] descriptionItem = descriptionLine[j].split(",");
             descriptionMap1.put(descriptionItem[0], descriptionItem[1]);
         }
+
         return descriptionMap1;
     }
 
@@ -81,18 +79,4 @@ public class ProductDAOFileImpl implements ProductDAO {
     public List<Product> getAllProducts() {
         return null;
     }
-
-//    //zaczytaj plik
-//        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(PRODUCTS_FILE);
-//        ArrayList<String> linesFromFile = readCSVFileWithAllCategories.getList();
-//
-//        //wez mappera do mapowania?
-//
-////            ProductDTO productDTO = new ProductDTO();
-//
-//
-//
-//
-//        return null;
-//    }
 }
