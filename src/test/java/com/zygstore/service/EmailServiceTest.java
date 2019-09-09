@@ -23,7 +23,7 @@ import org.mockito.runners.MockitoJUnitRunner;
  * @author Y08L@nykredit.dk
  */
 @RunWith(MockitoJUnitRunner.class)
-public class SendEmailServiceTest {
+public class EmailServiceTest {
 
     private static final String HOST_NAME = "relayinternal.nykreditnet.net";
     private static final String USER_NAME = "y08l@nykredit.dk";
@@ -41,7 +41,7 @@ public class SendEmailServiceTest {
     private static final String EMAIL_DATE = "20190305";
 
 
-    private SendEmailService sendEmailService;
+    private EmailService emailService;
     private EmailMessageDTO emailMessageDTO;
     private MimeMessage mimeMessage;
 
@@ -55,8 +55,8 @@ public class SendEmailServiceTest {
             SUBJECT,
             EMAIL_TEXT,
             EMAIL_DATE);
-        sendEmailService = new SendEmailService(emailConfig);
-        mimeMessage = sendEmailService.createMimeMessage(emailMessageDTO);
+        emailService = new EmailService(emailConfig);
+        mimeMessage = emailService.createMimeMessage(emailMessageDTO);
     }
 
     @After

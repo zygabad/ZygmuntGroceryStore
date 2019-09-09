@@ -1,6 +1,7 @@
 package com.zygstore.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 import com.zygstore.business.mappers.ProductMapper;
@@ -15,13 +16,24 @@ import com.zygstore.model.file.ProductDAOFileImpl;
  * @author Y08L@nykredit.dk
  */
 
-public class ProductService {
-    public List<ProductDTO> getProducts(String categoryId) {
-        ProductDAO productDAO = new ProductDAOFileImpl();
-        List<Product> prodcutsList = productDAO.getProducts(categoryId);
-        ProductMapper productMapper = new ProductMapper(prodcutsList);
-        List<ProductDTO> listOfProductsInCategory = productMapper.toProductsDTO();
+public class ProductService {//w service skladam klocki, nie tworze nowych bo inaczej trudno to przetestowac
+    ProductDAO productDAO;
+    ProductMapper productMapper;
 
-        return listOfProductsInCategory;
+    public List<ProductDTO> getProducts(String categoryId) {
+        List<Product> products = productDAO.getProducts(categoryId);
+        List<ProductDTO> productDTOS = products.stream()
+            .map(ProductMapper::toProductDTO)
+            .collect(Collectors.toList());
+
+        return productDTOS;
+    }
+
+    public void setProductDAO(ProductDAOFileImpl productDAO) {
+        this.productDAO = productDAO;
+    }
+
+    public void setProductMapper(ProductMapper productMapper) {
+        this.productMapper = productMapper;
     }
 }

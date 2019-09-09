@@ -29,6 +29,8 @@ public class ReadKomputronikSite {
         this.linesFromFile = getCSVLinesFromKomputronik(tree);
     }
 
+
+
     private ArrayList<String> getCSVLinesFromKomputronik(Element tree) {
         String id;
         String parentID;

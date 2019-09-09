@@ -19,6 +19,7 @@ public class ProductDTO {
 
     public ProductDTO(Long id, String name, String categoryId, double rating, double prize, String linkToPicture,
                       Map<String, String> description) {
+        this.id = id;
         this.name = name;
         this.categoryId = categoryId;
         this.rating = rating;

@@ -18,18 +18,17 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
  */
 
 public class ProductDAOFileImpl implements ProductDAO {
-    private static final String PRODUCTS_FILE = "Products.csv";
-    long id;
-    String productName;
-    String categoryId;
-    double rating;
-    double prize;
-    String linkToPicture;
-    String allDescriptionLine;
-    Map<String, String> description;
-    private List<String> linesFromFile;
-    List<Product> listOfProducts;
-    ProductDTO productDTO;
+    private String productsFile = "Products.csv";
+    private long id;
+    private String productName;
+    private String categoryId;
+    private double rating;
+    private double prize;
+    private String linkToPicture;
+    private Map<String, String> description;
+    private ArrayList<String> linesFromFile;
+    private List<Product> listOfProducts;
+    private ProductDTO productDTO;
 
     @Override
     public Product read(String productName) {
@@ -38,24 +37,24 @@ public class ProductDAOFileImpl implements ProductDAO {
 
     @Override
     public List<Product> getProducts(String category) {
-        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(PRODUCTS_FILE);
-        ArrayList<String> linesFromFile = readCSVFileWithAllCategories.getList();
+        ReadCSVFileWithAllCategories readCSVFileWithAllCategories =
+            new ReadCSVFileWithAllCategories(productsFile);//sprawdz ws-bank...config w xmlach zeby taki plik byl w konfigu
+        linesFromFile = readCSVFileWithAllCategories.getList();
         listOfProducts = new ArrayList<>();
         for (int i = 0; i < linesFromFile.size(); i++) {
             String line = linesFromFile.get(i);
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
                 if (values[2].equals(category)) {
+                    // TODO mapper
                     id = Long.parseLong(values[0]);
                     productName = values[1];
                     categoryId = values[2];
                     rating = Double.valueOf(values[3]);
                     prize = Double.valueOf(values[4]);
                     linkToPicture = values[5];
-                    allDescriptionLine = values[6];
-                    Map<String, String> descriptionMap = getMap(allDescriptionLine);
-                    Product product =
-                        new Product(id, productName, categoryId, rating, prize, linkToPicture, allDescriptionLine, descriptionMap);
+                    Map<String, String> descriptionMap = getMap(values[6]);
+                    Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, descriptionMap);
                     listOfProducts.add(product);
                 }
             }
@@ -78,5 +77,9 @@ public class ProductDAOFileImpl implements ProductDAO {
     @Override
     public List<Product> getAllProducts() {
         return null;
+    }
+
+    public void setProductsFile(String products_file) {
+        this.productsFile = products_file;
     }
 }

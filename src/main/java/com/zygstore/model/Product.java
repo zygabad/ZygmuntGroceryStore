@@ -15,17 +15,16 @@ public class Product {
     double rating;
     double prize;
     String linkToPicture;
-    String allDescriptionLine;
     Map<String, String> description;
 
-    public Product(Long id, String productName, String categoryId, double rating, double prize, String linkToPicture, String allDescriptionLine,
+    public Product(Long id, String productName, String categoryId, double rating, double prize, String linkToPicture,
                    Map<String, String> description) {
+        this.id = id;
         this.productName = productName;
         this.categoryId = categoryId;
         this.rating = rating;
         this.prize = prize;
         this.linkToPicture = linkToPicture;
-        this.allDescriptionLine = allDescriptionLine;
         this.description = description;
     }
 
@@ -75,14 +74,6 @@ public class Product {
 
     public void setLinkToPicture(String linkToPicture) {
         this.linkToPicture = linkToPicture;
-    }
-
-    public String getAllDescriptionLine() {
-        return allDescriptionLine;
-    }
-
-    public void setAllDescriptionLine(String allDescriptionLine) {
-        this.allDescriptionLine = allDescriptionLine;
     }
 
     public Map<String, String> getDescription() {
