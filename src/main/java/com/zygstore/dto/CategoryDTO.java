@@ -2,8 +2,8 @@ package com.zygstore.dto;
 
 import java.util.List;
 
-public interface MenuItemDTO {
-    void setId (String ID); //Long ew duzy int Int
+public interface CategoryDTO {  //TODO do I need interface here? - Wywalic
+    void setId (String ID); //TODO Long ew duzy int Int
     void setParentId (String ParentID);
     void setText(String text);
     void setLink (String link);

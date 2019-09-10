@@ -16,9 +16,9 @@ import org.junit.Test;
  * @author Y08L@nykredit.dk
  */
 
-public class ProductMapperTest {
+public class ProductDTOMapperTest {
     @Inject
-    private ProductMapper productMapper;
+    private ProductDTOMapper productDTOMapper;
 
     @Test
     public void toProductDTO() {
@@ -37,7 +37,7 @@ public class ProductMapperTest {
         Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, descriptionMap);
 
         //when
-        ProductDTO productDTO = ProductMapper.toProductDTO(product);
+        ProductDTO productDTO = productDTOMapper.toProductDTO(product);
 
         //then
         assertEquals(id, productDTO.getId());

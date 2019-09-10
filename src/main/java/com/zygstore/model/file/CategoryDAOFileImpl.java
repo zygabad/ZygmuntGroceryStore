@@ -16,7 +16,7 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
  */
 
 public class CategoryDAOFileImpl implements CategoryDAO {
-    private static final String FILE_MENU_PRODUCTS = "Categories.csv";
+    private String categoriesFile;
     private long id;
     private long parentId;
     private String text;
@@ -42,7 +42,7 @@ public class CategoryDAOFileImpl implements CategoryDAO {
     @Override
     public List<Category> getAllCategories() {
         linesFromFile = new ArrayList<>();
-        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(FILE_MENU_PRODUCTS);
+        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(categoriesFile);
         linesFromFile = readCSVFileWithAllCategories.getList();
         categoryList = new ArrayList<>();
 
@@ -70,4 +70,9 @@ public class CategoryDAOFileImpl implements CategoryDAO {
         }
         return categoryList;
     }
+
+    public void setCategoriesFile(String categoriesFile) {
+        this.categoriesFile = categoriesFile;
+    }
+
 }

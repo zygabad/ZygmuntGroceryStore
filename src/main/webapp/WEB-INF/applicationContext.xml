@@ -9,7 +9,7 @@
     </bean>
 
     <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">
-        <constructor-arg name="emailService" ref="emailService" />
+        <constructor-arg name="emailService" ref="emailService"/>
     </bean>
 
     <bean id="emailService" class="com.zygstore.service.EmailService">
@@ -51,24 +51,27 @@
 
     <bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
     </bean>
+
     <bean id="productMapper" class="com.zygstore.business.mappers.ProductMapper">
     </bean>
-    <bean id="productService" class="com.zygstore.service.ProductService">
-        <property name="productDAO" ref="productDAOFileImpl"></property>
-        <property name="productMapper" ref="productMapper"></property>
+
+    <bean id="productDTOMapper" class="com.zygstore.business.mappers.ProductDTOMapper">
     </bean>
 
+    <bean id="productService" class="com.zygstore.service.ProductService">
+        <constructor-arg name="productDAO" ref="productDAOFileImpl"></constructor-arg>
+        <constructor-arg name="productDTOMapper" ref="productDTOMapper"></constructor-arg>
+    </bean>
 
     <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
 
-    <!--<bean id="productDAO" class="com.zygstore.model.dao.ProductDAO" abstract="true">-->
-
-
-    <!--</bean>-->
-
     <bean id="productDAOFileImpl" class="com.zygstore.model.file.ProductDAOFileImpl">
-        <property name="productsFile" value="Products.csv"></property>
+        <constructor-arg name="productsFile" value="Products.csv"></constructor-arg>
+        <constructor-arg name="productMapper" ref="productMapper"></constructor-arg>
     </bean>
 
+    <bean id="categoryDAOfileImpl" class="com.zygstore.model.file.CategoryDAOFileImpl">
+        <property name="categoriesFile" value="Categories.csv"></property>
+    </bean>
 
 </beans>
