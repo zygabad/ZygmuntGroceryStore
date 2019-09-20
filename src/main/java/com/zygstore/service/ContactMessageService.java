@@ -17,10 +17,10 @@ import com.zygstore.utils.EmailUtils;
 
 public class ContactMessageService {
 
-    private SendEmailService sendEmailService;
+    private EmailService emailService;
 
-    public ContactMessageService(SendEmailService sendEmailService) {
-        this.sendEmailService = sendEmailService;
+    public ContactMessageService(EmailService emailService) {
+        this.emailService = emailService;
     }
 
     public void send(ContactMessageDTO contactMessageDTO, String ticketNumber) throws MessagingException, IOException {
@@ -29,6 +29,6 @@ public class ContactMessageService {
             EmailUtils.generateSubject(ticketNumber),
             EmailUtils.generateText(contactMessageDTO),
             EmailUtils.generateTime());
-        sendEmailService.send(emailMessageDTO);
+        emailService.send(emailMessageDTO);
     }
 }

@@ -16,14 +16,6 @@ import javax.faces.context.FacesContext;
 public class MessageBean {
     private String message ="";
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public String doSomeAction(){
         if(this.message.equals("")){
             FacesContext.getCurrentInstance().addMessage(null,
@@ -36,5 +28,13 @@ public class MessageBean {
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message","INFO Message"));
         }
         return "";
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

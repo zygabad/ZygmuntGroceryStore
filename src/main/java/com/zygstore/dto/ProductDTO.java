@@ -9,6 +9,7 @@ import java.util.Map;
  */
 
 public class ProductDTO {
+    private Long id;
     private String name;
     private String categoryId;
     private double rating;
@@ -16,14 +17,23 @@ public class ProductDTO {
     private String linkToPicture;
     private Map<String, String> description;
 
-    public ProductDTO(String name, String categoryId, double rating, double prize, String linkToPicture,
+    public ProductDTO(Long id, String name, String categoryId, double rating, double prize, String linkToPicture,
                       Map<String, String> description) {
+        this.id = id;
         this.name = name;
         this.categoryId = categoryId;
         this.rating = rating;
         this.prize = prize;
         this.linkToPicture = linkToPicture;
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

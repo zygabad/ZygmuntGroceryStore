@@ -21,9 +21,6 @@
                 <f:facet name="heading">
                     <i class="fa fa-shopping-basket " style="padding-right:20px"/>
                     <h:outputText value="Produkty"/>
-                    <h:outputText value="       "/>
-                    <h:outputText value="Nazwa kategorii: #{menuProductsBean.menuProductsDTOClicked.text} "/>
-                    <h:outputText value="Id kategorii: #{menuProductsBean.menuProductsDTOClicked.id}"/>
                 </f:facet>
                 <b:row>
                     <ui:repeat var="product" value="#{menuProductsBean.menuProductsDTOClicked.childsList}">
@@ -37,7 +34,7 @@
                             </b:thumbnail>
                         </b:column>
                     </ui:repeat>
-                    <h:panelGroup rendered="#{menuProductsBean.productListEmpty}">
+                    <h:panelGroup rendered="#{menuProductsBean.categoriesListEmpty}">
                         Nie znaleziono kateorii spełniających kryteria
                     </h:panelGroup>
                 </b:row>

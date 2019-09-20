@@ -6,7 +6,6 @@ package com.zygstore.dto;
  * @author Y08L@nykredit.dk
  */
 public class ContactMessageDTO {
-
     private String firstname;
     private String secondname;
     private String email;
@@ -56,6 +55,4 @@ public class ContactMessageDTO {
     public Boolean getClientAlready() {
         return clientAlready;
     }
-
-
 }

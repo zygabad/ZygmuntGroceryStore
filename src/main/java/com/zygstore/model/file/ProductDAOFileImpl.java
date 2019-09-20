@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import com.zygstore.dto.ProductDTO;
+import com.zygstore.business.mappers.ProductMapper;
 import com.zygstore.model.Product;
 import com.zygstore.model.dao.ProductDAO;
-import com.zygstore.utils.ReadCSVFileWithAllCategories;
-import com.zygstore.utils.ReadKomputronikCategoriesImages;
+import com.zygstore.utils.CSVFileUtils;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Place description here.
@@ -17,34 +17,47 @@ import com.zygstore.utils.ReadKomputronikCategoriesImages;
  */
 
 public class ProductDAOFileImpl implements ProductDAO {
-    private static final String PRODUCTS_FILE = "Products.csv";
+    private String productsFile;
+    private ProductMapper productMapper;
+    private CSVFileUtils CSVFileUtils;
 
+    public ProductDAOFileImpl(String productsFile,
+                              ProductMapper productMapper) {
+        this.productsFile = productsFile;
+        this.productMapper = productMapper;
+    }
+
+    //TODO to implement
     @Override
     public Product read(String productName) {
-        return null;
+        throw new NotImplementedException();
     }
 
     @Override
-    public List<Product> getProducts(String categoryId) {
-        return null;
+    public List<Product> getProducts(String category) {
+        List<String> linesFromFile = CSVFileUtils.getList(productsFile);
+        List<Product> listOfProducts = new ArrayList<>();
+
+        for (String line : linesFromFile) {
+            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
+                String[] values = line.split(";");
+                if (values[2].equals(category)) {
+                    Product product = productMapper.toProduct(values);
+                    listOfProducts.add(product);
+                }
+            }
+        }
+
+        return listOfProducts;
     }
 
+    //TODO to implement
     @Override
     public List<Product> getAllProducts() {
-        return null;
+        throw new NotImplementedException();
     }
 
-//    //zaczytaj plik
-//        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(PRODUCTS_FILE);
-//        ArrayList<String> linesFromFile = readCSVFileWithAllCategories.getList();
-//
-//        //wez mappera do mapowania?
-//
-////            ProductDTO productDTO = new ProductDTO();
-//
-//
-//
-//
-//        return null;
-//    }
+    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
+        this.CSVFileUtils = CSVFileUtils;
+    }
 }

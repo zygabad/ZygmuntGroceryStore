@@ -1,18 +1,14 @@
 package com.zygstore.service;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
 
-import javax.mail.MessagingException;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
 import com.zygstore.dto.ContactMessageDTO;
-import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 /**
  * Place description here.
@@ -22,15 +18,15 @@ import org.junit.Test;
 
 public class ContactMessageServiceTest {
     private ContactMessageDTO contactMessageDTO;
-    private SendEmailService sendEmailService;
+    private EmailService emailService;
     private ContactMessageService contactMessageService;
     private String computedTicketNumber;
 
     @Before
     public void setUp() throws Exception {
         contactMessageDTO = mock(ContactMessageDTO.class);
-        sendEmailService = mock(SendEmailService.class);
-        contactMessageService = new ContactMessageService(sendEmailService);
+        emailService = mock(EmailService.class);
+        contactMessageService = new ContactMessageService(emailService);
         computedTicketNumber = computeTicketNumber();
     }
 

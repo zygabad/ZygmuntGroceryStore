@@ -11,7 +11,8 @@
     <name>Documented Project</name>
     <url>http://example.com</url>
 
-    <dependencies>        <dependency>
+    <dependencies>
+        <dependency>
             <groupId>net.bootsfaces</groupId>
             <artifactId>bootsfaces</artifactId>
             <version>1.4.1</version>

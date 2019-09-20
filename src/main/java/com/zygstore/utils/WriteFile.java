@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class WriteFile {
     private static final String FILE_ENCODING ="UTF-8";
-
     private String fileName;
     private FileWriter fw;
     private ArrayList<String> listOfLiinesToWrite;
@@ -28,6 +27,7 @@ public class WriteFile {
         }
         outputStream.close();
     }
+
 
 
 }

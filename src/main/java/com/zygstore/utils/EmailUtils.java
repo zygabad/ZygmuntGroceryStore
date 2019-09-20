@@ -15,7 +15,6 @@ import com.zygstore.dto.ContactMessageDTO;
 public class EmailUtils {
     private static long ticketCounter;
 
-
     private EmailUtils() {
         //private constructor
     }

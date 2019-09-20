@@ -2,13 +2,13 @@ package com.zygstore.dto;
 
 import java.util.List;
 
-public class MenuProductsDTO implements MenuItemDTO {
-    private String id;
+public class MenuProductsDTO implements CategoryDTO {
+    private String id;//TODO change to Long
     private String parentId;
     private String text;
     private String link;
     private List<MenuProductsDTO> childsList;
-    private List<String> breadCrumbs;
+    private List<String> breadCrumbs;//TODO it is Frontend related in category. Should it be here?
     private String linkToPicture;
 
     @Override
