@@ -7,7 +7,7 @@ import java.util.List;
 import com.zygstore.business.mappers.ProductMapper;
 import com.zygstore.model.Product;
 import com.zygstore.model.dao.ProductDAO;
-import com.zygstore.utils.ReadCSVFileWithAllCategories;
+import com.zygstore.utils.CSVFileUtils;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
@@ -19,6 +19,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class ProductDAOFileImpl implements ProductDAO {
     private String productsFile;
     private ProductMapper productMapper;
+    private CSVFileUtils CSVFileUtils;
 
     public ProductDAOFileImpl(String productsFile,
                               ProductMapper productMapper) {
@@ -26,7 +27,7 @@ public class ProductDAOFileImpl implements ProductDAO {
         this.productMapper = productMapper;
     }
 
-    //TODO
+    //TODO to implement
     @Override
     public Product read(String productName) {
         throw new NotImplementedException();
@@ -34,10 +35,7 @@ public class ProductDAOFileImpl implements ProductDAO {
 
     @Override
     public List<Product> getProducts(String category) {
-        //TODO ReadCSVFileWithAllCategories przeniesc do beana springowego
-        ReadCSVFileWithAllCategories readCSVFileWithAllCategories =
-            new ReadCSVFileWithAllCategories(productsFile);//zrobione - //sprawdz ws-bank...config w xmlach zeby taki plik byl w konfigu
-        List<String> linesFromFile = readCSVFileWithAllCategories.getList();
+        List<String> linesFromFile = CSVFileUtils.getList(productsFile);
         List<Product> listOfProducts = new ArrayList<>();
 
         for (String line : linesFromFile) {
@@ -53,9 +51,13 @@ public class ProductDAOFileImpl implements ProductDAO {
         return listOfProducts;
     }
 
-    //TODO
+    //TODO to implement
     @Override
     public List<Product> getAllProducts() {
         throw new NotImplementedException();
+    }
+
+    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
+        this.CSVFileUtils = CSVFileUtils;
     }
 }

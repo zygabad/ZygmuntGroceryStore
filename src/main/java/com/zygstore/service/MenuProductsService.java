@@ -1,13 +1,11 @@
 package com.zygstore.service;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
-import com.zygstore.utils.ReadCSVFileWithAllCategories;
+import com.zygstore.utils.CSVFileUtils;
 
 /**
  * Place description here.
@@ -16,12 +14,10 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
  */
 
 public class MenuProductsService {
-    //@Autowired
-    private ArrayList<String> linesFromFile = new ArrayList<>();
+    private CSVFileUtils CSVFileUtils;
 
     public ArrayList<MenuProductsDTO> getCategories(String filePath) {
-        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(filePath);
-        linesFromFile = readCSVFileWithAllCategories.getList();
+        ArrayList<String> linesFromFile = CSVFileUtils.getList(filePath);
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
         ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
@@ -37,5 +33,9 @@ public class MenuProductsService {
         listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
 
         return listOfRootMenuItemsDTO;
+    }
+
+    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
+        this.CSVFileUtils = CSVFileUtils;
     }
 }

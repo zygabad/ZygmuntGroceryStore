@@ -7,7 +7,8 @@ import java.util.List;
 import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
-import com.zygstore.utils.ReadCSVFileWithAllCategories;
+import com.zygstore.utils.CSVFileUtils;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Place description here.
@@ -17,37 +18,40 @@ import com.zygstore.utils.ReadCSVFileWithAllCategories;
 
 public class CategoryDAOFileImpl implements CategoryDAO {
     private String categoriesFile;
-    private long id;
-    private long parentId;
-    private String text;
-    private String link;
-    private List<MenuProductsDTO> childsList;
-    private List<String> breadCrumbs;
-    private String linkToPicture;
-    private ArrayList<Category> categoryList;
-    private ArrayList<String> linesFromFile;
+    private CSVFileUtils CSVFileUtils;
 
-    @Override
-    public Category read(String categoryName) {
-        return null;
+    public void setCategoriesFile(String categoriesFile) {
+        this.categoriesFile = categoriesFile;
     }
 
+    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
+        this.CSVFileUtils = CSVFileUtils;
+    }
+
+    //TODO implement
+    @Override
+    public Category read(String categoryName) {
+        throw new NotImplementedException();
+    }
+
+    //TODO implement
     @Override
     public List<Category> getCategories(String categoryId) {
-
-
-        return null;
+        throw new NotImplementedException();
     }
 
     @Override
     public List<Category> getAllCategories() {
-        linesFromFile = new ArrayList<>();
-        ReadCSVFileWithAllCategories readCSVFileWithAllCategories = new ReadCSVFileWithAllCategories(categoriesFile);
-        linesFromFile = readCSVFileWithAllCategories.getList();
-        categoryList = new ArrayList<>();
+        List<Category> categoryList = new ArrayList<>();
+        long id = 0;
+        long parentId = 0;
+        String text = null;
+        String link = null;
+        String linkToPicture = null;
 
-        for (int i = 0; i < linesFromFile.size(); i++) {
-            String line = linesFromFile.get(i);
+        ArrayList<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
+
+        for (String line : linesFromFile) {
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
                 if (!values[0].equals(null)) {
@@ -69,10 +73,6 @@ public class CategoryDAOFileImpl implements CategoryDAO {
             categoryList.add(category);
         }
         return categoryList;
-    }
-
-    public void setCategoriesFile(String categoriesFile) {
-        this.categoriesFile = categoriesFile;
     }
 
 }
