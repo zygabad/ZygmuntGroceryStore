@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import com.zygstore.dto.MenuProductsDTO;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
@@ -49,7 +48,7 @@ public class CategoryDAOFileImpl implements CategoryDAO {
         String link = null;
         String linkToPicture = null;
 
-        ArrayList<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
+        List<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
 
         for (String line : linesFromFile) {
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {

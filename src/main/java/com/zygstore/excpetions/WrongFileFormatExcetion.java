@@ -7,8 +7,20 @@ package com.zygstore.excpetions;
  */
 
 public class WrongFileFormatExcetion extends Exception {
+    public static final String WRONG_NUMBER_OF_COLUMNS = "Line in the file has a wrong number of columns: '%s'. %d columns are expected.";
+    public static final String WRONG_PARAMETER_TYPE = "Parameter '%s' has a wrong type. It should be %s.";
 
-    public WrongFileFormatExcetion(String message){
+    private WrongFileFormatExcetion(String message) {
         super(message);
+    }
+
+    public static WrongFileFormatExcetion wrongNumberOfElements(String line, int expectedNumberOfColumns) {
+        String message = String.format(WRONG_NUMBER_OF_COLUMNS, line, expectedNumberOfColumns);
+        return new WrongFileFormatExcetion(message);
+    }
+
+    public static WrongFileFormatExcetion wrongParameterType(String parameter, String type) {
+        String message = String.format(WRONG_PARAMETER_TYPE, parameter, type);
+        return new WrongFileFormatExcetion(message);
     }
 }

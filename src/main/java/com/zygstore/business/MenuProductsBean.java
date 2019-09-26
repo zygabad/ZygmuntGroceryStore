@@ -12,10 +12,10 @@ import javax.faces.context.FacesContext;
 import static java.lang.System.out;
 
 import com.zygstore.config.Context;
-import com.zygstore.dto.MenuProductsDTO;
+import com.zygstore.dto.CategoryDTO;
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.navigation.Result;
-import com.zygstore.service.MenuProductsService;
+import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
 import com.zygstore.utils.ReadKomputronikSite;
@@ -39,10 +39,10 @@ public class MenuProductsBean {
     public Boolean productListEmpty;
     public Boolean categoriesListEmpty;
 
-    MenuProductsService menuProductsService;
+    CategoryService categoryService;
     ProductService productService;
-    public MenuProductsDTO menuProductsDTOClicked;
-    ArrayList<MenuProductsDTO> menuItemsList = new ArrayList<>();
+    public CategoryDTO categoryDTOClicked;
+    List<CategoryDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
 
     public MenuProductsBean() {
@@ -51,17 +51,17 @@ public class MenuProductsBean {
     }
 
     public void initPage() throws IOException {
-        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
-        checkCategoriesListEmpty(menuProductsDTOClicked);
+        menuItemsList = categoryService.getCategories(FILE_MENU_PRODUCTS);
+        checkCategoriesListEmpty(categoryDTOClicked);
     }
 
     public void initProductsPage() {
-        productsList = productService.getProducts(menuProductsDTOClicked.getId());
+        productsList = productService.getProducts(categoryDTOClicked.getId());
         productListEmpty = checkListOfProductsNotEmpty(productsList);
     }
 
     public void initMainPage() {
-        menuItemsList = menuProductsService.getCategories(FILE_MENU_PRODUCTS);
+        menuItemsList = categoryService.getCategories(FILE_MENU_PRODUCTS);
         setCategoriesListEmpty(false);
     }
 
@@ -75,8 +75,8 @@ public class MenuProductsBean {
         }
     }
 
-    public void checkCategoriesListEmpty(MenuProductsDTO menuProductsDTOClicked) {
-        if (menuProductsDTOClicked.getChildsList().size() > 0) {
+    public void checkCategoriesListEmpty(CategoryDTO categoryDTOClicked) {
+        if (categoryDTOClicked.getChildsList().size() > 0) {
             setCategoriesListEmpty(false);
         } else {
             setCategoriesListEmpty(true);
@@ -86,7 +86,7 @@ public class MenuProductsBean {
     public Result readKomputronikSiteToFile() throws IOException {
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
-        menuItemsList = menuProductsService.getCategories(listOfLines);
+        menuItemsList = categoryService.getCategories(listOfLines);
         WriteFile wf = new WriteFile(fileNameWithPathToCategories, listOfLines);
         wf.writeToFile();
         FacesContext.getCurrentInstance().addMessage(null,
@@ -96,7 +96,7 @@ public class MenuProductsBean {
         return Result.SUCCESS;
     }
 
-    public MenuProductsDTO findMenuProductClickedByName(String itemName) {
+    public CategoryDTO findMenuProductClickedByName(String itemName) {
         if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
             MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
             return menuItemsDTOSListCreator.mainPageDTO();
@@ -122,11 +122,11 @@ public class MenuProductsBean {
     }
 
     public void setClickedMenuItem(String itemName) {
-        setMenuProductsDTOClicked(findMenuProductClickedByName(itemName));
-        checkCategoriesListEmpty(menuProductsDTOClicked);
+        setCategoryDTOClicked(findMenuProductClickedByName(itemName));
+        checkCategoriesListEmpty(categoryDTOClicked);
     }
 
-    public ArrayList<MenuProductsDTO> getMenuItemsList() {
+    public List<CategoryDTO> getMenuItemsList() {
         return menuItemsList;
     }
 
@@ -162,12 +162,12 @@ public class MenuProductsBean {
         return context;
     }
 
-    public void setMenuProductsService(MenuProductsService menuProductsService) {
-        this.menuProductsService = menuProductsService;
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
-    public MenuProductsService getMenuProductsService() {
-        return menuProductsService;
+    public CategoryService getCategoryService() {
+        return categoryService;
     }
 
     public void setFileNameWithPathToCategories(String fileNameWithPathToCategories) {
@@ -178,11 +178,11 @@ public class MenuProductsBean {
         return fileNameWithPathToCategories;
     }
 
-    public MenuProductsDTO getMenuProductsDTOClicked() {
-        return menuProductsDTOClicked;
+    public CategoryDTO getCategoryDTOClicked() {
+        return categoryDTOClicked;
     }
 
-    public void setMenuProductsDTOClicked(MenuProductsDTO menuProductsDTOClicked) {
-        this.menuProductsDTOClicked = menuProductsDTOClicked;
+    public void setCategoryDTOClicked(CategoryDTO categoryDTOClicked) {
+        this.categoryDTOClicked = categoryDTOClicked;
     }
 }

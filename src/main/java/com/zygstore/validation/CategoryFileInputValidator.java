@@ -1,5 +1,11 @@
 package com.zygstore.validation;
 
+import static com.zygstore.excpetions.WrongFileFormatExcetion.*;
+import static com.zygstore.utils.Constants.*;
+
+import com.zygstore.excpetions.WrongFileFormatExcetion;
+import com.zygstore.utils.Constants;
+
 /**
  * Place description here.
  *
@@ -8,15 +14,26 @@ package com.zygstore.validation;
 
 public class CategoryFileInputValidator {
 
-    public boolean validate(String input){
+    public void validate(String input) throws WrongFileFormatExcetion {
+        String[] values = input.split(FILE_COLUMN_DELIMITER);
 
-        if (input!= "" || input != " " ) {
-            String[] values = input.split(";");
-            if (values.length != 5) {
-                return false;
-            }
+        if (values.length != CATEGORY_FILE_NUMBER_OF_COLUMNS) {
+            throw wrongNumberOfElements(input, CATEGORY_FILE_NUMBER_OF_COLUMNS);
         }
 
-        return true;
+        validateLong(values[0]);
+
+        String parentId = values[1];
+        if (!NULL_ELEMENT.equalsIgnoreCase(parentId)) {
+            validateLong(parentId);
+        }
+    }
+
+    private void validateLong(String parameter) throws WrongFileFormatExcetion {
+        try {
+            Long.parseLong(parameter);
+        } catch (NumberFormatException e) {
+            throw wrongParameterType(parameter, LONG_TYPE);
+        }
     }
 }

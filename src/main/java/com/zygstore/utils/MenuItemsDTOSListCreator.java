@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-import com.zygstore.dto.MenuProductsDTO;
+import com.zygstore.dto.CategoryDTO;
 
 /**
  * Place description here.
@@ -16,12 +16,12 @@ import com.zygstore.dto.MenuProductsDTO;
 public class MenuItemsDTOSListCreator {
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
 
-    public ArrayList<MenuProductsDTO> getAllMenuItemsDTO(ArrayList<String> linesFromFile) {
-        ArrayList<MenuProductsDTO> menuItemsDTOList = new ArrayList<>();
+    public List<CategoryDTO> getAllMenuItemsDTO(List<String> linesFromFile) {
+        List<CategoryDTO> menuItemsDTOList = new ArrayList<>();
         for (int i = 0; i < linesFromFile.size(); i++) {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
-            MenuProductsDTO menuItemDTO = new MenuProductsDTO();
+            CategoryDTO menuItemDTO = new CategoryDTO();
             menuItemDTO.setId((values[0]));
             if (!values[1].equals("null")) {
                 menuItemDTO.setParentId((values[1]));
@@ -53,14 +53,14 @@ public class MenuItemsDTOSListCreator {
         return imageLink;
     }
 
-    public ArrayList<MenuProductsDTO> getSelectedMenuItemsDTO(ArrayList<MenuProductsDTO> listOfMenuItems, String parentId) {
-        ArrayList<MenuProductsDTO> listOfSelectedMenuItems = new ArrayList<>();
+    public List<CategoryDTO> getSelectedMenuItemsDTO(List<CategoryDTO> listOfMenuItems, String parentId) {
+        List<CategoryDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
-            MenuProductsDTO currentMenuItemDTO = listOfMenuItems.get(i);
+            CategoryDTO currentMenuItemDTO = listOfMenuItems.get(i);
             if (currentMenuItemDTO.getParentId().equals(parentId)) {
                 int j = 0;
                 String currentItemID = currentMenuItemDTO.getId();
-                List<MenuProductsDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
+                List<CategoryDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
                     if (currentItemID == "0") {
@@ -73,14 +73,14 @@ public class MenuItemsDTOSListCreator {
                 }
                 listOfSelectedMenuItems.add(j, currentMenuItemDTO);
 
-                MenuProductsDTO parent = findItem(listOfMenuItems, parentId);
+                CategoryDTO parent = findItem(listOfMenuItems, parentId);
                 currentMenuItemDTO.setParent(parent);
                 j++;
             }
         }
         Collections.reverse(listOfSelectedMenuItems);
-        for (MenuProductsDTO dto : listOfMenuItems) {
-            MenuProductsDTO parent = dto.getParent();
+        for (CategoryDTO dto : listOfMenuItems) {
+            CategoryDTO parent = dto.getParent();
             List breadcrumbs = (parent != null) ? new ArrayList(parent.getBreadCrumbs()) : new ArrayList(mainPageDTO().getBreadCrumbs());
             breadcrumbs.add(dto.getText());
             dto.setBreadCrumbs(breadcrumbs);
@@ -89,20 +89,20 @@ public class MenuItemsDTOSListCreator {
         return listOfSelectedMenuItems;
     }
 
-    public MenuProductsDTO mainPageDTO() {
-        MenuProductsDTO menuProductsDTO = new MenuProductsDTO();
+    public CategoryDTO mainPageDTO() {
+        CategoryDTO categoryDTO = new CategoryDTO();
         List<String> breadcrumb = new ArrayList<>();
         breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
-        menuProductsDTO.setBreadCrumbs(breadcrumb);
-        menuProductsDTO.setLink("/index.xhtml");
-        menuProductsDTO.setId("0");
-        menuProductsDTO.setText("MainPageDTO");
-        return menuProductsDTO;
+        categoryDTO.setBreadCrumbs(breadcrumb);
+        categoryDTO.setLink("/index.xhtml");
+        categoryDTO.setId("0");
+        categoryDTO.setText("MainPageDTO");
+        return categoryDTO;
     }
 
 
-    private MenuProductsDTO findItem(ArrayList<MenuProductsDTO> menuProductsDTOS, String id) {
-        for (MenuProductsDTO dto : menuProductsDTOS) {
+    private CategoryDTO findItem(List<CategoryDTO> categoryDTOS, String id) {
+        for (CategoryDTO dto : categoryDTOS) {
             if (dto.getId().equals(id)) {
                 return dto;
             }

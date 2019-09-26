@@ -26,7 +26,7 @@
 
     <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
         <property name="context" ref="context"/>
-        <property name="menuProductsService" ref="menuProductsService"/>
+        <property name="categoryService" ref="categoryService"/>
         <property name="productService" ref="productService"/>
         <property name="fileNameWithPathToCategories" ref="fileNameWithPathToCategories"></property>
     </bean>
@@ -49,9 +49,6 @@
         <constructor-arg value="ERROR"></constructor-arg>
     </bean>
 
-    <bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
-        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
-    </bean>
 
     <bean id="productMapper" class="com.zygstore.business.mappers.ProductMapper">
     </bean>
@@ -62,10 +59,20 @@
     <bean id="productDTOMapper" class="com.zygstore.business.mappers.ProductDTOMapper">
     </bean>
 
+    <bean id="categoryDTOMapper" class="com.zygstore.business.mappers.CategoryDTOMapper">
+    </bean>
+
     <bean id="productService" class="com.zygstore.service.ProductService">
         <constructor-arg name="productDAO" ref="productDAOFileImpl"></constructor-arg>
         <constructor-arg name="productDTOMapper" ref="productDTOMapper"></constructor-arg>
     </bean>
+
+    <bean id="categoryService" class="com.zygstore.service.CategoryService">
+        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
+        <!--<constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>-->
+        <!--<constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>-->
+    </bean>
+
 
     <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
 

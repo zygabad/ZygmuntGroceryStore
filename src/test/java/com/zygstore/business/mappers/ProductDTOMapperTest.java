@@ -3,11 +3,11 @@ package com.zygstore.business.mappers;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import static org.junit.Assert.assertEquals;
 
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.model.Product;
-import org.jboss.arquillian.core.api.annotation.Inject;
 import org.junit.Test;
 
 /**
@@ -15,10 +15,8 @@ import org.junit.Test;
  *
  * @author Y08L@nykredit.dk
  */
-
 public class ProductDTOMapperTest {
-    @Inject
-    private ProductDTOMapper productDTOMapper;
+    private ProductDTOMapper productDTOMapper = new ProductDTOMapper();
 
     @Test
     public void toProductDTO() {

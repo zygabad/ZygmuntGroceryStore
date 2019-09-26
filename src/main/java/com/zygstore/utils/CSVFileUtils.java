@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 
 import org.springframework.core.io.ClassPathResource;
@@ -14,8 +15,8 @@ public class CSVFileUtils {
     public CSVFileUtils() {
     }
 
-    public ArrayList<String> getList(String filePath) {
-        ArrayList<String> list = new ArrayList<>();
+    public List<String> getList(String filePath) {
+        List<String> list = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filePath).getInputStream(), fileEncoding));
             String line = reader.readLine();

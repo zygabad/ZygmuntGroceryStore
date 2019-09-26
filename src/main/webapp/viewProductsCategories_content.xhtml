@@ -23,7 +23,7 @@
                     <h:outputText value="Produkty"/>
                 </f:facet>
                 <b:row>
-                    <ui:repeat var="product" value="#{menuProductsBean.menuProductsDTOClicked.childsList}">
+                    <ui:repeat var="product" value="#{menuProductsBean.categoryDTOClicked.childsList}">
                         <b:column span="3">
                             <b:thumbnail style="padding-bottom: 30px;align-content: center;width: 100%;height: 150px;" >
                                 <b:navLink value="#{product.text}"
