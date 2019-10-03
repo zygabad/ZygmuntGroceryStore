@@ -22,11 +22,11 @@ public class MenuItemsDTOSListCreator {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
             CategoryDTO menuItemDTO = new CategoryDTO();
-            menuItemDTO.setId((values[0]));
+            menuItemDTO.setId(Long.parseLong(values[0]));
             if (!values[1].equals("null")) {
-                menuItemDTO.setParentId((values[1]));
+                menuItemDTO.setParentId(Long.parseLong(values[1]));
             } else if (values[1].equals("null")) {
-                menuItemDTO.setParentId("null");
+                menuItemDTO.setParentId(null);
             }
             menuItemDTO.setText(values[2]);
             menuItemDTO.setChildsList(null);
@@ -52,18 +52,19 @@ public class MenuItemsDTOSListCreator {
         String imageLink = "https://www.komputronik.pl/uploads/category_pic_" + categoryId + ".jpg";
         return imageLink;
     }
-
-    public List<CategoryDTO> getSelectedMenuItemsDTO(List<CategoryDTO> listOfMenuItems, String parentId) {
+//TODO napisz test do tego creatora, zeby pokrywal menu glowne poziome i wyjdzie gdzie jest blad
+    public List<CategoryDTO> getSelectedMenuItemsDTO(List<CategoryDTO> listOfMenuItems, Long parentId) {
         List<CategoryDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             CategoryDTO currentMenuItemDTO = listOfMenuItems.get(i);
-            if (currentMenuItemDTO.getParentId().equals(parentId)) {
+//            if (currentMenuItemDTO.getParentId().equals(parentId)) {
+            if (currentMenuItemDTO.getParentId() == parentId) {
                 int j = 0;
-                String currentItemID = currentMenuItemDTO.getId();
+                Long currentItemID = currentMenuItemDTO.getId();
                 List<CategoryDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
-                    if (currentItemID == "0") {
+                    if (currentItemID == 0L) {
                         currentMenuItemDTO.setLink("/index.xhtml");
                     } else {
                         currentMenuItemDTO.setLink("/viewProductsList.xhtml");
@@ -95,13 +96,13 @@ public class MenuItemsDTOSListCreator {
         breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
         categoryDTO.setBreadCrumbs(breadcrumb);
         categoryDTO.setLink("/index.xhtml");
-        categoryDTO.setId("0");
+        categoryDTO.setId(0L);
         categoryDTO.setText("MainPageDTO");
         return categoryDTO;
     }
 
 
-    private CategoryDTO findItem(List<CategoryDTO> categoryDTOS, String id) {
+    private CategoryDTO findItem(List<CategoryDTO> categoryDTOS, Long id) {
         for (CategoryDTO dto : categoryDTOS) {
             if (dto.getId().equals(id)) {
                 return dto;

@@ -34,7 +34,7 @@ public class ProductDAOFileImpl implements ProductDAO {
     }
 
     @Override
-    public List<Product> getProducts(String category) {
+    public List<Product> getProducts(Long category) {
         List<String> linesFromFile = CSVFileUtils.getList(productsFile);
         List<Product> listOfProducts = new ArrayList<>();
 

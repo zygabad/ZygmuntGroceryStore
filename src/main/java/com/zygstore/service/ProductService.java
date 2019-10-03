@@ -26,7 +26,7 @@ public class ProductService {//w service skladam klocki, nie tworze nowych bo in
         this.productDTOMapper = productDTOMapper;
     }
 
-    public List<ProductDTO> getProducts(String categoryId) {
+    public List<ProductDTO> getProducts(Long categoryId) {
         List<Product> products = productDAO.getProducts(categoryId);
         List<ProductDTO> productDTOS = products.stream()
             .map(productDTOMapper::toProductDTO)

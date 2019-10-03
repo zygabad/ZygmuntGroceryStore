@@ -34,15 +34,15 @@ public class CategoryServiceTest {
     private CategoryService categoryService;
 
     @Test
-    public void getCategoriesFileWay() {
+    public void getCategoriesFromFile() {
         //given
-        String id = "5";
-        String parentId = Constants.NULL_ELEMENT;
+        Long id = 5L;
+        Long parentId = null;
         String text = "Elektronika";
         String link = "/viewProductsList.xhtml";
         String linkToPicture = "http://picture";
 
-        String line = String.join(Constants.FILE_COLUMN_DELIMITER, id, parentId, text, link, linkToPicture);
+        String line = String.join(Constants.FILE_COLUMN_DELIMITER, "" + id, "" + parentId, text, link, linkToPicture);
         List<String> linesFromFile = Arrays.asList(line);
 
         when(csvFileUtils.getList(anyString())).thenReturn(linesFromFile);
@@ -62,7 +62,7 @@ public class CategoryServiceTest {
     }
 
     @Test
-    public void getCategoriesInternetWay() {
+    public void getCategoriesFromInternet() {
         //given
         ArrayList<String> linesFromFile = new ArrayList<>();
         linesFromFile.add("1;null;Elektronika;");
@@ -73,8 +73,8 @@ public class CategoryServiceTest {
 
         //then
         CategoryDTO categoryDTO = result.get(0);
-        assertEquals("1", categoryDTO.getId());
-        assertEquals("null", categoryDTO.getParentId());
+        assertEquals(Long.valueOf(1), categoryDTO.getId());
+        assertEquals(null, categoryDTO.getParentId());
         assertEquals("Elektronika", categoryDTO.getText());
     }
 
@@ -89,12 +89,12 @@ public class CategoryServiceTest {
         List<CategoryDTO> listOfMenuProductDTOS = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
 
         //when
-        List<CategoryDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS, "1");
+        List<CategoryDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS, 1L);
 
         //then
         CategoryDTO categoryDTO = result.get(0);
-        assertEquals("2", categoryDTO.getId());
-        assertEquals("1", categoryDTO.getParentId());
+        assertEquals(Long.valueOf(2), categoryDTO.getId());
+        assertEquals(Long.valueOf(1), categoryDTO.getParentId());
         assertEquals("Telewizory", categoryDTO.getText());
     }
 
@@ -111,8 +111,8 @@ public class CategoryServiceTest {
 
         //then
         CategoryDTO categoryDTO = result.get(0);
-        assertEquals("1", categoryDTO.getId());
-        assertEquals("null", categoryDTO.getParentId());
+        assertEquals(Long.valueOf(1L), categoryDTO.getId());
+        assertEquals(null, categoryDTO.getParentId());
         assertEquals("Elektronika", categoryDTO.getText());
     }
 
@@ -137,7 +137,7 @@ public class CategoryServiceTest {
         //when
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         List<CategoryDTO> listOfMenuProductDTOS = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        List<CategoryDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS, Constants.NULL_ELEMENT);
+        List<CategoryDTO> result = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfMenuProductDTOS, null);
 
         //then
         CategoryDTO menuLevel_1 = result.get(0);

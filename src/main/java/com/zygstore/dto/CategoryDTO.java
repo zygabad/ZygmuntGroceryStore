@@ -3,8 +3,8 @@ package com.zygstore.dto;
 import java.util.List;
 
 public class CategoryDTO {
-    private String id;//TODO change to Long
-    private String parentId;
+    private Long id;//TODO change to Long
+    private Long parentId;
     private String text;
     private String link;
     private List<CategoryDTO> childsList;
@@ -14,7 +14,7 @@ public class CategoryDTO {
     public CategoryDTO() { //TODO wywalic - zrobiony zeby test validatora przechodzil
     }
 
-    public CategoryDTO(String id, String parentId, String text, String link, String linkToPicture) {
+    public CategoryDTO(Long id, Long parentId, String text, String link, String linkToPicture) {
         this.id = id;
         this.parentId = parentId;
         this.text = text;
@@ -40,19 +40,19 @@ public class CategoryDTO {
 
     private CategoryDTO parent;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getParentId() {
+    public Long getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
+    public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
 

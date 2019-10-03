@@ -7,6 +7,7 @@ import java.util.Map;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.anyLong;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
@@ -51,10 +52,10 @@ public class ProductsServiceTest {
         Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, description);
         List<Product> products = Arrays.asList(product);
 
-        when(productDAO.getProducts(anyString())).thenReturn(products);
+        when(productDAO.getProducts(anyLong())).thenReturn(products);
 
         //when
-        List<ProductDTO> productDTOs = productService.getProducts("3");
+        List<ProductDTO> productDTOs = productService.getProducts(3L);
 
         //then
         assertEquals(1, productDTOs.size());

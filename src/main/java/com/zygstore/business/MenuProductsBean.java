@@ -2,7 +2,9 @@ package com.zygstore.business;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 import javax.faces.application.FacesMessage;
@@ -19,7 +21,7 @@ import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
 import com.zygstore.utils.ReadKomputronikSite;
-import com.zygstore.utils.WriteFile;
+import com.zygstore.utils.WriteFileUtils;
 import org.apache.log4j.Logger;
 
 /**
@@ -45,13 +47,15 @@ public class MenuProductsBean {
     List<CategoryDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
 
+    private Map<String, CategoryDTO> menuItemsMap;
+
     public MenuProductsBean() {
         out.println("MenuProductsBean zainicjalizowany !");
         logger.info("MenuProductsBean initialized!");
     }
 
     public void initPage() throws IOException {
-        menuItemsList = categoryService.getCategories(FILE_MENU_PRODUCTS);
+        setMenuItemsList(categoryService.getCategories(FILE_MENU_PRODUCTS));
         checkCategoriesListEmpty(categoryDTOClicked);
     }
 
@@ -61,7 +65,7 @@ public class MenuProductsBean {
     }
 
     public void initMainPage() {
-        menuItemsList = categoryService.getCategories(FILE_MENU_PRODUCTS);
+        setMenuItemsList(categoryService.getCategories(FILE_MENU_PRODUCTS));
         setCategoriesListEmpty(false);
     }
 
@@ -86,8 +90,8 @@ public class MenuProductsBean {
     public Result readKomputronikSiteToFile() throws IOException {
         ReadKomputronikSite kompsite = new ReadKomputronikSite();
         ArrayList<String> listOfLines = kompsite.getLinesFromFile();
-        menuItemsList = categoryService.getCategories(listOfLines);
-        WriteFile wf = new WriteFile(fileNameWithPathToCategories, listOfLines);
+        setMenuItemsList(categoryService.getCategories(listOfLines));
+        WriteFileUtils wf = new WriteFileUtils(fileNameWithPathToCategories, listOfLines);
         wf.writeToFile();
         FacesContext.getCurrentInstance().addMessage(null,
             new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message", "INFO File was successfully saved"));
@@ -96,28 +100,23 @@ public class MenuProductsBean {
         return Result.SUCCESS;
     }
 
+    //TODO wrzuc to do service lub util i napisz test do tego???
     public CategoryDTO findMenuProductClickedByName(String itemName) {
         if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
             MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
             return menuItemsDTOSListCreator.mainPageDTO();
         }
-        for (int i = 0; i < menuItemsList.size(); i++) {
-            if (menuItemsList.get(i).getText().equals(itemName)) {
-                return menuItemsList.get(i);
-            } else {
-                for (int j = 0; j < menuItemsList.get(i).getChildsList().size(); j++) {
-                    if (menuItemsList.get(i).getChildsList().get(j).getText().equals(itemName)) {
-                        return menuItemsList.get(i).getChildsList().get(j);
-                    } else {
-                        for (int x = 0; x < menuItemsList.get(i).getChildsList().get(j).getChildsList().size(); x++) {
-                            if (menuItemsList.get(i).getChildsList().get(j).getChildsList().get(x).getText().equals(itemName)) {
-                                return menuItemsList.get(i).getChildsList().get(j).getChildsList().get(x);
-                            }
-                        }
-                    }
-                }
+
+        return menuItemsMap.get(itemName);
+    }
+
+    private CategoryDTO findCategoryDTOByName(List<CategoryDTO> categoryDTOs, String categoryName) {
+        for (CategoryDTO categoryDTO : categoryDTOs) {
+            if (categoryDTO.getText().equals(categoryName)) {
+                return categoryDTO;
             }
         }
+
         return null;
     }
 
@@ -184,5 +183,18 @@ public class MenuProductsBean {
 
     public void setCategoryDTOClicked(CategoryDTO categoryDTOClicked) {
         this.categoryDTOClicked = categoryDTOClicked;
+    }
+
+    private void setMenuItemsList(List<CategoryDTO> menuItemsList) {
+        this.menuItemsList = menuItemsList;
+        menuItemsMap = new HashMap<>();
+        updateMenuItemsMap(menuItemsList);
+    }
+
+    private void updateMenuItemsMap(List<CategoryDTO> menuItemsList) {
+        for (CategoryDTO categoryDTO : menuItemsList) {
+            menuItemsMap.put(categoryDTO.getText(), categoryDTO);
+            updateMenuItemsMap(categoryDTO.getChildsList());
+        }
     }
 }

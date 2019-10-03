@@ -4,7 +4,6 @@ import static com.zygstore.excpetions.WrongFileFormatExcetion.*;
 import static com.zygstore.utils.Constants.*;
 
 import com.zygstore.excpetions.WrongFileFormatExcetion;
-import com.zygstore.utils.Constants;
 
 /**
  * Place description here.
