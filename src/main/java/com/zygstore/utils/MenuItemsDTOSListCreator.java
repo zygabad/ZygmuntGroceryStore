@@ -52,19 +52,21 @@ public class MenuItemsDTOSListCreator {
         String imageLink = "https://www.komputronik.pl/uploads/category_pic_" + categoryId + ".jpg";
         return imageLink;
     }
-//TODO napisz test do tego creatora, zeby pokrywal menu glowne poziome i wyjdzie gdzie jest blad
+
+    //TODO napisz test do tego creatora, zeby pokrywal menu glowne poziome i wyjdzie gdzie jest blad
     public List<CategoryDTO> getSelectedMenuItemsDTO(List<CategoryDTO> listOfMenuItems, Long parentId) {
         List<CategoryDTO> listOfSelectedMenuItems = new ArrayList<>();
         for (int i = 0; i < listOfMenuItems.size(); i++) {
             CategoryDTO currentMenuItemDTO = listOfMenuItems.get(i);
-//            if (currentMenuItemDTO.getParentId().equals(parentId)) {
-            if (currentMenuItemDTO.getParentId() == parentId) {
+
+            if ((parentId == null && currentMenuItemDTO.getParentId() == null) ||
+                (parentId != null && parentId.equals(currentMenuItemDTO.getParentId()))) {
                 int j = 0;
                 Long currentItemID = currentMenuItemDTO.getId();
                 List<CategoryDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
-                    if (currentItemID == 0L) {
+                    if (parentId == 0L) {
                         currentMenuItemDTO.setLink("/index.xhtml");
                     } else {
                         currentMenuItemDTO.setLink("/viewProductsList.xhtml");

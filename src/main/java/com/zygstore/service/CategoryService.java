@@ -17,15 +17,6 @@ import com.zygstore.utils.MenuItemsDTOSListCreator;
 public class CategoryService {
     private CSVFileUtils CSVFileUtils;
 
-//    public ArrayList<MenuProductsDTO> getCategories(String filePath) {
-//        ArrayList<String> linesFromFile = CSVFileUtils.getList(filePath);
-//        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
-//        ArrayList<MenuProductsDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-//        ArrayList<MenuProductsDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, "null");
-//
-//        return listOfRootMenuItemsDTO;
-//    }
-
     public List<CategoryDTO> getCategories(String filePath) {
         List<String> linesFromFile = CSVFileUtils.getList(filePath);
         MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
@@ -34,7 +25,6 @@ public class CategoryService {
 
         return listOfRootMenuItemsDTO;
     }
-
 
     public List<CategoryDTO> getCategories(ArrayList<String> linesFromFile) {
         // TODO inject creator
