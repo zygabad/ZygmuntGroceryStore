@@ -66,7 +66,7 @@ public class MenuItemsDTOSListCreator {
                 List<CategoryDTO> childsList = getSelectedMenuItemsDTO(listOfMenuItems, currentItemID);
                 currentMenuItemDTO.setChildsList(childsList);
                 if (childsList.size() == 0) {
-                    if (parentId == 0L) {
+                    if (parentId == null) {
                         currentMenuItemDTO.setLink("/index.xhtml");
                     } else {
                         currentMenuItemDTO.setLink("/viewProductsList.xhtml");

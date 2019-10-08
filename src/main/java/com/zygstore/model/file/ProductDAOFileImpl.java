@@ -41,7 +41,8 @@ public class ProductDAOFileImpl implements ProductDAO {
         for (String line : linesFromFile) {
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
-                if (values[2].equals(category)) {
+
+                if (values[2] != null && !values[2].equals("") && Long.parseLong(values[2]) == category.longValue()) {
                     Product product = productMapper.toProduct(values);
                     listOfProducts.add(product);
                 }
