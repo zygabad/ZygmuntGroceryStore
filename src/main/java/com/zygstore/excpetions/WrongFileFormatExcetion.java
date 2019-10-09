@@ -6,7 +6,7 @@ package com.zygstore.excpetions;
  * @author y08l@nykredit.dk
  */
 
-public class WrongFileFormatExcetion extends Exception {
+public class WrongFileFormatExcetion extends RuntimeException {
     public static final String WRONG_NUMBER_OF_COLUMNS = "Line in the file has a wrong number of columns: '%s'. %d columns are expected.";
     public static final String WRONG_PARAMETER_TYPE = "Parameter '%s' has a wrong type. It should be %s.";
 

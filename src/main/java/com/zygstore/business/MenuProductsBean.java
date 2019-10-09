@@ -16,6 +16,7 @@ import static java.lang.System.out;
 import com.zygstore.config.Context;
 import com.zygstore.dto.CategoryDTO;
 import com.zygstore.dto.ProductDTO;
+import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
@@ -32,14 +33,16 @@ import org.apache.log4j.Logger;
 @ManagedBean(name = "menuProductsBean", eager = true)
 @SessionScoped
 public class MenuProductsBean {
-    private Context context;
-    final static Logger logger = Logger.getLogger(MenuProductsBean.class);
-    private static final String FILE_MENU_PRODUCTS = "Categories.csv";
+
+    private static final Logger LOGGER = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
+
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
     public Boolean categoriesListEmpty;
+
+    private Context context;
 
     CategoryService categoryService;
     ProductService productService;
@@ -51,11 +54,11 @@ public class MenuProductsBean {
 
     public MenuProductsBean() {
         out.println("MenuProductsBean zainicjalizowany !");
-        logger.info("MenuProductsBean initialized!");
+        LOGGER.info("MenuProductsBean initialized!");
     }
 
-    public void initPage() throws IOException {
-        setMenuItemsList(categoryService.getCategories(FILE_MENU_PRODUCTS));
+    public void initPage() throws IOException, WrongFileFormatExcetion {
+        setMenuItemsList(categoryService.getCategories());
         checkCategoriesListEmpty(categoryDTOClicked);
     }
 
@@ -64,8 +67,8 @@ public class MenuProductsBean {
         productListEmpty = checkListOfProductsNotEmpty(productsList);
     }
 
-    public void initMainPage() {
-        setMenuItemsList(categoryService.getCategories(FILE_MENU_PRODUCTS));
+    public void initMainPage() throws WrongFileFormatExcetion {
+        setMenuItemsList(categoryService.getCategories());
         setCategoriesListEmpty(false);
     }
 
@@ -95,7 +98,7 @@ public class MenuProductsBean {
         wf.writeToFile();
         FacesContext.getCurrentInstance().addMessage(null,
             new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message", "INFO File was successfully saved"));
-        logger.info("File " + fileNameWithPathToCategories + "was successfully saved");
+        LOGGER.info("File " + fileNameWithPathToCategories + "was successfully saved");
 
         return Result.SUCCESS;
     }

@@ -2,7 +2,6 @@ package com.zygstore.business.mappers;
 
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
-import com.zygstore.utils.Constants;
 import com.zygstore.validation.CategoryFileInputValidator;
 
 /**
@@ -17,15 +16,28 @@ public class CategoryMapper {
     public CategoryMapper() {
     }
 
-    public Category toCategory(String input) throws WrongFileFormatExcetion {
-        categoryFileInputValidator.validate(input);
-        String[] values = input.split(Constants.FILE_COLUMN_DELIMITER);
-        //TODO duze longi
-        long id = Long.parseLong(values[0]);
-        long parentId = Long.parseLong(values[1]);
-        String text = values[2];
-        String link = values[3];
-        String linkToPicture = values[4];
+    public Category toCategory(String[] values) throws WrongFileFormatExcetion {
+//TODO change input
+        //        categoryFileInputValidator.validate(input);
+        Long id = 0L;
+        Long parentId = 0L;
+        String text = null;
+        String link = null;
+        String linkToPicture = null;
+
+        if (!values[0].equals("null")) {
+            id = Long.parseLong(values[0]);
+        } else if (values[0].equals("null")) {
+            id = null;
+        }
+        if (!values[1].equals("null")) {
+            parentId = Long.parseLong(values[1]);
+        } else if (values[1].equals("null")) {
+            parentId = null;
+        }
+        text = values[2];
+        link = values[3];
+        linkToPicture = values[4];
 
         return new Category(id, parentId, text, link, linkToPicture);
     }

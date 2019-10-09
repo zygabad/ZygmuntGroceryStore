@@ -11,8 +11,7 @@ import com.zygstore.model.Category;
 
 public class CategoryDTOMapper {
 
-//    public CategoryDTO toCategoryDTO(Category category){
-//        return new CategoryDTO(category.getId(), category.getParentId(), category.getText(), category.getLink(), category.getLinkToPicture());
-//    }
-//    String id, String parentId, String text, String link, String linkToPicture) {
+    public CategoryDTO toCategoryDTO(Category category){
+        return new CategoryDTO(category.getId(), category.getParentId(), category.getText(), category.getLink(), category.getLinkToPicture());
+    }
 }

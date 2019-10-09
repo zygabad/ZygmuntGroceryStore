@@ -3,6 +3,7 @@ package com.zygstore.model.dao;
 import java.util.List;
 
 
+import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 
 /**
@@ -16,3 +17,4 @@ public interface CategoryDAO {
     public List<Category> getCategories(String categoryId);
     List<Category> getAllCategories();
 }
+

@@ -68,9 +68,9 @@
     </bean>
 
     <bean id="categoryService" class="com.zygstore.service.CategoryService">
+        <constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>
+        <constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>
         <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
-        <!--<constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>-->
-        <!--<constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>-->
     </bean>
 
 
@@ -85,6 +85,8 @@
     <bean id="categoryDAOfileImpl" class="com.zygstore.model.file.CategoryDAOFileImpl">
         <property name="categoriesFile" value="Categories.csv"></property>
         <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
+        <property name="categoryMapper" ref="categoryMapper"/>
+
     </bean>
 
     <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.CSVFileUtils">
@@ -96,5 +98,6 @@
     </bean>
 
     <bean id="menuItemsDTOSListCreator" class="com.zygstore.utils.MenuItemsDTOSListCreator"/>
+
 
 </beans>

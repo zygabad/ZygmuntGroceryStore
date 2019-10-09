@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.zygstore.business.mappers.CategoryMapper;
+import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
@@ -18,6 +21,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class CategoryDAOFileImpl implements CategoryDAO {
     private String categoriesFile;
     private CSVFileUtils CSVFileUtils;
+    @Autowired
+    private CategoryMapper categoryMapper;
 
     public void setCategoriesFile(String categoriesFile) {
         this.categoriesFile = categoriesFile;
@@ -42,36 +47,19 @@ public class CategoryDAOFileImpl implements CategoryDAO {
     @Override
     public List<Category> getAllCategories() {
         List<Category> categoryList = new ArrayList<>();
-        long id = 0;
-        long parentId = 0;
-        String text = null;
-        String link = null;
-        String linkToPicture = null;
-
         List<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
 
         for (String line : linesFromFile) {
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
-                if (!values[0].equals(null)) {
-                    id = Long.parseLong(values[0]);
-                } else if (values[0].equals(null)) {
-                    id = Long.parseLong(null);
-                }
-                if (!values[1].equals(null)) {
-                    parentId = Long.parseLong(values[1]);
-                } else if (!values[1].equals(null)) {
-                    parentId = Long.parseLong(null);
-                }
-                text = values[2];
-                link = values[3];
-                linkToPicture = values[4];
-
+                categoryList.add(categoryMapper.toCategory(values));
             }
-            Category category = new Category(id, parentId, text, link, linkToPicture);
-            categoryList.add(category);
         }
         return categoryList;
     }
 
+    public void setCategoryMapper(CategoryMapper categoryMapper) {
+        this.categoryMapper = categoryMapper;
+
+    }
 }

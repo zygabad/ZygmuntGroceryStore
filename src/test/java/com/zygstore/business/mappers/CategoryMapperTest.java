@@ -30,18 +30,19 @@ public class CategoryMapperTest {
     @Test
     public void testToCategoryWithParent() throws WrongFileFormatExcetion {
         //given
-        long id = 5L;
-        long parentId = 1L;
+        Long id = 5L;
+        Long parentId = 1L;
         String text = "text";
         String link = "link";
         String linkToPicture = "linkToPicture";
 
         String input = String.join(Constants.FILE_COLUMN_DELIMITER, "" + id, "" + parentId, text, link, linkToPicture);
+        String[] values = input.split(";");
 
         doNothing().when(validator).validate(anyString());
 
         //when
-        Category category = categoryMapper.toCategory(input);
+        Category category = categoryMapper.toCategory(values);
 
         //then
         assertEquals(id, category.getId());

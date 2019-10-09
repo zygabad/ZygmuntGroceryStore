@@ -9,7 +9,11 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
+import com.zygstore.business.mappers.CategoryDTOMapper;
 import com.zygstore.dto.CategoryDTO;
+import com.zygstore.excpetions.WrongFileFormatExcetion;
+import com.zygstore.model.Category;
+import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
 import com.zygstore.utils.Constants;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
@@ -17,6 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 /**
@@ -28,27 +33,30 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class CategoryServiceTest {
 
     @Mock
-    private CSVFileUtils csvFileUtils;
+    private CategoryDAO categoryDAO;
+
+    @Spy
+    private CategoryDTOMapper categoryDTOMapper;
 
     @InjectMocks
     private CategoryService categoryService;
 
     @Test
-    public void getCategoriesFromFile() {
+    public void getCategoriesFromFile() throws WrongFileFormatExcetion {
         //given
         Long id = 5L;
         Long parentId = null;
         String text = "Elektronika";
-        String link = "/viewProductsList.xhtml";
+        String link = "/index.xhtml";
         String linkToPicture = "http://picture";
 
-        String line = String.join(Constants.FILE_COLUMN_DELIMITER, "" + id, "" + parentId, text, link, linkToPicture);
-        List<String> linesFromFile = Arrays.asList(line);
+        Category category = new Category(id, parentId, text, link, linkToPicture);
+        List<Category> categories = Arrays.asList(category);
 
-        when(csvFileUtils.getList(anyString())).thenReturn(linesFromFile);
+        when(categoryDAO.getAllCategories()).thenReturn(categories);
 
         //when
-        List<CategoryDTO> result = categoryService.getCategories("Categories.csv");
+        List<CategoryDTO> result = categoryService.getCategories();
 
         //then
         assertEquals(1, result.size());
