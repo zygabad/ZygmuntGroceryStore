@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class CategoryService {
     private CSVFileUtils CSVFileUtils;
+    private MenuItemsDTOSListCreator menuItemsDTOSListCreator;
 
     @Autowired
     private CategoryDAO categoryDAO;
@@ -28,9 +29,10 @@ public class CategoryService {
     @Autowired
     private CategoryDTOMapper categoryDTOMapper;
 
-    public CategoryService(CategoryDAO categoryDAO, CategoryDTOMapper categoryDTOMapper) {
+    public CategoryService(CategoryDAO categoryDAO, CategoryDTOMapper categoryDTOMapper, MenuItemsDTOSListCreator menuItemsDTOSListCreator) {
         this.categoryDAO = categoryDAO;
         this.categoryDTOMapper = categoryDTOMapper;
+        this.menuItemsDTOSListCreator = menuItemsDTOSListCreator;
     }
 
     public List<CategoryDTO> getCategories() throws WrongFileFormatExcetion {
@@ -39,15 +41,10 @@ public class CategoryService {
         for (Category category : categories) {
             categoryDTOS.add(categoryDTOMapper.toCategoryDTO(category));
         }
-        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
-        List<CategoryDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(categoryDTOS, null);
-
-        return listOfRootMenuItemsDTO;
+        return menuItemsDTOSListCreator.getSelectedMenuItemsDTO(categoryDTOS, null);
     }
 
     public List<CategoryDTO> getCategories(ArrayList<String> linesFromFile) {
-        // TODO inject creator
-        MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
         List<CategoryDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
         List<CategoryDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, null);
 
