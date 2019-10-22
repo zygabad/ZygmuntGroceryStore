@@ -71,6 +71,7 @@
         <constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>
         <constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>
         <constructor-arg name="menuItemsDTOSListCreator" ref="menuItemsDTOSListCreator"/>
+        <constructor-arg name="categoryDTOHierarchyCreator" ref="categoryDTOHierarchyCreator"/>
         <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
     </bean>
 
@@ -100,5 +101,6 @@
 
     <bean id="menuItemsDTOSListCreator" class="com.zygstore.utils.MenuItemsDTOSListCreator"/>
 
+    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator"/>
 
 </beans>

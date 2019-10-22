@@ -1,5 +1,6 @@
 package com.zygstore.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryDTO {
@@ -20,6 +21,7 @@ public class CategoryDTO {
         this.text = text;
         this.link = link;
         this.linkToPicture = linkToPicture;
+        this.childsList = new ArrayList<>();
     }
 
     public void setChildsList(List<CategoryDTO> childsList) {

@@ -49,8 +49,8 @@ public class MenuProductsBean {
     public CategoryDTO categoryDTOClicked;
     List<CategoryDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
-
     private Map<String, CategoryDTO> menuItemsMap;
+
 
     public MenuProductsBean() {
         out.println("MenuProductsBean zainicjalizowany !");
@@ -103,15 +103,6 @@ public class MenuProductsBean {
         return Result.SUCCESS;
     }
 
-    //TODO wrzuc to do service lub util i napisz test do tego???
-    public CategoryDTO findMenuProductClickedByName(String itemName) {
-        if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
-            MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
-            return menuItemsDTOSListCreator.mainPageDTO();
-        }
-
-        return menuItemsMap.get(itemName);
-    }
 
     private CategoryDTO findCategoryDTOByName(List<CategoryDTO> categoryDTOs, String categoryName) {
         for (CategoryDTO categoryDTO : categoryDTOs) {
@@ -188,7 +179,17 @@ public class MenuProductsBean {
         this.categoryDTOClicked = categoryDTOClicked;
     }
 
-    private void setMenuItemsList(List<CategoryDTO> menuItemsList) {
+    //TODO wrzuc to do service lub util i napisz test do tego???
+    public CategoryDTO findMenuProductClickedByName(String itemName) {
+        if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
+            MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
+            return menuItemsDTOSListCreator.mainPageDTO();
+        }
+
+        return menuItemsMap.get(itemName);
+    }
+
+    public void setMenuItemsList(List<CategoryDTO> menuItemsList) {
         this.menuItemsList = menuItemsList;
         menuItemsMap = new HashMap<>();
         updateMenuItemsMap(menuItemsList);
@@ -200,4 +201,5 @@ public class MenuProductsBean {
             updateMenuItemsMap(categoryDTO.getChildsList());
         }
     }
+
 }

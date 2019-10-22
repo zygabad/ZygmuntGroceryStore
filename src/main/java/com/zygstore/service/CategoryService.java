@@ -1,7 +1,9 @@
 package com.zygstore.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 import com.zygstore.business.mappers.CategoryDTOMapper;
@@ -10,6 +12,7 @@ import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
+import com.zygstore.utils.CategoryDTOHierarchyCreator;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CategoryService {
     private CSVFileUtils CSVFileUtils;
     private MenuItemsDTOSListCreator menuItemsDTOSListCreator;
+    private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
 
     @Autowired
     private CategoryDAO categoryDAO;
@@ -29,10 +33,14 @@ public class CategoryService {
     @Autowired
     private CategoryDTOMapper categoryDTOMapper;
 
-    public CategoryService(CategoryDAO categoryDAO, CategoryDTOMapper categoryDTOMapper, MenuItemsDTOSListCreator menuItemsDTOSListCreator) {
+    public CategoryService(CategoryDAO categoryDAO,
+                           CategoryDTOMapper categoryDTOMapper,
+                           MenuItemsDTOSListCreator menuItemsDTOSListCreator,
+                           CategoryDTOHierarchyCreator categoryDTOHierarchyCreator) {
         this.categoryDAO = categoryDAO;
         this.categoryDTOMapper = categoryDTOMapper;
         this.menuItemsDTOSListCreator = menuItemsDTOSListCreator;
+        this.categoryDTOHierarchyCreator = categoryDTOHierarchyCreator;
     }
 
     public List<CategoryDTO> getCategories() throws WrongFileFormatExcetion {
@@ -41,7 +49,8 @@ public class CategoryService {
         for (Category category : categories) {
             categoryDTOS.add(categoryDTOMapper.toCategoryDTO(category));
         }
-        return menuItemsDTOSListCreator.getSelectedMenuItemsDTO(categoryDTOS, null);
+//        return menuItemsDTOSListCreator.getSelectedMenuItemsDTO(categoryDTOS, null);
+        return categoryDTOHierarchyCreator.create(categoryDTOS);
     }
 
     public List<CategoryDTO> getCategories(ArrayList<String> linesFromFile) {
@@ -54,4 +63,5 @@ public class CategoryService {
     public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
         this.CSVFileUtils = CSVFileUtils;
     }
+
 }
