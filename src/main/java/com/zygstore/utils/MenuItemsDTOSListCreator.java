@@ -21,25 +21,21 @@ public class MenuItemsDTOSListCreator {
         for (int i = 0; i < linesFromFile.size(); i++) {
             String line = linesFromFile.get(i);
             String[] values = line.split(";");
-            CategoryDTO menuItemDTO = new CategoryDTO();
-            menuItemDTO.setId(Long.parseLong(values[0]));
+            Long id = Long.parseLong(values[0]);
+            Long parentId = null;
             if (!values[1].equals("null")) {
-                menuItemDTO.setParentId(Long.parseLong(values[1]));
-            } else if (values[1].equals("null")) {
-                menuItemDTO.setParentId(null);
+                parentId = Long.parseLong(values[1]);
             }
-            menuItemDTO.setText(values[2]);
-            menuItemDTO.setChildsList(null);
+            String text = values[2];
+            String linkToPicture = null;
             if (values.length > 3) {
-                menuItemDTO.setLink(values[3]);
                 if (values[4].equals("null")) {
-                    menuItemDTO.setLinkToPicture(getLinkToPicFromHref(values[3]));
+                    linkToPicture = getLinkToPicFromHref(values[3]);
                 } else {
-                    menuItemDTO.setLinkToPicture(values[4]);
+                    linkToPicture = values[4];
                 }
-            } else {
-                menuItemDTO.setLink("/viewProductsList.xhtml");
             }
+            CategoryDTO menuItemDTO = new CategoryDTO(id, parentId, text, linkToPicture);
             menuItemsDTOList.add(i, menuItemDTO);
         }
 
@@ -93,13 +89,16 @@ public class MenuItemsDTOSListCreator {
     }
 
     public CategoryDTO mainPageDTO() {
-        CategoryDTO categoryDTO = new CategoryDTO();
+        Long id = 0L;
+        Long parentId = null;
+        String text = "MainPageDTO";
+        String linkToPicture = null;
+        CategoryDTO categoryDTO = new CategoryDTO(id, parentId, text, linkToPicture);
+
         List<String> breadcrumb = new ArrayList<>();
         breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
         categoryDTO.setBreadCrumbs(breadcrumb);
-        categoryDTO.setLink("/index.xhtml");
-        categoryDTO.setId(0L);
-        categoryDTO.setText("MainPageDTO");
+
         return categoryDTO;
     }
 

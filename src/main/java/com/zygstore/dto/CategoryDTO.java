@@ -12,9 +12,6 @@ public class CategoryDTO {
     private List<String> breadCrumbs;//TODO it is Frontend related in category. Should it be here?
     private String linkToPicture;
 
-    public CategoryDTO() { //TODO wywalic - zrobiony zeby test validatora przechodzil
-    }
-
     public CategoryDTO(Long id, Long parentId, String text, String linkToPicture) {
         this.id = id;
         this.parentId = parentId;
