@@ -10,14 +10,12 @@ public class Category {
     private Long id;
     private Long parentId;
     private String text;
-    private String link;
     private String linkToPicture;
 
-    public Category(Long id, Long parentId, String text, String link, String linkToPicture) {
+    public Category(Long id, Long parentId, String text, String linkToPicture) {
         this.id = id;
         this.parentId = parentId;
         this.text = text;
-        this.link = link;
         this.linkToPicture = linkToPicture;
     }
 
@@ -43,14 +41,6 @@ public class Category {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
     }
 
     public String getLinkToPicture() {

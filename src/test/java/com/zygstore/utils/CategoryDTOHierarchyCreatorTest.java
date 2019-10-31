@@ -25,30 +25,26 @@ public class CategoryDTOHierarchyCreatorTest {
         Long id_1 = 1L;
         Long parentId_1 = null;
         String text_1 = "Elektronika";
-        String link_1 = MAIN_PAGE;
         String linkToPicture_1 = "/images/categories/elektronika.jpg";
-        CategoryDTO categoryDTO_1 = new CategoryDTO(id_1, parentId_1, text_1, link_1, linkToPicture_1);
+        CategoryDTO categoryDTO_1 = new CategoryDTO(id_1, parentId_1, text_1, linkToPicture_1);
 
         Long id_2 = 2L;
         Long parentId_2 = id_1;
         String text_2 = "Laptopy";
-        String link_2 = PRODUCTS_PAGE;
         String linkToPicture_2 = "null";
-        CategoryDTO categoryDTO_2 = new CategoryDTO(id_2, parentId_2, text_2, link_2, linkToPicture_2);
+        CategoryDTO categoryDTO_2 = new CategoryDTO(id_2, parentId_2, text_2, linkToPicture_2);
 
         Long id_3 = 184L;
         Long parentId_3 = null;
         String text_3 = "Telefony i Smartwatche";
-        String link_3 = MAIN_PAGE;
         String linkToPicture_3 = "/images/categories/telefonyIsmartwatche.jpg";
-        CategoryDTO categoryDTO_3 = new CategoryDTO(id_3, parentId_3, text_3, link_3, linkToPicture_3);
+        CategoryDTO categoryDTO_3 = new CategoryDTO(id_3, parentId_3, text_3, linkToPicture_3);
 
         Long id_4 = 185L;
         Long parentId_4 = id_3;
         String text_4 = "Telefony i Smartfony";
-        String link_4 = PRODUCTS_PAGE;
         String linkToPicture_4 = "null";
-        CategoryDTO categoryDTO_4 = new CategoryDTO(id_4, parentId_4, text_4, link_4, linkToPicture_4);
+        CategoryDTO categoryDTO_4 = new CategoryDTO(id_4, parentId_4, text_4, linkToPicture_4);
 
         categories.add(categoryDTO_1);
         categories.add(categoryDTO_2);

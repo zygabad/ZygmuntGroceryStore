@@ -37,7 +37,7 @@ public class CategoryDTOHierarchyCreator {
     private void updateLinks(List<CategoryDTO> categories) {
         for (CategoryDTO categoryDTO : categories) {
             if (categoryDTO.getParentId() == null) {
-                categoryDTO.setLink(MAIN_PAGE);
+                categoryDTO.setLink(CATEGORIES_PAGE);
             } else if (categoryDTO.getChildsList().size() > 0) {
                 categoryDTO.setLink(CATEGORIES_PAGE);
             } else {

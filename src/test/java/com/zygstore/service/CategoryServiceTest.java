@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 
+import static com.zygstore.utils.CategoryDTOHierarchyCreator.CATEGORIES_PAGE;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
 import com.zygstore.business.mappers.CategoryDTOMapper;
@@ -14,7 +14,7 @@ import com.zygstore.dto.CategoryDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
-import com.zygstore.utils.CSVFileUtils;
+import com.zygstore.utils.CategoryDTOHierarchyCreator;
 import com.zygstore.utils.Constants;
 import com.zygstore.utils.MenuItemsDTOSListCreator;
 import org.junit.Test;
@@ -38,6 +38,9 @@ public class CategoryServiceTest {
     @Spy
     private CategoryDTOMapper categoryDTOMapper;
 
+    @Spy
+    private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
+
     @InjectMocks
     private CategoryService categoryService;
 
@@ -47,10 +50,9 @@ public class CategoryServiceTest {
         Long id = 5L;
         Long parentId = null;
         String text = "Elektronika";
-        String link = "/index.xhtml";
         String linkToPicture = "http://picture";
 
-        Category category = new Category(id, parentId, text, link, linkToPicture);
+        Category category = new Category(id, parentId, text, linkToPicture);
         List<Category> categories = Arrays.asList(category);
 
         when(categoryDAO.getAllCategories()).thenReturn(categories);
@@ -65,25 +67,8 @@ public class CategoryServiceTest {
         assertEquals(id, categoryDTO.getId());
         assertEquals(parentId, categoryDTO.getParentId());
         assertEquals(text, categoryDTO.getText());
-        assertEquals(link, categoryDTO.getLink());
+        assertEquals(CATEGORIES_PAGE, categoryDTO.getLink());
         assertEquals(linkToPicture, categoryDTO.getLinkToPicture());
-    }
-
-    @Test
-    public void getCategoriesFromInternet() {
-        //given
-        ArrayList<String> linesFromFile = new ArrayList<>();
-        linesFromFile.add("1;null;Elektronika;");
-        linesFromFile.add("2;1;Telewizory;");
-
-        //when
-        List<CategoryDTO> result = categoryService.getCategories(linesFromFile);
-
-        //then
-        CategoryDTO categoryDTO = result.get(0);
-        assertEquals(Long.valueOf(1), categoryDTO.getId());
-        assertEquals(null, categoryDTO.getParentId());
-        assertEquals("Elektronika", categoryDTO.getText());
     }
 
     // TODO move to other test clase

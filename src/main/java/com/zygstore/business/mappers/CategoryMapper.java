@@ -22,7 +22,6 @@ public class CategoryMapper {
         Long id = 0L;
         Long parentId = 0L;
         String text = null;
-        String link = null;
         String linkToPicture = null;
 
         if (!values[0].equals("null")) {
@@ -36,9 +35,8 @@ public class CategoryMapper {
             parentId = null;
         }
         text = values[2];
-        link = values[3];
         linkToPicture = values[4];
 
-        return new Category(id, parentId, text, link, linkToPicture);
+        return new Category(id, parentId, text, linkToPicture);
     }
 }

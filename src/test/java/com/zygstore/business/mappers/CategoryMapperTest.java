@@ -48,7 +48,6 @@ public class CategoryMapperTest {
         assertEquals(id, category.getId());
         assertEquals(parentId, category.getParentId());
         assertEquals(text, category.getText());
-        assertEquals(link, category.getLink());
         assertEquals(linkToPicture, category.getLinkToPicture());
     }
 }

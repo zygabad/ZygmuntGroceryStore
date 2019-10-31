@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryDTO {
-    private Long id;//TODO change to Long
+    private Long id;
     private Long parentId;
     private String text;
     private String link;
@@ -15,11 +15,10 @@ public class CategoryDTO {
     public CategoryDTO() { //TODO wywalic - zrobiony zeby test validatora przechodzil
     }
 
-    public CategoryDTO(Long id, Long parentId, String text, String link, String linkToPicture) {
+    public CategoryDTO(Long id, Long parentId, String text, String linkToPicture) {
         this.id = id;
         this.parentId = parentId;
         this.text = text;
-        this.link = link;
         this.linkToPicture = linkToPicture;
         this.childsList = new ArrayList<>();
     }
