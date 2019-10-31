@@ -34,7 +34,7 @@
                             </b:thumbnail>
                         </b:column>
                     </ui:repeat>
-                    <h:panelGroup rendered="#{menuProductsBean.categoriesListEmpty}">
+                    <h:panelGroup rendered="#{menuProductsBean.isCategoriesListEmpty()}">
                         Nie znaleziono kateorii spełniających kryteria
                     </h:panelGroup>
                 </b:row>

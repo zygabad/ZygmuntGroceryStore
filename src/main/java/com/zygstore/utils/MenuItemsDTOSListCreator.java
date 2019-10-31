@@ -102,7 +102,6 @@ public class MenuItemsDTOSListCreator {
         return categoryDTO;
     }
 
-
     private CategoryDTO findItem(List<CategoryDTO> categoryDTOS, Long id) {
         for (CategoryDTO dto : categoryDTOS) {
             if (dto.getId().equals(id)) {

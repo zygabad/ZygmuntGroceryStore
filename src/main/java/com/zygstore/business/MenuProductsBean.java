@@ -40,7 +40,6 @@ public class MenuProductsBean {
 
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
-    public Boolean categoriesListEmpty;
 
     private Context context;
 
@@ -59,7 +58,6 @@ public class MenuProductsBean {
 
     public void initPage() throws IOException, WrongFileFormatExcetion {
         setMenuItemsList(categoryService.getCategories());
-        checkCategoriesListEmpty(categoryDTOClicked);
     }
 
     public void initProductsPage() {
@@ -69,7 +67,6 @@ public class MenuProductsBean {
 
     public void initMainPage() throws WrongFileFormatExcetion {
         setMenuItemsList(categoryService.getCategories());
-        setCategoriesListEmpty(false);
     }
 
     private Boolean checkListOfProductsNotEmpty(List<ProductDTO> listOfProducts) {
@@ -79,14 +76,6 @@ public class MenuProductsBean {
         } else {
             setProductListEmpty(true);
             return true;
-        }
-    }
-
-    public void checkCategoriesListEmpty(CategoryDTO categoryDTOClicked) {
-        if (categoryDTOClicked.getChildsList().size() > 0) {
-            setCategoriesListEmpty(false);
-        } else {
-            setCategoriesListEmpty(true);
         }
     }
 
@@ -103,33 +92,21 @@ public class MenuProductsBean {
         return Result.SUCCESS;
     }
 
-
-    private CategoryDTO findCategoryDTOByName(List<CategoryDTO> categoryDTOs, String categoryName) {
-        for (CategoryDTO categoryDTO : categoryDTOs) {
-            if (categoryDTO.getText().equals(categoryName)) {
-                return categoryDTO;
-            }
-        }
-
-        return null;
-    }
-
     public void setClickedMenuItem(String itemName) {
-        setCategoryDTOClicked(findMenuProductClickedByName(itemName));
-        checkCategoriesListEmpty(categoryDTOClicked);
+        CategoryDTO clickedItem = findMenuProductClickedByName(itemName);
+        setCategoryDTOClicked(clickedItem);
     }
 
     public List<CategoryDTO> getMenuItemsList() {
         return menuItemsList;
     }
 
-    public Boolean getCategoriesListEmpty() {
-        return categoriesListEmpty;
+    public Boolean isCategoriesListEmpty() {
+        return categoryDTOClicked == null
+            || categoryDTOClicked.getChildsList() == null
+            || categoryDTOClicked.getChildsList().size() == 0;
     }
 
-    public void setCategoriesListEmpty(Boolean categoriesListEmpty) {
-        this.categoriesListEmpty = categoriesListEmpty;
-    }
 
     public void setProductService(ProductService productService) {
         this.productService = productService;

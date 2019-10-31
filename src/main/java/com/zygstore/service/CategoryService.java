@@ -49,7 +49,6 @@ public class CategoryService {
         for (Category category : categories) {
             categoryDTOS.add(categoryDTOMapper.toCategoryDTO(category));
         }
-//        return menuItemsDTOSListCreator.getSelectedMenuItemsDTO(categoryDTOS, null);
         return categoryDTOHierarchyCreator.create(categoryDTOS);
     }
 
