@@ -71,6 +71,31 @@ public class CategoryServiceTest {
         assertEquals(linkToPicture, categoryDTO.getLinkToPicture());
     }
 
+    @Test
+    public void getCateory() {
+        //given
+        Long id = 1L;
+        Long parentId = null;
+        String text = "Elektronika";
+        String linkToPicture = "http://picture";
+        Category category = new Category(id, parentId, text, linkToPicture);
+        List<Category> categories = Arrays.asList(category);
+
+        when(categoryDAO.getAllCategories()).thenReturn(categories);
+
+        //when
+        CategoryDTO result = categoryService.getCategory(1L);
+
+        //then
+        assertEquals(id, result.getId());
+    }
+
+
+
+
+
+
+
     // TODO move to other test clase
     @Test
     public void getSelectedMenuItems() {

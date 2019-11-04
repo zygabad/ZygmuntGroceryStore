@@ -26,6 +26,7 @@ public class CategoryService {
     private CSVFileUtils CSVFileUtils;
     private MenuItemsDTOSListCreator menuItemsDTOSListCreator;
     private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
+    private  Map<Long, CategoryDTO> categoriesMap = new HashMap<>();
 
     @Autowired
     private CategoryDAO categoryDAO;
@@ -50,6 +51,19 @@ public class CategoryService {
             categoryDTOS.add(categoryDTOMapper.toCategoryDTO(category));
         }
         return categoryDTOHierarchyCreator.create(categoryDTOS);
+    }
+
+    public CategoryDTO getCategory(Long id) {
+        buildCategoriesMap(getCategories());
+
+        return categoriesMap.get(id);
+    }
+
+    private void buildCategoriesMap(List<CategoryDTO> categories){
+        for (CategoryDTO categoryDTO : categories){
+            categoriesMap.put(categoryDTO.getId(), categoryDTO);
+            buildCategoriesMap(categoryDTO.getChildsList());
+        }
     }
 
     public List<CategoryDTO> getCategories(ArrayList<String> linesFromFile) {
