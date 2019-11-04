@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="result" class="com.zygstore.navigation.Result" factory-method="valueOf">
+        <constructor-arg value="ERROR"></constructor-arg>
+    </bean>
+
+    <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
+
+
+    <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.CSVFileUtils">
+        <property name="fileEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="categoryFileInputValidator" class="com.zygstore.validation.CategoryFileInputValidator">
+
+    </bean>
+
+    <bean id="menuItemsDTOSListCreator" class="com.zygstore.utils.MenuItemsDTOSListCreator"/>
+
+    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator"/>
+
+    <bean id="emailConfig" class="com.zygstore.config.EmailConfig">
+        <constructor-arg name="hostName" value="relayinternal.nykreditnet.net"/>
+        <constructor-arg name="username" value="y08l@nykredit.dk"/>
+        <constructor-arg name="password" value=""/>
+        <constructor-arg name="port" value="25"/>
+        <constructor-arg name="auth" value="true"/>
+    </bean>
+
+</beans>

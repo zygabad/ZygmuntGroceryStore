@@ -49,9 +49,13 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
-        </fileset>
-        <fileset id="fileset2" name="Spring Application Context TEST" removed="false">
-          <file>file://$MODULE_DIR$/src/test/webapp/applicationTestConfig.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationConfigDAOS.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/applicationConfigServices.xml</file>
+          <file>file://$MODULE_DIR$/src/test/webapp/WEB-INF/applicationTestContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/applicationConfigUtils.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/applicationConfigMappers.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/applicationConfigDTOS.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/applicationConfigBusinessBeans.xml</file>
         </fileset>
       </configuration>
     </facet>

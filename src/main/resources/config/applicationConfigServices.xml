@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="productService" class="com.zygstore.service.ProductService">
+        <constructor-arg name="productDAO" ref="productDAOFileImpl"></constructor-arg>
+        <constructor-arg name="productDTOMapper" ref="productDTOMapper"></constructor-arg>
+    </bean>
+
+    <bean id="categoryService" class="com.zygstore.service.CategoryService">
+        <constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>
+        <constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>
+        <constructor-arg name="menuItemsDTOSListCreator" ref="menuItemsDTOSListCreator"/>
+        <constructor-arg name="categoryDTOHierarchyCreator" ref="categoryDTOHierarchyCreator"/>
+        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
+    </bean>
+
+    <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">
+        <constructor-arg name="emailService" ref="emailService"/>
+    </bean>
+
+    <bean id="emailService" class="com.zygstore.service.EmailService">
+        <constructor-arg name="emailConfig" ref="emailConfig"/>
+    </bean>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
+        <constructor-arg name="firstname" value=""/>
+        <constructor-arg name="secondname" value=""/>
+        <constructor-arg name="email" value=""/>
+        <constructor-arg name="phone" value=""/>
+        <constructor-arg name="issueType" value=""/>
+        <constructor-arg name="messageText" value=""/>
+        <constructor-arg name="clientAlready" value=""/>
+    </bean>
+
+</beans>

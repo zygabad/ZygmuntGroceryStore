@@ -13,7 +13,6 @@ import com.zygstore.dto.CategoryDTO;
  */
 
 public class CategoryDTOHierarchyCreator {
-    public static final String MAIN_PAGE = "/index.xhtml";
     public static final String PRODUCTS_PAGE = "/viewProductsList.xhtml";
     public static final String CATEGORIES_PAGE = "/viewProductsCategories.xhtml";
 
