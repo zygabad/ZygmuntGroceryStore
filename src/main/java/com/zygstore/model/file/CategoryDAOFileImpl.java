@@ -1,11 +1,9 @@
 package com.zygstore.model.file;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 import com.zygstore.business.mappers.CategoryMapper;
-import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
@@ -46,20 +44,12 @@ public class CategoryDAOFileImpl implements CategoryDAO {
 
     @Override
     public List<Category> getAllCategories() {
-        List<Category> categoryList = new ArrayList<>();
         List<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
 
-        for (String line : linesFromFile) {
-            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
-                String[] values = line.split(";");
-                categoryList.add(categoryMapper.toCategory(values));
-            }
-        }
-        return categoryList;
+        return categoryMapper.toCategories(linesFromFile);
     }
 
     public void setCategoryMapper(CategoryMapper categoryMapper) {
         this.categoryMapper = categoryMapper;
-
     }
 }

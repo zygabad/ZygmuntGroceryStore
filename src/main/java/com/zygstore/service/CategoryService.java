@@ -35,13 +35,16 @@ public class CategoryService {
     @Autowired
     private CategoryDTOMapper categoryDTOMapper;
 
+    @Autowired
     private CategoryMapper categoryMapper;
 
     public CategoryService(CategoryDAO categoryDAO,
+                           CategoryMapper categoryMapper,
                            CategoryDTOMapper categoryDTOMapper,
                            MenuItemsDTOSListCreator menuItemsDTOSListCreator,
                            CategoryDTOHierarchyCreator categoryDTOHierarchyCreator) {
         this.categoryDAO = categoryDAO;
+        this.categoryMapper = categoryMapper;
         this.categoryDTOMapper = categoryDTOMapper;
         this.menuItemsDTOSListCreator = menuItemsDTOSListCreator;
         this.categoryDTOHierarchyCreator = categoryDTOHierarchyCreator;
@@ -52,20 +55,10 @@ public class CategoryService {
         return toCategoryDTOS(categories);
     }
 
-    public List<CategoryDTO> getCategories(List<String> linesFromFile) {
-        List<Category> categories = new ArrayList<>();
-
-        for (String line : linesFromFile) {
-            String[] values = line.split(";");
-            categories.add(categoryMapper.toCategory(values));
-        }
+    public List<CategoryDTO> getCategories(List<String> lines) {
+        List<Category> categories = categoryMapper.toCategories(lines);
 
         return toCategoryDTOS(categories);
-
-        //List<CategoryDTO> listOfAllMenuItemsDTO = menuItemsDTOSListCreator.getAllMenuItemsDTO(linesFromFile);
-        //List<CategoryDTO> listOfRootMenuItemsDTO = menuItemsDTOSListCreator.getSelectedMenuItemsDTO(listOfAllMenuItemsDTO, null);
-
-        //return listOfRootMenuItemsDTO;
     }
 
     private List<CategoryDTO> toCategoryDTOS(List<Category> categories) {

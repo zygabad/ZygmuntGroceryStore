@@ -1,5 +1,9 @@
 package com.zygstore.business.mappers;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.validation.CategoryFileInputValidator;
@@ -14,6 +18,18 @@ public class CategoryMapper {
     private CategoryFileInputValidator categoryFileInputValidator;
 
     public CategoryMapper() {
+    }
+
+    public List<Category> toCategories(List<String> lines){
+        List<Category> categories = new ArrayList<>();
+        for (String line : lines) {
+            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
+                String[] values = line.split(";");
+                categories.add(toCategory(values));
+            }
+        }
+
+        return categories;
     }
 
     public Category toCategory(String[] values) throws WrongFileFormatExcetion {

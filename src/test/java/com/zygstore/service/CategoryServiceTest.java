@@ -7,9 +7,11 @@ import java.util.List;
 
 import static com.zygstore.utils.CategoryDTOHierarchyCreator.CATEGORIES_PAGE;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 import com.zygstore.business.mappers.CategoryDTOMapper;
+import com.zygstore.business.mappers.CategoryMapper;
 import com.zygstore.dto.CategoryDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
@@ -34,6 +36,9 @@ public class CategoryServiceTest {
 
     @Mock
     private CategoryDAO categoryDAO;
+
+    @Spy
+    private CategoryMapper categoryMapper;
 
     @Spy
     private CategoryDTOMapper categoryDTOMapper;
@@ -69,6 +74,25 @@ public class CategoryServiceTest {
         assertEquals(text, categoryDTO.getText());
         assertEquals(CATEGORIES_PAGE, categoryDTO.getLink());
         assertEquals(linkToPicture, categoryDTO.getLinkToPicture());
+    }
+
+    @Test
+    public void testGetCategoriesFromLines() {
+        //given
+        String line = "1;null;Elektronika;https://www.komputronik.pl/category/14508/elektronika.html;http://picture";
+        List<String> lines = Arrays.asList(line);
+
+        //when
+        List<CategoryDTO> result = categoryService.getCategories(lines);
+
+        //then
+        assertEquals(1, result.size());
+        CategoryDTO categoryDTO = result.get(0);
+        assertEquals(1, categoryDTO.getId().longValue());
+        assertNull(categoryDTO.getParent());
+        assertEquals("Elektronika", categoryDTO.getText());
+        assertEquals(CATEGORIES_PAGE, categoryDTO.getLink());
+        assertEquals("http://picture", categoryDTO.getLinkToPicture());
     }
 
     // TODO move to other test clase

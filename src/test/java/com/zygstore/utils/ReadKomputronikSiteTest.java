@@ -1,5 +1,8 @@
 package com.zygstore.utils;
 
+import java.io.IOException;
+
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -12,10 +15,19 @@ import org.junit.Test;
 
 public class ReadKomputronikSiteTest {
 
-    @Test
-    public void getLinesFromFile() {
+    //TODO test integracyjny z tego ponizszego
+    public void getLinesFromFile() throws IOException {
         //given
+        String expectedFirstLineInFile = "1;null;Elektronika;https://www.komputronik.pl/category/14508/elektronika.html";
+        ReadKomputronikSite readKomputronikSite = new ReadKomputronikSite();
+
         //when
+        String result = readKomputronikSite.getLinesFromFile().get(0);
+
         //then
+        assertEquals(expectedFirstLineInFile, result);
     }
+
+
+
 }
