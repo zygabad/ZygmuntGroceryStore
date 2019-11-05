@@ -19,12 +19,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class ProductDAOFileImpl implements ProductDAO {
     private String productsFile;
     private ProductMapper productMapper;
-    private CSVFileUtils CSVFileUtils;
+    private CSVFileUtils csvFileUtils;
 
     public ProductDAOFileImpl(String productsFile,
-                              ProductMapper productMapper) {
+                              ProductMapper productMapper,
+                              CSVFileUtils csvFileUtils) {
         this.productsFile = productsFile;
         this.productMapper = productMapper;
+        this.csvFileUtils = csvFileUtils;
     }
 
     //TODO to implement
@@ -35,7 +37,7 @@ public class ProductDAOFileImpl implements ProductDAO {
 
     @Override
     public List<Product> getProducts(Long category) {
-        List<String> linesFromFile = CSVFileUtils.getList(productsFile);
+        List<String> linesFromFile = csvFileUtils.getList(productsFile);
         List<Product> listOfProducts = new ArrayList<>();
 
         for (String line : linesFromFile) {
@@ -56,9 +58,5 @@ public class ProductDAOFileImpl implements ProductDAO {
     @Override
     public List<Product> getAllProducts() {
         throw new NotImplementedException();
-    }
-
-    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
-        this.CSVFileUtils = CSVFileUtils;
     }
 }

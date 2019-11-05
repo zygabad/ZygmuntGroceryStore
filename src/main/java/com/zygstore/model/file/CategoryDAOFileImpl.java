@@ -18,16 +18,17 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class CategoryDAOFileImpl implements CategoryDAO {
     private String categoriesFile;
-    private CSVFileUtils CSVFileUtils;
+    //TODO consider to have a service instead of util
+    private CSVFileUtils csvFileUtils;
     @Autowired
     private CategoryMapper categoryMapper;
 
-    public void setCategoriesFile(String categoriesFile) {
+    public CategoryDAOFileImpl(CategoryMapper categoryMapper,
+                               String categoriesFile,
+                               CSVFileUtils csvFileUtils) {
+        this.categoryMapper = categoryMapper;
         this.categoriesFile = categoriesFile;
-    }
-
-    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
-        this.CSVFileUtils = CSVFileUtils;
+        this.csvFileUtils = csvFileUtils;
     }
 
     //TODO implement
@@ -44,12 +45,8 @@ public class CategoryDAOFileImpl implements CategoryDAO {
 
     @Override
     public List<Category> getAllCategories() {
-        List<String> linesFromFile = CSVFileUtils.getList(categoriesFile);
+        List<String> linesFromFile = csvFileUtils.getList(categoriesFile);
 
         return categoryMapper.toCategories(linesFromFile);
-    }
-
-    public void setCategoryMapper(CategoryMapper categoryMapper) {
-        this.categoryMapper = categoryMapper;
     }
 }
