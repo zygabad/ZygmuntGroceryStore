@@ -14,7 +14,6 @@ import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
 import com.zygstore.utils.CategoryDTOHierarchyCreator;
-import com.zygstore.utils.MenuItemsDTOSListCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -24,10 +23,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 
 public class CategoryService {
-    private CSVFileUtils CSVFileUtils;
-    private MenuItemsDTOSListCreator menuItemsDTOSListCreator;
+    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
+
     private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
-    private Map<Long, CategoryDTO> categoriesMap = new HashMap<>();
 
     @Autowired
     private CategoryDAO categoryDAO;
@@ -41,12 +39,10 @@ public class CategoryService {
     public CategoryService(CategoryDAO categoryDAO,
                            CategoryMapper categoryMapper,
                            CategoryDTOMapper categoryDTOMapper,
-                           MenuItemsDTOSListCreator menuItemsDTOSListCreator,
                            CategoryDTOHierarchyCreator categoryDTOHierarchyCreator) {
         this.categoryDAO = categoryDAO;
         this.categoryMapper = categoryMapper;
         this.categoryDTOMapper = categoryDTOMapper;
-        this.menuItemsDTOSListCreator = menuItemsDTOSListCreator;
         this.categoryDTOHierarchyCreator = categoryDTOHierarchyCreator;
     }
 
@@ -61,6 +57,20 @@ public class CategoryService {
         return toCategoryDTOS(categories);
     }
 
+    public CategoryDTO mainPageDTO() {
+        Long id = 0L;
+        Long parentId = null;
+        String text = "MainPageDTO";
+        String linkToPicture = null;
+        CategoryDTO categoryDTO = new CategoryDTO(id, parentId, text, linkToPicture);
+
+        List<String> breadcrumb = new ArrayList<>();
+        breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
+        categoryDTO.setBreadCrumbs(breadcrumb);
+
+        return categoryDTO;
+    }
+
     private List<CategoryDTO> toCategoryDTOS(List<Category> categories) {
         List<CategoryDTO> categoryDTOS = new ArrayList<>();
         for (Category category : categories) {
@@ -68,9 +78,5 @@ public class CategoryService {
         }
 
         return categoryDTOHierarchyCreator.create(categoryDTOS);
-    }
-
-    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
-        this.CSVFileUtils = CSVFileUtils;
     }
 }

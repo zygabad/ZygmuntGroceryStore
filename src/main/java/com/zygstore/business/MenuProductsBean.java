@@ -20,7 +20,6 @@ import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
-import com.zygstore.utils.MenuItemsDTOSListCreator;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFileUtils;
 import org.apache.log4j.Logger;
@@ -159,8 +158,7 @@ public class MenuProductsBean {
     //TODO wrzuc to do service lub util i napisz test do tego???
     public CategoryDTO findMenuProductClickedByName(String itemName) {
         if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
-            MenuItemsDTOSListCreator menuItemsDTOSListCreator = new MenuItemsDTOSListCreator();
-            return menuItemsDTOSListCreator.mainPageDTO();
+            return categoryService.mainPageDTO();
         }
 
         return menuItemsMap.get(itemName);
