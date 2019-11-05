@@ -27,7 +27,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ContactMessageBean {
     private ContactMessageService contactMessageService;
     ClassPathXmlApplicationContext ctx;
-    private Context context;
+
     private String firstname;
     private String secondname;
     private String email;
@@ -39,7 +39,8 @@ public class ContactMessageBean {
 
     final static Logger logger = Logger.getLogger(ContactMessageBean.class);
 
-    public ContactMessageBean() {
+    public ContactMessageBean(ContactMessageService contactMessageService) {
+        this.contactMessageService = contactMessageService;
         System.out.println("ContactMessageBean zainicjalizowany !");
         logger.info("ContactMessageBean initialized!");
     }
@@ -125,14 +126,6 @@ public class ContactMessageBean {
         this.clientAlready = clientAlready;
     }
 
-    public void setContactMessageService(ContactMessageService contactMessageService) {
-        this.contactMessageService = contactMessageService;
-    }
-
-    public ContactMessageService getContactMessageService() {
-        return contactMessageService;
-    }
-
     public void setTicketNumber(String ticketNumber) {
         this.ticketNumber = ticketNumber;
     }
@@ -141,11 +134,4 @@ public class ContactMessageBean {
         return ticketNumber;
     }
 
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public Context getContext() {
-        return context;
-    }
 }

@@ -32,15 +32,12 @@ import org.apache.log4j.Logger;
 @ManagedBean(name = "menuProductsBean", eager = true)
 @SessionScoped
 public class MenuProductsBean {
-
     private static final Logger LOGGER = Logger.getLogger(MenuProductsBean.class);
     private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
 
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
     public Boolean productListEmpty;
-
-    private Context context;
 
     CategoryService categoryService;
     ProductService productService;
@@ -50,7 +47,10 @@ public class MenuProductsBean {
     private Map<String, CategoryDTO> menuItemsMap;
 
 
-    public MenuProductsBean() {
+    public MenuProductsBean(CategoryService categoryService,
+                            ProductService productService) {
+        this.categoryService = categoryService;
+        this.productService = productService;
         out.println("MenuProductsBean zainicjalizowany !");
         LOGGER.info("MenuProductsBean initialized!");
     }
@@ -106,11 +106,6 @@ public class MenuProductsBean {
             || categoryDTOClicked.getChildsList().size() == 0;
     }
 
-
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
-    }
-
     public List<ProductDTO> getProductsList() {
         return productsList;
     }
@@ -121,22 +116,6 @@ public class MenuProductsBean {
 
     public void setProductListEmpty(Boolean productListEmpty) {
         this.productListEmpty = productListEmpty;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public Context getContext() {
-        return context;
-    }
-
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public CategoryService getCategoryService() {
-        return categoryService;
     }
 
     public void setFileNameWithPathToCategories(String fileNameWithPathToCategories) {

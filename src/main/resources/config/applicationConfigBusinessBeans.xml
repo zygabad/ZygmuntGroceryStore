@@ -4,14 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="contactMessageBean" class="com.zygstore.business.ContactMessageBean">
-        <property name="contactMessageService" ref="contactMessageService"/>
-        <property name="context" ref="context"/>
+        <constructor-arg name="contactMessageService" ref="contactMessageService"/>
     </bean>
 
     <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
-        <property name="context" ref="context"/>
-        <property name="categoryService" ref="categoryService"/>
-        <property name="productService" ref="productService"/>
+        <constructor-arg name="categoryService" ref="categoryService"/>
+        <constructor-arg name="productService" ref="productService"/>
         <property name="fileNameWithPathToCategories" ref="fileNameWithPathToCategories"></property>
     </bean>
 
