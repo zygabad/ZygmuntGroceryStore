@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="productDAOFileImpl" class="com.zygstore.model.file.ProductDAOFileImpl">
+        <constructor-arg name="productsFile" value="Products.csv"></constructor-arg>
+        <constructor-arg name="productMapper" ref="productMapper"></constructor-arg>
+        <constructor-arg name="csvFileUtils" ref="readCSVFileWithAllCategories"/>
+    </bean>
+
+    <bean id="categoryDAOfileImpl" class="com.zygstore.model.file.CategoryDAOFileImpl">
+        <constructor-arg name="categoryMapper" ref="categoryMapper"/>
+        <constructor-arg name="categoriesFile" value="Categories.csv"/>
+        <constructor-arg name="csvFileUtils" ref="readCSVFileWithAllCategories"/>
+    </bean>
+
+</beans>

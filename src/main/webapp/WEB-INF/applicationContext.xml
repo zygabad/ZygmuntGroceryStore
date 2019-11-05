@@ -3,89 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="contactMessageBean" class="com.zygstore.business.ContactMessageBean">
-        <property name="contactMessageService" ref="contactMessageService"/>
-        <property name="context" ref="context"/>
-    </bean>
 
-    <bean id="contactMessageService" class="com.zygstore.service.ContactMessageService">
-        <constructor-arg name="emailService" ref="emailService"/>
-    </bean>
-
-    <bean id="emailService" class="com.zygstore.service.EmailService">
-        <constructor-arg name="emailConfig" ref="emailConfig"/>
-    </bean>
-
-    <bean id="emailConfig" class="com.zygstore.config.EmailConfig">
-        <constructor-arg name="hostName" value="relayinternal.nykreditnet.net"/>
-        <constructor-arg name="username" value="y08l@nykredit.dk"/>
-        <constructor-arg name="password" value=""/>
-        <constructor-arg name="port" value="25"/>
-        <constructor-arg name="auth" value="true"/>
-    </bean>
-
-    <bean id="menuProductsBean" class="com.zygstore.business.MenuProductsBean">
-        <property name="context" ref="context"/>
-        <property name="menuProductsService" ref="menuProductsService"/>
-        <property name="productService" ref="productService"/>
-        <property name="fileNameWithPathToCategories" ref="fileNameWithPathToCategories"></property>
-    </bean>
-
-    <bean id="contactMessageDTO" class="com.zygstore.dto.ContactMessageDTO">
-        <constructor-arg name="firstname" value=""/>
-        <constructor-arg name="secondname" value=""/>
-        <constructor-arg name="email" value=""/>
-        <constructor-arg name="phone" value=""/>
-        <constructor-arg name="issueType" value=""/>
-        <constructor-arg name="messageText" value=""/>
-        <constructor-arg name="clientAlready" value=""/>
-    </bean>
+    <import resource="classpath:config/applicationConfigDAOS.xml"/>
+    <import resource="classpath:config/applicationConfigDTOS.xml"/>
+    <import resource="classpath:config/applicationConfigMappers.xml"/>
+    <import resource="classpath:config/applicationConfigServices.xml"/>
+    <import resource="classpath:config/applicationConfigUtils.xml"/>
+    <import resource="classpath:config/applicationConfigBusinessBeans.xml"/>
 
     <bean id="context" class="com.zygstore.config.Context">
         <constructor-arg value="application-config.xml"/>
-    </bean>
-
-    <bean id="result" class="com.zygstore.navigation.Result" factory-method="valueOf">
-        <constructor-arg value="ERROR"></constructor-arg>
-    </bean>
-
-    <bean id="menuProductsService" class="com.zygstore.service.MenuProductsService">
-        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
-    </bean>
-
-    <bean id="productMapper" class="com.zygstore.business.mappers.ProductMapper">
-    </bean>
-
-    <bean id="categoryMapper" class="com.zygstore.business.mappers.CategoryMapper">
-    </bean>
-
-    <bean id="productDTOMapper" class="com.zygstore.business.mappers.ProductDTOMapper">
-    </bean>
-
-    <bean id="productService" class="com.zygstore.service.ProductService">
-        <constructor-arg name="productDAO" ref="productDAOFileImpl"></constructor-arg>
-        <constructor-arg name="productDTOMapper" ref="productDTOMapper"></constructor-arg>
-    </bean>
-
-    <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
-
-    <bean id="productDAOFileImpl" class="com.zygstore.model.file.ProductDAOFileImpl">
-        <constructor-arg name="productsFile" value="Products.csv"></constructor-arg>
-        <constructor-arg name="productMapper" ref="productMapper"></constructor-arg>
-        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
-    </bean>
-
-    <bean id="categoryDAOfileImpl" class="com.zygstore.model.file.CategoryDAOFileImpl">
-        <property name="categoriesFile" value="Categories.csv"></property>
-        <property name="CSVFileUtils" ref="readCSVFileWithAllCategories"/>
-    </bean>
-
-    <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.CSVFileUtils">
-        <property name="fileEncoding" value="UTF-8"/>
-    </bean>
-
-    <bean id="categoryFileInputValidator" class="com.zygstore.validation.CategoryFileInputValidator">
-
     </bean>
 
 </beans>

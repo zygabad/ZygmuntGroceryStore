@@ -6,13 +6,13 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class WriteFile {
+public class WriteFileUtils {
     private static final String FILE_ENCODING ="UTF-8";
     private String fileName;
     private FileWriter fw;
     private ArrayList<String> listOfLiinesToWrite;
 
-    public WriteFile(String fileName, ArrayList<String> listOfLiinesToWrite) throws IOException {
+    public WriteFileUtils(String fileName, ArrayList<String> listOfLiinesToWrite) throws IOException {
         this.fileName = fileName;
         this.listOfLiinesToWrite = listOfLiinesToWrite;
     }

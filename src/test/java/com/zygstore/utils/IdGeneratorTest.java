@@ -3,7 +3,6 @@ package com.zygstore.utils;
 import static org.junit.Assert.assertEquals;
 
 import com.zygstore.excpetions.WrongIdException;
-import com.zygstore.service.MenuProductsService;
 import org.junit.Test;
 
 /**

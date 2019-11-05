@@ -14,6 +14,6 @@ import com.zygstore.model.Product;
 
 public interface ProductDAO {
     public Product read(String productName);
-    public List<Product> getProducts(String categoryId);
+    public List<Product> getProducts(Long categoryId);
     List<Product> getAllProducts();
 }

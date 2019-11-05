@@ -5,7 +5,7 @@
                 xmlns:b="http://bootsfaces.net/ui">
     <h:form>
         <b:breadcrumbs>
-            <ui:repeat value="#{menuProductsBean.menuProductsDTOClicked.breadCrumbs}" var="breadCrumb">
+            <ui:repeat value="#{menuProductsBean.categoryDTOClicked.breadCrumbs}" var="breadCrumb">
                 <b:navLink value="#{breadCrumb}" outcome="#{menuProductsBean.findMenuProductClickedByName(breadCrumb).link}" onclick="ajax:menuProductsBean.setClickedMenuItem(breadCrumb)"/>
             </ui:repeat>
         </b:breadcrumbs>

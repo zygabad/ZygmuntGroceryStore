@@ -19,12 +19,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class ProductDAOFileImpl implements ProductDAO {
     private String productsFile;
     private ProductMapper productMapper;
-    private CSVFileUtils CSVFileUtils;
+    private CSVFileUtils csvFileUtils;
 
     public ProductDAOFileImpl(String productsFile,
-                              ProductMapper productMapper) {
+                              ProductMapper productMapper,
+                              CSVFileUtils csvFileUtils) {
         this.productsFile = productsFile;
         this.productMapper = productMapper;
+        this.csvFileUtils = csvFileUtils;
     }
 
     //TODO to implement
@@ -34,14 +36,15 @@ public class ProductDAOFileImpl implements ProductDAO {
     }
 
     @Override
-    public List<Product> getProducts(String category) {
-        List<String> linesFromFile = CSVFileUtils.getList(productsFile);
+    public List<Product> getProducts(Long category) {
+        List<String> linesFromFile = csvFileUtils.getList(productsFile);
         List<Product> listOfProducts = new ArrayList<>();
 
         for (String line : linesFromFile) {
             if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
                 String[] values = line.split(";");
-                if (values[2].equals(category)) {
+
+                if (values[2] != null && !values[2].equals("") && Long.parseLong(values[2]) == category.longValue()) {
                     Product product = productMapper.toProduct(values);
                     listOfProducts.add(product);
                 }
@@ -55,9 +58,5 @@ public class ProductDAOFileImpl implements ProductDAO {
     @Override
     public List<Product> getAllProducts() {
         throw new NotImplementedException();
-    }
-
-    public void setCSVFileUtils(CSVFileUtils CSVFileUtils) {
-        this.CSVFileUtils = CSVFileUtils;
     }
 }
