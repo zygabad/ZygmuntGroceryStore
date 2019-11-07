@@ -10,9 +10,12 @@
     <import resource="classpath:config/applicationConfigServices.xml"/>
     <import resource="classpath:config/applicationConfigUtils.xml"/>
     <import resource="classpath:config/applicationConfigBusinessBeans.xml"/>
+    <import resource="classpath:config/applicationCacheConfig.xml"/>
 
     <bean id="context" class="com.zygstore.config.Context">
         <constructor-arg value="application-config.xml"/>
     </bean>
+
+
 
 </beans>

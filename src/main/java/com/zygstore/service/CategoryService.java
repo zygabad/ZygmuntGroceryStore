@@ -15,6 +15,8 @@ import com.zygstore.model.dao.CategoryDAO;
 import com.zygstore.utils.CSVFileUtils;
 import com.zygstore.utils.CategoryDTOHierarchyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 
 /**
  * Place description here.
@@ -46,6 +48,7 @@ public class CategoryService {
         this.categoryDTOHierarchyCreator = categoryDTOHierarchyCreator;
     }
 
+    @Cacheable("categories")
     public List<CategoryDTO> getCategories() throws WrongFileFormatExcetion {
         List<Category> categories = categoryDAO.getAllCategories();
         return toCategoryDTOS(categories);
