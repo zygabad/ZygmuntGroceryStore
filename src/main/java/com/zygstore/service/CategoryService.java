@@ -1,9 +1,7 @@
 package com.zygstore.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 import com.zygstore.business.mappers.CategoryDTOMapper;
@@ -12,9 +10,10 @@ import com.zygstore.dto.CategoryDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
-import com.zygstore.utils.CSVFileUtils;
 import com.zygstore.utils.CategoryDTOHierarchyCreator;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 
 /**
  * Place description here.
@@ -24,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class CategoryService {
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
+    final static Logger logger = Logger.getLogger(CategoryService.class);
 
     private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
 
@@ -46,8 +46,11 @@ public class CategoryService {
         this.categoryDTOHierarchyCreator = categoryDTOHierarchyCreator;
     }
 
+    @Cacheable("categories")
     public List<CategoryDTO> getCategories() throws WrongFileFormatExcetion {
         List<Category> categories = categoryDAO.getAllCategories();
+        logger.info("Executing method CategoryService.getCategories() - reading categories from file not from cache");
+
         return toCategoryDTOS(categories);
     }
 

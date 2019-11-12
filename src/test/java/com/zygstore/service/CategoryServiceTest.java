@@ -57,7 +57,6 @@ public class CategoryServiceTest {
 
         Category category = new Category(id, parentId, text, linkToPicture);
         List<Category> categories = Arrays.asList(category);
-
         when(categoryDAO.getAllCategories()).thenReturn(categories);
 
         //when

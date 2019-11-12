@@ -41,8 +41,8 @@ public class RequestResultFilter implements Filter {
         HttpSession session = httpRequest.getSession(false);
         try {
             chain.doFilter(httpRequest, response);
-            out.println("Przeszedlem przez filtr RequestResultFilter");
-            logger.info("Passed through RequestResultFilter");
+//            out.println("Przeszedlem przez filtr RequestResultFilter");
+//            logger.info("Passed through RequestResultFilter");
         } catch (Exception exception) {
             //TODO log error here and pass it further redirect to error page
             logger.error("Something went wrong, stacktrace: ", exception);

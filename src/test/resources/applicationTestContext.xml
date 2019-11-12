@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <cache:annotation-driven/>
+
+    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+        <property name="caches">
+            <set>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" name="categories" />
+            </set>
+        </property>
+    </bean>
+
+    <bean id="categoryDAOMock" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.zygstore.model.dao.CategoryDAO"/>
+    </bean>
+
+    <bean id="categoryMapper" class="com.zygstore.business.mappers.CategoryMapper"/>
+
+    <bean id="categoryDTOMapper" class="com.zygstore.business.mappers.CategoryDTOMapper"/>
+
+    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator"/>
+
+    <bean id="categoryService" class="com.zygstore.service.CategoryService">
+        <constructor-arg name="categoryDAO" ref="categoryDAOMock"/>
+        <constructor-arg name="categoryMapper" ref="categoryMapper"/>
+        <constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>
+        <constructor-arg name="categoryDTOHierarchyCreator" ref="categoryDTOHierarchyCreator"/>
+    </bean>
+</beans>
