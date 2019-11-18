@@ -5,9 +5,9 @@
                 xmlns:b="http://bootsfaces.net/ui">
     <b:form id="contact_form">
         <b:container fluid="=true">
-            <b:panel title="Czyszczenie cache" look="primary">
+            <b:panel title="Czyszczenie cache" collapsible="false">
                 <b:row>
-                    <b:column medium-screen="4"></b:column>
+                    <b:column medium-screen="2"></b:column>
                     <b:column medium-screen="4">
                         <h:outputText value="Operacja czyszczenia cache przebiegła pomyślnie" />
                     </b:column>
@@ -16,9 +16,8 @@
                 </b:row>
                 <b:row>
                     <b:column medium-screen="2"></b:column>
-                    <b:column medium-screen="2"></b:column>
                     <b:column medium-screen="4">
-                        <h:commandButton action="BACK" value="Wróć" >
+                        <h:commandButton style="width:150px" action="BACK" value="Wróć" >
                             <!-- <f:param name="someparam" value="somevalue" /> -->
                         </h:commandButton>
                     </b:column>

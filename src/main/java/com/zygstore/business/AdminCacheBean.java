@@ -51,8 +51,6 @@ public class AdminCacheBean {
     }
 
     protected void showMessage() {
-        FacesContext.getCurrentInstance().addMessage(null,
-            new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message", "INFO Cache was successfully cleared"));
         LOGGER.info("Cache was successfully cleared");
     }
 

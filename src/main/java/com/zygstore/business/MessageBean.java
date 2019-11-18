@@ -30,7 +30,14 @@ public class MessageBean {
         return "";
     }
 
-    public String getMessage() {
+    public void doLog(){
+
+    if(this.message.equals("TEST ZYG")) {
+        FacesContext.getCurrentInstance().addMessage(null,
+            new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error Message", "Error Message"));
+    }}
+
+        public String getMessage() {
         return message;
     }
 

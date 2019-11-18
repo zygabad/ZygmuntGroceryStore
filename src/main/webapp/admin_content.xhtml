@@ -3,35 +3,31 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:b="http://bootsfaces.net/ui">
-    <b:tabView activeIndex="0" pills="false" contentStyle="border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding:10px">
-        <b:tab title="Menu z Komputronik">
             <b:form id="admin_form">
                 <b:container fluid="=true">
-                    <b:panel title="Tworzenie menu z komputronik" look="primary">
+                    <b:panel title="Tworzenie menu z komputronik" collapsible="false">
                         <b:row>
-                            <b:column medium-screen="2"></b:column>
-                            <b:column medium-screen="2">
+                            <b:column medium-screen="4">
                                 <h:outputText value="Scieżka do pliku:" for="filename"/>
                             </b:column>
-                            <b:column medium-screen="4">
-                                <b:inputText placeholder="Sciezka do pliku" id="filename"
+                            <b:column medium-screen="2">
+                                <b:inputText style="width:200px" placeholder="Sciezka do pliku" id="filename"
                                              value="#{menuProductsBean.fileNameWithPathToCategories}"
                                              ajax="true" autocomplete="false" update="@(.message)" required="true"
                                              data-error="Sciezka jest wymagana.">
                                     <f:facet name="prepend">
-                                        <b:icon name="user"/>
+                                        <b:icon name="file"/>
                                     </f:facet>
                                 </b:inputText>
                             </b:column>
                         </b:row>
 
                         <b:row>
-                            <b:column medium-screen="2"></b:column>
-                            <b:column medium-screen="2"></b:column>
-                            <b:column medium-screen="4">
+                            <b:column medium-screen="4"></b:column>
+                            <b:column medium-screen="2">
 
-                                <h:commandButton action="#{menuProductsBean.readKomputronikSiteToFile}"
-                                                 value="Zaczytaj Komputronik do pliku"></h:commandButton>
+                                <h:commandButton style="width:150px" action="#{menuProductsBean.readKomputronikSiteToFile}"
+                                                 value="Zaczytaj do pliku" ></h:commandButton>
                             </b:column>
                         </b:row>
                     </b:panel>
@@ -39,31 +35,25 @@
 
 
             </b:form>
-        </b:tab>
-        <b:tab title="Czyszczenie cache">
             <b:form id="admin_cache">
-                <b:container fluid="=true">
-                    <b:panel title="Czyszczenie cache aplikacji" look="primary">
+                <b:container fluid="=false">
+                    <b:panel title="Czyszczenie cache aplikacji" collapsible="false">
                         <b:row>
-                            <b:column medium-screen="2"></b:column>
-                            <b:column medium-screen="2">
+                            <b:column medium-screen="4">
                                 <h:outputText value="Czyszczenie cache całej aplikacji"/>
                             </b:column>
-                            <b:column medium-screen="4">
-                                <h:commandButton action="#{adminCacheBean.clearCache}"
+                            <b:column medium-screen="2">
+                                <h:commandButton style="width:150px" action="#{adminCacheBean.clearCache}"
                                                  value="Wyczyść cache"></h:commandButton>
                             </b:column>
                         </b:row>
 
                         <b:row>
-                            <b:column medium-screen="2"></b:column>
-                            <b:column medium-screen="2"></b:column>
+                            <b:column medium-screen="4"></b:column>
                             <b:column medium-screen="4"></b:column>
                         </b:row>
                     </b:panel>
                 </b:container>
             </b:form>
-        </b:tab>
-    </b:tabView>
 
 </ui:composition>
