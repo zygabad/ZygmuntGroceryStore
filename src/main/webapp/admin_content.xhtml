@@ -7,11 +7,11 @@
                 <b:container fluid="=true">
                     <b:panel title="Tworzenie menu z komputronik" collapsible="false">
                         <b:row>
-                            <b:column medium-screen="4">
+                            <b:column medium-screen="3">
                                 <h:outputText value="Scieżka do pliku:" for="filename"/>
                             </b:column>
-                            <b:column medium-screen="2">
-                                <b:inputText style="width:200px" placeholder="Sciezka do pliku" id="filename"
+                            <b:column medium-screen="5">
+                                <b:inputText style="width:400px" placeholder="Sciezka do pliku" id="filename"
                                              value="#{menuProductsBean.fileNameWithPathToCategories}"
                                              ajax="true" autocomplete="false" update="@(.message)" required="true"
                                              data-error="Sciezka jest wymagana.">
@@ -20,15 +20,10 @@
                                     </f:facet>
                                 </b:inputText>
                             </b:column>
-                        </b:row>
-
-                        <b:row>
-                            <b:column medium-screen="4"></b:column>
-                            <b:column medium-screen="2">
-
-                                <h:commandButton style="width:150px" action="#{menuProductsBean.readKomputronikSiteToFile}"
-                                                 value="Zaczytaj do pliku" ></h:commandButton>
-                            </b:column>
+                        <b:column medium-screen="3">
+                            <h:commandButton style="width:150px" action="#{menuProductsBean.readKomputronikSiteToFile}"
+                                             value="Zaczytaj do pliku" ></h:commandButton>
+                        </b:column>
                         </b:row>
                     </b:panel>
                 </b:container>
@@ -39,18 +34,17 @@
                 <b:container fluid="=false">
                     <b:panel title="Czyszczenie cache aplikacji" collapsible="false">
                         <b:row>
-                            <b:column medium-screen="4">
+                            <b:column medium-screen="3">
                                 <h:outputText value="Czyszczenie cache całej aplikacji"/>
                             </b:column>
-                            <b:column medium-screen="2">
-                                <h:commandButton style="width:150px" action="#{adminCacheBean.clearCache}"
-                                                 value="Wyczyść cache"></h:commandButton>
+                            <b:column medium-screen="3">
+                                <b:commandButton value="Wyczyść cache" action="#{adminCacheBean.clearCache}" update="@none" look="warning" style="width:150px"/>
                             </b:column>
                         </b:row>
 
                         <b:row>
-                            <b:column medium-screen="4"></b:column>
-                            <b:column medium-screen="4"></b:column>
+                            <b:column medium-screen="3"></b:column>
+                            <b:column medium-screen="3"></b:column>
                         </b:row>
                     </b:panel>
                 </b:container>

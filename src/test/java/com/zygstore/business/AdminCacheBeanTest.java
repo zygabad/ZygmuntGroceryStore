@@ -26,7 +26,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author Y08L@nykredit.dk
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/applicationTestContext.xml")
+@ContextConfiguration(locations = "/com/zygstore/business/applicationTestContext.xml")
 public class AdminCacheBeanTest {
 
     @Autowired
