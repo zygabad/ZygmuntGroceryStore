@@ -23,6 +23,8 @@ import com.zygstore.service.ProductService;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFileUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 
 /**
  * Place description here.
@@ -46,6 +48,8 @@ public class MenuProductsBean {
     List<ProductDTO> productsList = new ArrayList<>();
     private Map<String, CategoryDTO> menuItemsMap;
 
+    @Autowired
+    CacheManager cacheManager;
 
     public MenuProductsBean(CategoryService categoryService,
                             ProductService productService) {
@@ -89,6 +93,16 @@ public class MenuProductsBean {
         LOGGER.info("File " + fileNameWithPathToCategories + "was successfully saved");
 
         return Result.SUCCESS;
+    }
+
+    public Result clearCache() {
+        cacheManager.getCache("caches").clear();
+
+        FacesContext.getCurrentInstance().addMessage(null,
+            new FacesMessage(FacesMessage.SEVERITY_INFO, "INFO Message", "INFO Cache was successfully cleared"));
+        LOGGER.info("Cache was successfully cleared");
+
+        return Result.CACHE_CLEAR_SUCCESS;
     }
 
     public void setClickedMenuItem(String itemName) {

@@ -11,5 +11,7 @@ public enum Result {
     ERROR,
     BACK,
     INDEX,
-    NEXT_TICKET;
+    NEXT_TICKET,
+    CACHE_CLEAR_SUCCESS,
+    CACHE_CLEAR_ERROR;
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:event type="preRenderView" listener="#{menuProductsBean.initPage}"/>
+<h:head>
+    <title><ui:insert name="title">Default title</ui:insert></title>
+</h:head>
+<h:body>
+    <div id="menuBlack"><ui:insert name="menuBlack">Default menu black</ui:insert></div>
+    <div id="content"><ui:insert name="content"></ui:insert></div>
+</h:body>
+
+</html>
