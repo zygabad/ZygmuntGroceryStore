@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author Y08L@nykredit.dk
  */
 
-
+//
 //@RunWith(MockitoJUnitRunner.class)
 //public class CategoryDAOFileImplTest {
 //

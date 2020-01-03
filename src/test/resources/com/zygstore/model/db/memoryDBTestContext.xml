@@ -28,4 +28,16 @@
         <property name="password" value="sa"/>
     </bean>
 
+    <bean id="categoryMapper" class="com.zygstore.business.mappers.CategoryMapper">
+    </bean>
+
+    <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.CSVFileUtils">
+        <property name="fileEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="categoryDAOImpl" class="com.zygstore.model.db.CategoryDAOImpl">
+    </bean>
+
+    <bean id="category" class="com.zygstore.model.Category"/>
+
 </beans>

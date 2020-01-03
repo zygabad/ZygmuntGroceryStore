@@ -26,16 +26,9 @@ public class FeedProductsWithDataTest {
         description.put("system operacyjny","Mac OS");
 
         //when
-        ProductDTO productDTO = new ProductDTO(1L,"Apple Macbook Air 13,3","1",4.58,4169, "applemacbookair13.jpg",description);
+        ProductDTO productDTO = new ProductDTO(1L,"Apple Macbook Air 13,3",1L,4.58,4169, "applemacbookair13.jpg",description);
 
         //then
         assertEquals(name, productDTO.getName());
     }
-
-
-//        = {"system operacyjny : Mac OS","typ procesora : Intel Core i5", "wielkość pamięci RAM : 8 GB",
-//    "pojemność dysku SSD : 128 GB"};
-    //then
-
-
 }

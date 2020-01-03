@@ -43,7 +43,7 @@
                                     <div class="divpaddingleft5px"></div>
                                     <div class="divpaddingright5px"></div>
                                     <div>
-                                        <ui:repeat var="entry" value="#{product.description.entrySet().toArray()}">
+                                        <ui:repeat var="entry" value="#{product.descriptionMap.entrySet().toArray()}">
                                             <div>
                                                 <h:outputText value="#{entry.key} : "/>
                                                 <h:outputText styleClass="productDescription" value="#{entry.value}"/>

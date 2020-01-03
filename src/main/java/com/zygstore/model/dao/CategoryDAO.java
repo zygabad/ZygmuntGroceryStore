@@ -15,6 +15,6 @@ import com.zygstore.model.Category;
 public interface CategoryDAO {
     public Category read(String categoryName);
     public List<Category> getCategories(String categoryId);
-    List<Category> getAllCategories();
+    public List<Category> getAllCategories();
 }
 
