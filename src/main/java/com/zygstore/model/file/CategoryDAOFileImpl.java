@@ -6,7 +6,7 @@ import java.util.List;
 import com.zygstore.business.mappers.CategoryMapper;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
-import com.zygstore.utils.CSVFileUtils;
+import com.zygstore.utils.CVSFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -19,16 +19,16 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class CategoryDAOFileImpl implements CategoryDAO {
     private String categoriesFile;
     //TODO consider to have a service instead of util
-    private CSVFileUtils csvFileUtils;
+    private CVSFileUtils cvsFileUtils;
     @Autowired
     private CategoryMapper categoryMapper;
 
     public CategoryDAOFileImpl(CategoryMapper categoryMapper,
                                String categoriesFile,
-                               CSVFileUtils csvFileUtils) {
+                               CVSFileUtils cvsFileUtils) {
         this.categoryMapper = categoryMapper;
         this.categoriesFile = categoriesFile;
-        this.csvFileUtils = csvFileUtils;
+        this.cvsFileUtils = cvsFileUtils;
     }
 
     //TODO implement
@@ -45,7 +45,7 @@ public class CategoryDAOFileImpl implements CategoryDAO {
 
     @Override
     public List<Category> getAllCategories() {
-        List<String> linesFromFile = csvFileUtils.getList(categoriesFile);
+        List<String> linesFromFile = cvsFileUtils.getList(categoriesFile);
 
         return categoryMapper.toCategories(linesFromFile);
     }

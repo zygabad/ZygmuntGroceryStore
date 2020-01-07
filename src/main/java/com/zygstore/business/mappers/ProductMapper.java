@@ -1,5 +1,8 @@
 package com.zygstore.business.mappers;
 
+import java.util.List;
+
+
 import com.zygstore.model.Product;
 
 /**
@@ -21,4 +24,17 @@ public class ProductMapper {
 
         return new Product(id, productName, categoryId, rating, prize, linkToPicture, description);
     }
+    //TODO implement this method
+//    public List<Product> toProducts(List<String> linesFromFile) {
+//        for (String line : linesFromFile) {
+//            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
+//                String[] values = line.split(";");
+//
+//                if (values[2] != null && !values[2].equals("") && Long.parseLong(values[2]) == category.longValue()) {
+//                    Product product = productMapper.toProduct(values);
+//                    listOfProducts.add(product);
+//                }
+//            }
+//        }
+//    }
 }

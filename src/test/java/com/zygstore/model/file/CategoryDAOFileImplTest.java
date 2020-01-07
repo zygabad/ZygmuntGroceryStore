@@ -1,22 +1,7 @@
 package com.zygstore.model.file;
 
-import java.util.List;
-
 
 import static org.junit.Assert.assertEquals;
-
-import com.zygstore.business.mappers.CategoryMapper;
-import com.zygstore.business.mappers.ProductMapper;
-import com.zygstore.excpetions.WrongFileFormatExcetion;
-import com.zygstore.model.Category;
-import com.zygstore.model.dao.CategoryDAO;
-import com.zygstore.utils.CSVFileUtils;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Spy;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 /**

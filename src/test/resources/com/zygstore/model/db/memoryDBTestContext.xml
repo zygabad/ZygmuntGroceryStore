@@ -31,13 +31,26 @@
     <bean id="categoryMapper" class="com.zygstore.business.mappers.CategoryMapper">
     </bean>
 
-    <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.CSVFileUtils">
+    <bean id="productMapper" class="com.zygstore.business.mappers.ProductMapper"/>
+
+    <bean id="cvsFileUtils" class="com.zygstore.utils.CVSFileUtils">
         <property name="fileEncoding" value="UTF-8"/>
     </bean>
 
-    <bean id="categoryDAOImpl" class="com.zygstore.model.db.CategoryDAOImpl">
+    <bean id="categoryDAO" class="com.zygstore.model.db.CategoryDAOImpl">
     </bean>
 
+    <bean id="productDAO" class="com.zygstore.model.db.ProductDAOImpl"/>
+
     <bean id="category" class="com.zygstore.model.Category"/>
+
+    <bean id="DBInitialization" class="com.zygstore.model.db.DBInitialization">
+        <constructor-arg name="cvsFileUtils" ref="cvsFileUtils"/>
+        <constructor-arg name="categoriesFile" value="Categories.csv"/>
+        <constructor-arg name="categoryMapper" ref="categoryMapper"/>
+        <constructor-arg name="productsFile" value="Products.csv"/>
+        <constructor-arg name="productMapper" ref="productMapper"/>
+    </bean>
+
 
 </beans>

@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @author Y08L@nykredit.dk
  */
 @Entity
-@Table(name = "PRODUCTS")
+@Table(name = "PRODUCT")
 public class Product {
 
     @Id
@@ -21,7 +21,7 @@ public class Product {
     @Column(name = "productName", columnDefinition = "VARCHAR(255)")
     String productName;
 
-    @Column(name = "categoryId", columnDefinition = "INT")
+    @Column(name = "categoryId", columnDefinition = "INT", nullable = false)
     Long categoryId;
 //TODO next sprint -  to powinno wskazywac na category na obiekt konkretny (nie id|) - ws-bank example w ansoegning - wskazuje na grundlagh - AnsoegningEntity.java linia 55
 

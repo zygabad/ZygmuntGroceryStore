@@ -35,4 +35,6 @@
     <bean id="adminCacheBean" class="com.zygstore.business.AdminCacheBean">
         <constructor-arg name="cacheManager" ref="cacheManager"/>
     </bean>
+
+
 </beans>

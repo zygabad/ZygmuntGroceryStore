@@ -16,6 +16,4 @@
         <constructor-arg value="application-config.xml"/>
     </bean>
 
-
-
 </beans>

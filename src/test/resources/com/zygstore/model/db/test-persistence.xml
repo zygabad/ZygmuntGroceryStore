@@ -8,6 +8,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>com.zygstore.model.Category</class>
+        <class>com.zygstore.model.Product</class>
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
