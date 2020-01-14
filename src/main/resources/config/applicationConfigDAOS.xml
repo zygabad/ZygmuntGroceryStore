@@ -6,13 +6,19 @@
     <bean id="productDAOFileImpl" class="com.zygstore.model.file.ProductDAOFileImpl">
         <constructor-arg name="productsFile" value="Products.csv"></constructor-arg>
         <constructor-arg name="productMapper" ref="productMapper"></constructor-arg>
-        <constructor-arg name="csvFileUtils" ref="readCSVFileWithAllCategories"/>
+        <constructor-arg name="cvsFileUtils" ref="cvsFileUtils"/>
     </bean>
 
     <bean id="categoryDAOfileImpl" class="com.zygstore.model.file.CategoryDAOFileImpl">
         <constructor-arg name="categoryMapper" ref="categoryMapper"/>
         <constructor-arg name="categoriesFile" value="Categories.csv"/>
-        <constructor-arg name="csvFileUtils" ref="readCSVFileWithAllCategories"/>
+        <constructor-arg name="cvsFileUtils" ref="cvsFileUtils"/>
     </bean>
+
+    <bean id="categoryDAO" class="com.zygstore.model.db.CategoryDAOImpl">
+    </bean>
+
+    <bean id="productDAO" class="com.zygstore.model.db.ProductDAOImpl"/>
+
 
 </beans>

@@ -10,7 +10,7 @@
     <bean id="fileNameWithPathToCategories" class="java.lang.String"/>
 
 
-    <bean id="readCSVFileWithAllCategories" class="com.zygstore.utils.cvsFileUtils">
+    <bean id="cvsFileUtils" class="com.zygstore.utils.CVSFileUtils">
         <property name="fileEncoding" value="UTF-8"/>
     </bean>
 

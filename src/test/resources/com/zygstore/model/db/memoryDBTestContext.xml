@@ -4,7 +4,6 @@
        xmlns:cache="http://www.springframework.org/schema/cache"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <!-- transaction -->
@@ -44,7 +43,7 @@
 
     <bean id="category" class="com.zygstore.model.Category"/>
 
-    <bean id="DBInitialization" class="com.zygstore.model.db.DBInitialization">
+    <bean id="dbInitialization" class="com.zygstore.model.db.DBInitialization">
         <constructor-arg name="cvsFileUtils" ref="cvsFileUtils"/>
         <constructor-arg name="categoriesFile" value="Categories.csv"/>
         <constructor-arg name="categoryMapper" ref="categoryMapper"/>

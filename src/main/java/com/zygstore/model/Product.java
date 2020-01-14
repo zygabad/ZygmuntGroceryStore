@@ -37,6 +37,10 @@ public class Product {
     @Column(name = "description", columnDefinition = "VARCHAR(1024)")
     String description;
 
+    private Product(){
+        //required by JPA - does nothing
+    }
+
     public Product(Long id, String productName, Long categoryId, double rating, double prize, String linkToPicture,
                    String description) {
         this.id = id;

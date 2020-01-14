@@ -13,10 +13,10 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import static java.lang.System.out;
 
-import com.zygstore.config.Context;
 import com.zygstore.dto.CategoryDTO;
 import com.zygstore.dto.ProductDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
+import com.zygstore.model.db.DBInitialization;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
@@ -35,7 +35,8 @@ import org.springframework.cache.CacheManager;
 @SessionScoped
 public class MenuProductsBean {
     private static final Logger LOGGER = Logger.getLogger(MenuProductsBean.class);
-    private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+//    private static final String FILE_MENU_PRODUCTS_ADMIN = "c:\\temp_zyg_ZygmuntGroceryStore\\Categories.csv";
+    private static final String FILE_MENU_PRODUCTS_ADMIN = "Categories.csv";
     private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
 
     public String fileNameWithPathToCategories = FILE_MENU_PRODUCTS_ADMIN;
@@ -47,14 +48,19 @@ public class MenuProductsBean {
     List<CategoryDTO> menuItemsList = new ArrayList<>();
     List<ProductDTO> productsList = new ArrayList<>();
     private Map<String, CategoryDTO> menuItemsMap;
+    private DBInitialization dbInitialization;
 
     @Autowired
     CacheManager cacheManager;
 
+//    @Autowired
+//    DBInitialization dbInitialization;
+
     public MenuProductsBean(CategoryService categoryService,
-                            ProductService productService) {
+                            ProductService productService, DBInitialization dbInitialization) {
         this.categoryService = categoryService;
         this.productService = productService;
+        this.dbInitialization = dbInitialization;
         out.println("MenuProductsBean zainicjalizowany !");
         LOGGER.info("MenuProductsBean initialized!");
     }
@@ -69,6 +75,9 @@ public class MenuProductsBean {
     }
 
     public void initMainPage() throws WrongFileFormatExcetion {
+        dbInitialization.initialize();
+        out.println("Database initialized - Categories and Products!");
+        LOGGER.info("Database initialized - Categories and Products!");
         setMenuItemsList(categoryService.getCategories());
     }
 

@@ -23,10 +23,10 @@ public class ProductDAOFileImpl implements ProductDAO {
 
     public ProductDAOFileImpl(String productsFile,
                               ProductMapper productMapper,
-                              CVSFileUtils CVSFileUtils) {
+                              CVSFileUtils cvsFileUtils) {
         this.productsFile = productsFile;
         this.productMapper = productMapper;
-        this.CVSFileUtils = CVSFileUtils;
+        this.CVSFileUtils = cvsFileUtils;
     }
 
     //TODO to implement

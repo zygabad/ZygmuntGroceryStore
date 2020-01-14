@@ -29,7 +29,11 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public List<Product> getProducts(Long categoryId) {
-        return null;
+        String sql = "SELECT c FROM Product c WHERE c.categoryId = :categoryId";
+        TypedQuery<Product> query = em.createQuery(sql, Product.class);
+        query.setParameter("categoryId", categoryId);
+
+        return query.getResultList();
     }
 
     @Override

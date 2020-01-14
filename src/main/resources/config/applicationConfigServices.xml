@@ -4,12 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="productService" class="com.zygstore.service.ProductService">
-        <constructor-arg name="productDAO" ref="productDAOFileImpl"></constructor-arg>
+        <constructor-arg name="productDAO" ref="productDAO"></constructor-arg>
         <constructor-arg name="productDTOMapper" ref="productDTOMapper"></constructor-arg>
     </bean>
 
     <bean id="categoryService" class="com.zygstore.service.CategoryService">
-        <constructor-arg name="categoryDAO" ref="categoryDAOfileImpl"/>
+        <constructor-arg name="categoryDAO" ref="categoryDAO"/>
         <constructor-arg name="categoryMapper" ref="categoryMapper"/>
         <constructor-arg name="categoryDTOMapper" ref="categoryDTOMapper"/>
         <constructor-arg name="categoryDTOHierarchyCreator" ref="categoryDTOHierarchyCreator"/>

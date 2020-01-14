@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
 import com.zygstore.business.mappers.CategoryMapper;
@@ -23,18 +25,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 public class DBInitialization {
 
-    private CVSFileUtils cvsFileUtils;
-    private String categoriesFile;
-    private String productsFile;
-
     @PersistenceContext
     private EntityManager em;
 
-    @Autowired
-    CategoryMapper categoryMapper;
+    private CVSFileUtils cvsFileUtils;
+    private String categoriesFile;
+    private String productsFile;
+    private CategoryMapper categoryMapper;
+    private ProductMapper productMapper;
 
-    @Autowired
-    ProductMapper productMapper;
+    private boolean dbInitialized = false;
 
     public DBInitialization(CVSFileUtils cvsFileUtils, String categoriesFile, CategoryMapper categoryMapper, String productsFile, ProductMapper productMapper) {
         this.cvsFileUtils = cvsFileUtils;
@@ -46,8 +46,13 @@ public class DBInitialization {
 
     @Transactional
     public void initialize() {
+        if (dbInitialized) {
+            //Logger
+            return;
+        }
         initializeCategories();
         initializeProducts();
+        dbInitialized = true;
     }
 
     private void initializeCategories() {
@@ -89,4 +94,3 @@ public class DBInitialization {
         return products;
     }
 }
-

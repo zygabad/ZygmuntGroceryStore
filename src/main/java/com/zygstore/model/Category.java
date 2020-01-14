@@ -29,7 +29,7 @@ public class Category {
     private String linkToPicture;
 
     //required by JPA - does nothing
-    protected Category() {
+    private Category() {
         //in order to initialize empty object and then use setters
     }
 
