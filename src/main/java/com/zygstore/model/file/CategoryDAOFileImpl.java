@@ -37,9 +37,8 @@ public class CategoryDAOFileImpl implements CategoryDAO {
         throw new NotImplementedException();
     }
 
-    //TODO implement
     @Override
-    public List<Category> getCategories(String categoryId) {
+    public Category getCategory(Long categoryId) {
         throw new NotImplementedException();
     }
 

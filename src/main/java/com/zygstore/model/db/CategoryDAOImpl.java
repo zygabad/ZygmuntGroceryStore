@@ -32,7 +32,12 @@ public class CategoryDAOImpl implements CategoryDAO {
     }
 
     @Override
-    public List<Category> getCategories(String categoryId) {
+    public Category getCategory(Long categoryId) {
+//        String sql = "SELECT c FROM Category c WHERE c.id = :categoryId";
+//        TypedQuery<Category> query = em.createQuery(sql, Category.class);
+//
+//        return query.getSingleResult();
+
         throw new NotImplementedException();
     }
 

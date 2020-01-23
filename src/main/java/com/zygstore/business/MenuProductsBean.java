@@ -20,6 +20,7 @@ import com.zygstore.model.db.DBInitialization;
 import com.zygstore.navigation.Result;
 import com.zygstore.service.CategoryService;
 import com.zygstore.service.ProductService;
+import com.zygstore.utils.CategoryDTOHelper;
 import com.zygstore.utils.ReadKomputronikSite;
 import com.zygstore.utils.WriteFileUtils;
 import org.apache.log4j.Logger;
@@ -52,6 +53,9 @@ public class MenuProductsBean {
 
     @Autowired
     CacheManager cacheManager;
+
+    @Autowired
+    private CategoryDTOHelper categoryDTOHelper;
 
 //    @Autowired
 //    DBInitialization dbInitialization;
@@ -160,7 +164,7 @@ public class MenuProductsBean {
     //TODO wrzuc to do service lub util i napisz test do tego???
     public CategoryDTO findMenuProductClickedByName(String itemName) {
         if (itemName.equals(MAIN_PAGE_BREADCRUMB_NAME)) {
-            return categoryService.mainPageDTO();
+            return categoryDTOHelper.mainPageDTO();
         }
 
         return menuItemsMap.get(itemName);

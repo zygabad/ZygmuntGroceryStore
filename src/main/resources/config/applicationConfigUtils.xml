@@ -18,7 +18,13 @@
 
     </bean>
 
-    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator"/>
+    <bean id="breadCrumbsCreator" class="com.zygstore.utils.BreadCrumbsCreator"/>
+
+    <bean id="categoryDTOHelper" class="com.zygstore.utils.CategoryDTOHelper"/>
+
+    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator">
+        <property name="breadCrumbsCreator" ref="breadCrumbsCreator"></property>
+    </bean>
 
     <bean id="emailConfig" class="com.zygstore.config.EmailConfig">
         <constructor-arg name="hostName" value="relayinternal.nykreditnet.net"/>

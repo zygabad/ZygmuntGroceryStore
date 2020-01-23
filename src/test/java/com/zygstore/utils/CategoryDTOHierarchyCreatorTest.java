@@ -1,6 +1,7 @@
 package com.zygstore.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -9,50 +10,41 @@ import static org.junit.Assert.*;
 
 import com.zygstore.dto.CategoryDTO;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "/applicationTestContext.xml")
 public class CategoryDTOHierarchyCreatorTest {
 
+    @Autowired
+    BreadCrumbsCreator breadCrumbsCreator;
+
+    @Autowired
+    CategoryDTOHelper categoryDTOHelper;
+
+    @Autowired
+    CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
+
     @Test
-    public void create() {
-        CategoryDTOHierarchyCreator creator = new CategoryDTOHierarchyCreator();
-        List<CategoryDTO> categories = new ArrayList<>();
-        Long id_1 = 1L;
-        Long parentId_1 = null;
-        String text_1 = "Elektronika";
-        String linkToPicture_1 = "/images/categories/elektronika.jpg";
-        CategoryDTO categoryDTO_1 = new CategoryDTO(id_1, parentId_1, text_1, linkToPicture_1);
+    public void testCreate() {
+        CategoryDTO categoryDTO_1 = new CategoryDTO(1L, null, "Elektronika", "/images/categories/elektronika.jpg");
+        CategoryDTO categoryDTO_2 = new CategoryDTO(2L, 1L, "Laptopy", null);
+        CategoryDTO categoryDTO_3 = new CategoryDTO(184L, null, "Telefony i Smartwatche", "/images/telefonyIsmartwatche.jpg");
+        CategoryDTO categoryDTO_4 = new CategoryDTO(185L, 184L, "Telefony i Smartfony", null);
 
-        Long id_2 = 2L;
-        Long parentId_2 = id_1;
-        String text_2 = "Laptopy";
-        String linkToPicture_2 = "null";
-        CategoryDTO categoryDTO_2 = new CategoryDTO(id_2, parentId_2, text_2, linkToPicture_2);
-
-        Long id_3 = 184L;
-        Long parentId_3 = null;
-        String text_3 = "Telefony i Smartwatche";
-        String linkToPicture_3 = "/images/categories/telefonyIsmartwatche.jpg";
-        CategoryDTO categoryDTO_3 = new CategoryDTO(id_3, parentId_3, text_3, linkToPicture_3);
-
-        Long id_4 = 185L;
-        Long parentId_4 = id_3;
-        String text_4 = "Telefony i Smartfony";
-        String linkToPicture_4 = "null";
-        CategoryDTO categoryDTO_4 = new CategoryDTO(id_4, parentId_4, text_4, linkToPicture_4);
-
-        categories.add(categoryDTO_1);
-        categories.add(categoryDTO_2);
-        categories.add(categoryDTO_3);
-        categories.add(categoryDTO_4);
+        List<CategoryDTO> categories = Arrays.asList(categoryDTO_1, categoryDTO_2, categoryDTO_3, categoryDTO_4);
 
         //when
-        List<CategoryDTO> mainCategories = creator.create(categories);
+        List<CategoryDTO> mainCategories = categoryDTOHierarchyCreator.create(categories);
 
         //done
         assertCategory(categoryDTO_1, mainCategories.get(0));
