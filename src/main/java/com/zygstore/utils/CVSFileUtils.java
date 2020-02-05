@@ -9,10 +9,10 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
-public class CSVFileUtils {
+public class CVSFileUtils {
     String fileEncoding;
 
-    public CSVFileUtils() {
+    public CVSFileUtils() {
     }
 
     public List<String> getList(String filePath) {

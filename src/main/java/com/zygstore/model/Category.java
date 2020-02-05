@@ -1,16 +1,37 @@
 package com.zygstore.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
 
+@Entity
+@Table(name = "CATEGORY")
 public class Category {
+
+    @Id
+    @Column(name= "Id" , columnDefinition = "INT")
     private Long id;
+
+    @Column(name= "parentId" , columnDefinition = "INT")
     private Long parentId;
+
+    @Column(name= "text" , columnDefinition = "VARCHAR(255)")
     private String text;
+
+    @Column(name= "linkToPicture" , columnDefinition = "VARCHAR(255)")
     private String linkToPicture;
+
+    //required by JPA - does nothing
+    private Category() {
+        //in order to initialize empty object and then use setters
+    }
 
     public Category(Long id, Long parentId, String text, String linkToPicture) {
         this.id = id;

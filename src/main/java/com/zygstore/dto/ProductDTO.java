@@ -3,7 +3,7 @@ package com.zygstore.dto;
 import java.util.Map;
 
 /**
- * Place description here.
+ * Place descriptionMap here.
  *
  * @author Y08L@nykredit.dk
  */
@@ -11,21 +11,21 @@ import java.util.Map;
 public class ProductDTO {
     private Long id;
     private String name;
-    private String categoryId;
+    private Long categoryId;
     private double rating;
     private double prize;
     private String linkToPicture;
-    private Map<String, String> description;
+    private Map<String, String> descriptionMap;
 
-    public ProductDTO(Long id, String name, String categoryId, double rating, double prize, String linkToPicture,
-                      Map<String, String> description) {
+    public ProductDTO(Long id, String name, Long categoryId, double rating, double prize, String linkToPicture,
+                      Map<String, String> descriptionMap) {
         this.id = id;
         this.name = name;
         this.categoryId = categoryId;
         this.rating = rating;
         this.prize = prize;
         this.linkToPicture = linkToPicture;
-        this.description = description;
+        this.descriptionMap = descriptionMap;
     }
 
     public Long getId() {
@@ -44,11 +44,11 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public String getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -76,11 +76,11 @@ public class ProductDTO {
         this.linkToPicture = linkToPicture;
     }
 
-    public Map<String, String> getDescription() {
-        return description;
+    public Map<String, String> getDescriptionMap() {
+        return descriptionMap;
     }
 
-    public void setDescription(Map<String, String> description) {
-        this.description = description;
+    public void setDescriptionMap(Map<String, String> descriptionMap) {
+        this.descriptionMap = descriptionMap;
     }
 }

@@ -1,24 +1,48 @@
 package com.zygstore.model;
 
-import java.util.Map;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-
+@Entity
+@Table(name = "PRODUCT")
 public class Product {
-    Long id;
-    String productName;
-    String categoryId;
-    double rating;
-    double prize;
-    String linkToPicture;
-    Map<String, String> description;
 
-    public Product(Long id, String productName, String categoryId, double rating, double prize, String linkToPicture,
-                   Map<String, String> description) {
+    @Id
+    @Column(name = "Id", columnDefinition = "INT")
+    Long id;
+
+    @Column(name = "productName", columnDefinition = "VARCHAR(255)")
+    String productName;
+
+    @Column(name = "categoryId", columnDefinition = "INT", nullable = false)
+    Long categoryId;
+//TODO next sprint -  to powinno wskazywac na category na obiekt konkretny (nie id|) - ws-bank example w ansoegning - wskazuje na grundlagh - AnsoegningEntity.java linia 55
+
+    @Column(name = "rating", columnDefinition = "INT")
+    double rating;
+
+    @Column(name = "prize", columnDefinition = "INT")
+    double prize;
+
+    @Column(name = "linkToPicture", columnDefinition = "VARCHAR(255)")
+    String linkToPicture;
+
+    @Column(name = "description", columnDefinition = "VARCHAR(1024)")
+    String description;
+
+    private Product(){
+        //required by JPA - does nothing
+    }
+
+    public Product(Long id, String productName, Long categoryId, double rating, double prize, String linkToPicture,
+                   String description) {
         this.id = id;
         this.productName = productName;
         this.categoryId = categoryId;
@@ -44,11 +68,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -76,11 +100,11 @@ public class Product {
         this.linkToPicture = linkToPicture;
     }
 
-    public Map<String, String> getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Map<String, String> description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }

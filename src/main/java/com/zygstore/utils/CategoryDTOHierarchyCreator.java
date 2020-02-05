@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import com.zygstore.dto.CategoryDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Place description here.
@@ -16,16 +17,22 @@ public class CategoryDTOHierarchyCreator {
     public static final String PRODUCTS_PAGE = "/viewProductsList.xhtml";
     public static final String CATEGORIES_PAGE = "/viewProductsCategories.xhtml";
 
+    @Autowired
+    private BreadCrumbsCreator breadCrumbsCreator;
+
+    @Autowired
+    private CategoryDTOHelper categoryDTOHelper;
+
     public List<CategoryDTO> create(List<CategoryDTO> categories) {
         updateChildren(categories);
         updateLinks(categories);
-
+        breadCrumbsCreator.updateBreadCrumbs(categories);
         return getMainCategories(categories);
     }
 
     private void updateChildren(List<CategoryDTO> categories) {
         for (CategoryDTO categoryDTO : categories) {
-            CategoryDTO parent = getParent(categories, categoryDTO.getParentId());
+            CategoryDTO parent = categoryDTOHelper.getParent(categories, categoryDTO.getParentId());
 
             if (parent != null) {
                 parent.getChildsList().add(categoryDTO);
@@ -61,13 +68,11 @@ public class CategoryDTOHierarchyCreator {
         return result;
     }
 
-    private CategoryDTO getParent(List<CategoryDTO> categories, Long parentId) {
-        for (CategoryDTO categoryDTO : categories) {
-            if (parentId != null && parentId.equals(categoryDTO.getId())) {
-                return categoryDTO;
-            }
-        }
+    public BreadCrumbsCreator getBreadCrumbsCreator() {
+        return breadCrumbsCreator;
+    }
 
-        return null;
+    public void setBreadCrumbsCreator(BreadCrumbsCreator breadCrumbsCreator) {
+        this.breadCrumbsCreator = breadCrumbsCreator;
     }
 }

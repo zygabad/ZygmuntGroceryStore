@@ -1,6 +1,5 @@
 package com.zygstore.business.mappers;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -23,16 +22,14 @@ public class ProductDTOMapperTest {
         //given
         Long id = 1L;
         String productName = "Macbook Pro";
-        String categoryId = "Laptop";
+        Long categoryId = 1L;
         double rating = 1.6;
         double prize = 8909.99;
         String linkToPicture = "http://link_to_picture";
 
-        Map<String, String> descriptionMap = new HashMap<>();
-        descriptionMap.put("processor", "i5");
-        descriptionMap.put("RAM", "8 GB");
+        String description = "processor,i5#RAM,8 GB";
 
-        Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, descriptionMap);
+        Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, description);
 
         //when
         ProductDTO productDTO = productDTOMapper.toProductDTO(product);
@@ -44,6 +41,9 @@ public class ProductDTOMapperTest {
         assertEquals(rating, productDTO.getRating(), 0.0);
         assertEquals(prize, productDTO.getPrize(), 0.0);
         assertEquals(linkToPicture, productDTO.getLinkToPicture());
-        assertEquals(descriptionMap, productDTO.getDescription());
+
+        Map<String, String> descriptionMap = productDTO.getDescriptionMap();
+        assertEquals("i5", descriptionMap.get("processor"));
+        assertEquals("8 GB", descriptionMap.get("RAM"));
     }
 }

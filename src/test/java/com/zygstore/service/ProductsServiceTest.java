@@ -1,14 +1,11 @@
 package com.zygstore.service;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyLong;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
 import com.zygstore.business.mappers.ProductDTOMapper;
@@ -43,11 +40,11 @@ public class ProductsServiceTest {
         //given
         Long id = 1L;
         String productName = "Apple Macbook Air 13,3";
-        String categoryId = "5";
+        Long categoryId = 5L;
         double rating = 4.5;
         double prize = 1390.99;
         String linkToPicture = "linkToPicture";
-        Map<String, String> description = new HashMap<>();
+        String description = "RAM,8 GB";
 
         Product product = new Product(id, productName, categoryId, rating, prize, linkToPicture, description);
         List<Product> products = Arrays.asList(product);
@@ -55,7 +52,7 @@ public class ProductsServiceTest {
         when(productDAO.getProducts(anyLong())).thenReturn(products);
 
         //when
-        List<ProductDTO> productDTOs = productService.getProducts(3L);
+        List<ProductDTO> productDTOs = productService.getProducts(categoryId);
 
         //then
         assertEquals(1, productDTOs.size());
@@ -64,6 +61,7 @@ public class ProductsServiceTest {
         assertEquals(id, productDTO.getId());
         assertEquals(productName, productDTO.getName());
         assertEquals(categoryId, productDTO.getCategoryId());
+        assertEquals(description, product.getDescription());
         // TODO - other asserts
     }
 

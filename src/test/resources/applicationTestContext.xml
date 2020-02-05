@@ -23,7 +23,9 @@
 
     <bean id="categoryDTOMapper" class="com.zygstore.business.mappers.CategoryDTOMapper"/>
 
-    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator"/>
+    <bean id="categoryDTOHierarchyCreator" class="com.zygstore.utils.CategoryDTOHierarchyCreator">
+        <property name="breadCrumbsCreator" ref="breadCrumbsCreator"></property>
+    </bean>
 
     <bean id="categoryService" class="com.zygstore.service.CategoryService">
         <constructor-arg name="categoryDAO" ref="categoryDAOMock"/>
@@ -35,4 +37,11 @@
     <bean id="adminCacheBean" class="com.zygstore.business.AdminCacheBean">
         <constructor-arg name="cacheManager" ref="cacheManager"/>
     </bean>
+
+
+    <bean id="breadCrumbsCreator" class="com.zygstore.utils.BreadCrumbsCreator"/>
+
+    <bean id="categoryDTOHelper" class="com.zygstore.utils.CategoryDTOHelper"/>
+
+
 </beans>

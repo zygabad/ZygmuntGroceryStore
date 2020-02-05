@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-
-    <import resource="classpath:config/applicationConfigDAOS.xml"/>
-    <import resource="classpath:config/applicationConfigDTOS.xml"/>
-    <import resource="classpath:config/applicationConfigMappers.xml"/>
-    <import resource="classpath:config/applicationConfigServices.xml"/>
-    <import resource="classpath:config/applicationConfigUtils.xml"/>
-    <import resource="classpath:config/applicationConfigBusinessBeans.xml"/>
-    <import resource="classpath:config/applicationCacheConfig.xml"/>
-
-    <bean id="context" class="com.zygstore.config.Context">
-        <constructor-arg value="application-config.xml"/>
-    </bean>
-
-    <context:annotation-config/>
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <!-- transaction -->
     <tx:annotation-driven proxy-target-class="true"/>
@@ -30,7 +16,7 @@
     <!-- entity manager -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="persistenceXmlLocation" value="classpath:config/persistence.xml"/>
+        <property name="persistenceXmlLocation" value="classpath:/com/zygstore/model/db/test-persistence.xml"/>
     </bean>
 
     <!-- data source -->
@@ -41,6 +27,22 @@
         <property name="password" value="sa"/>
     </bean>
 
+    <bean id="categoryMapper" class="com.zygstore.business.mappers.CategoryMapper">
+    </bean>
+
+    <bean id="productMapper" class="com.zygstore.business.mappers.ProductMapper"/>
+
+    <bean id="cvsFileUtils" class="com.zygstore.utils.CVSFileUtils">
+        <property name="fileEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="categoryDAO" class="com.zygstore.model.db.CategoryDAOImpl">
+    </bean>
+
+    <bean id="productDAO" class="com.zygstore.model.db.ProductDAOImpl"/>
+
+    <bean id="category" class="com.zygstore.model.Category"/>
+
     <bean id="dbInitialization" class="com.zygstore.model.db.DBInitialization">
         <constructor-arg name="cvsFileUtils" ref="cvsFileUtils"/>
         <constructor-arg name="categoriesFile" value="Categories.csv"/>
@@ -48,7 +50,6 @@
         <constructor-arg name="productsFile" value="Products.csv"/>
         <constructor-arg name="productMapper" ref="productMapper"/>
     </bean>
-
 
 
 </beans>

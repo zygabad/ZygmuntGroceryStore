@@ -20,7 +20,7 @@
             <b:panel col-xs="9" collapsible="false">
                 <f:facet name="heading">
                     <i class="fa fa-shopping-basket " style="padding-right:20px"/>
-                    <h:outputText value="Produkty"/>
+                    <h:outputText value="#{menuProductsBean.categoryDTOClicked.text}"/>
                 </f:facet>
                 <b:row>
                     <ui:repeat var="product" value="#{menuProductsBean.categoryDTOClicked.childsList}">

@@ -1,7 +1,6 @@
 package com.zygstore.business.mappers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 
 import com.zygstore.model.Product;
@@ -17,24 +16,25 @@ public class ProductMapper {
     public Product toProduct(String[] values) {
         long id = Long.parseLong(values[0]);
         String productName = values[1];
-        String categoryId = values[2];
+        Long categoryId = Long.parseLong(values[2]);
         Double rating = Double.valueOf(values[3]);
         Double prize = Double.valueOf(values[4]);
         String linkToPicture = values[5];
-        Map<String, String> descriptionMap = getMap(values[6]);
+        String description = values[6];
 
-        return new Product(id, productName, categoryId, rating, prize, linkToPicture, descriptionMap);
+        return new Product(id, productName, categoryId, rating, prize, linkToPicture, description);
     }
-
-    private Map<String, String> getMap(String allDescriptionLine) {
-        Map<String, String> descriptionMap = new HashMap<>();
-        String[] descriptionLines = allDescriptionLine.split("#");
-
-        for (String descriptionLine : descriptionLines) {
-            String[] descriptionItems = descriptionLine.split(",");
-            descriptionMap.put(descriptionItems[0], descriptionItems[1]);
-        }
-
-        return descriptionMap;
-    }
+    //TODO implement this method
+//    public List<Product> toProducts(List<String> linesFromFile) {
+//        for (String line : linesFromFile) {
+//            if (!line.equals(null) || !line.equals("") || !line.equals(" ")) {
+//                String[] values = line.split(";");
+//
+//                if (values[2] != null && !values[2].equals("") && Long.parseLong(values[2]) == category.longValue()) {
+//                    Product product = productMapper.toProduct(values);
+//                    listOfProducts.add(product);
+//                }
+//            }
+//        }
+//    }
 }

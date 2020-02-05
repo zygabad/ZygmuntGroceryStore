@@ -7,7 +7,7 @@ import java.util.List;
 import com.zygstore.business.mappers.ProductMapper;
 import com.zygstore.model.Product;
 import com.zygstore.model.dao.ProductDAO;
-import com.zygstore.utils.CSVFileUtils;
+import com.zygstore.utils.CVSFileUtils;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
@@ -19,14 +19,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class ProductDAOFileImpl implements ProductDAO {
     private String productsFile;
     private ProductMapper productMapper;
-    private CSVFileUtils csvFileUtils;
+    private CVSFileUtils CVSFileUtils;
 
     public ProductDAOFileImpl(String productsFile,
                               ProductMapper productMapper,
-                              CSVFileUtils csvFileUtils) {
+                              CVSFileUtils cvsFileUtils) {
         this.productsFile = productsFile;
         this.productMapper = productMapper;
-        this.csvFileUtils = csvFileUtils;
+        this.CVSFileUtils = cvsFileUtils;
     }
 
     //TODO to implement
@@ -37,7 +37,7 @@ public class ProductDAOFileImpl implements ProductDAO {
 
     @Override
     public List<Product> getProducts(Long category) {
-        List<String> linesFromFile = csvFileUtils.getList(productsFile);
+        List<String> linesFromFile = CVSFileUtils.getList(productsFile);
         List<Product> listOfProducts = new ArrayList<>();
 
         for (String line : linesFromFile) {

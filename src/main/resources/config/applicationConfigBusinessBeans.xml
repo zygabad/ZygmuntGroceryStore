@@ -11,6 +11,7 @@
         <constructor-arg name="categoryService" ref="categoryService"/>
         <constructor-arg name="productService" ref="productService"/>
         <property name="fileNameWithPathToCategories" ref="fileNameWithPathToCategories"></property>
+        <constructor-arg name="dbInitialization" ref="dbInitialization"/>
     </bean>
 
     <bean id="adminCacheBean" class="com.zygstore.business.AdminCacheBean">

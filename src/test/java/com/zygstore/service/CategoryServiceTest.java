@@ -15,6 +15,7 @@ import com.zygstore.dto.CategoryDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
+import com.zygstore.utils.CategoryDTOHelper;
 import com.zygstore.utils.CategoryDTOHierarchyCreator;
 import com.zygstore.utils.Constants;
 import org.junit.Test;
@@ -23,28 +24,35 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * Place description here.
  *
  * @author Y08L@nykredit.dk
  */
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "/applicationTestContext.xml")
 public class CategoryServiceTest {
 
-    @Mock
+    @Autowired
     private CategoryDAO categoryDAO;
 
-    @Spy
+    @Autowired
     private CategoryMapper categoryMapper;
 
-    @Spy
+    @Autowired
     private CategoryDTOMapper categoryDTOMapper;
 
-    @Spy
+    @Autowired
     private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
 
-    @InjectMocks
+    @Autowired
+    private CategoryDTOHelper categoryDTOHelper;
+
+    @Autowired
     private CategoryService categoryService;
 
     @Test

@@ -10,6 +10,7 @@ import com.zygstore.dto.CategoryDTO;
 import com.zygstore.excpetions.WrongFileFormatExcetion;
 import com.zygstore.model.Category;
 import com.zygstore.model.dao.CategoryDAO;
+import com.zygstore.utils.CategoryDTOHelper;
 import com.zygstore.utils.CategoryDTOHierarchyCreator;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,8 @@ import org.springframework.cache.annotation.Cacheable;
  */
 
 public class CategoryService {
-    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
     final static Logger logger = Logger.getLogger(CategoryService.class);
-
+    private static final String MAIN_PAGE_BREADCRUMB_NAME = "Strona główna";
     private CategoryDTOHierarchyCreator categoryDTOHierarchyCreator;
 
     @Autowired
@@ -49,7 +49,7 @@ public class CategoryService {
     @Cacheable("categories")
     public List<CategoryDTO> getCategories() throws WrongFileFormatExcetion {
         List<Category> categories = categoryDAO.getAllCategories();
-        logger.info("Executing method CategoryService.getCategories() - reading categories from file not from cache");
+        logger.info("Executing method CategoryService.getCategory() - reading categories from file not from cache");
 
         return toCategoryDTOS(categories);
     }
@@ -58,20 +58,6 @@ public class CategoryService {
         List<Category> categories = categoryMapper.toCategories(lines);
 
         return toCategoryDTOS(categories);
-    }
-
-    public CategoryDTO mainPageDTO() {
-        Long id = 0L;
-        Long parentId = null;
-        String text = "MainPageDTO";
-        String linkToPicture = null;
-        CategoryDTO categoryDTO = new CategoryDTO(id, parentId, text, linkToPicture);
-
-        List<String> breadcrumb = new ArrayList<>();
-        breadcrumb.add(MAIN_PAGE_BREADCRUMB_NAME);
-        categoryDTO.setBreadCrumbs(breadcrumb);
-
-        return categoryDTO;
     }
 
     private List<CategoryDTO> toCategoryDTOS(List<Category> categories) {
